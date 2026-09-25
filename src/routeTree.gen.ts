@@ -10,33 +10,79 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as MenuRouteImport } from './routes/menu'
+import { Route as SimulationIndexRouteImport } from './routes/simulation.index'
+import { Route as SimulationSettingsRouteImport } from './routes/simulation.settings'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MenuRoute = MenuRouteImport.update({
+  id: '/menu',
+  path: '/menu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SimulationIndexRoute = SimulationIndexRouteImport.update({
+  id: '/simulation/',
+  path: '/simulation/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SimulationSettingsRoute = SimulationSettingsRouteImport.update({
+  id: '/simulation/settings',
+  path: '/simulation/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/menu': typeof MenuRoute
+  '/simulation/settings': typeof SimulationSettingsRoute
+  '/simulation/': typeof SimulationIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/menu': typeof MenuRoute
+  '/simulation/settings': typeof SimulationSettingsRoute
+  '/simulation': typeof SimulationIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/menu': typeof MenuRoute
+  '/simulation/settings': typeof SimulationSettingsRoute
+  '/simulation/': typeof SimulationIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/admin' | '/menu' | '/simulation/settings' | '/simulation/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/admin' | '/menu' | '/simulation/settings' | '/simulation'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/menu'
+    | '/simulation/settings'
+    | '/simulation/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  MenuRoute: typeof MenuRoute
+  SimulationSettingsRoute: typeof SimulationSettingsRoute
+  SimulationIndexRoute: typeof SimulationIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +94,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/menu': {
+      id: '/menu'
+      path: '/menu'
+      fullPath: '/menu'
+      preLoaderRoute: typeof MenuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/simulation/': {
+      id: '/simulation/'
+      path: '/simulation'
+      fullPath: '/simulation/'
+      preLoaderRoute: typeof SimulationIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/simulation/settings': {
+      id: '/simulation/settings'
+      path: '/simulation/settings'
+      fullPath: '/simulation/settings'
+      preLoaderRoute: typeof SimulationSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  MenuRoute: MenuRoute,
+  SimulationSettingsRoute: SimulationSettingsRoute,
+  SimulationIndexRoute: SimulationIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
