@@ -11,6 +11,10 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { SiteHeader } from "@/components/layout/site-header";
+import { AccessibilityProvider } from "@/context/accessibility-context";
+import { I18nProvider, useI18n } from "@/context/i18n-context";
 
 function NotFoundComponent() {
   return (
@@ -77,19 +81,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "TOLC-S Trainer" },
+      {
+        name: "description",
+        content:
+          "Preparazione accessibile al test di ammissione CISIA TOLC-S per Informatica.",
+      },
+      { property: "og:title", content: "TOLC-S Trainer" },
+      {
+        property: "og:description",
+        content:
+          "Preparazione accessibile al test di ammissione CISIA TOLC-S per Informatica.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@500;600;700&family=Lexend:wght@400;500;600;700&family=Atkinson+Hyperlegible:wght@400;700&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
@@ -102,7 +115,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="it">
       <head>
         <HeadContent />
       </head>
@@ -114,13 +127,37 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+function AppFrame() {
+  const { t } = useI18n();
+
+  return (
+    <div className="flex min-h-dvh flex-col bg-background">
+      <a
+        href="#main-content"
+        className="sr-only rounded-md bg-primary px-4 py-2 text-primary-foreground focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50"
+      >
+        {t.common.skipToContent}
+      </a>
+      <SiteHeader />
+      <main id="main-content" className="flex-1">
+        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+        <Outlet />
+      </main>
+      <SiteFooter />
+    </div>
+  );
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <AccessibilityProvider>
+        <I18nProvider>
+          <AppFrame />
+        </I18nProvider>
+      </AccessibilityProvider>
     </QueryClientProvider>
   );
 }
