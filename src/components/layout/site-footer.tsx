@@ -13,6 +13,7 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-8 text-sm text-muted-foreground md:flex-row md:items-center md:justify-between">
         <div className="max-w-xl">
           <p className="font-medium text-surface-foreground">{t.footer.thesis}</p>
+          <p className="mt-1 text-xs">{t.footer.author}</p>
           <p className="mt-1 text-xs">{t.footer.disclaimer}</p>
         </div>
         <nav aria-label="Footer">

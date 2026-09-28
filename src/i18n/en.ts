@@ -202,7 +202,7 @@ export const en: Translation = {
   about: {
     title: "The thesis project",
     subtitle: "AI as an aid for self-education: an application tested against the CISIA TOLC-S test.",
-    p1: "This app was built as part of a Computer Science bachelor's thesis. It helps students enrolling in science degrees prepare for the TOLC-S test with per-section or full-exam simulations.",
+    p1: "This app was built by Francesco Agnoli as part of a Computer Science bachelor's thesis. It helps students enrolling in science degrees prepare for the TOLC-S test with per-section or full-exam simulations.",
     p2: "A core goal is visual accessibility: dyslexia-friendly font, high contrast, colour-blind palettes, text scaling and reduced motion.",
     p3: "The questions currently included are demonstration samples and do not come from CISIA.",
   },
@@ -250,6 +250,7 @@ export const en: Translation = {
     aboutLink: "About this thesis project",
     thesis:
       "AI as an aid for self-education: an application tested against the CISIA TOLC-S test",
+    author: "Thesis by Francesco Agnoli",
     disclaimer:
       "Independent academic project. Not affiliated with CISIA. TOLC® is a trademark of CISIA.",
     accessibilityLink: "Accessibility",

@@ -3,8 +3,8 @@
 Study-prep web app for students preparing the **CISIA TOLC-S** admission test for
 Computer Science degrees in Italy.
 
-Thesis: _"AI as an aid for self-education: an Application tested against the CISIA
-TOLC-S Test"_.
+Thesis by **Francesco Agnoli**: _"AI as an aid for self-education: an Application
+tested against the CISIA TOLC-S Test"_.
 
 This repository currently contains the **shell**: design system, routing, layout,
 i18n (Italian/English) and the full accessibility system. The simulation engine is

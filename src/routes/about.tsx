@@ -6,10 +6,11 @@ import { useI18n } from "@/context/i18n-context";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "Il progetto di tesi — TOLC-S Trainer" },
-      { name: "description", content: "Tesi di laurea: l'IA come supporto all'autoapprendimento, verificata sul test CISIA TOLC-S." },
-      { property: "og:title", content: "Il progetto di tesi — TOLC-S Trainer" },
-      { property: "og:description", content: "Obiettivi e accessibilità del progetto di tesi TOLC-S Trainer." },
+      { title: "Tesi di Francesco Agnoli — TOLC-S Trainer" },
+      { name: "description", content: "Tesi di laurea di Francesco Agnoli: l'IA come supporto all'autoapprendimento, verificata sul test CISIA TOLC-S." },
+      { name: "author", content: "Francesco Agnoli" },
+      { property: "og:title", content: "Tesi di Francesco Agnoli — TOLC-S Trainer" },
+      { property: "og:description", content: "Obiettivi e accessibilità del progetto di tesi di Francesco Agnoli." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
     ],

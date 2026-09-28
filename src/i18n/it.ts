@@ -200,7 +200,7 @@ export const it = {
   about: {
     title: "Il progetto di tesi",
     subtitle: "L'IA come supporto all'autoapprendimento: un'applicazione verificata sul test CISIA TOLC-S.",
-    p1: "Questa applicazione è stata sviluppata come parte di una tesi di laurea in Informatica. Aiuta chi si iscrive a un corso di laurea scientifico a prepararsi al test TOLC-S con simulazioni per sezione o d'esame completo.",
+    p1: "Questa applicazione è stata sviluppata da Francesco Agnoli come parte di una tesi di laurea in Informatica. Aiuta chi si iscrive a un corso di laurea scientifico a prepararsi al test TOLC-S con simulazioni per sezione o d'esame completo.",
     p2: "Un obiettivo centrale è l'accessibilità visiva: font per dislessia, contrasto elevato, palette per daltonismo, scala dei caratteri e riduzione delle animazioni.",
     p3: "Le domande attualmente incluse sono esempi dimostrativi e non provengono da CISIA.",
   },
@@ -250,6 +250,7 @@ export const it = {
     aboutLink: "Il progetto di tesi",
     thesis:
       "L'IA come supporto all'autoapprendimento: un'applicazione verificata sul test CISIA TOLC-S",
+    author: "Tesi di Francesco Agnoli",
     disclaimer:
       "Progetto accademico indipendente. Non affiliato a CISIA. TOLC® è un marchio di CISIA.",
     accessibilityLink: "Accessibilità",
