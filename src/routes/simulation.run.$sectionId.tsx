@@ -55,10 +55,13 @@ function RunPage() {
   // The Mathematical logic module pulls live questions from the Logic API;
   // every other target uses the local sample bank only.
   const isLogicModule = target === "matematica-ragionare";
+  // The requested count is part of the cache key: changing it in the settings
+  // screen must trigger a fresh generation instead of reusing a shorter batch.
+  const requestedCount = settings?.questionCount ?? null;
   const logicQuery = useQuery({
-    queryKey: ["logic-api-questions", attempt],
-    queryFn: () => fetchLogicQuestions({ data: { count: settings?.questionCount ?? 5 } }),
-    enabled: hydrated && isLogicModule,
+    queryKey: ["logic-api-questions", target, requestedCount, attempt],
+    queryFn: () => fetchLogicQuestions({ data: { count: requestedCount! } }),
+    enabled: hydrated && isLogicModule && requestedCount !== null,
     staleTime: Infinity,
     refetchOnWindowFocus: false,
     retry: false,
@@ -67,11 +70,20 @@ function RunPage() {
   const plan = useMemo(() => {
     if (!settings) return null;
     if (!isLogicModule) return simulationService.buildPlan(target, settings);
-    if (logicQuery.isPending) return null;
+    if (logicQuery.isPending || logicQuery.isFetching) return null;
     const live = logicQuery.data ?? [];
     return simulationService.buildPlan(target, settings, live.length > 0 ? { [target]: live } : {});
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hydrated, target, attempt, isLogicModule, logicQuery.isPending, logicQuery.data]);
+  }, [
+    hydrated,
+    target,
+    attempt,
+    isLogicModule,
+    requestedCount,
+    logicQuery.isPending,
+    logicQuery.isFetching,
+    logicQuery.data,
+  ]);
 
   if (!settings || !plan) {
     return <p className="mx-auto max-w-3xl px-4 py-14 text-muted-foreground">{t.run.loading}</p>;
