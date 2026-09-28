@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 
 import { RunSession } from "@/components/simulation/run-session";
+import { SampleNotice } from "@/components/simulation/scope-badge";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/context/i18n-context";
 import { useSettingsStore } from "@/hooks/use-settings-store";
@@ -58,13 +59,18 @@ function RunPage() {
     return <p className="mx-auto max-w-3xl px-4 py-14 text-muted-foreground">{t.run.loading}</p>;
   }
   return (
-    <RunSession
-      key={attempt}
-      target={target}
-      plan={plan}
-      settings={settings}
-      onRetry={() => setAttempt((a) => a + 1)}
-    />
+    <>
+      <div className="px-4 pt-6">
+        <SampleNotice target={target} />
+      </div>
+      <RunSession
+        key={attempt}
+        target={target}
+        plan={plan}
+        settings={settings}
+        onRetry={() => setAttempt((a) => a + 1)}
+      />
+    </>
   );
 }
 

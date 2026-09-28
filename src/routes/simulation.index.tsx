@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Layers, Play, Settings2 } from "lucide-react";
 
 import { PageShell } from "@/components/layout/page-shell";
+import { ScopeBadge } from "@/components/simulation/scope-badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { useI18n } from "@/context/i18n-context";
@@ -89,6 +90,7 @@ function TargetCard(props: { target: SimulationTarget; title: string; body?: str
         <h2 className={props.highlight ? "font-serif text-2xl font-semibold" : "font-serif text-lg font-semibold"}>
           {props.title}
         </h2>
+        <ScopeBadge target={props.target} />
         {props.body && <p className="text-muted-foreground">{props.body}</p>}
         <p className="text-sm text-muted-foreground">
           {summary(getSettings(props.target))}{" "}

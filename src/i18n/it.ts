@@ -52,6 +52,13 @@ export const it = {
     accessibilityTitle: "Impostazioni Accessibilità",
     accessibilityBody: "Adatta lettura, contrasto e colori alle tue esigenze.",
   },
+  scope: {
+    thesisModule: "Modulo di tesi",
+    sampleModule: "Esemplificativo",
+    noticeTitle: "Nota di tesi:",
+    noticeBody:
+      "questa sezione contiene quesiti puramente dimostrativi, utili a riprodurre la struttura completa del TOLC-S. I quesiti originali sviluppati per questo progetto di tesi riguardano i moduli di Logica matematica e Combinatoria e probabilità.",
+  },
   simulation: {
     title: "Simulazione TOLC-S",
     subtitle: "Seleziona una sezione da esercitare oppure affronta l'esame completo.",

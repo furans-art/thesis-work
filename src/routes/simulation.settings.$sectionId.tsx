@@ -2,6 +2,7 @@ import { createFileRoute, Link, notFound, useNavigate } from "@tanstack/react-ro
 import { toast } from "sonner";
 
 import { PageShell } from "@/components/layout/page-shell";
+import { SampleNotice } from "@/components/simulation/scope-badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -72,6 +73,9 @@ function SettingsPage() {
 
   return (
     <PageShell title={`${t.settings.titlePrefix}: ${name}`} subtitle={t.settings.subtitle}>
+      <div className="mx-0 max-w-2xl">
+        <SampleNotice target={target} />
+      </div>
       <Card className="max-w-2xl">
         <CardContent className="space-y-8 p-6 md:p-8">
           <fieldset className="space-y-3">

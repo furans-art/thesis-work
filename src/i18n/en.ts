@@ -54,6 +54,13 @@ export const en: Translation = {
     accessibilityTitle: "Accessibility Settings",
     accessibilityBody: "Adapt reading, contrast and colour to your needs.",
   },
+  scope: {
+    thesisModule: "Thesis module",
+    sampleModule: "Sample placeholder",
+    noticeTitle: "Thesis note:",
+    noticeBody:
+      "this section contains illustrative sample questions, used to reproduce the full structure of the TOLC-S exam. The original questions developed for this thesis project cover the Mathematical logic and Combinatorics and probability modules.",
+  },
   simulation: {
     title: "TOLC-S simulation",
     subtitle: "Pick a section to practise, or take the full exam.",
