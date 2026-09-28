@@ -71,7 +71,10 @@ const mockQuestions: Omit<Question, "sectionId">[] = [
 ];
 
 export const questionService = {
+  getBySection(sectionId: TolcSectionId): Question[] {
+    return mockQuestions.map((q) => ({ ...q, id: `${sectionId}-${q.id}`, sectionId }));
+  },
   async listBySection(sectionId: TolcSectionId): Promise<Question[]> {
-    return mockQuestions.map((q) => ({ ...q, sectionId }));
+    return questionService.getBySection(sectionId);
   },
 };
