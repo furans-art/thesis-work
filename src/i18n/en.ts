@@ -129,6 +129,8 @@ export const en: Translation = {
     minutesLeft: "{n} minutes left",
     timeTaken: "Time taken",
     reviewSession: "Wrong answers review",
+    logicLive: "Questions generated in real time by the thesis Logic API generator (API_Logica).",
+    logicOffline: "Logic generator unreachable: local sample questions are being used instead.",
     flagAria: "Flag this question to review later",
     progress: "Question",
     flag: "Flag",
