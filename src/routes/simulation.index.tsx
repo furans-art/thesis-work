@@ -56,7 +56,7 @@ function SimulationPage() {
             </p>
           </div>
           <Button size="lg" variant="accent" asChild>
-            <Link to="/simulation/settings">{t.simulation.settings}</Link>
+            <Link to="/simulation/settings">{t.simulation.sectionSettings}</Link>
           </Button>
         </CardContent>
       </Card>
