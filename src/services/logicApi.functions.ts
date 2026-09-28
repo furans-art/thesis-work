@@ -18,6 +18,7 @@ export const fetchLogicQuestions = createServerFn({ method: "POST" })
   .inputValidator((input: { count: number }) => z.object({ count: z.number().int().min(1).max(50) }).parse(input))
   .handler(async ({ data }) => {
     const questions: Question[] = [];
+    const seen = new Set<string>();
     const WAVE = 20;
     const MAX_ATTEMPTS = 70;
     let attempts = 0;
