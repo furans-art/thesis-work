@@ -8,8 +8,11 @@ const key = (target: SimulationTarget) => `settings:${target}`;
 
 export const MIN_QUESTIONS = 5;
 export const MAX_SECTION_QUESTIONS = 30;
-/** Thesis modules (live logic generator / future real banks) allow longer sessions. */
-export const MAX_THESIS_QUESTIONS = 50;
+/**
+ * Thesis modules are capped at the official CISIA TOLC-S Basic Mathematics
+ * block: 20 questions. The live logic generator produces exactly this many.
+ */
+export const MAX_THESIS_QUESTIONS = 20;
 
 export function isSimulationTarget(value: string): value is SimulationTarget {
   return value === "full" || [...tolcSections, ...mathematicsTopics].some((s) => s.id === value);

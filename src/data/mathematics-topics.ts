@@ -14,6 +14,7 @@ export const mathematicsTopics: MathematicsTopic[] = [
   { id: "matematica-combinatoria-probabilita", labelKey: "matematicaProbabilita", descriptionKey: "matematicaProbabilitaDesc", parentId: "matematica", questionCount: 5, durationMinutes: 15, order: 5 },
   { id: "matematica-medie-variabilita", labelKey: "matematicaStatistica", descriptionKey: "matematicaStatisticaDesc", parentId: "matematica", questionCount: 5, durationMinutes: 15, order: 6 },
   { id: "matematica-comprendere-rappresentare", labelKey: "matematicaComprendere", descriptionKey: "matematicaComprendereDesc", parentId: "matematica", questionCount: 5, durationMinutes: 15, order: 7 },
-  { id: "matematica-ragionare", labelKey: "matematicaRagionare", descriptionKey: "matematicaRagionareDesc", parentId: "matematica", questionCount: 5, durationMinutes: 15, order: 8 },
+  // Live thesis module: mirrors the official Basic Mathematics block (20 questions / 50 minutes).
+  { id: "matematica-ragionare", labelKey: "matematicaRagionare", descriptionKey: "matematicaRagionareDesc", parentId: "matematica", questionCount: 20, durationMinutes: 50, order: 8 },
   { id: "matematica-modellizzare-risolvere", labelKey: "matematicaModellizzare", descriptionKey: "matematicaModellizzareDesc", parentId: "matematica", questionCount: 5, durationMinutes: 15, order: 9 },
 ];
