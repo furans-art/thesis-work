@@ -1,4 +1,5 @@
 import { tolcSections } from "@/data/tolc-sections";
+import { mathematicsTopics } from "@/data/mathematics-topics";
 import { storage } from "@/services/storage";
 import type { SimulationSettings, SimulationTarget } from "@/types/settings";
 
@@ -8,8 +9,11 @@ export const MIN_QUESTIONS = 5;
 export const MAX_SECTION_QUESTIONS = 30;
 
 export function isSimulationTarget(value: string): value is SimulationTarget {
-  return value === "full" || tolcSections.some((s) => s.id === value);
+  return value === "full" || [...tolcSections, ...mathematicsTopics].some((s) => s.id === value);
 }
+
+const findTarget = (target: SimulationTarget) =>
+  [...tolcSections, ...mathematicsTopics].find((section) => section.id === target);
 
 /** Upper bound for the question slider: 30 per section, official total for the full exam. */
 export function maxQuestions(target: SimulationTarget): number {
@@ -19,14 +23,14 @@ export function maxQuestions(target: SimulationTarget): number {
 
 function officialQuestions(target: SimulationTarget): number {
   if (target === "full") return tolcSections.reduce((n, s) => n + s.questionCount, 0);
-  return tolcSections.find((s) => s.id === target)?.questionCount ?? 20;
+  return findTarget(target)?.questionCount ?? 20;
 }
 
 export function defaultSettings(target: SimulationTarget): SimulationSettings {
   const minutes =
     target === "full"
       ? tolcSections.reduce((n, s) => n + s.durationMinutes, 0)
-      : (tolcSections.find((s) => s.id === target)?.durationMinutes ?? 20);
+      : (findTarget(target)?.durationMinutes ?? 20);
   return {
     mode: "practice",
     questionCount: Math.max(MIN_QUESTIONS, officialQuestions(target)),

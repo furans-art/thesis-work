@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Treat the nine official 2026 CISIA Basic Mathematics syllabus areas as practice targets, but aggregate them into the single 20-question, 50-minute Mathematics block in full exams because the syllabus areas are not separate exam sections.

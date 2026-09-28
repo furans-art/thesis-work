@@ -12,6 +12,7 @@ import { useProgressStats } from "@/hooks/use-progress-stats";
 import { useSectionLabel } from "@/hooks/use-section-label";
 import { formatClock } from "@/hooks/use-simulation-run";
 import { tolcSections } from "@/data/tolc-sections";
+import { mathematicsTopics } from "@/data/mathematics-topics";
 import { accuracy } from "@/services/history.service";
 
 export const Route = createFileRoute("/history")({
@@ -36,7 +37,7 @@ function HistoryPage() {
   const label = useSectionLabel();
   const { hydrated, sessions } = useHistory();
   const stats = useProgressStats(sessions);
-  const sectionName = (id: string) => label(tolcSections.find((s) => s.id === id)?.labelKey ?? id);
+  const sectionName = (id: string) => label([...tolcSections, ...mathematicsTopics].find((s) => s.id === id)?.labelKey ?? id);
   const dateFmt = (iso: string) =>
     new Date(iso).toLocaleString(locale, { dateStyle: "medium", timeStyle: "short" });
 

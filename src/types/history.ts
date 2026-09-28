@@ -1,8 +1,8 @@
 import type { SimulationMode, SimulationTarget } from "@/types/settings";
-import type { TolcSectionId } from "@/types/tolc";
+import type { PracticeSectionId } from "@/types/tolc";
 
 export interface SectionResult {
-  sectionId: TolcSectionId;
+  sectionId: PracticeSectionId;
   correct: number;
   wrong: number;
   blank: number;

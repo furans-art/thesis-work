@@ -1,4 +1,5 @@
 import { tolcSections } from "@/data/tolc-sections";
+import { mathematicsTopics } from "@/data/mathematics-topics";
 import { questionService, type Question } from "@/services/questionService";
 import type { SimulationSettings, SimulationTarget } from "@/types/settings";
 import type { TolcSection } from "@/types/tolc";
@@ -79,7 +80,7 @@ export const simulationService = {
     const sections =
       target === "full"
         ? [...tolcSections].sort((a, b) => a.order - b.order)
-        : tolcSections.filter((s) => s.id === target);
+        : [...tolcSections, ...mathematicsTopics].filter((s) => s.id === target);
     const wanted =
       target === "full" ? splitTotal(settings.questionCount, sections) : [settings.questionCount];
 

@@ -1,6 +1,6 @@
-import type { TolcSectionId } from "@/types/tolc";
+import type { PracticeSectionId } from "@/types/tolc";
 
-export type SimulationTarget = TolcSectionId | "full";
+export type SimulationTarget = PracticeSectionId | "full";
 export type ExplanationMode = "after-each" | "end" | "never";
 export type Difficulty = "easy" | "medium" | "hard" | "all";
 export type SimulationMode = "practice" | "exam";

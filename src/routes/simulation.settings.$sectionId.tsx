@@ -13,6 +13,7 @@ import { useI18n } from "@/context/i18n-context";
 import { useSectionLabel } from "@/hooks/use-section-label";
 import { useSettingsForm } from "@/hooks/use-settings-form";
 import { tolcSections } from "@/data/tolc-sections";
+import { mathematicsTopics } from "@/data/mathematics-topics";
 import { isSimulationTarget, maxQuestions, MIN_QUESTIONS } from "@/services/settings.service";
 import type { ExplanationMode, SimulationMode } from "@/types/settings";
 
@@ -57,7 +58,7 @@ function SettingsPage() {
   const name =
     target === "full"
       ? t.settings.fullExam
-      : label(tolcSections.find((s) => s.id === target)?.labelKey ?? target);
+      : label([...tolcSections, ...mathematicsTopics].find((s) => s.id === target)?.labelKey ?? target);
   const max = maxQuestions(target);
 
   const onSave = () => {

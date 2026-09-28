@@ -9,6 +9,7 @@ import { useSectionLabel } from "@/hooks/use-section-label";
 import { useSettingsStore } from "@/hooks/use-settings-store";
 import { useSettingsSummary } from "@/hooks/use-settings-summary";
 import { tolcSections } from "@/data/tolc-sections";
+import { mathematicsTopics } from "@/data/mathematics-topics";
 import type { SimulationTarget } from "@/types/settings";
 
 export const Route = createFileRoute("/simulation/")({
@@ -31,7 +32,7 @@ export const Route = createFileRoute("/simulation/")({
 function SimulationPage() {
   const { t } = useI18n();
   const label = useSectionLabel();
-  const sections = [...tolcSections].sort((a, b) => a.order - b.order);
+  const sections = [...tolcSections].filter((section) => section.id !== "matematica").sort((a, b) => a.order - b.order);
 
   return (
     <PageShell title={t.simulation.title} subtitle={t.simulation.subtitle}>
@@ -41,6 +42,25 @@ function SimulationPage() {
         body={t.simulation.fullExamBody}
         highlight
       />
+      <section className="mt-8" aria-labelledby="mathematics-heading">
+        <div className="max-w-3xl">
+          <h2 id="mathematics-heading" className="font-serif text-2xl font-semibold">
+            {t.sections.matematica}
+          </h2>
+          <p className="mt-1 text-muted-foreground">{t.simulation.mathematicsSyllabus}</p>
+        </div>
+        <ul className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {mathematicsTopics.map((topic) => (
+            <li key={topic.id}>
+              <TargetCard
+                target={topic.id}
+                title={label(topic.labelKey)}
+                body={label(topic.descriptionKey)}
+              />
+            </li>
+          ))}
+        </ul>
+      </section>
       <ul className="mt-8 grid gap-4 md:grid-cols-2">
         {sections.map((section) => (
           <li key={section.id}>
