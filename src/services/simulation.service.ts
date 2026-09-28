@@ -2,7 +2,7 @@ import { tolcSections } from "@/data/tolc-sections";
 import { mathematicsTopics } from "@/data/mathematics-topics";
 import { questionService, type Question } from "@/services/questionService";
 import type { SimulationSettings, SimulationTarget } from "@/types/settings";
-import type { TolcSection } from "@/types/tolc";
+import type { PracticeSectionId, TolcSection } from "@/types/tolc";
 
 export interface RunQuestion extends Question {
   /** index of the block (section) this question belongs to */
