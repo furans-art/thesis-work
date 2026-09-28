@@ -166,7 +166,7 @@ export const it = {
     matematicaStatisticaDesc: "Variabili, frequenze, distribuzioni, media e mediana.",
     matematicaComprendere: "Comprendere e rappresentare",
     matematicaComprendereDesc: "Interpretare testi e usare rappresentazioni e linguaggio degli insiemi.",
-    matematicaRagionare: "Ragionare",
+    matematicaRagionare: "Logica matematica",
     matematicaRagionareDesc: "Verità delle affermazioni, negazioni, quantificatori e condizioni logiche.",
     matematicaModellizzare: "Modellizzare e risolvere problemi",
     matematicaModellizzareDesc: "Tradurre situazioni in termini matematici e scegliere strategie risolutive.",

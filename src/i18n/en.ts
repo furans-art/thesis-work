@@ -168,7 +168,7 @@ export const en: Translation = {
     matematicaStatisticaDesc: "Variables, frequencies, distributions, mean and median.",
     matematicaComprendere: "Understanding and representing",
     matematicaComprendereDesc: "Interpreting texts and using representations and set language.",
-    matematicaRagionare: "Reasoning",
+    matematicaRagionare: "Mathematical logic",
     matematicaRagionareDesc: "Truth of statements, negation, quantifiers and logical conditions.",
     matematicaModellizzare: "Modelling and problem solving",
     matematicaModellizzareDesc: "Translating situations into mathematics and choosing solution strategies.",
