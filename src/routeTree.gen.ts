@@ -14,6 +14,7 @@ import { Route as AccessibilityRouteImport } from './routes/accessibility'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as MenuRouteImport } from './routes/menu'
 import { Route as SimulationIndexRouteImport } from './routes/simulation.index'
+import { Route as SimulationReviewSessionIdRouteImport } from './routes/simulation.review.$sessionId'
 import { Route as SimulationRunSectionIdRouteImport } from './routes/simulation.run.$sectionId'
 import { Route as SimulationSettingsSectionIdRouteImport } from './routes/simulation.settings.$sectionId'
 
@@ -42,6 +43,12 @@ const SimulationIndexRoute = SimulationIndexRouteImport.update({
   path: '/simulation/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SimulationReviewSessionIdRoute =
+  SimulationReviewSessionIdRouteImport.update({
+    id: '/simulation/review/$sessionId',
+    path: '/simulation/review/$sessionId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const SimulationRunSectionIdRoute = SimulationRunSectionIdRouteImport.update({
   id: '/simulation/run/$sectionId',
   path: '/simulation/run/$sectionId',
@@ -60,6 +67,7 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AdminRoute
   '/menu': typeof MenuRoute
   '/simulation/': typeof SimulationIndexRoute
+  '/simulation/review/$sessionId': typeof SimulationReviewSessionIdRoute
   '/simulation/run/$sectionId': typeof SimulationRunSectionIdRoute
   '/simulation/settings/$sectionId': typeof SimulationSettingsSectionIdRoute
 }
@@ -69,6 +77,7 @@ export interface FileRoutesByTo {
   '/admin': typeof AdminRoute
   '/menu': typeof MenuRoute
   '/simulation': typeof SimulationIndexRoute
+  '/simulation/review/$sessionId': typeof SimulationReviewSessionIdRoute
   '/simulation/run/$sectionId': typeof SimulationRunSectionIdRoute
   '/simulation/settings/$sectionId': typeof SimulationSettingsSectionIdRoute
 }
@@ -79,6 +88,7 @@ export interface FileRoutesById {
   '/admin': typeof AdminRoute
   '/menu': typeof MenuRoute
   '/simulation/': typeof SimulationIndexRoute
+  '/simulation/review/$sessionId': typeof SimulationReviewSessionIdRoute
   '/simulation/run/$sectionId': typeof SimulationRunSectionIdRoute
   '/simulation/settings/$sectionId': typeof SimulationSettingsSectionIdRoute
 }
@@ -90,6 +100,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/menu'
     | '/simulation/'
+    | '/simulation/review/$sessionId'
     | '/simulation/run/$sectionId'
     | '/simulation/settings/$sectionId'
   fileRoutesByTo: FileRoutesByTo
@@ -99,6 +110,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/menu'
     | '/simulation'
+    | '/simulation/review/$sessionId'
     | '/simulation/run/$sectionId'
     | '/simulation/settings/$sectionId'
   id:
@@ -108,6 +120,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/menu'
     | '/simulation/'
+    | '/simulation/review/$sessionId'
     | '/simulation/run/$sectionId'
     | '/simulation/settings/$sectionId'
   fileRoutesById: FileRoutesById
@@ -118,6 +131,7 @@ export interface RootRouteChildren {
   AdminRoute: typeof AdminRoute
   MenuRoute: typeof MenuRoute
   SimulationIndexRoute: typeof SimulationIndexRoute
+  SimulationReviewSessionIdRoute: typeof SimulationReviewSessionIdRoute
   SimulationRunSectionIdRoute: typeof SimulationRunSectionIdRoute
   SimulationSettingsSectionIdRoute: typeof SimulationSettingsSectionIdRoute
 }
@@ -159,6 +173,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SimulationIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/simulation/review/$sessionId': {
+      id: '/simulation/review/$sessionId'
+      path: '/simulation/review/$sessionId'
+      fullPath: '/simulation/review/$sessionId'
+      preLoaderRoute: typeof SimulationReviewSessionIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/simulation/run/$sectionId': {
       id: '/simulation/run/$sectionId'
       path: '/simulation/run/$sectionId'
@@ -182,6 +203,7 @@ const rootRouteChildren: RootRouteChildren = {
   AdminRoute: AdminRoute,
   MenuRoute: MenuRoute,
   SimulationIndexRoute: SimulationIndexRoute,
+  SimulationReviewSessionIdRoute: SimulationReviewSessionIdRoute,
   SimulationRunSectionIdRoute: SimulationRunSectionIdRoute,
   SimulationSettingsSectionIdRoute: SimulationSettingsSectionIdRoute,
 }
