@@ -1,4 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import type React from "react";
 import type { ReactNode } from "react";
 
 import { translations, type Translation } from "@/i18n";
@@ -11,7 +12,9 @@ interface I18nContextValue {
   t: Translation;
 }
 
-const I18nContext = createContext<I18nContextValue | null>(null);
+// Keep one context instance across hot reloads (editing translations re-runs this module).
+const g = globalThis as { __tolcsI18nContext?: React.Context<I18nContextValue | null> };
+const I18nContext = (g.__tolcsI18nContext ??= createContext<I18nContextValue | null>(null));
 
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>(defaultLocale);
