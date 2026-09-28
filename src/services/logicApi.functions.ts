@@ -11,9 +11,9 @@ import type { Question } from "@/services/questionService";
  * fills any gap with the local sample bank.
  */
 export const fetchLogicQuestions = createServerFn({ method: "POST" })
-  .inputValidator((input: { count: number }) => z.object({ count: z.number().int().min(1).max(30) }).parse(input))
+  .inputValidator((input: { count: number }) => z.object({ count: z.number().int().min(1).max(50) }).parse(input))
   .handler(async ({ data }) => {
-    const attempts = Math.min(data.count + 2, 12);
+    const attempts = Math.min(data.count + 2, 24);
     const requests = Array.from({ length: attempts }, () => logicApi.fetchQuestion());
     const results = await Promise.all(requests);
     const questions: Question[] = [];
