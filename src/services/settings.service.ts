@@ -28,6 +28,7 @@ export function defaultSettings(target: SimulationTarget): SimulationSettings {
       ? tolcSections.reduce((n, s) => n + s.durationMinutes, 0)
       : (tolcSections.find((s) => s.id === target)?.durationMinutes ?? 20);
   return {
+    mode: "practice",
     questionCount: Math.max(MIN_QUESTIONS, officialQuestions(target)),
     timeLimitMinutes: minutes,
     shuffleQuestions: false,

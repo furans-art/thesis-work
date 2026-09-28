@@ -49,7 +49,32 @@ function splitTotal(total: number, sections: TolcSection[]): number[] {
   return counts;
 }
 
+function toBlocks(picked: { section: TolcSection; questions: Question[] }[]): RunBlock[] {
+  return picked
+    .filter((b) => b.questions.length > 0)
+    .map((b, blockIndex) => ({
+      section: b.section,
+      questions: b.questions.map((q) => ({ ...q, blockIndex })),
+    }));
+}
+
 export const simulationService = {
+  /** Practice plan made only of the given question ids, in official section order. */
+  buildReviewPlan(questionIds: string[]): RunPlan {
+    const ids = new Set(questionIds);
+    const blocks = toBlocks(
+      [...tolcSections]
+        .sort((a, b) => a.order - b.order)
+        .map((section) => ({
+          section,
+          questions: questionService.getBySection(section.id).filter((q) => ids.has(q.id)),
+        })),
+    );
+    const questions = blocks.flatMap((b) => b.questions);
+    return { blocks, questions, requested: questions.length, available: questions.length };
+  },
+
+
   buildPlan(target: SimulationTarget, settings: SimulationSettings): RunPlan {
     const sections =
       target === "full"

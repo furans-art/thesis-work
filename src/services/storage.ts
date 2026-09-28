@@ -39,6 +39,20 @@ export const storage = {
     }
   },
 
+  /** Removes every key this app has written on this device. */
+  clearAll(): void {
+    if (!isBrowser()) return;
+    try {
+      window.localStorage.clear();
+    } catch {
+      /* noop */
+    }
+  },
+
+  reloadPage(): void {
+    if (typeof window !== "undefined") window.location.reload();
+  },
+
   remove(key: string): void {
     if (!isBrowser()) return;
     try {
@@ -52,4 +66,5 @@ export const storage = {
 export const STORAGE_KEYS = {
   accessibility: "tolcs.accessibility.v1",
   locale: "tolcs.locale.v1",
+  history: "tolcs.history.v1",
 } as const;

@@ -1,8 +1,10 @@
 export type TolcSectionId =
   | "matematica"
-  | "comprensione-testo"
-  | "ragionamento-problemi"
-  | "scienze-base"
+  | "ragionamento"
+  | "biologia"
+  | "chimica"
+  | "fisica"
+  | "scienze-terra"
   | "inglese";
 
 export interface TolcSection {

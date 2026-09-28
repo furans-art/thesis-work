@@ -14,7 +14,7 @@ import { useSectionLabel } from "@/hooks/use-section-label";
 import { useSettingsForm } from "@/hooks/use-settings-form";
 import { tolcSections } from "@/data/tolc-sections";
 import { isSimulationTarget, maxQuestions, MIN_QUESTIONS } from "@/services/settings.service";
-import type { ExplanationMode } from "@/types/settings";
+import type { ExplanationMode, SimulationMode } from "@/types/settings";
 
 export const Route = createFileRoute("/simulation/settings/$sectionId")({
   loader: ({ params }) => {
@@ -73,6 +73,31 @@ function SettingsPage() {
     <PageShell title={`${t.settings.titlePrefix}: ${name}`} subtitle={t.settings.subtitle}>
       <Card className="max-w-2xl">
         <CardContent className="space-y-8 p-6 md:p-8">
+          <fieldset className="space-y-3">
+            <legend className="text-sm font-medium">{t.settings.mode}</legend>
+            <RadioGroup
+              value={form.mode}
+              onValueChange={(v) => update("mode", v as SimulationMode)}
+              className="gap-3"
+            >
+              {(
+                [
+                  ["practice", t.settings.modePractice, t.settings.modePracticeHint],
+                  ["exam", t.settings.modeExam, t.settings.modeExamHint],
+                ] as const
+              ).map(([value, text, hint]) => (
+                <div key={value} className="flex items-start gap-3 rounded-md border border-border p-3">
+                  <RadioGroupItem id={`mode-${value}`} value={value} aria-describedby={`mode-${value}-hint`} className="mt-1" />
+                  <div>
+                    <Label htmlFor={`mode-${value}`}>{text}</Label>
+                    <p id={`mode-${value}-hint`} className="text-sm text-muted-foreground">{hint}</p>
+                  </div>
+                </div>
+              ))}
+            </RadioGroup>
+            {form.mode === "exam" && <p className="text-sm text-muted-foreground">{t.settings.examNote}</p>}
+          </fieldset>
+
           <div className="space-y-3">
             <div className="flex items-center justify-between">
               <Label htmlFor="q-count">{t.settings.questionCount}</Label>
@@ -86,8 +111,9 @@ function SettingsPage() {
               value={[form.questionCount]}
               onValueChange={([v]) => update("questionCount", v ?? MIN_QUESTIONS)}
               aria-label={t.settings.questionCount}
+              aria-describedby="q-count-range"
             />
-            <p className="text-sm text-muted-foreground">
+            <p id="q-count-range" className="text-sm text-muted-foreground">
               {t.settings.questionRange.replace("{min}", String(MIN_QUESTIONS)).replace("{max}", String(max))}
             </p>
           </div>
