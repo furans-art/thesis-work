@@ -127,6 +127,10 @@ export const it = {
     minutesLeft: "{n} minuti rimasti",
     timeTaken: "Tempo impiegato",
     reviewSession: "Ripasso delle risposte errate",
+    logicLive:
+      "Quesiti generati in tempo reale dal generatore di logica dell'API di tesi (API_Logica).",
+    logicOffline:
+      "Generatore di logica non raggiungibile: vengono usati i quesiti di esempio locali.",
     flagAria: "Segnala la domanda per rivederla",
     progress: "Domanda",
     flag: "Segnala",
