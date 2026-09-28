@@ -1,5 +1,6 @@
 import { tolcSections } from "@/data/tolc-sections";
 import { mathematicsTopics } from "@/data/mathematics-topics";
+import { isThesisModule } from "@/services/content-scope.service";
 import { storage } from "@/services/storage";
 import type { SimulationSettings, SimulationTarget } from "@/types/settings";
 
