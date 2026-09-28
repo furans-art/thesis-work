@@ -27,6 +27,9 @@ export const fetchLogicQuestions = createServerFn({ method: "POST" })
       attempts += size;
       for (const raw of results) {
         if (!raw) continue;
+        const fingerprint = `${raw.promptProlog}|${raw.optionProlog}`;
+        if (seen.has(fingerprint)) continue;
+        seen.add(fingerprint);
         questions.push(logicQuestionToQuestion(raw, questions.length));
         if (questions.length >= data.count) break;
       }
