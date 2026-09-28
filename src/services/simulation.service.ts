@@ -76,7 +76,12 @@ export const simulationService = {
   },
 
 
-  buildPlan(target: SimulationTarget, settings: SimulationSettings): RunPlan {
+  buildPlan(
+    target: SimulationTarget,
+    settings: SimulationSettings,
+    /** Questions from an external source (e.g. the Logic API), by section id. */
+    extraQuestions: Partial<Record<PracticeSectionId, Question[]>> = {},
+  ): RunPlan {
     const sections =
       target === "full"
         ? [...tolcSections].sort((a, b) => a.order - b.order)
@@ -86,7 +91,8 @@ export const simulationService = {
 
     const blocks: RunBlock[] = sections
       .map((section, idx) => {
-        let pool = questionService.getBySection(section.id);
+        const external = extraQuestions[section.id];
+        let pool = external && external.length > 0 ? external : questionService.getBySection(section.id);
         if (settings.shuffleQuestions) pool = shuffle(pool);
         if (settings.shuffleAnswers) pool = pool.map(shuffleOptions);
         return { section, picked: pool.slice(0, wanted[idx] ?? 0) };
