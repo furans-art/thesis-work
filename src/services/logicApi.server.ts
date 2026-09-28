@@ -1,25 +1,21 @@
 /**
- * Server-only client for KevinUniud's TestLogica API (API_Logica thesis project).
- * Endpoint base is configurable; a call that fails (tunnel down, timeout)
- * lets the caller fall back to the local sample questions.
+ * Server-only client for KevinUniud's TestLogica API (the API_Logica thesis
+ * project by the previous student). The base URL is configurable through the
+ * LOGIC_API_URL environment variable; a failed call (tunnel down, timeout)
+ * returns null so callers can fall back to local sample questions.
  */
-
-import type { Locale } from "@/types/i18n";
-
-const DEFAULT_LOGIC_API_URL = "https://produce-changed-ist-generators.trycloudflare.com";
-const TIMEOUT_MS = 12_000;
 
 export interface LogicQuestion {
   kind: "tvq" | "consequence";
-  /** question prompt (Prolog formula for consequence questions) */
+  /** premise formula (Prolog syntax) for consequence questions */
   promptProlog: string | null;
   variables: string[];
-  /** e.g. ["p-true","q-false"] */
+  /** e.g. ["p-true","q-false"] — only for truth-value questions */
   information: string[];
-  /** Prolog formulas, already shuffled by the API */
+  /** Prolog formulas (options), in the order returned by the API */
   optionProlog: string[];
   correctIndex: number;
-  /** step-by-step derivation of the correct option, if returned */
+  /** construction steps of the correct option, in order */
   correctSteps: string[];
 }
 
@@ -37,7 +33,9 @@ interface ApiResult {
   options?: ApiOption[];
 }
 
-async function callApi(url: string, body: unknown): Promise<LogicQuestion | null> {
+const TIMEOUT_MS = 12_000;
+
+async function callApi(url: string, body: Record<string, unknown>): Promise<ApiResult | null> {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
@@ -51,22 +49,7 @@ async function callApi(url: string, body: unknown): Promise<LogicQuestion | null
     const payload = (await response.json()) as { result?: ApiResult };
     const result = payload.result;
     if (!result?.options || result.options.length < 2) return null;
-
-    const options = result.options;
-    let correctIndex = options.findIndex((o) => o.is_true === true || o.is_consequence === true);
-    if (correctIndex < 0) correctIndex = 0;
-    const correct = options[correctIndex]!;
-    return {
-      kind: body.kind === "consequence" ? "consequence" : "tvq",
-      promptProlog: result.question_prolog ?? null,
-      variables: result.variables ?? [],
-      information: result.information ?? [],
-      optionProlog: options.map((o) => o.formula_prolog),
-      correctIndex,
-      correctSteps: (correct.construction?.steps ?? [])
-        .sort((a, b) => a.index - b.index)
-        .map((s) => s.result_prolog),
-    };
+    return result;
   } catch {
     return null;
   } finally {
@@ -74,15 +57,34 @@ async function callApi(url: string, body: unknown): Promise<LogicQuestion | null
   }
 }
 
-const IT_SENTENCE = ["Vera", "Falsa"] as const;
-const EN_SENTENCE = ["True", "False"] as const;
+function toLogicQuestion(kind: "tvq" | "consequence", result: ApiResult): LogicQuestion | null {
+  const options = result.options;
+  if (!options) return null;
+  let correctIndex = options.findIndex((o) => o.is_true === true || o.is_consequence === true);
+  if (correctIndex < 0) correctIndex = 0;
+  const correct = options[correctIndex]!;
+  return {
+    kind,
+    promptProlog: result.question_prolog ?? null,
+    variables: result.variables ?? [],
+    information: result.information ?? [],
+    optionProlog: options.map((o) => o.formula_prolog),
+    correctIndex,
+    correctSteps: (correct.construction?.steps ?? [])
+      .sort((a, b) => a.index - b.index)
+      .map((s) => s.result_prolog),
+  };
+}
 
 export const logicApi = {
-  async fetchQuestion(locale: Locale): Promise<LogicQuestion | null> {
-    const base = (process.env["LOGIC_API_URL"] || DEFAULT_LOGIC_API_URL).replace(/\/$/, "");
-    // Alternate between the two exercise types.
+  /** Fetches one generated question; null when the API is unreachable. */
+  async fetchQuestion(): Promise<LogicQuestion | null> {
+    const base = (process.env["LOGIC_API_URL"] || "https://produce-changed-ist-generators.trycloudflare.com").replace(
+      /\/$/,
+      "",
+    );
     const wantConsequence = Math.random() < 0.5;
-    const raw = wantConsequence
+    const result = wantConsequence
       ? await callApi(`${base}/api/generator/build-logical-consequence-question`, {
           variable_count: 3,
           correct_options_count: 1,
@@ -93,18 +95,6 @@ export const logicApi = {
           true_options_count: 1,
           false_options_count: 3,
         });
-    if (!raw) return null;
-    return wantConsequence
-      ? {
-          ...raw,
-          kind: "consequence" as const,
-        }
-      : {
-          ...raw,
-          kind: "tvq" as const,
-        };
-  },
-  sentenceLabels(locale: Locale): readonly [string, string] {
-    return locale === "it" ? IT_SENTENCE : EN_SENTENCE;
+    return result ? toLogicQuestion(wantConsequence ? "consequence" : "tvq", result) : null;
   },
 };
