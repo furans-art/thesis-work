@@ -28,7 +28,7 @@ function SimulationSettingsPage() {
   const { t } = useI18n();
 
   return (
-    <PageShell title={t.simulation.settingsTitle} subtitle={t.simulation.settingsSubtitle}>
+    <PageShell title={t.settings.titlePrefix} subtitle={t.settings.subtitle}>
       <Card className="border-dashed">
         <CardContent className="space-y-4 p-8">
           <p className="text-sm font-semibold uppercase tracking-wide text-accent">
