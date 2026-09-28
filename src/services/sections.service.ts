@@ -1,5 +1,6 @@
 import { tolcSections } from "@/data/tolc-sections";
-import type { TolcSection, TolcSectionId } from "@/types/tolc";
+import { mathematicsTopics } from "@/data/mathematics-topics";
+import type { PracticeSectionId, TolcSection } from "@/types/tolc";
 
 /**
  * Data-access layer for TOLC-S structure. Currently reads local seed data;
@@ -10,8 +11,8 @@ export const sectionsService = {
     return [...tolcSections].sort((a, b) => a.order - b.order);
   },
 
-  async getById(id: TolcSectionId): Promise<TolcSection | undefined> {
-    return tolcSections.find((s) => s.id === id);
+  async getById(id: PracticeSectionId): Promise<TolcSection | undefined> {
+    return [...tolcSections, ...mathematicsTopics].find((s) => s.id === id);
   },
 
   totalQuestions(): number {
