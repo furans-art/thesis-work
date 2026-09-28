@@ -11,6 +11,7 @@ import type { Locale } from "@/types/i18n";
 const navItems = [
   { to: "/menu", key: "menu" },
   { to: "/simulation", key: "simulation" },
+  { to: "/history", key: "history" },
   { to: "/accessibility", key: "accessibility" },
   { to: "/admin", key: "admin" },
 ] as const;
@@ -23,7 +24,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-3 px-4 py-3">
-        <Link to="/" className="flex items-center gap-3 rounded-md">
+        <Link to="/" className="flex items-center gap-3 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" aria-label={t.common.appName}>
           <span className="flex size-9 items-center justify-center rounded-md bg-primary text-primary-foreground">
             <GraduationCap aria-hidden="true" />
           </span>
@@ -38,7 +39,7 @@ export function SiteHeader() {
             <Link
               key={item.to}
               to={item.to}
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-secondary-foreground"
+              className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-secondary hover:text-secondary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               activeProps={{ className: "bg-secondary text-secondary-foreground" }}
             >
               {t.nav[item.key]}
