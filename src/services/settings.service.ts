@@ -1,6 +1,6 @@
 import { tolcSections } from "@/data/tolc-sections";
 import { mathematicsTopics } from "@/data/mathematics-topics";
-import { isThesisModule } from "@/services/content-scope.service";
+import { contentScopeService } from "@/services/content-scope.service";
 import { storage } from "@/services/storage";
 import type { SimulationSettings, SimulationTarget } from "@/types/settings";
 
@@ -21,7 +21,7 @@ const findTarget = (target: SimulationTarget) =>
 /** Upper bound for the question slider: 30 per section, 50 for thesis modules, official total for the full exam. */
 export function maxQuestions(target: SimulationTarget): number {
   if (target === "full") return tolcSections.reduce((n, s) => n + s.questionCount, 0);
-  if (isThesisModule(target)) return MAX_THESIS_QUESTIONS;
+  if (contentScopeService.isThesisModule(target)) return MAX_THESIS_QUESTIONS;
   return MAX_SECTION_QUESTIONS;
 }
 
