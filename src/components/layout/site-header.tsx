@@ -59,7 +59,7 @@ export function SiteHeader() {
                 type="button"
                 onClick={() => setLocale(code)}
                 aria-pressed={locale === code}
-                className={`min-h-11 px-3 text-xs font-semibold uppercase transition-colors ${
+                className={`min-h-11 px-3 text-xs font-semibold uppercase transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring ${
                   locale === code
                     ? "bg-primary text-primary-foreground"
                     : "text-muted-foreground hover:bg-secondary"

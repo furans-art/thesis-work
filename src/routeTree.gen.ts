@@ -10,9 +10,12 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as AccessibilityRouteImport } from './routes/accessibility'
 import { Route as AdminRouteImport } from './routes/admin'
+import { Route as HistoryRouteImport } from './routes/history'
 import { Route as MenuRouteImport } from './routes/menu'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as SimulationIndexRouteImport } from './routes/simulation.index'
 import { Route as SimulationReviewSessionIdRouteImport } from './routes/simulation.review.$sessionId'
 import { Route as SimulationRunSectionIdRouteImport } from './routes/simulation.run.$sectionId'
@@ -21,6 +24,11 @@ import { Route as SimulationSettingsSectionIdRouteImport } from './routes/simula
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AccessibilityRoute = AccessibilityRouteImport.update({
@@ -33,9 +41,19 @@ const AdminRoute = AdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HistoryRoute = HistoryRouteImport.update({
+  id: '/history',
+  path: '/history',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MenuRoute = MenuRouteImport.update({
   id: '/menu',
   path: '/menu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SimulationIndexRoute = SimulationIndexRouteImport.update({
@@ -63,9 +81,12 @@ const SimulationSettingsSectionIdRoute =
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/accessibility': typeof AccessibilityRoute
   '/admin': typeof AdminRoute
+  '/history': typeof HistoryRoute
   '/menu': typeof MenuRoute
+  '/privacy': typeof PrivacyRoute
   '/simulation/': typeof SimulationIndexRoute
   '/simulation/review/$sessionId': typeof SimulationReviewSessionIdRoute
   '/simulation/run/$sectionId': typeof SimulationRunSectionIdRoute
@@ -73,9 +94,12 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/accessibility': typeof AccessibilityRoute
   '/admin': typeof AdminRoute
+  '/history': typeof HistoryRoute
   '/menu': typeof MenuRoute
+  '/privacy': typeof PrivacyRoute
   '/simulation': typeof SimulationIndexRoute
   '/simulation/review/$sessionId': typeof SimulationReviewSessionIdRoute
   '/simulation/run/$sectionId': typeof SimulationRunSectionIdRoute
@@ -84,9 +108,12 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/accessibility': typeof AccessibilityRoute
   '/admin': typeof AdminRoute
+  '/history': typeof HistoryRoute
   '/menu': typeof MenuRoute
+  '/privacy': typeof PrivacyRoute
   '/simulation/': typeof SimulationIndexRoute
   '/simulation/review/$sessionId': typeof SimulationReviewSessionIdRoute
   '/simulation/run/$sectionId': typeof SimulationRunSectionIdRoute
@@ -96,9 +123,12 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/accessibility'
     | '/admin'
+    | '/history'
     | '/menu'
+    | '/privacy'
     | '/simulation/'
     | '/simulation/review/$sessionId'
     | '/simulation/run/$sectionId'
@@ -106,9 +136,12 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/accessibility'
     | '/admin'
+    | '/history'
     | '/menu'
+    | '/privacy'
     | '/simulation'
     | '/simulation/review/$sessionId'
     | '/simulation/run/$sectionId'
@@ -116,9 +149,12 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/accessibility'
     | '/admin'
+    | '/history'
     | '/menu'
+    | '/privacy'
     | '/simulation/'
     | '/simulation/review/$sessionId'
     | '/simulation/run/$sectionId'
@@ -127,9 +163,12 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AccessibilityRoute: typeof AccessibilityRoute
   AdminRoute: typeof AdminRoute
+  HistoryRoute: typeof HistoryRoute
   MenuRoute: typeof MenuRoute
+  PrivacyRoute: typeof PrivacyRoute
   SimulationIndexRoute: typeof SimulationIndexRoute
   SimulationReviewSessionIdRoute: typeof SimulationReviewSessionIdRoute
   SimulationRunSectionIdRoute: typeof SimulationRunSectionIdRoute
@@ -143,6 +182,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/accessibility': {
@@ -159,11 +205,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/history': {
+      id: '/history'
+      path: '/history'
+      fullPath: '/history'
+      preLoaderRoute: typeof HistoryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/menu': {
       id: '/menu'
       path: '/menu'
       fullPath: '/menu'
       preLoaderRoute: typeof MenuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/simulation/': {
@@ -199,9 +259,12 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AccessibilityRoute: AccessibilityRoute,
   AdminRoute: AdminRoute,
+  HistoryRoute: HistoryRoute,
   MenuRoute: MenuRoute,
+  PrivacyRoute: PrivacyRoute,
   SimulationIndexRoute: SimulationIndexRoute,
   SimulationReviewSessionIdRoute: SimulationReviewSessionIdRoute,
   SimulationRunSectionIdRoute: SimulationRunSectionIdRoute,
