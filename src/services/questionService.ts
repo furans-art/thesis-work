@@ -135,10 +135,23 @@ const mathematicsQuestions: Record<MathematicsTopicId, QuestionSeed[]> = {
   ],
 };
 
+function interleaveMathematicsTopics(): Question[] {
+  const topicQuestions = mathematicsTopics.map((topic) => questionService.getBySection(topic.id));
+  const maxLength = Math.max(...topicQuestions.map((questions) => questions.length));
+  const interleaved: Question[] = [];
+  for (let index = 0; index < maxLength; index += 1) {
+    for (const questions of topicQuestions) {
+      const question = questions[index];
+      if (question) interleaved.push(question);
+    }
+  }
+  return interleaved;
+}
+
 export const questionService = {
   getBySection(sectionId: PracticeSectionId): Question[] {
     if (sectionId === "matematica") {
-      return mathematicsTopics.flatMap((topic) => questionService.getBySection(topic.id));
+      return interleaveMathematicsTopics();
     }
     if (sectionId in mathematicsQuestions) {
       return mathematicsQuestions[sectionId as MathematicsTopicId].map((question, index) => ({
