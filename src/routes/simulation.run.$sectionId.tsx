@@ -49,19 +49,45 @@ function RunPage() {
 
   // Shuffling uses Math.random, so the plan is only built on the client after settings load.
   const settings = hydrated ? getSettings(target) : null;
-  const plan = useMemo(
-    () => (settings ? simulationService.buildPlan(target, settings) : null),
+
+  // The Mathematical logic module pulls live questions from the Logic API;
+  // every other target uses the local sample bank only.
+  const isLogicModule = target === "matematica-ragionare";
+  const logicQuery = useQuery({
+    queryKey: ["logic-api-questions", attempt],
+    queryFn: () => fetchLogicQuestions({ data: { count: settings?.questionCount ?? 5 } }),
+    enabled: hydrated && isLogicModule,
+    staleTime: Infinity,
+    refetchOnWindowFocus: false,
+    retry: false,
+  });
+
+  const plan = useMemo(() => {
+    if (!settings) return null;
+    if (!isLogicModule) return simulationService.buildPlan(target, settings);
+    if (logicQuery.isPending) return null;
+    const live = logicQuery.data ?? [];
+    return simulationService.buildPlan(target, settings, live.length > 0 ? { [target]: live } : {});
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [hydrated, target, attempt],
-  );
+  }, [hydrated, target, attempt, isLogicModule, logicQuery.isPending, logicQuery.data]);
 
   if (!settings || !plan) {
     return <p className="mx-auto max-w-3xl px-4 py-14 text-muted-foreground">{t.run.loading}</p>;
   }
   return (
     <>
-      <div className="px-4 pt-6">
+      <div className="space-y-2 px-4 pt-6">
         <SampleNotice target={target} />
+        {isLogicModule && logicQuery.isError === false && (logicQuery.data?.length ?? 0) > 0 && (
+          <p className="rounded-md border border-accent/40 bg-accent/10 px-4 py-2 text-sm text-foreground" role="status">
+            {t.run.logicLive}
+          </p>
+        )}
+        {isLogicModule && !logicQuery.isPending && (logicQuery.data?.length ?? 0) === 0 && (
+          <p className="rounded-md border border-border bg-muted px-4 py-2 text-sm text-muted-foreground" role="status">
+            {t.run.logicOffline}
+          </p>
+        )}
       </div>
       <RunSession
         key={attempt}
