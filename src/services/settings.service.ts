@@ -7,6 +7,8 @@ const key = (target: SimulationTarget) => `settings:${target}`;
 
 export const MIN_QUESTIONS = 5;
 export const MAX_SECTION_QUESTIONS = 30;
+/** Thesis modules (live logic generator / future real banks) allow longer sessions. */
+export const MAX_THESIS_QUESTIONS = 50;
 
 export function isSimulationTarget(value: string): value is SimulationTarget {
   return value === "full" || [...tolcSections, ...mathematicsTopics].some((s) => s.id === value);
@@ -15,9 +17,10 @@ export function isSimulationTarget(value: string): value is SimulationTarget {
 const findTarget = (target: SimulationTarget) =>
   [...tolcSections, ...mathematicsTopics].find((section) => section.id === target);
 
-/** Upper bound for the question slider: 30 per section, official total for the full exam. */
+/** Upper bound for the question slider: 30 per section, 50 for thesis modules, official total for the full exam. */
 export function maxQuestions(target: SimulationTarget): number {
   if (target === "full") return tolcSections.reduce((n, s) => n + s.questionCount, 0);
+  if (isThesisModule(target)) return MAX_THESIS_QUESTIONS;
   return MAX_SECTION_QUESTIONS;
 }
 
