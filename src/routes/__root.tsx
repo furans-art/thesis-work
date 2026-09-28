@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { Toaster } from "@/components/ui/sonner";
 import { AccessibilityProvider } from "@/context/accessibility-context";
 import { I18nProvider, useI18n } from "@/context/i18n-context";
 
@@ -144,6 +145,7 @@ function AppFrame() {
         <Outlet />
       </main>
       <SiteFooter />
+      <Toaster richColors position="top-center" />
     </div>
   );
 }

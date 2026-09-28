@@ -5,15 +5,21 @@ import type { SimulationSettings, SimulationTarget } from "@/types/settings";
 const key = (target: SimulationTarget) => `settings:${target}`;
 
 export const MIN_QUESTIONS = 5;
+export const MAX_SECTION_QUESTIONS = 30;
 
 export function isSimulationTarget(value: string): value is SimulationTarget {
   return value === "full" || tolcSections.some((s) => s.id === value);
 }
 
-/** Upper bound for the question slider. */
+/** Upper bound for the question slider: 30 per section, official total for the full exam. */
 export function maxQuestions(target: SimulationTarget): number {
   if (target === "full") return tolcSections.reduce((n, s) => n + s.questionCount, 0);
-  return tolcSections.find((s) => s.id === target)?.questionCount ?? MIN_QUESTIONS;
+  return MAX_SECTION_QUESTIONS;
+}
+
+function officialQuestions(target: SimulationTarget): number {
+  if (target === "full") return tolcSections.reduce((n, s) => n + s.questionCount, 0);
+  return tolcSections.find((s) => s.id === target)?.questionCount ?? 20;
 }
 
 export function defaultSettings(target: SimulationTarget): SimulationSettings {
@@ -22,7 +28,7 @@ export function defaultSettings(target: SimulationTarget): SimulationSettings {
       ? tolcSections.reduce((n, s) => n + s.durationMinutes, 0)
       : (tolcSections.find((s) => s.id === target)?.durationMinutes ?? 20);
   return {
-    questionCount: maxQuestions(target),
+    questionCount: Math.max(MIN_QUESTIONS, officialQuestions(target)),
     timeLimitMinutes: minutes,
     shuffleQuestions: false,
     shuffleAnswers: false,
