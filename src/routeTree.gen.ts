@@ -15,6 +15,7 @@ import { Route as AdminRouteImport } from './routes/admin'
 import { Route as MenuRouteImport } from './routes/menu'
 import { Route as SimulationIndexRouteImport } from './routes/simulation.index'
 import { Route as SimulationRunSectionIdRouteImport } from './routes/simulation.run.$sectionId'
+import { Route as SimulationSettingsSectionIdRouteImport } from './routes/simulation.settings.$sectionId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -46,6 +47,12 @@ const SimulationRunSectionIdRoute = SimulationRunSectionIdRouteImport.update({
   path: '/simulation/run/$sectionId',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SimulationSettingsSectionIdRoute =
+  SimulationSettingsSectionIdRouteImport.update({
+    id: '/simulation/settings/$sectionId',
+    path: '/simulation/settings/$sectionId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -54,6 +61,7 @@ export interface FileRoutesByFullPath {
   '/menu': typeof MenuRoute
   '/simulation/': typeof SimulationIndexRoute
   '/simulation/run/$sectionId': typeof SimulationRunSectionIdRoute
+  '/simulation/settings/$sectionId': typeof SimulationSettingsSectionIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +70,7 @@ export interface FileRoutesByTo {
   '/menu': typeof MenuRoute
   '/simulation': typeof SimulationIndexRoute
   '/simulation/run/$sectionId': typeof SimulationRunSectionIdRoute
+  '/simulation/settings/$sectionId': typeof SimulationSettingsSectionIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +80,7 @@ export interface FileRoutesById {
   '/menu': typeof MenuRoute
   '/simulation/': typeof SimulationIndexRoute
   '/simulation/run/$sectionId': typeof SimulationRunSectionIdRoute
+  '/simulation/settings/$sectionId': typeof SimulationSettingsSectionIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,6 +91,7 @@ export interface FileRouteTypes {
     | '/menu'
     | '/simulation/'
     | '/simulation/run/$sectionId'
+    | '/simulation/settings/$sectionId'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +100,7 @@ export interface FileRouteTypes {
     | '/menu'
     | '/simulation'
     | '/simulation/run/$sectionId'
+    | '/simulation/settings/$sectionId'
   id:
     | '__root__'
     | '/'
@@ -97,6 +109,7 @@ export interface FileRouteTypes {
     | '/menu'
     | '/simulation/'
     | '/simulation/run/$sectionId'
+    | '/simulation/settings/$sectionId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -106,6 +119,7 @@ export interface RootRouteChildren {
   MenuRoute: typeof MenuRoute
   SimulationIndexRoute: typeof SimulationIndexRoute
   SimulationRunSectionIdRoute: typeof SimulationRunSectionIdRoute
+  SimulationSettingsSectionIdRoute: typeof SimulationSettingsSectionIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -152,6 +166,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SimulationRunSectionIdRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/simulation/settings/$sectionId': {
+      id: '/simulation/settings/$sectionId'
+      path: '/simulation/settings/$sectionId'
+      fullPath: '/simulation/settings/$sectionId'
+      preLoaderRoute: typeof SimulationSettingsSectionIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -162,6 +183,7 @@ const rootRouteChildren: RootRouteChildren = {
   MenuRoute: MenuRoute,
   SimulationIndexRoute: SimulationIndexRoute,
   SimulationRunSectionIdRoute: SimulationRunSectionIdRoute,
+  SimulationSettingsSectionIdRoute: SimulationSettingsSectionIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
