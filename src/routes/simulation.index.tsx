@@ -8,11 +8,10 @@ import { useI18n } from "@/context/i18n-context";
 import { useSectionLabel } from "@/hooks/use-section-label";
 import { useSettingsStore } from "@/hooks/use-settings-store";
 import { useSettingsSummary } from "@/hooks/use-settings-summary";
-import { tolcSectionsQuery, useTolcSections } from "@/hooks/use-tolc-sections";
+import { tolcSections } from "@/data/tolc-sections";
 import type { SimulationTarget } from "@/types/settings";
 
 export const Route = createFileRoute("/simulation/")({
-  loader: ({ context }) => context.queryClient.ensureQueryData(tolcSectionsQuery),
   head: () => ({
     meta: [
       { title: "Simulazione TOLC-S — TOLC-S Trainer" },
@@ -32,7 +31,7 @@ export const Route = createFileRoute("/simulation/")({
 function SimulationPage() {
   const { t } = useI18n();
   const label = useSectionLabel();
-  const { data: sections = [] } = useTolcSections();
+  const sections = [...tolcSections].sort((a, b) => a.order - b.order);
 
   return (
     <PageShell title={t.simulation.title} subtitle={t.simulation.subtitle}>
