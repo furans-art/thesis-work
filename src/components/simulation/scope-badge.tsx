@@ -11,10 +11,11 @@ export function ScopeBadge({ target }: { target: SimulationTarget }) {
     <span
       className={
         thesis
-          ? "inline-flex w-fit items-center rounded border border-accent/40 bg-accent/10 px-2 py-0.5 text-xs font-medium text-accent-foreground"
-          : "inline-flex w-fit items-center rounded border border-border bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground"
+          ? "inline-flex w-fit items-center gap-1.5 rounded border border-accent/50 bg-accent/10 px-2 py-0.5 text-xs font-medium text-foreground"
+          : "inline-flex w-fit items-center gap-1.5 rounded border border-border bg-muted px-2 py-0.5 text-xs font-medium text-muted-foreground"
       }
     >
+      <span aria-hidden="true" className={thesis ? "size-1.5 rounded-full bg-accent" : "size-1.5 rounded-full bg-muted-foreground/60"} />
       {thesis ? t.scope.thesisModule : t.scope.sampleModule}
     </span>
   );
