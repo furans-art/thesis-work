@@ -3,6 +3,7 @@ import type { RunPlan } from "@/services/simulation.service";
 import type { SectionResult, SessionRecord } from "@/types/history";
 import type { SimulationMode, SimulationTarget } from "@/types/settings";
 
+
 const listeners = new Set<() => void>();
 let version = 0;
 let cache: SessionRecord[] | null = null;
@@ -65,6 +66,10 @@ export function buildRecord(input: {
     sections,
     wrongQuestionIds: Array.from(new Set(wrongQuestionIds)),
     score: tolcScore(correct, wrong),
+    snapshot: input.plan.blocks.map((b) => ({
+      sectionId: b.section.id,
+      questions: b.questions.map(({ blockIndex: _blockIndex, ...q }) => q),
+    })),
   };
 }
 
