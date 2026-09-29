@@ -20,6 +20,7 @@ import { Route as PlaygroundRouteImport } from './routes/playground'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as LessonsLessonIdRouteImport } from './routes/lessons.$lessonId'
 import { Route as SimulationIndexRouteImport } from './routes/simulation.index'
+import { Route as SimulationRetakeSessionIdRouteImport } from './routes/simulation.retake.$sessionId'
 import { Route as SimulationReviewSessionIdRouteImport } from './routes/simulation.review.$sessionId'
 import { Route as SimulationRunSectionIdRouteImport } from './routes/simulation.run.$sectionId'
 import { Route as SimulationSettingsSectionIdRouteImport } from './routes/simulation.settings.$sectionId'
@@ -79,6 +80,12 @@ const SimulationIndexRoute = SimulationIndexRouteImport.update({
   path: '/simulation/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SimulationRetakeSessionIdRoute =
+  SimulationRetakeSessionIdRouteImport.update({
+    id: '/simulation/retake/$sessionId',
+    path: '/simulation/retake/$sessionId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const SimulationReviewSessionIdRoute =
   SimulationReviewSessionIdRouteImport.update({
     id: '/simulation/review/$sessionId',
@@ -109,6 +116,7 @@ export interface FileRoutesByFullPath {
   '/privacy': typeof PrivacyRoute
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/simulation/': typeof SimulationIndexRoute
+  '/simulation/retake/$sessionId': typeof SimulationRetakeSessionIdRoute
   '/simulation/review/$sessionId': typeof SimulationReviewSessionIdRoute
   '/simulation/run/$sectionId': typeof SimulationRunSectionIdRoute
   '/simulation/settings/$sectionId': typeof SimulationSettingsSectionIdRoute
@@ -125,6 +133,7 @@ export interface FileRoutesByTo {
   '/privacy': typeof PrivacyRoute
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/simulation': typeof SimulationIndexRoute
+  '/simulation/retake/$sessionId': typeof SimulationRetakeSessionIdRoute
   '/simulation/review/$sessionId': typeof SimulationReviewSessionIdRoute
   '/simulation/run/$sectionId': typeof SimulationRunSectionIdRoute
   '/simulation/settings/$sectionId': typeof SimulationSettingsSectionIdRoute
@@ -142,6 +151,7 @@ export interface FileRoutesById {
   '/privacy': typeof PrivacyRoute
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/simulation/': typeof SimulationIndexRoute
+  '/simulation/retake/$sessionId': typeof SimulationRetakeSessionIdRoute
   '/simulation/review/$sessionId': typeof SimulationReviewSessionIdRoute
   '/simulation/run/$sectionId': typeof SimulationRunSectionIdRoute
   '/simulation/settings/$sectionId': typeof SimulationSettingsSectionIdRoute
@@ -160,6 +170,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/lessons/$lessonId'
     | '/simulation/'
+    | '/simulation/retake/$sessionId'
     | '/simulation/review/$sessionId'
     | '/simulation/run/$sectionId'
     | '/simulation/settings/$sectionId'
@@ -176,6 +187,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/lessons/$lessonId'
     | '/simulation'
+    | '/simulation/retake/$sessionId'
     | '/simulation/review/$sessionId'
     | '/simulation/run/$sectionId'
     | '/simulation/settings/$sectionId'
@@ -192,6 +204,7 @@ export interface FileRouteTypes {
     | '/privacy'
     | '/lessons/$lessonId'
     | '/simulation/'
+    | '/simulation/retake/$sessionId'
     | '/simulation/review/$sessionId'
     | '/simulation/run/$sectionId'
     | '/simulation/settings/$sectionId'
@@ -208,6 +221,7 @@ export interface RootRouteChildren {
   PlaygroundRoute: typeof PlaygroundRoute
   PrivacyRoute: typeof PrivacyRoute
   SimulationIndexRoute: typeof SimulationIndexRoute
+  SimulationRetakeSessionIdRoute: typeof SimulationRetakeSessionIdRoute
   SimulationReviewSessionIdRoute: typeof SimulationReviewSessionIdRoute
   SimulationRunSectionIdRoute: typeof SimulationRunSectionIdRoute
   SimulationSettingsSectionIdRoute: typeof SimulationSettingsSectionIdRoute
@@ -292,6 +306,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SimulationIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/simulation/retake/$sessionId': {
+      id: '/simulation/retake/$sessionId'
+      path: '/simulation/retake/$sessionId'
+      fullPath: '/simulation/retake/$sessionId'
+      preLoaderRoute: typeof SimulationRetakeSessionIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/simulation/review/$sessionId': {
       id: '/simulation/review/$sessionId'
       path: '/simulation/review/$sessionId'
@@ -338,6 +359,7 @@ const rootRouteChildren: RootRouteChildren = {
   PlaygroundRoute: PlaygroundRoute,
   PrivacyRoute: PrivacyRoute,
   SimulationIndexRoute: SimulationIndexRoute,
+  SimulationRetakeSessionIdRoute: SimulationRetakeSessionIdRoute,
   SimulationReviewSessionIdRoute: SimulationReviewSessionIdRoute,
   SimulationRunSectionIdRoute: SimulationRunSectionIdRoute,
   SimulationSettingsSectionIdRoute: SimulationSettingsSectionIdRoute,

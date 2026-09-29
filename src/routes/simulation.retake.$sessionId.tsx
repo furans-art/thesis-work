@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { PageShell } from "@/components/layout/page-shell";
 import { useI18n } from "@/context/i18n-context";
 import { useHistory } from "@/hooks/use-history";
-import { defaultSettings, settingsService } from "@/services/settings.service";
+import { settingsService } from "@/services/settings.service";
 import { simulationService } from "@/services/simulation.service";
 
 export const Route = createFileRoute("/simulation/retake/$sessionId")({
@@ -37,11 +37,9 @@ function RetakePage() {
 
   const settings = useMemo(() => {
     if (!session) return null;
-    if (session.target === "full" || plan === null) {
-      return { ...settingsService.get(session.target), mode: session.mode };
-    }
     return { ...settingsService.get(session.target), mode: session.mode };
-  }, [session, plan]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [session?.id]);
 
   if (!hydrated) {
     return (
@@ -69,11 +67,7 @@ function RetakePage() {
 
   return (
     <PageShell title={t.run.retakeSame}>
-      <RunSession
-        target={session.target}
-        plan={plan}
-        settings={settings.explanationMode ? { ...settings, showTimer: settings.showTimer } : settings}
-      />
+      <RunSession target={session.target} plan={plan} settings={settings} />
     </PageShell>
   );
 }
