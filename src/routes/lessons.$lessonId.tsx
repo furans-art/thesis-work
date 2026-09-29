@@ -37,7 +37,7 @@ function LessonPage() {
     );
   }
 
-  const lessonKey = (key: string) => (t.lesson as Record<string, string>)[key];
+  const lessonKey = (key: string): string => (t.lesson as Record<string, string>)[key] ?? "";
 
   return (
     <PageShell title={lessonKey(lesson.titleKey)}>
