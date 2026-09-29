@@ -16,6 +16,7 @@ export const en: Translation = {
   },
   nav: {
     history: "Progress",
+    lessons: "Lessons",
     privacy: "Privacy",
     home: "Home",
     menu: "Menu",
@@ -51,21 +52,40 @@ export const en: Translation = {
     subtitle: "Choose how to continue.",
     simulationTitle: "Test Simulation",
     simulationBody: "Start a section drill or the full exam.",
-    lessonsTitle: "Logic lessons",
-    lessonsBody: "The theory behind the Mathematical logic module, lesson by lesson.",
+    lessonsTitle: "Lessons and theory",
+    lessonsBody: "Theory organised by TOLC-S section, with the complete Mathematical logic module.",
     playgroundTitle: "Formula playground",
     playgroundBody: "Build logic formulas and inspect their truth table.",
     progressTitle: "Your progress",
     progressBody: "Charts, scores and a review of wrong answers.",
   },
   lessons: {
-    title: "Logic lessons",
-    subtitle: "The theory of the Mathematical logic module, developed from the lessons of Kevin's Webpage_Logica project.",
+    title: "Lessons and theory",
+    subtitle:
+      "Theory is organised around the official TOLC-S sections. The Mathematical logic lessons are developed from Kevin's Webpage_Logica project.",
     openLesson: "Open lesson",
     backToLessons: "All lessons",
     practice: "Practise this lesson",
     playground: "Open the formula playground",
     notFound: "Lesson not found.",
+    lessonCount: "lessons available",
+    comingSoon: "Theory coming soon",
+    comingSoonBody: "Topics follow the official CISIA syllabus; the study material will be added in the future.",
+    practiceArea: "Practise this area",
+  },
+  lessonOutline: {
+    ragionamento:
+      "Text comprehension, logical-deductive reasoning and problem-solving strategies tested in the standalone section of the exam.",
+    biologia:
+      "The cell, biological chemistry basics, genetics, evolution, anatomy and the physiology of living organisms.",
+    chimica:
+      "Structure of matter, the periodic table, chemical bonding, solutions, reactions and organic chemistry basics.",
+    fisica:
+      "Quantities and measurement, kinematics, dynamics, energy, thermodynamics, electromagnetism and optics.",
+    scienzeTerra:
+      "The solar system, Earth as a planet, atmosphere, hydrosphere, lithosphere and crustal dynamics.",
+    inglese:
+      "Reading short texts and a working knowledge of basic English grammar structures.",
   },
   lesson: {
     lesson1Title: "Lesson 1 · Propositions and language",

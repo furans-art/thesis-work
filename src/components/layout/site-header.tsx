@@ -11,6 +11,7 @@ import type { Locale } from "@/types/i18n";
 const navItems = [
   { to: "/menu", key: "menu" },
   { to: "/simulation", key: "simulation" },
+  { to: "/lessons", key: "lessons" },
   { to: "/history", key: "history" },
   { to: "/accessibility", key: "accessibility" },
   { to: "/admin", key: "admin" },
