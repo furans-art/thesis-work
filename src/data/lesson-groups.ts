@@ -1,7 +1,7 @@
 import { lessons } from "./lessons";
 import { mathematicsTopics } from "./mathematics-topics";
 import { tolcSections } from "./tolc-sections";
-import type { PracticeSectionId } from "@/types/settings";
+import type { PracticeSectionId } from "@/types/tolc";
 import type { TolcSectionId } from "@/types/tolc";
 
 /**
