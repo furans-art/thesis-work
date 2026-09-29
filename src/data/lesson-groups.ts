@@ -23,7 +23,7 @@ export interface LessonTopicEntry {
 }
 
 export interface LessonSectionGroup {
-  sectionId: TolcSectionId;
+  sectionId: PracticeSectionId;
   labelKey: string;
   topics: LessonTopicEntry[];
 }
