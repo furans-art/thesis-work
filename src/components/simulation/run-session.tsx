@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { ArrowLeft, ArrowRight, Check, Flag, Lightbulb, SkipForward } from "lucide-react";
 
-import { ScopeBadge } from "@/components/simulation/scope-badge";
+import { SampleNotice, ScopeBadge } from "@/components/simulation/scope-badge";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import {
   AlertDialog,
@@ -90,6 +90,7 @@ function RunInner({ target, plan, settings, onRetake }: RunInnerProps) {
 
   return (
     <div className="mx-auto max-w-3xl space-y-6">
+      {target !== null && <SampleNotice target={target} />}
       {/* Top bar */}
       <div className="space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-3">
