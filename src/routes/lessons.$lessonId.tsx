@@ -37,11 +37,13 @@ function LessonPage() {
     );
   }
 
+  const lessonKey = (key: string) => (t.lesson as Record<string, string>)[key];
+
   return (
-    <PageShell title={t.lesson[lesson.titleKey]}>
+    <PageShell title={lessonKey(lesson.titleKey)}>
       <article className="max-w-3xl space-y-6">
-        <p className="font-serif text-lg leading-relaxed">{t.lesson[lesson.summaryKey]}</p>
-        <p className="leading-relaxed text-foreground/90">{t.lesson[lesson.bodyKey]}</p>
+        <p className="font-serif text-lg leading-relaxed">{lessonKey(lesson.summaryKey)}</p>
+        <p className="leading-relaxed text-foreground/90">{lessonKey(lesson.bodyKey)}</p>
         <div className="flex flex-wrap gap-3 border-t pt-6">
           <Button asChild>
             <Link to="/simulation/settings/$sectionId" params={{ sectionId: "matematica-ragionare" }}>
