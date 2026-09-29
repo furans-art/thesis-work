@@ -14,6 +14,7 @@ export const it = {
   },
   nav: {
     history: "Progressi",
+    lessons: "Lezioni",
     privacy: "Privacy",
     home: "Home",
     menu: "Menu",
@@ -49,21 +50,40 @@ export const it = {
     subtitle: "Scegli come procedere.",
     simulationTitle: "Simulazione Test",
     simulationBody: "Avvia una simulazione per sezione o l'esame completo.",
-    lessonsTitle: "Lezioni di logica",
-    lessonsBody: "La teoria del modulo di Logica matematica, lezione per lezione.",
+    lessonsTitle: "Lezioni e teoria",
+    lessonsBody: "La teoria organizzata per sezione del TOLC-S, con il modulo di Logica matematica completo.",
     playgroundTitle: "Laboratorio formule",
     playgroundBody: "Costruisci formule logiche e consulta la loro tabella di verità.",
     progressTitle: "I tuoi progressi",
     progressBody: "Grafici, punteggi e ripasso delle risposte errate.",
   },
   lessons: {
-    title: "Lezioni di logica",
-    subtitle: "La teoria del modulo di Logica matematica, sviluppata a partire dalle lezioni del progetto Webpage_Logica di Kevin.",
+    title: "Lezioni e teoria",
+    subtitle:
+      "La teoria è organizzata secondo le sezioni ufficiali del TOLC-S. Le lezioni di Logica matematica sono sviluppate a partire dal progetto Webpage_Logica di Kevin.",
     openLesson: "Apri la lezione",
     backToLessons: "Tutte le lezioni",
     practice: "Esercitati su questa lezione",
     playground: "Apri il laboratorio formule",
     notFound: "Lezione non trovata.",
+    lessonCount: "lezioni disponibili",
+    comingSoon: "Teoria in arrivo",
+    comingSoonBody: "Gli argomenti sono elencati secondo il programma ufficiale CISIA; il materiale teorico sarà aggiunto in futuro.",
+    practiceArea: "Esercitati su quest'area",
+  },
+  lessonOutline: {
+    ragionamento:
+      "Comprensione del testo, ragionamento logico-deduttivo e strategie di risoluzione dei problemi proposti nella sezione autonoma del test.",
+    biologia:
+      "La cellula, le basi della chimica biologica, genetica, evoluzione, anatomia e fisiologia degli organismi.",
+    chimica:
+      "Struttura della materia, tavola periodica, legami chimici, soluzioni, reazioni e nozioni di chimica organica.",
+    fisica:
+      "Grandezze e misure, cinematica, dinamica, energia, termodinamica, elettromagnetismo e ottica.",
+    scienzeTerra:
+      "Il sistema solare, la Terra come pianeta, atmosfera, idrosfera, litosfera e dinamica della crosta terrestre.",
+    inglese:
+      "Comprensione di brevi testi e conoscenza delle strutture grammaticali di base della lingua inglese.",
   },
   lesson: {
     lesson1Title: "Lezione 1 · Proposizioni e linguaggio",
