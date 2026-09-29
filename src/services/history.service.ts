@@ -68,7 +68,7 @@ export function buildRecord(input: {
     score: tolcScore(correct, wrong),
     snapshot: input.plan.blocks.map((b) => ({
       sectionId: b.section.id,
-      questions: b.questions.map(({ blockIndex: _blockIndex, ...q }) => q),
+      questions: b.questions,
     })),
   };
 }
