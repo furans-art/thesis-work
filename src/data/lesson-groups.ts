@@ -1,6 +1,7 @@
 import { lessons } from "./lessons";
 import { mathematicsTopics } from "./mathematics-topics";
 import { tolcSections } from "./tolc-sections";
+import type { PracticeSectionId } from "@/types/settings";
 import type { TolcSectionId } from "@/types/tolc";
 
 /**
@@ -11,7 +12,7 @@ import type { TolcSectionId } from "@/types/tolc";
  */
 export interface LessonTopicEntry {
   /** Practice target id, used for the "practise this area" link and scope badge. */
-  id: string;
+  id: PracticeSectionId;
   /** Key inside t.sections. */
   labelKey: string;
   /** Key inside t.sections for mathematics areas, else null. */
@@ -28,7 +29,7 @@ export interface LessonSectionGroup {
 }
 
 /** The only area with fully developed theory so far. */
-const LESSONS_TOPIC_ID = "matematica-ragionare";
+const LESSONS_TOPIC_ID = "matematica-ragionare" satisfies PracticeSectionId;
 
 const mathematicsGroup: LessonSectionGroup = {
   sectionId: "matematica",

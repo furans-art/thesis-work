@@ -58,11 +58,11 @@ function LessonsPage() {
                 )}
               </div>
 
-              {group.topics.length === 1 && group.topics[0].outlineKey !== null ? (
+              {group.topics.length === 1 && group.topics[0]?.outlineKey !== null ? (
                 // Whole sections without lessons yet: syllabus outline only.
                 <Card>
                   <CardContent className="flex flex-col gap-3 p-6">
-                    <p className="text-muted-foreground">{outline(group.topics[0].outlineKey)}</p>
+                    <p className="text-muted-foreground">{outline(group.topics[0]?.outlineKey ?? "")}</p>
                     <p className="text-sm text-muted-foreground/80">
                       <span className="font-medium text-foreground">{t.lessons.comingSoon}: </span>
                       {t.lessons.comingSoonBody}
