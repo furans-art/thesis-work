@@ -9,7 +9,6 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { useI18n } from "@/context/i18n-context";
 import { useBackup } from "@/hooks/use-backup";
-import type { ImportResult } from "@/services/backup.service";
 
 export const Route = createFileRoute("/admin")({
   head: () => ({
@@ -96,7 +95,7 @@ function AdminPage() {
               <p role="status" aria-live="polite" className="text-sm">
                 {result.ok
                   ? t.admin.importSuccess.replace("{n}", String(result.written))
-                  : t.admin[reasonKey[result.reason ?? "unreadable"]]}
+                  : (t.admin as Record<string, string>)[reasonKey[result.reason ?? "unreadable"]!]}
               </p>
             )}
           </CardContent>
