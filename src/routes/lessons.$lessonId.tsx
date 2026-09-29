@@ -44,7 +44,7 @@ function LessonPage() {
         <p className="leading-relaxed text-foreground/90">{t.lesson[lesson.bodyKey]}</p>
         <div className="flex flex-wrap gap-3 border-t pt-6">
           <Button asChild>
-            <Link to="/simulation/settings/matematica-ragionare">
+            <Link to="/simulation/settings/$sectionId" params={{ sectionId: "matematica-ragionare" }}>
               <BookOpen aria-hidden="true" />
               {t.lessons.practice}
             </Link>

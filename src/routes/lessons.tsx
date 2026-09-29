@@ -36,8 +36,8 @@ function LessonsPage() {
             <Link to="/lessons/$lessonId" params={{ lessonId: String(lesson.id) }} className="group block h-full rounded-lg">
               <Card className="h-full border-border transition-shadow group-hover:shadow-[var(--shadow-raised)]">
                 <CardContent className="flex h-full flex-col gap-3 p-6">
-                  <h2 className="font-serif text-xl font-semibold">{t.lesson[lesson.titleKey]}</h2>
-                  <p className="text-muted-foreground">{t.lesson[lesson.summaryKey]}</p>
+                  <h2 className="font-serif text-xl font-semibold">{(t.lesson as Record<string, string>)[lesson.titleKey]}</h2>
+                  <p className="text-muted-foreground">{(t.lesson as Record<string, string>)[lesson.summaryKey]}</p>
                   <span className="mt-auto inline-flex items-center gap-2 pt-2 text-sm font-semibold text-primary">
                     {t.lessons.openLesson}
                     <ArrowRight aria-hidden="true" className="size-4" />

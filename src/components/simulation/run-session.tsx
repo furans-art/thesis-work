@@ -313,8 +313,8 @@ export function RunReview({
   retakeTo,
 }: {
   plan: RunPlan;
-  onRetry?: () => void;
-  retakeTo?: string;
+  onRetry?: (() => void) | undefined;
+  retakeTo?: string | undefined;
 }) {
   const { t, locale } = useI18n();
   return (
