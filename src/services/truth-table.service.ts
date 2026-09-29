@@ -112,7 +112,9 @@ export function evaluate(f: Formula, env: Record<string, boolean>): boolean {
   }
 }
 
-export const OP_LABEL: Record<Formula extends { kind: "binary"; op: infer O } ? O : never, string> = {
+type BinaryOp = "and" | "or" | "imp" | "iff";
+
+export const OP_LABEL: Record<BinaryOp, string> = {
   and: "∧",
   or: "∨",
   imp: "→",

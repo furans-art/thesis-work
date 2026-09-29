@@ -21,7 +21,7 @@ import { useI18n } from "@/context/i18n-context";
 import { useRunKeyboard } from "@/hooks/use-run-keyboard";
 import { useSimulationRun, formatClock } from "@/hooks/use-simulation-run";
 import { contentScopeService } from "@/services/content-scope.service";
-import { historyService } from "@/services/history.service";
+import { buildRecord, historyService } from "@/services/history.service";
 import type { RunPlan } from "@/services/simulation.service";
 import type { SimulationSettings, SimulationTarget } from "@/types/settings";
 
@@ -30,28 +30,37 @@ export interface RunSessionProps {
   target: SimulationTarget | null;
   plan: RunPlan;
   settings: SimulationSettings;
-  onRetry?: () => void;
-  editSettingsTo?: string;
+  onRetry?: (() => void) | undefined;
 }
 
 export function RunSession({ target, plan, settings, onRetry }: RunSessionProps) {
   const [runKey, setRunKey] = useState(0);
   return (
-    <RunInner key={runKey} runKey={runKey} target={target} plan={plan} settings={settings} onRetry={onRetry} onRetake={() => setRunKey((k) => k + 1)} />
+    <RunInner
+      key={runKey}
+      target={target}
+      plan={plan}
+      settings={settings}
+      onRetry={onRetry}
+      onRetake={() => setRunKey((k) => k + 1)}
+    />
   );
 }
 
-interface RunInnerProps extends RunSessionProps {
-  runKey: number;
+interface RunInnerProps {
+  target: SimulationTarget | null;
+  plan: RunPlan;
+  settings: SimulationSettings;
+  onRetry?: (() => void) | undefined;
   onRetake: () => void;
 }
 
 function RunInner({ target, plan, settings, onRetake }: RunInnerProps) {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const run = useSimulationRun(plan, settings, (answers, elapsed) => {
     if (target === null) return; // review sessions are never recorded
     historyService.add(
-      historyService.buildRecord({
+      buildRecord({
         target,
         mode: settings.mode,
         plan,
@@ -79,7 +88,6 @@ function RunInner({ target, plan, settings, onRetake }: RunInnerProps) {
   const isSample = target !== null && !isThesis;
   const answered = run.confirmed;
   const isCorrect = answered && run.selected === run.q.correctIndex;
-  const showFeedback = answered && (exam || settings.explanationMode !== "never");
   const canAskFeedback = answered && !exam && settings.explanationMode !== "never";
 
   return (
@@ -88,7 +96,9 @@ function RunInner({ target, plan, settings, onRetake }: RunInnerProps) {
       <div className="space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2">
-            <ScopeBadge isThesis={isThesis} isSample={isSample} />
+            {target !== null && (
+              <ScopeBadge isThesis={isThesis} isSample={isSample} />
+            )}
             <Badge variant="outline">
               {t.run.progress} {run.index + 1} {t.run.of} {run.total}
             </Badge>
