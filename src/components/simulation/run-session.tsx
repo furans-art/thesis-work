@@ -84,8 +84,6 @@ function RunInner({ target, plan, settings, onRetake }: RunInnerProps) {
 
   const exam = run.exam;
   const showTimer = settings.showTimer || exam;
-  const isThesis = target !== null && contentScopeService.isThesisModule(target);
-  const isSample = target !== null && !isThesis;
   const answered = run.confirmed;
   const isCorrect = answered && run.selected === run.q.correctIndex;
   const canAskFeedback = answered && !exam && settings.explanationMode !== "never";
@@ -96,9 +94,7 @@ function RunInner({ target, plan, settings, onRetake }: RunInnerProps) {
       <div className="space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2">
-            {target !== null && (
-              <ScopeBadge isThesis={isThesis} isSample={isSample} />
-            )}
+            {target !== null && <ScopeBadge target={target} />}
             <Badge variant="outline">
               {t.run.progress} {run.index + 1} {t.run.of} {run.total}
             </Badge>
