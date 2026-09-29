@@ -91,7 +91,6 @@ function RunPage() {
   return (
     <>
       <div className="space-y-2 px-4 pt-6">
-        <SampleNotice target={target} />
         {isLogicModule && logicQuery.isError === false && (logicQuery.data?.length ?? 0) > 0 && (
           <p className="rounded-md border border-accent/40 bg-accent/10 px-4 py-2 text-sm text-foreground" role="status">
             {t.run.logicLive}
