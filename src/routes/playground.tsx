@@ -26,7 +26,7 @@ export const Route = createFileRoute("/playground")({
   component: PlaygroundPage,
 });
 
-const EXAMPLES = ["imp(p,q) → imp(¬q,¬p)", "¬(p ∧ q) ↔ (¬p ∨ ¬q)", "((p → q) ∧ p) → q", "imp(and(p,not(q)),or(r,q))"];
+const EXAMPLES = ["p ∧ q → r", "¬(p ∧ q) ↔ (¬p ∨ ¬q)", "(p → q) ∧ p → q", "p ∨ ¬q ↔ ¬(p ∧ q)"];
 
 function PlaygroundPage() {
   const { t } = useI18n();

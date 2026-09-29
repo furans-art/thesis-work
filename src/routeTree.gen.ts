@@ -16,6 +16,7 @@ import { Route as AdminRouteImport } from './routes/admin'
 import { Route as HistoryRouteImport } from './routes/history'
 import { Route as LessonsRouteImport } from './routes/lessons'
 import { Route as MenuRouteImport } from './routes/menu'
+import { Route as PlaygroundRouteImport } from './routes/playground'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as LessonsLessonIdRouteImport } from './routes/lessons.$lessonId'
 import { Route as SimulationIndexRouteImport } from './routes/simulation.index'
@@ -56,6 +57,11 @@ const LessonsRoute = LessonsRouteImport.update({
 const MenuRoute = MenuRouteImport.update({
   id: '/menu',
   path: '/menu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlaygroundRoute = PlaygroundRouteImport.update({
+  id: '/playground',
+  path: '/playground',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -99,6 +105,7 @@ export interface FileRoutesByFullPath {
   '/history': typeof HistoryRoute
   '/lessons': typeof LessonsRouteWithChildren
   '/menu': typeof MenuRoute
+  '/playground': typeof PlaygroundRoute
   '/privacy': typeof PrivacyRoute
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/simulation/': typeof SimulationIndexRoute
@@ -114,6 +121,7 @@ export interface FileRoutesByTo {
   '/history': typeof HistoryRoute
   '/lessons': typeof LessonsRouteWithChildren
   '/menu': typeof MenuRoute
+  '/playground': typeof PlaygroundRoute
   '/privacy': typeof PrivacyRoute
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/simulation': typeof SimulationIndexRoute
@@ -130,6 +138,7 @@ export interface FileRoutesById {
   '/history': typeof HistoryRoute
   '/lessons': typeof LessonsRouteWithChildren
   '/menu': typeof MenuRoute
+  '/playground': typeof PlaygroundRoute
   '/privacy': typeof PrivacyRoute
   '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/simulation/': typeof SimulationIndexRoute
@@ -147,6 +156,7 @@ export interface FileRouteTypes {
     | '/history'
     | '/lessons'
     | '/menu'
+    | '/playground'
     | '/privacy'
     | '/lessons/$lessonId'
     | '/simulation/'
@@ -162,6 +172,7 @@ export interface FileRouteTypes {
     | '/history'
     | '/lessons'
     | '/menu'
+    | '/playground'
     | '/privacy'
     | '/lessons/$lessonId'
     | '/simulation'
@@ -177,6 +188,7 @@ export interface FileRouteTypes {
     | '/history'
     | '/lessons'
     | '/menu'
+    | '/playground'
     | '/privacy'
     | '/lessons/$lessonId'
     | '/simulation/'
@@ -193,6 +205,7 @@ export interface RootRouteChildren {
   HistoryRoute: typeof HistoryRoute
   LessonsRoute: typeof LessonsRouteWithChildren
   MenuRoute: typeof MenuRoute
+  PlaygroundRoute: typeof PlaygroundRoute
   PrivacyRoute: typeof PrivacyRoute
   SimulationIndexRoute: typeof SimulationIndexRoute
   SimulationReviewSessionIdRoute: typeof SimulationReviewSessionIdRoute
@@ -249,6 +262,13 @@ declare module '@tanstack/react-router' {
       path: '/menu'
       fullPath: '/menu'
       preLoaderRoute: typeof MenuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/playground': {
+      id: '/playground'
+      path: '/playground'
+      fullPath: '/playground'
+      preLoaderRoute: typeof PlaygroundRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -315,6 +335,7 @@ const rootRouteChildren: RootRouteChildren = {
   HistoryRoute: HistoryRoute,
   LessonsRoute: LessonsRouteWithChildren,
   MenuRoute: MenuRoute,
+  PlaygroundRoute: PlaygroundRoute,
   PrivacyRoute: PrivacyRoute,
   SimulationIndexRoute: SimulationIndexRoute,
   SimulationReviewSessionIdRoute: SimulationReviewSessionIdRoute,
