@@ -3,7 +3,6 @@ import { useQuery } from "@tanstack/react-query";
 import { useMemo, useState } from "react";
 
 import { RunSession } from "@/components/simulation/run-session";
-import { SampleNotice } from "@/components/simulation/scope-badge";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/context/i18n-context";
 import { useSettingsStore } from "@/hooks/use-settings-store";
