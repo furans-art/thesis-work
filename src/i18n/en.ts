@@ -287,8 +287,21 @@ export const en: Translation = {
     p3: "The questions currently included are demonstration samples and do not come from CISIA.",
   },
   admin: {
-    title: "Admin area",
-    subtitle: "Aggregated statistics about study sessions will appear here.",
+    title: "Data and backups",
+    subtitle: "Export your progress to carry it to another device, or import a previous backup.",
+    itemCount: "{n} items saved on this device.",
+    exportTitle: "Export backups",
+    exportBody: "Download a JSON file with history, settings and preferences. The file is readable and safe to keep.",
+    exportButton: "Export backups",
+    importTitle: "Import backups",
+    importBody: "Upload a previously exported file. Data is merged with what is already here.",
+    importReplace: "Replace existing data",
+    importButton: "Choose file and import",
+    importSuccess: "Import successful: {n} items restored. The page will reload.",
+    importWrongFormat: "This file is not a valid TOLC-S Trainer backup.",
+    importEmpty: "The file contains no usable data.",
+    importUnreadable: "The file could not be read.",
+    privacyNote: "All data stays in your browser: see the Privacy page.",
   },
   a11y: {
     title: "Accessibility settings",
@@ -312,6 +325,7 @@ export const en: Translation = {
     cvdDeuteranopia: "Deuteranopia",
     cvdProtanopia: "Protanopia",
     cvdTritanopia: "Tritanopia",
+    cvdAchromatopsia: "Achromatopsia",
     theme: "Colour theme",
     reducedMotion: "Reduce motion",
     reducedMotionHint: "Turns off non-essential transitions and animations.",
@@ -334,5 +348,6 @@ export const en: Translation = {
     disclaimer:
       "Independent academic project. Not affiliated with CISIA. TOLC® is a trademark of CISIA.",
     accessibilityLink: "Accessibility",
+    dataLink: "Data and backups",
   },
 };
