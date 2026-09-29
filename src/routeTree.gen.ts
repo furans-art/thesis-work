@@ -14,9 +14,13 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as AccessibilityRouteImport } from './routes/accessibility'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as HistoryRouteImport } from './routes/history'
+import { Route as LessonsRouteImport } from './routes/lessons'
 import { Route as MenuRouteImport } from './routes/menu'
+import { Route as PlaygroundRouteImport } from './routes/playground'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as LessonsLessonIdRouteImport } from './routes/lessons_.$lessonId'
 import { Route as SimulationIndexRouteImport } from './routes/simulation.index'
+import { Route as SimulationRetakeSessionIdRouteImport } from './routes/simulation.retake.$sessionId'
 import { Route as SimulationReviewSessionIdRouteImport } from './routes/simulation.review.$sessionId'
 import { Route as SimulationRunSectionIdRouteImport } from './routes/simulation.run.$sectionId'
 import { Route as SimulationSettingsSectionIdRouteImport } from './routes/simulation.settings.$sectionId'
@@ -46,9 +50,19 @@ const HistoryRoute = HistoryRouteImport.update({
   path: '/history',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LessonsRoute = LessonsRouteImport.update({
+  id: '/lessons',
+  path: '/lessons',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MenuRoute = MenuRouteImport.update({
   id: '/menu',
   path: '/menu',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlaygroundRoute = PlaygroundRouteImport.update({
+  id: '/playground',
+  path: '/playground',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PrivacyRoute = PrivacyRouteImport.update({
@@ -56,11 +70,22 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LessonsLessonIdRoute = LessonsLessonIdRouteImport.update({
+  id: '/lessons_/$lessonId',
+  path: '/lessons/$lessonId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SimulationIndexRoute = SimulationIndexRouteImport.update({
   id: '/simulation/',
   path: '/simulation/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SimulationRetakeSessionIdRoute =
+  SimulationRetakeSessionIdRouteImport.update({
+    id: '/simulation/retake/$sessionId',
+    path: '/simulation/retake/$sessionId',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const SimulationReviewSessionIdRoute =
   SimulationReviewSessionIdRouteImport.update({
     id: '/simulation/review/$sessionId',
@@ -85,9 +110,13 @@ export interface FileRoutesByFullPath {
   '/accessibility': typeof AccessibilityRoute
   '/admin': typeof AdminRoute
   '/history': typeof HistoryRoute
+  '/lessons': typeof LessonsRoute
   '/menu': typeof MenuRoute
+  '/playground': typeof PlaygroundRoute
   '/privacy': typeof PrivacyRoute
+  '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/simulation/': typeof SimulationIndexRoute
+  '/simulation/retake/$sessionId': typeof SimulationRetakeSessionIdRoute
   '/simulation/review/$sessionId': typeof SimulationReviewSessionIdRoute
   '/simulation/run/$sectionId': typeof SimulationRunSectionIdRoute
   '/simulation/settings/$sectionId': typeof SimulationSettingsSectionIdRoute
@@ -98,9 +127,13 @@ export interface FileRoutesByTo {
   '/accessibility': typeof AccessibilityRoute
   '/admin': typeof AdminRoute
   '/history': typeof HistoryRoute
+  '/lessons': typeof LessonsRoute
   '/menu': typeof MenuRoute
+  '/playground': typeof PlaygroundRoute
   '/privacy': typeof PrivacyRoute
+  '/lessons/$lessonId': typeof LessonsLessonIdRoute
   '/simulation': typeof SimulationIndexRoute
+  '/simulation/retake/$sessionId': typeof SimulationRetakeSessionIdRoute
   '/simulation/review/$sessionId': typeof SimulationReviewSessionIdRoute
   '/simulation/run/$sectionId': typeof SimulationRunSectionIdRoute
   '/simulation/settings/$sectionId': typeof SimulationSettingsSectionIdRoute
@@ -112,9 +145,13 @@ export interface FileRoutesById {
   '/accessibility': typeof AccessibilityRoute
   '/admin': typeof AdminRoute
   '/history': typeof HistoryRoute
+  '/lessons': typeof LessonsRoute
   '/menu': typeof MenuRoute
+  '/playground': typeof PlaygroundRoute
   '/privacy': typeof PrivacyRoute
+  '/lessons_/$lessonId': typeof LessonsLessonIdRoute
   '/simulation/': typeof SimulationIndexRoute
+  '/simulation/retake/$sessionId': typeof SimulationRetakeSessionIdRoute
   '/simulation/review/$sessionId': typeof SimulationReviewSessionIdRoute
   '/simulation/run/$sectionId': typeof SimulationRunSectionIdRoute
   '/simulation/settings/$sectionId': typeof SimulationSettingsSectionIdRoute
@@ -127,9 +164,13 @@ export interface FileRouteTypes {
     | '/accessibility'
     | '/admin'
     | '/history'
+    | '/lessons'
     | '/menu'
+    | '/playground'
     | '/privacy'
+    | '/lessons/$lessonId'
     | '/simulation/'
+    | '/simulation/retake/$sessionId'
     | '/simulation/review/$sessionId'
     | '/simulation/run/$sectionId'
     | '/simulation/settings/$sectionId'
@@ -140,9 +181,13 @@ export interface FileRouteTypes {
     | '/accessibility'
     | '/admin'
     | '/history'
+    | '/lessons'
     | '/menu'
+    | '/playground'
     | '/privacy'
+    | '/lessons/$lessonId'
     | '/simulation'
+    | '/simulation/retake/$sessionId'
     | '/simulation/review/$sessionId'
     | '/simulation/run/$sectionId'
     | '/simulation/settings/$sectionId'
@@ -153,9 +198,13 @@ export interface FileRouteTypes {
     | '/accessibility'
     | '/admin'
     | '/history'
+    | '/lessons'
     | '/menu'
+    | '/playground'
     | '/privacy'
+    | '/lessons_/$lessonId'
     | '/simulation/'
+    | '/simulation/retake/$sessionId'
     | '/simulation/review/$sessionId'
     | '/simulation/run/$sectionId'
     | '/simulation/settings/$sectionId'
@@ -167,9 +216,13 @@ export interface RootRouteChildren {
   AccessibilityRoute: typeof AccessibilityRoute
   AdminRoute: typeof AdminRoute
   HistoryRoute: typeof HistoryRoute
+  LessonsRoute: typeof LessonsRoute
   MenuRoute: typeof MenuRoute
+  PlaygroundRoute: typeof PlaygroundRoute
   PrivacyRoute: typeof PrivacyRoute
+  LessonsLessonIdRoute: typeof LessonsLessonIdRoute
   SimulationIndexRoute: typeof SimulationIndexRoute
+  SimulationRetakeSessionIdRoute: typeof SimulationRetakeSessionIdRoute
   SimulationReviewSessionIdRoute: typeof SimulationReviewSessionIdRoute
   SimulationRunSectionIdRoute: typeof SimulationRunSectionIdRoute
   SimulationSettingsSectionIdRoute: typeof SimulationSettingsSectionIdRoute
@@ -212,11 +265,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof HistoryRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lessons': {
+      id: '/lessons'
+      path: '/lessons'
+      fullPath: '/lessons'
+      preLoaderRoute: typeof LessonsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/menu': {
       id: '/menu'
       path: '/menu'
       fullPath: '/menu'
       preLoaderRoute: typeof MenuRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/playground': {
+      id: '/playground'
+      path: '/playground'
+      fullPath: '/playground'
+      preLoaderRoute: typeof PlaygroundRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/privacy': {
@@ -226,11 +293,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/lessons_/$lessonId': {
+      id: '/lessons_/$lessonId'
+      path: '/lessons/$lessonId'
+      fullPath: '/lessons/$lessonId'
+      preLoaderRoute: typeof LessonsLessonIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/simulation/': {
       id: '/simulation/'
       path: '/simulation'
       fullPath: '/simulation/'
       preLoaderRoute: typeof SimulationIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/simulation/retake/$sessionId': {
+      id: '/simulation/retake/$sessionId'
+      path: '/simulation/retake/$sessionId'
+      fullPath: '/simulation/retake/$sessionId'
+      preLoaderRoute: typeof SimulationRetakeSessionIdRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/simulation/review/$sessionId': {
@@ -263,9 +344,13 @@ const rootRouteChildren: RootRouteChildren = {
   AccessibilityRoute: AccessibilityRoute,
   AdminRoute: AdminRoute,
   HistoryRoute: HistoryRoute,
+  LessonsRoute: LessonsRoute,
   MenuRoute: MenuRoute,
+  PlaygroundRoute: PlaygroundRoute,
   PrivacyRoute: PrivacyRoute,
+  LessonsLessonIdRoute: LessonsLessonIdRoute,
   SimulationIndexRoute: SimulationIndexRoute,
+  SimulationRetakeSessionIdRoute: SimulationRetakeSessionIdRoute,
   SimulationReviewSessionIdRoute: SimulationReviewSessionIdRoute,
   SimulationRunSectionIdRoute: SimulationRunSectionIdRoute,
   SimulationSettingsSectionIdRoute: SimulationSettingsSectionIdRoute,

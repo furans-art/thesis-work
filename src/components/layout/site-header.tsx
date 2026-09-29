@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Accessibility, GraduationCap, Moon, Sun } from "lucide-react";
+import { GraduationCap, Moon, SlidersHorizontal, Sun } from "lucide-react";
 
 import { AccessibilityQuickPanel } from "@/components/accessibility/accessibility-quick-panel";
 import { Button } from "@/components/ui/button";
@@ -82,7 +82,7 @@ export function SiteHeader() {
           <Popover>
             <PopoverTrigger asChild>
               <Button variant="outline" size="icon" aria-label={t.nav.quickAccessibility}>
-                <Accessibility />
+                <SlidersHorizontal />
               </Button>
             </PopoverTrigger>
             <PopoverContent align="end" className="w-80">

@@ -20,7 +20,7 @@ export function SiteFooter() {
           <ul className="flex flex-wrap items-center gap-x-2 gap-y-1">
             <li><Link to="/privacy" className={linkClass}>{t.footer.privacyLink}</Link></li>
             <li aria-hidden="true">|</li>
-            <li><Link to="/accessibility" className={linkClass}>{t.footer.accessibilityLink}</Link></li>
+            <li><Link to="/admin" className={linkClass}>{t.footer.dataLink}</Link></li>
             <li aria-hidden="true">|</li>
             <li><Link to="/about" className={linkClass}>{t.footer.aboutLink}</Link></li>
           </ul>

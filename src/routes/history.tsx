@@ -159,15 +159,23 @@ function HistoryPage() {
                     {t.history.accuracy}: <strong>{accuracy({ correct, total })}%</strong> ({correct}/{total}) ·{" "}
                     {t.history.score}: <strong>{s.score.toLocaleString(locale)}</strong>
                   </p>
-                  <div className="mt-auto pt-2">
-                    {s.wrongQuestionIds.length > 0 ? (
+                  <div className="mt-auto flex flex-wrap items-center gap-2 pt-2">
+                    {s.wrongQuestionIds.length > 0 && (
                       <Button variant="outline" size="sm" asChild>
                         <Link to="/simulation/review/$sessionId" params={{ sessionId: s.id }}>
                           <RotateCcw aria-hidden="true" />
                           {t.history.reviewWrong} ({s.wrongQuestionIds.length})
                         </Link>
                       </Button>
-                    ) : (
+                    )}
+                    {s.snapshot && s.snapshot.length > 0 && (
+                      <Button variant="ghost" size="sm" asChild>
+                        <Link to="/simulation/retake/$sessionId" params={{ sessionId: s.id }}>
+                          {t.history.retake}
+                        </Link>
+                      </Button>
+                    )}
+                    {s.wrongQuestionIds.length === 0 && !(s.snapshot && s.snapshot.length > 0) && (
                       <p className="text-sm text-success">{t.history.noWrong}</p>
                     )}
                   </div>

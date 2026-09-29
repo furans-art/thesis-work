@@ -75,6 +75,7 @@ function AccessibilityPage() {
     { value: "deuteranopia", label: t.a11y.cvdDeuteranopia },
     { value: "protanopia", label: t.a11y.cvdProtanopia },
     { value: "tritanopia", label: t.a11y.cvdTritanopia },
+    { value: "achromatopsia", label: t.a11y.cvdAchromatopsia },
   ];
 
   return (

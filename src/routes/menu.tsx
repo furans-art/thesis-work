@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Accessibility, ArrowRight, ClipboardList } from "lucide-react";
+import { ArrowRight, BarChart3, BookOpen, ClipboardList, FlaskConical } from "lucide-react";
 
 import { PageShell } from "@/components/layout/page-shell";
 import { Card, CardContent } from "@/components/ui/card";
@@ -11,12 +11,12 @@ export const Route = createFileRoute("/menu")({
       { title: "Menu principale — TOLC-S Trainer" },
       {
         name: "description",
-        content: "Scegli fra simulazione del test TOLC-S e impostazioni di accessibilità.",
+        content: "Simulazioni TOLC-S, lezioni di logica, laboratorio formule e progressi.",
       },
       { property: "og:title", content: "Menu principale — TOLC-S Trainer" },
       {
         property: "og:description",
-        content: "Scegli fra simulazione del test TOLC-S e impostazioni di accessibilità.",
+        content: "Simulazioni TOLC-S, lezioni di logica, laboratorio formule e progressi.",
       },
     ],
   }),
@@ -34,10 +34,22 @@ function MenuPage() {
       body: t.menu.simulationBody,
     },
     {
-      to: "/accessibility",
-      icon: Accessibility,
-      title: t.menu.accessibilityTitle,
-      body: t.menu.accessibilityBody,
+      to: "/lessons",
+      icon: BookOpen,
+      title: t.menu.lessonsTitle,
+      body: t.menu.lessonsBody,
+    },
+    {
+      to: "/playground",
+      icon: FlaskConical,
+      title: t.menu.playgroundTitle,
+      body: t.menu.playgroundBody,
+    },
+    {
+      to: "/history",
+      icon: BarChart3,
+      title: t.menu.progressTitle,
+      body: t.menu.progressBody,
     },
   ] as const;
 

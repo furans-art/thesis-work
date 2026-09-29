@@ -39,11 +39,44 @@ export const storage = {
     }
   },
 
+  /** Every key this app owns on this device, with its raw JSON string value. */
+  entries(): Record<string, string> {
+    if (!isBrowser()) return {};
+    const out: Record<string, string> = {};
+    try {
+      for (let i = 0; i < window.localStorage.length; i += 1) {
+        const k = window.localStorage.key(i);
+        if (!k || !isAppKey(k)) continue;
+        const v = window.localStorage.getItem(k);
+        if (v !== null) out[k] = v;
+      }
+    } catch {
+      /* noop */
+    }
+    return out;
+  },
+
+  /** Writes a set of raw key/value pairs, ignoring keys this app does not own. */
+  setEntries(entries: Record<string, string>): number {
+    if (!isBrowser()) return 0;
+    let written = 0;
+    for (const [k, v] of Object.entries(entries)) {
+      if (!isAppKey(k) || typeof v !== "string") continue;
+      try {
+        window.localStorage.setItem(k, v);
+        written += 1;
+      } catch {
+        /* noop */
+      }
+    }
+    return written;
+  },
+
   /** Removes every key this app has written on this device. */
   clearAll(): void {
     if (!isBrowser()) return;
     try {
-      window.localStorage.clear();
+      Object.keys(storage.entries()).forEach((k) => window.localStorage.removeItem(k));
     } catch {
       /* noop */
     }
@@ -68,3 +101,8 @@ export const STORAGE_KEYS = {
   locale: "tolcs.locale.v1",
   history: "tolcs.history.v1",
 } as const;
+
+/** Keys owned by this app: the versioned `tolcs.*` keys plus per-target settings. */
+export function isAppKey(key: string): boolean {
+  return key.startsWith("tolcs.") || key.startsWith("settings:");
+}
