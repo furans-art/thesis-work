@@ -23,13 +23,11 @@ export const Route = createFileRoute("/admin")({
   component: AdminPage,
 });
 
-const reasonKey: Record<NonNullable<ImportResult["reason"]>, keyof Translation["admin"]> = {
+const reasonKey: Record<string, string> = {
   unreadable: "importUnreadable",
   "wrong-format": "importWrongFormat",
   empty: "importEmpty",
 };
-
-type Translation = ReturnType<typeof useI18n>["t"];
 
 function AdminPage() {
   const { t } = useI18n();
@@ -90,7 +88,7 @@ function AdminPage() {
                 e.target.value = "";
               }}
             />
-            <Button onClick={() => fileRef.current?.click()} disabled={result === null && false}>
+            <Button onClick={() => fileRef.current?.click()}>
               <Upload aria-hidden="true" className="size-4" />
               {t.admin.importButton}
             </Button>
