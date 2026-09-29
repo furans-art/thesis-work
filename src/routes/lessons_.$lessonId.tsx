@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { useI18n } from "@/context/i18n-context";
 import { lessons } from "@/data/lessons";
 
-export const Route = createFileRoute("/lessons/$lessonId")({
+export const Route = createFileRoute("/lessons_/$lessonId")({
   head: () => ({
     meta: [
       { title: "Lezione di logica — TOLC-S Trainer" },
