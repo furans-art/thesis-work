@@ -1,7 +1,7 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { ArrowLeft, ArrowRight, Check, Flag, Lightbulb, SkipForward } from "lucide-react";
 
-import { SampleNotice, ScopeBadge } from "@/components/simulation/scope-badge";
+import { ScopeBadge } from "@/components/simulation/scope-badge";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import {
   AlertDialog,
@@ -47,7 +47,7 @@ interface RunInnerProps extends RunSessionProps {
 }
 
 function RunInner({ target, plan, settings, onRetake }: RunInnerProps) {
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
   const run = useSimulationRun(plan, settings, (answers, elapsed) => {
     if (target === null) return; // review sessions are never recorded
     historyService.add(
