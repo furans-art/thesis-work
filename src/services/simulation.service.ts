@@ -2,6 +2,7 @@ import { tolcSections } from "@/data/tolc-sections";
 import { mathematicsTopics } from "@/data/mathematics-topics";
 import { questionService, type Question } from "@/services/questionService";
 import type { SimulationSettings, SimulationTarget } from "@/types/settings";
+import type { SessionSnapshotBlock } from "@/types/history";
 import type { PracticeSectionId, TolcSection } from "@/types/tolc";
 
 export interface RunQuestion extends Question {
@@ -74,6 +75,25 @@ export const simulationService = {
     const questions = blocks.flatMap((b) => b.questions);
     return { blocks, questions, requested: questions.length, available: questions.length };
   },
+
+  /**
+   * Exact replay of a stored session: rebuilds the plan from the snapshot of
+   * questions actually served, so live API-generated questions can be retaken too.
+   */
+  buildSnapshotPlan(snapshot: SessionSnapshotBlock[]): RunPlan | null {
+    const byId = new Map(
+      [...tolcSections, ...mathematicsTopics].map((s) => [s.id, s] as const),
+    );
+    const blocks = toBlocks(
+      snapshot
+        .filter((b) => byId.has(b.sectionId) && b.questions.length > 0)
+        .map((b) => ({ section: byId.get(b.sectionId)!, questions: b.questions })),
+    );
+    const questions = blocks.flatMap((b) => b.questions);
+    if (questions.length === 0) return null;
+    return { blocks, questions, requested: questions.length, available: questions.length };
+  },
+
 
 
   buildPlan(
