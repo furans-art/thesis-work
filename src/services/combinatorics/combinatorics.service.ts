@@ -55,6 +55,11 @@ function uniqueDistractors(exercise: GeneratedExercise): string[] {
   const out: string[] = [];
   for (const raw of exercise.distractors) {
     let value = raw;
+    const { a, b } = parseValue(value);
+    // a probability can never exceed 1: sums of probabilities may, so replace them
+    if (b > 1 && a > b) {
+      value = fallbackDistractors(exercise.correct).find((c) => !seen.has(c)) ?? value;
+    }
     if (seen.has(value)) {
       const fallback = fallbackDistractors(exercise.correct).find((c) => !seen.has(c));
       if (!fallback) continue; // extremely unlikely: skip rather than duplicate
