@@ -10,7 +10,8 @@
 <!-- LOVABLE:END -->
 
 - Treat the nine official 2026 CISIA Basic Mathematics syllabus areas as practice targets, but aggregate them into the single 20-question, 50-minute Mathematics block in full exams because the syllabus areas are not separate exam sections.
-- The Mathematical logic module fetches live questions from the TestLogica API (API_Logica) through a server function (`src/services/logicApi.functions.ts` -> `logicApi.server.ts`); the browser never calls the API directly because the FastAPI backend sends no CORS headers. The base URL lives in `LOGIC_API_URL` (default: the current trycloudflare tunnel); when unreachable, fall back to local sample questions.
+- Logica module: live questions from TestLogica API via server fn (`logicApi.functions.ts` -> `logicApi.server.ts`); browser never calls it directly (no CORS); `LOGIC_API_URL` (default trycloudflare tunnel), unreachable -> local fallback.
+- Combinatoria e probabilità (`matematica-combinatoria-probabilita`, default 20/50 min): fully randomized local generation in `src/services/combinatorics/` (exact fractions, deduped distractors), wired in `buildPlan` so snapshots/retakes include generated questions.
 - Session records store a `snapshot` (the exact questions served, including API-generated ones) in `SessionRecord.snapshot`; retakes (`/simulation/retake/$sessionId`) and wrong-answer review rebuild the plan from the snapshot via `buildSnapshotPlan`, never by re-reading the local pool.
 - All data export/import goes through `src/services/backup.service.ts` (format `tolcs.backup` v1) on the Data page (`/admin`); it only accepts app-owned keys (`tolcs.*`, `settings:*`).
 - Quiz keyboard controls (arrows / 1–4 / A–D to select, Enter to confirm and advance) live in `src/hooks/use-run-keyboard.ts` and are suppressed while dialogs are open or focus is in an input.
