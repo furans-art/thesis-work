@@ -184,20 +184,23 @@ function RunInner({ target, plan, settings, onRetake }: RunInnerProps) {
                     <AlertDescription>{run.q.explanation[locale]}</AlertDescription>
                   </Alert>
                   {(() => {
+                    const selected = run.selected;
                     const diagnosis =
-                      !isCorrect && run.selected !== null
-                        ? (run.q.rationales?.[run.selected] ?? null)
+                      !isCorrect && selected !== null
+                        ? (run.q.rationales?.[selected] ?? null)
                         : null;
-                    if (!diagnosis) return null;
+                    if (!diagnosis || selected === null) return null;
+                    const heading = t.run.diagnosisTitle.replace(
+                      "{letter}",
+                      "ABCD"[selected] ?? "",
+                    );
                     return (
                       <div
                         role="note"
-                        aria-label={t.run.diagnosisTitle.replace("{letter}", "ABCD"[run.selected] ?? "")}
+                        aria-label={heading}
                         className="rounded-lg border border-destructive/40 bg-destructive/5 p-4"
                       >
-                        <p className="text-sm font-semibold">
-                          {t.run.diagnosisTitle.replace("{letter}", "ABCD"[run.selected] ?? "")}
-                        </p>
+                        <p className="text-sm font-semibold">{heading}</p>
                         <p className="mt-1 text-sm text-foreground/90">{diagnosis[locale]}</p>
                       </div>
                     );
