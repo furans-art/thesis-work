@@ -18,3 +18,4 @@
 - Theory lessons live in `src/data/lessons.ts` (1–6 adapted from Kevin's Webpage_Logica for Logica matematica, 7–10 for Combinatoria e probabilità); grouping is data-driven via `practiceTargets` in `lesson-groups.ts`; detail route `lessons_.$lessonId.tsx` (flat) so /lessons is not a layout route.
 - The accessibility icon is neutral (SlidersHorizontal), never the disability icon; quick customisation lives in the header, the full page at /accessibility is the only other entry point, and the footer links Privacy | Data | About.
 - CVD palettes include achromatopsia (lightness-only, no hue); success/error must stay distinguishable by lightness in that palette.
+Benchmark tooling: scripts/benchmark/ (dataset deterministico, runner LLM, metriche) è fuori dall'app; usa solo bun. Non toccare il motore a 24 archetipi.
