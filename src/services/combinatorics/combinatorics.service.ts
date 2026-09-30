@@ -5,6 +5,7 @@ import { combinationArchetypes } from "./archetypes/combinations";
 import { urnArchetypes } from "./archetypes/urns";
 import { probabilityArchetypes } from "./archetypes/probability";
 import { advancedArchetypes } from "./archetypes/advanced";
+import { trombettaArchetypes } from "./archetypes/trombetta";
 import type { Archetype, GeneratedExercise, Localized } from "./types";
 import type { PracticeSectionId } from "@/types/tolc";
 import type { Question } from "@/services/questionService";
@@ -18,6 +19,7 @@ const ARCHETYPES: Archetype[] = [
   ...urnArchetypes,
   ...probabilityArchetypes,
   ...advancedArchetypes,
+  ...trombettaArchetypes,
 ];
 
 function parseValue(value: string): { a: number; b: number } {

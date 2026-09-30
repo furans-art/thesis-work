@@ -27,4 +27,5 @@ export const lessons: LessonSummary[] = [
   { id: 8, titleKey: "lesson8Title", summaryKey: "lesson8Summary", bodyKey: "lesson8Body", practiceTargets: ["matematica-combinatoria-probabilita"] },
   { id: 9, titleKey: "lesson9Title", summaryKey: "lesson9Summary", bodyKey: "lesson9Body", practiceTargets: ["matematica-combinatoria-probabilita"] },
   { id: 10, titleKey: "lesson10Title", summaryKey: "lesson10Summary", bodyKey: "lesson10Body", practiceTargets: ["matematica-combinatoria-probabilita"] },
+  { id: 11, titleKey: "lesson11Title", summaryKey: "lesson11Summary", bodyKey: "lesson11Body", practiceTargets: ["matematica-combinatoria-probabilita"] },
 ];
