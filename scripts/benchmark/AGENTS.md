@@ -1,0 +1,1 @@
+Benchmark tooling: this directory is standalone (dataset deterministico, runner LLM, metriche), run with bun only; it is not part of the app. Do not touch the 24-archetype engine it imports from `src/services/combinatorics/`.
