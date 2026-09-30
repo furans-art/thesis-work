@@ -1,4 +1,4 @@
-import { Fraction, asPercent, factorial } from "../math-utils";
+import { Fraction, factorial } from "../math-utils";
 import type { Archetype } from "../types";
 
 /** Sums with a symmetric complement (5↔9, 6↔8) share the same count. */
@@ -42,15 +42,24 @@ export const probabilityArchetypes: Archetype[] = [
     difficulty: "intermediate",
     generate(rng) {
       const deck = rng.pick([
-        { favourable: 12, condition: "una figura (J, Q o K)", conditionEn: "a face card (J, Q or K)" },
-        { favourable: 13, condition: "una carta di cuori", conditionEn: "a heart" },
-        { favourable: 4, condition: "un asso", conditionEn: "an ace" },
+        {
+          favourable: 12,
+          condition: "una figura (fante, donna o re)",
+          conditionEn: "a face card (jack, queen or king)",
+          intersection: 3,
+          intersectionNote: "le figure di picche sono 3",
+          intersectionNoteEn: "the face cards in spades are 3",
+        },
+        {
+          favourable: 4,
+          condition: "un asso",
+          conditionEn: "an ace",
+          intersection: 1,
+          intersectionNote: "l'asso di picche è 1",
+          intersectionNoteEn: "the ace of spades is 1",
+        },
       ]);
-      // A ∩ B: ace of hearts (1) or a red face card (6) or face card in hearts (3).
-      const intersection = deck.favourable === 12 ? 6 : deck.favourable === 13 ? 3 : 1;
-      const correct = new Fraction(deck.favourable + deck.favourable - intersection, 52);
-      void deck.condition;
-      void deck.conditionEn;
+      const correct = new Fraction(deck.favourable + 13 - deck.intersection, 52);
       return {
         archetype: "probabilita-unione-eventi",
         difficulty: "intermediate",
@@ -62,11 +71,11 @@ export const probabilityArchetypes: Archetype[] = [
         distractors: [
           new Fraction(deck.favourable + 13, 52).toString(),
           new Fraction(13, 52).toString(),
-          new Fraction(deck.favourable - intersection, 52).toString(),
+          new Fraction(deck.favourable - deck.intersection, 52).toString(),
         ],
         explanation: {
-          it: `P = P(figura) + P(picche) − P(entrambe), con ${deck.favourable}/52 + 13/52 − ${intersection}/52 = ${deck.favourable + 13 - intersection}/52 = ${correct.toString()}. Dimenticare di togliere l'intersezione porterebbe a ${deck.favourable + 13}/52, che conta due volte le carte in entrambe le condizioni.`,
-          en: `P = P(face) + P(spade) − P(both): ${deck.favourable}/52 + 13/52 − ${intersection}/52 = ${deck.favourable + 13 - intersection}/52 = ${correct.toString()}. Forgetting to remove the intersection would give ${deck.favourable + 13}/52, counting the cards in both conditions twice.`,
+          it: `P(A ∪ B) = P(A) + P(B) − P(A ∩ B): ${deck.favourable}/52 + 13/52 − ${deck.intersection}/52, perché ${deck.intersectionNote}. Risultato ${deck.favourable + 13 - deck.intersection}/52 = ${correct.toString()}. Dimenticare di togliere l'intersezione porterebbe a ${deck.favourable + 13}/52, contando due volte le carte che sono ${deck.condition} e di picche insieme.`,
+          en: `P(A ∪ B) = P(A) + P(B) − P(A ∩ B): ${deck.favourable}/52 + 13/52 − ${deck.intersection}/52, because ${deck.intersectionNoteEn}. Result ${deck.favourable + 13 - deck.intersection}/52 = ${correct.toString()}. Forgetting to remove the intersection would give ${deck.favourable + 13}/52, counting the cards that are both ${deck.conditionEn} and spades twice.`,
         },
       };
     },
@@ -80,8 +89,7 @@ export const probabilityArchetypes: Archetype[] = [
       const p = new Fraction(1, 2);
       const q = p.complement();
       const binomial = factorial(n) / (factorial(k) * factorial(n - k));
-      const correct = p.mul(q).mul(new Fraction(binomial, 1));
-      void asPercent;
+      const correct = new Fraction(binomial, 2 ** n);
       return {
         archetype: "bernoulli-esattamente-k",
         difficulty: "advanced",
@@ -91,7 +99,7 @@ export const probabilityArchetypes: Archetype[] = [
         },
         correct: correct.toString(),
         distractors: [
-          p.mul(new Fraction(1, 2 ** (n - 1))).toString(),
+          new Fraction(1, 2 ** n).toString(),
           p.mul(q).toString(),
           new Fraction(binomial, 2 ** (n + 1)).toString(),
         ],
