@@ -11,6 +11,12 @@ export interface Question {
   options: Localized[];
   correctIndex: number;
   explanation: Localized;
+  /**
+   * Error diagnosis per option (same length as `options`, null where the
+   * option is correct or has no known diagnosis). Optional: only generated
+   * exercises of the thesis modules provide it.
+   */
+  rationales?: (Localized | null)[] | undefined;
 }
 
 /** Mock data for the fac-simile. Swap for a real source later. */

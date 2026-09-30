@@ -23,6 +23,20 @@ export const urnArchetypes: Archetype[] = [
         },
         correct: correct.toString(),
         distractors: [withReplacement.toString(), correct.add(withReplacement).toString(), `1`],
+        diagnoses: [
+          {
+            it: `Hai trattato le due estrazioni come indipendenti (con reimmissione): estraendo contemporaneamente la prima pallina non torna nell'urna, quindi le coppie vanno contate senza ripetizioni.`,
+            en: `You treated the two draws as independent (with replacement): drawing together means the first ball never goes back, so pairs must be counted without repetition.`,
+          },
+          {
+            it: `Hai sommato due probabilità calcolate con modelli diversi: la stessa coppia andrebbe contata due volte, il che non ha senso. Va bene il conteggio diretto delle coppie favorevoli.`,
+            en: `You added two probabilities computed with different models: the same pair would be counted twice, which makes no sense. Count the favourable pairs directly.`,
+          },
+          {
+            it: `Non è un evento certo: le due palline possono anche avere colori diversi, quindi la probabilità è minore di 1.`,
+            en: `This is not a certain event: the two balls may well have different colours, so the probability is less than 1.`,
+          },
+        ],
         explanation: {
           it: `I casi possibili sono C(${total},2) = ${combinations(total, 2)} coppie. I casi favorevoli sono le coppie tutte rosse più quelle tutte blu: C(${red},2) + C(${blue},2) = ${combinations(red, 2)} + ${combinations(blue, 2)}. Quindi P = ${combinations(red, 2) + combinations(blue, 2)}/${combinations(total, 2)} = ${correct.toString()}.`,
           en: `The possible cases are C(${total},2) = ${combinations(total, 2)} pairs. The favourable cases are all-red plus all-blue pairs: C(${red},2) + C(${blue},2) = ${combinations(red, 2)} + ${combinations(blue, 2)}. So P = ${combinations(red, 2) + combinations(blue, 2)}/${combinations(total, 2)} = ${correct.toString()}.`,
@@ -52,6 +66,20 @@ export const urnArchetypes: Archetype[] = [
           correct.add(independent).toString(),
           new Fraction(red, total).toString(),
         ],
+        diagnoses: [
+          {
+            it: `Alla seconda estrazione hai usato la probabilità di una blu: la seconda estrazione avviene senza reimmissione, quindi dopo una rossa restano ${red - 1} rosse su ${total - 1}.`,
+            en: `For the second draw you used the probability of a blue ball: the second draw happens without replacement, so after one red there are ${red - 1} reds left out of ${total - 1}.`,
+          },
+          {
+            it: `Hai sommato invece di moltiplicare: «entrambe rosse» è un evento simultaneo, non un'alternativa fra i due colori.`,
+            en: `You added instead of multiplying: “both red” is a simultaneous event, not an alternative between the two colours.`,
+          },
+          {
+            it: `È la probabilità della sola prima estrazione: serve anche che la seconda sia rossa, e l'urna nel frattempo è cambiata.`,
+            en: `That is the probability of the first draw alone: the second must also be red, and the urn has changed in the meantime.`,
+          },
+        ],
         explanation: {
           it: `La prima estrazione ha probabilità ${red}/${total}. La seconda, sapendo che è rimasta una rossa in meno, ha probabilità ${red - 1}/${total - 1}. Il prodotto è ${red}/${total} · ${red - 1}/${total - 1} = ${correct.toString()}. Usare ${red}/${total} anche alla seconda estrazione ignora che l'urna è cambiata.`,
           en: `The first draw has probability ${red}/${total}. The second, knowing one red ball is gone, has probability ${red - 1}/${total - 1}. The product is ${red}/${total} · ${red - 1}/${total - 1} = ${correct.toString()}. Using ${red}/${total} for the second draw too ignores that the urn has changed.`,
@@ -80,6 +108,20 @@ export const urnArchetypes: Archetype[] = [
           new Fraction(red, total).toString(),
           noneBlue.toString(),
           correct.add(new Fraction(1, combinations(total, 2))).toString(),
+        ],
+        diagnoses: [
+          {
+            it: `È la probabilità che la prima pallina sia rossa: «almeno una» su due estrazioni va calcolato con il complementare dell'evento contrario.`,
+            en: `That is the probability that the first ball is red: “at least one” over two draws is computed with the complement of the opposite event.`,
+          },
+          {
+            it: `È la probabilità dell'evento contrario (nessuna rossa, cioè due blu): il risultato richiede 1 − quel valore.`,
+            en: `That is the probability of the opposite event (no red, i.e. two blue): the answer requires 1 − that value.`,
+          },
+          {
+            it: `Hai aggiunto un pezzo invece di sottrarre: la formula del complementare è 1 − P(nessuna rossa), senza ulteriori correzioni.`,
+            en: `You added a piece instead of subtracting: the complement formula is 1 − P(no red), with no further correction.`,
+          },
         ],
         explanation: {
           it: `È più semplice usare l'evento complementare "nessuna rossa", cioè due blu: C(${blue},2)/C(${total},2) = ${combinations(blue, 2)}/${combinations(total, 2)} = ${noneBlue.toString()}. Quindi P(almeno una rossa) = 1 − ${noneBlue.toString()} = ${correct.toString()}.`,

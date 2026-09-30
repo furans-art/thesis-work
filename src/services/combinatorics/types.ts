@@ -14,6 +14,12 @@ export interface GeneratedExercise {
   correct: string;
   /** exactly three plausible wrong answers, each modelling a typical mistake */
   distractors: string[];
+  /**
+   * Error diagnosis for each distractor, parallel to `distractors`: it explains
+   * which conceptual mistake produces that exact wrong value. A distractor
+   * replaced by a fallback loses its diagnosis, so the service tolerates gaps.
+   */
+  diagnoses?: (Localized | undefined)[];
   explanation: Localized;
 }
 

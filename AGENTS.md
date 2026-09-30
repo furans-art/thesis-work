@@ -9,12 +9,12 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- Treat the nine official 2026 CISIA Basic Mathematics syllabus areas as practice targets, but aggregate them into the single 20-question, 50-minute Mathematics block in full exams because the syllabus areas are not separate exam sections.
+- Nine official 2026 CISIA Basic Mathematics syllabus areas are practice targets, aggregated into the single 20-question, 50-minute Mathematics block in full exams (they are not separate exam sections).
 - Logica module: live questions from TestLogica API via server fn (`logicApi.functions.ts` -> `logicApi.server.ts`); browser never calls it directly (no CORS); `LOGIC_API_URL` (default trycloudflare tunnel), unreachable -> local fallback.
-- Combinatoria e probabilità (`matematica-combinatoria-probabilita`, default 20/50 min): fully randomized local generation in `src/services/combinatorics/` (exact fractions, deduped distractors), wired in `buildPlan` so snapshots/retakes include generated questions.
-- Session records store a `snapshot` (the exact questions served, including API-generated ones) in `SessionRecord.snapshot`; retakes (`/simulation/retake/$sessionId`) and wrong-answer review rebuild the plan from the snapshot via `buildSnapshotPlan`, never by re-reading the local pool.
-- All data export/import goes through `src/services/backup.service.ts` (format `tolcs.backup` v1) on the Data page (`/admin`); it only accepts app-owned keys (`tolcs.*`, `settings:*`).
-- Quiz keyboard controls (arrows / 1–4 / A–D to select, Enter to confirm and advance) live in `src/hooks/use-run-keyboard.ts` and are suppressed while dialogs are open or focus is in an input.
-- Theory lessons come from `src/data/lessons.ts` (adapted from Kevin's Webpage_Logica, 6 lessons credited); the lesson detail route is `lessons_.$lessonId.tsx` (flat, not nested under /lessons) so the list page is not turned into a layout route.
+- Combinatoria e probabilità (default 20/50 min): fully local generation in `src/services/combinatorics/` — 20 archetypes (incl. Bayes/total probability, pigeonhole, "at least one", positional constraints), exact reduced fractions, per-distractor error diagnoses in `rationales`; wired into `buildPlan` for snapshots/retakes.
+- Session records store a `snapshot` (the exact questions served) in `SessionRecord.snapshot`; retakes (`/simulation/retake/$sessionId`) and wrong-answer review rebuild via `buildSnapshotPlan`, never by re-reading the pool.
+- Data export/import goes through `src/services/backup.service.ts` (format `tolcs.backup` v1, page `/admin`); only app-owned keys (`tolcs.*`, `settings:*`).
+- Quiz keyboard controls (arrows / 1–4 / A–D to select, Enter to confirm and advance) live in `src/hooks/use-run-keyboard.ts`; suppressed while dialogs are open or focus is in an input.
+- Theory lessons live in `src/data/lessons.ts` (1–6 adapted from Kevin's Webpage_Logica for Logica matematica, 7–10 for Combinatoria e probabilità); grouping is data-driven via `practiceTargets` in `lesson-groups.ts`; detail route `lessons_.$lessonId.tsx` (flat) so /lessons is not a layout route.
 - The accessibility icon is neutral (SlidersHorizontal), never the disability icon; quick customisation lives in the header, the full page at /accessibility is the only other entry point, and the footer links Privacy | Data | About.
 - CVD palettes include achromatopsia (lightness-only, no hue); success/error must stay distinguishable by lightness in that palette.

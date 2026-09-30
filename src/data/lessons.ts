@@ -1,7 +1,10 @@
 /**
- * Theory lessons for the Mathematical logic module, adapted from the lesson
- * structure of Kevin's Webpage_Logica (lezioni/lezione-1..6.html).
- * Original material by Kevin — https://github.com/KevinUniud/Webpage_Logica
+ * Theory lessons for the two active thesis modules:
+ * - Mathematical logic (lessons 1–6), adapted from the lesson structure of
+ *   Kevin's Webpage_Logica (lezioni/lezione-1..6.html).
+ *   Original material by Kevin — https://github.com/KevinUniud/Webpage_Logica
+ * - Combinatorics & probability (lessons 7–10), written for this thesis app
+ *   against the official CISIA TOLC-S syllabus.
  */
 
 export interface LessonSummary {
@@ -9,7 +12,7 @@ export interface LessonSummary {
   titleKey: `lesson${number}Title`;
   summaryKey: `lesson${number}Summary`;
   bodyKey: `lesson${number}Body`;
-  /** API_Logica generator families that exercise this topic */
+  /** practice areas that exercise this topic */
   practiceTargets: string[];
 }
 
@@ -20,4 +23,8 @@ export const lessons: LessonSummary[] = [
   { id: 4, titleKey: "lesson4Title", summaryKey: "lesson4Summary", bodyKey: "lesson4Body", practiceTargets: ["matematica-ragionare"] },
   { id: 5, titleKey: "lesson5Title", summaryKey: "lesson5Summary", bodyKey: "lesson5Body", practiceTargets: ["matematica-ragionare"] },
   { id: 6, titleKey: "lesson6Title", summaryKey: "lesson6Summary", bodyKey: "lesson6Body", practiceTargets: ["matematica-ragionare"] },
+  { id: 7, titleKey: "lesson7Title", summaryKey: "lesson7Summary", bodyKey: "lesson7Body", practiceTargets: ["matematica-combinatoria-probabilita"] },
+  { id: 8, titleKey: "lesson8Title", summaryKey: "lesson8Summary", bodyKey: "lesson8Body", practiceTargets: ["matematica-combinatoria-probabilita"] },
+  { id: 9, titleKey: "lesson9Title", summaryKey: "lesson9Summary", bodyKey: "lesson9Body", practiceTargets: ["matematica-combinatoria-probabilita"] },
+  { id: 10, titleKey: "lesson10Title", summaryKey: "lesson10Summary", bodyKey: "lesson10Body", practiceTargets: ["matematica-combinatoria-probabilita"] },
 ];

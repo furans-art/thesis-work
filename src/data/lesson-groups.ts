@@ -5,9 +5,10 @@ import type { PracticeSectionId } from "@/types/tolc";
 
 /**
  * Theory index organised by TOLC-S section, mirroring the taxonomy used by the
- * simulation pages. Only the Mathematical logic module currently ships lessons
- * (adapted from Kevin's Webpage_Logica); every other area is listed with its
- * official syllabus outline so the structure of the test stays visible.
+ * simulation pages. Lessons are matched to topics through practiceTargets:
+ * lessons 1–6 feed Mathematical logic, lessons 7–10 feed Combinatorics &
+ * probability; every other area is listed with its official syllabus outline
+ * so the structure of the test stays visible.
  */
 export interface LessonTopicEntry {
   /** Practice target id, used for the "practise this area" link and scope badge. */
@@ -27,9 +28,6 @@ export interface LessonSectionGroup {
   topics: LessonTopicEntry[];
 }
 
-/** The only area with fully developed theory so far. */
-const LESSONS_TOPIC_ID = "matematica-ragionare" satisfies PracticeSectionId;
-
 const mathematicsGroup: LessonSectionGroup = {
   sectionId: "matematica",
   labelKey: "matematica",
@@ -38,7 +36,9 @@ const mathematicsGroup: LessonSectionGroup = {
     labelKey: topic.labelKey,
     descriptionKey: topic.descriptionKey,
     outlineKey: null,
-    lessonIds: topic.id === LESSONS_TOPIC_ID ? lessons.map((lesson) => lesson.id) : [],
+    lessonIds: lessons
+      .filter((lesson) => lesson.practiceTargets.includes(topic.id))
+      .map((lesson) => lesson.id),
   })),
 };
 
@@ -55,7 +55,9 @@ export const lessonGroups: LessonSectionGroup[] = [
           labelKey: section.labelKey,
           descriptionKey: null,
           outlineKey: section.labelKey,
-          lessonIds: [],
+          lessonIds: lessons
+            .filter((lesson) => lesson.practiceTargets.includes(section.id))
+            .map((lesson) => lesson.id),
         },
       ],
     })),

@@ -9,10 +9,10 @@ import { lessons } from "@/data/lessons";
 export const Route = createFileRoute("/lessons_/$lessonId")({
   head: () => ({
     meta: [
-      { title: "Lezione di logica — TOLC-S Trainer" },
-      { name: "description", content: "Lezione di teoria della logica propedeutica al modulo di Logica matematica." },
-      { property: "og:title", content: "Lezione di logica — TOLC-S Trainer" },
-      { property: "og:description", content: "Lezione di teoria della logica propedeutica al modulo di Logica matematica." },
+      { title: "Lezione — TOLC-S Trainer" },
+      { name: "description", content: "Lezione di teoria per la preparazione al test CISIA TOLC-S." },
+      { property: "og:title", content: "Lezione — TOLC-S Trainer" },
+      { property: "og:description", content: "Lezione di teoria per la preparazione al test CISIA TOLC-S." },
     ],
   }),
   component: LessonPage,
@@ -46,7 +46,10 @@ function LessonPage() {
         <p className="leading-relaxed text-foreground/90">{lessonKey(lesson.bodyKey)}</p>
         <div className="flex flex-wrap gap-3 border-t pt-6">
           <Button asChild>
-            <Link to="/simulation/settings/$sectionId" params={{ sectionId: "matematica-ragionare" }}>
+            <Link
+              to="/simulation/settings/$sectionId"
+              params={{ sectionId: lesson.practiceTargets[0] ?? "matematica-ragionare" }}
+            >
               <BookOpen aria-hidden="true" />
               {t.lessons.practice}
             </Link>
