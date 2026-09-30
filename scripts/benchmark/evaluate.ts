@@ -155,12 +155,13 @@ function renderMarkdown(): string {
   lines.push("");
   lines.push("## Tabella 6.2 — Accuratezza per macro-categoria");
   lines.push("");
-  lines.push(`| Modello | ${families.join(" | ")} |`);
-  lines.push(`| --- | ${families.map(() => "---").join(" | ")} |`);
+  lines.push(`| Modello | Lingua | ${families.join(" | ")} |`);
+  lines.push(`| --- | --- | ${families.map(() => "---").join(" | ")} |`);
   for (const s of summaries) {
     const cells = families.map((f) => pct(s.perFamily[f].correct, s.perFamily[f].total));
-    lines.push(`| ${s.modelLabel} | ${cells.join(" | ")} |`);
+    lines.push(`| ${s.modelLabel} | ${s.locale} | ${cells.join(" | ")} |`);
   }
+
   lines.push("");
   return lines.join("\n");
 }
