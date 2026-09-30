@@ -107,7 +107,7 @@ function LessonBlockView({ block }: { block: LessonBlock }) {
         <section className="rounded-lg border border-primary/25 bg-primary/5 p-5">
           <h3 className="flex items-center gap-2 font-semibold text-foreground">
             <Lightbulb aria-hidden="true" className="size-4 shrink-0 text-primary" />
-            {block.title}
+            <RichText text={block.title} />
           </h3>
           <div className="mt-2 flex flex-col gap-2">
             {block.body.map((paragraph, index) => (
@@ -138,7 +138,7 @@ function LessonBlockView({ block }: { block: LessonBlock }) {
         >
           <h3 className="flex items-center gap-2 font-semibold text-foreground">
             <Icon aria-hidden="true" className="size-4 shrink-0" />
-            {block.title}
+            <RichText text={block.title} />
           </h3>
           <div className="mt-2 flex flex-col gap-2">
             {block.body.map((paragraph, index) => (
