@@ -1,6 +1,7 @@
 import { tolcSections } from "@/data/tolc-sections";
 import { mathematicsTopics } from "@/data/mathematics-topics";
 import { questionService, type Question } from "@/services/questionService";
+import { combinatoricsService } from "@/services/combinatorics/combinatorics.service";
 import type { SimulationSettings, SimulationTarget } from "@/types/settings";
 import type { SessionSnapshotBlock } from "@/types/history";
 import type { PracticeSectionId, TolcSection } from "@/types/tolc";
@@ -112,7 +113,12 @@ export const simulationService = {
     const blocks: RunBlock[] = sections
       .map((section, idx) => {
         const external = extraQuestions[section.id];
-        let pool = external && external.length > 0 ? external : questionService.getBySection(section.id);
+        let pool =
+          external && external.length > 0
+            ? external
+            : combinatoricsService.isEnabled(section.id)
+              ? combinatoricsService.generateQuestions(section.id, wanted[idx] ?? 0)
+              : questionService.getBySection(section.id);
         if (settings.shuffleQuestions) pool = shuffle(pool);
         if (settings.shuffleAnswers) pool = pool.map(shuffleOptions);
         return { section, picked: pool.slice(0, wanted[idx] ?? 0) };
