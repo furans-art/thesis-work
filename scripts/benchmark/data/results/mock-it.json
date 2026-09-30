@@ -1,0 +1,875 @@
+{
+  "modelId": "mock",
+  "modelLabel": "Mock (offline pipeline check)",
+  "model": "mock",
+  "transport": "mock",
+  "locale": "it",
+  "datasetSeed": 20261001,
+  "startedAt": "2026-09-30T21:51:49.815Z",
+  "answers": [
+    {
+      "itemId": "disposizioni-semplici-codice-000",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "disposizioni-semplici-codice-001",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "disposizioni-semplici-codice-002",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 1
+    },
+    {
+      "itemId": "disposizioni-semplici-codice-003",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 1
+    },
+    {
+      "itemId": "disposizioni-ripetizione-targa-004",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"B\"}",
+      "latencyMs": 1
+    },
+    {
+      "itemId": "disposizioni-ripetizione-targa-005",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 1
+    },
+    {
+      "itemId": "disposizioni-ripetizione-targa-006",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"B\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "disposizioni-ripetizione-targa-007",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"B\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "disposizioni-podio-008",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "disposizioni-podio-009",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"B\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "disposizioni-podio-010",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "disposizioni-podio-011",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "permutazioni-semplici-anagrammi-012",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "correct": "B",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "permutazioni-semplici-anagrammi-013",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "correct": "D",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "permutazioni-semplici-anagrammi-014",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "permutazioni-semplici-anagrammi-015",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "correct": "B",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "permutazioni-ripetizione-anagrammi-016",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "permutazioni-ripetizione-anagrammi-017",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "permutazioni-ripetizione-anagrammi-018",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"B\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "permutazioni-ripetizione-anagrammi-019",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "correct": "D",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "permutazioni-vincolo-vicinanza-020",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "permutazioni-vincolo-vicinanza-021",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "permutazioni-vincolo-vicinanza-022",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "correct": "D",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "permutazioni-vincolo-vicinanza-023",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "combinazioni-semplici-commissione-024",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "combinazioni-semplici-commissione-025",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 1
+    },
+    {
+      "itemId": "combinazioni-semplici-commissione-026",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"B\"}",
+      "latencyMs": 1
+    },
+    {
+      "itemId": "combinazioni-semplici-commissione-027",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "correct": "C",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 1
+    },
+    {
+      "itemId": "combinazioni-quote-gruppi-028",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "combinazioni-quote-gruppi-029",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"B\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "combinazioni-quote-gruppi-030",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "correct": "C",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"B\"}",
+      "latencyMs": 1
+    },
+    {
+      "itemId": "combinazioni-quote-gruppi-031",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 1
+    },
+    {
+      "itemId": "combinazioni-diagonali-poligono-032",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 1
+    },
+    {
+      "itemId": "combinazioni-diagonali-poligono-033",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"B\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "combinazioni-diagonali-poligono-034",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "combinazioni-diagonali-poligono-035",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "combinazioni-sottoinsiemi-036",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "correct": "C",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "combinazioni-sottoinsiemi-037",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "combinazioni-sottoinsiemi-038",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"B\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "combinazioni-sottoinsiemi-039",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "correct": "C",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "urna-senza-reimmissione-stesso-colore-040",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "correct": "C",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 1
+    },
+    {
+      "itemId": "urna-senza-reimmissione-stesso-colore-041",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "correct": "B",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 1
+    },
+    {
+      "itemId": "urna-senza-reimmissione-stesso-colore-042",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "correct": "C",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"B\"}",
+      "latencyMs": 1
+    },
+    {
+      "itemId": "urna-senza-reimmissione-stesso-colore-043",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "correct": "D",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "urna-senza-reimmissione-entrambe-rosse-044",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "correct": "A",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "urna-senza-reimmissione-entrambe-rosse-045",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "urna-senza-reimmissione-entrambe-rosse-046",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "correct": "C",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "urna-senza-reimmissione-entrambe-rosse-047",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "correct": "C",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "urna-almeno-uno-048",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "correct": "D",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "urna-almeno-uno-049",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "correct": "B",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "urna-almeno-uno-050",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "correct": "D",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "urna-almeno-uno-051",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "probabilita-dadi-somma-052",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "probabilita-dadi-somma-053",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "probabilita-dadi-somma-054",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "correct": "C",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"B\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "probabilita-dadi-somma-055",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "correct": "B",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "probabilita-unione-eventi-056",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "correct": "C",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"B\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "probabilita-unione-eventi-057",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "probabilita-unione-eventi-058",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "correct": "D",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "probabilita-unione-eventi-059",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "correct": "D",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "bernoulli-esattamente-k-060",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "bernoulli-esattamente-k-061",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "correct": "D",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "bernoulli-esattamente-k-062",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"B\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "bernoulli-esattamente-k-063",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "probabilita-totale-bayes-064",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "correct": "B",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "probabilita-totale-bayes-065",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 1
+    },
+    {
+      "itemId": "probabilita-totale-bayes-066",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 1
+    },
+    {
+      "itemId": "probabilita-totale-bayes-067",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "correct": "A",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 1
+    },
+    {
+      "itemId": "principio-cassetti-dirichlet-068",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "principio-cassetti-dirichlet-069",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "principio-cassetti-dirichlet-070",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "principio-cassetti-dirichlet-071",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "probabilita-almeno-uno-072",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "probabilita-almeno-uno-073",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "probabilita-almeno-uno-074",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "probabilita-almeno-uno-075",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"B\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "disposizioni-vincolo-posizione-076",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "correct": "A",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "disposizioni-vincolo-posizione-077",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "correct": "A",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"B\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "disposizioni-vincolo-posizione-078",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "disposizioni-vincolo-posizione-079",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "correct": "B",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "distribuzione-oggetti-stelle-barre-080",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "distribuzione-oggetti-stelle-barre-081",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "correct": "A",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "distribuzione-oggetti-stelle-barre-082",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"B\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "distribuzione-oggetti-stelle-barre-083",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "correct": "B",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "permutazioni-cicliche-084",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "permutazioni-cicliche-085",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "correct": "D",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"B\"}",
+      "latencyMs": 1
+    },
+    {
+      "itemId": "permutazioni-cicliche-086",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"B\"}",
+      "latencyMs": 1
+    },
+    {
+      "itemId": "permutazioni-cicliche-087",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "correct": "D",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"B\"}",
+      "latencyMs": 1
+    },
+    {
+      "itemId": "binomio-newton-088",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "binomio-newton-089",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "correct": "D",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "binomio-newton-090",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "correct": "B",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "binomio-newton-091",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "inclusione-esclusione-092",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"D\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "inclusione-esclusione-093",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "inclusione-esclusione-094",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"A\"}",
+      "latencyMs": 0
+    },
+    {
+      "itemId": "inclusione-esclusione-095",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "correct": "A",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"mock deterministic answer\",\"choice\":\"C\"}",
+      "latencyMs": 0
+    }
+  ]
+}

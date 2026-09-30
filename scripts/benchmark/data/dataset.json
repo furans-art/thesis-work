@@ -1,0 +1,3311 @@
+{
+  "seed": 20261001,
+  "createdAt": "2026-09-30T21:51:49.761Z",
+  "archetypeCount": 24,
+  "items": [
+    {
+      "id": "disposizioni-semplici-codice-000",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "difficulty": "base",
+      "text": {
+        "it": "Quanti codici di 2 cifre tutte diverse si possono formare usando le cifre da 1 a 6?",
+        "en": "How many 2-digit codes with all different digits can be formed using the digits from 1 to 6?"
+      },
+      "options": {
+        "A": "36",
+        "B": "720",
+        "C": "15",
+        "D": "30"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "L'ordine conta e le cifre non si ripetono: sono disposizioni semplici D(6,2) = 6 · 5 = 30. Se le cifre potessero ripetersi sarebbero 6^2 = 36; se l'ordine non contasse sarebbero C(6,2) = 15.",
+        "en": "Order matters and digits cannot repeat, so these are simple dispositions D(6,2) = 6 · 5 = 30. With repetition allowed it would be 6^2 = 36; ignoring order it would be C(6,2) = 15."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai consentito di ripetere le cifre: «tutte diverse» esclude i codici con cifre ripetute, quindi si contano disposizioni semplici, non disposizioni con ripetizione (6^2).",
+          "en": "You allowed digits to repeat: “all different” rules out codes with repeated digits, so you count simple dispositions, not dispositions with repetition (6^2)."
+        },
+        "B": {
+          "it": "Hai contato le permutazioni di tutte le 6 cifre: il codice usa solo 2 posizioni, quindi il prodotto si arresta dopo 2 fattori.",
+          "en": "You counted the permutations of all 6 digits: the code uses only 2 positions, so the product stops after 2 factors."
+        },
+        "C": {
+          "it": "Hai ignorato l'ordine: un codice è una sequenza ordinata, quindi scambiare due cifre produce un codice diverso.",
+          "en": "You ignored the order: a code is an ordered sequence, so swapping two digits produces a different code."
+        }
+      }
+    },
+    {
+      "id": "disposizioni-semplici-codice-001",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "difficulty": "base",
+      "text": {
+        "it": "Quanti codici di 4 cifre tutte diverse si possono formare usando le cifre da 1 a 5?",
+        "en": "How many 4-digit codes with all different digits can be formed using the digits from 1 to 5?"
+      },
+      "options": {
+        "A": "120",
+        "B": "121",
+        "C": "5",
+        "D": "625"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "L'ordine conta e le cifre non si ripetono: sono disposizioni semplici D(5,4) = 5 · 4 · 3 · 2 = 120. Se le cifre potessero ripetersi sarebbero 5^4 = 625; se l'ordine non contasse sarebbero C(5,4) = 5.",
+        "en": "Order matters and digits cannot repeat, so these are simple dispositions D(5,4) = 5 · 4 · 3 · 2 = 120. With repetition allowed it would be 5^4 = 625; ignoring order it would be C(5,4) = 5."
+      },
+      "diagnoses": {
+        "C": {
+          "it": "Hai ignorato l'ordine: un codice è una sequenza ordinata, quindi scambiare due cifre produce un codice diverso.",
+          "en": "You ignored the order: a code is an ordered sequence, so swapping two digits produces a different code."
+        },
+        "D": {
+          "it": "Hai consentito di ripetere le cifre: «tutte diverse» esclude i codici con cifre ripetute, quindi si contano disposizioni semplici, non disposizioni con ripetizione (5^4).",
+          "en": "You allowed digits to repeat: “all different” rules out codes with repeated digits, so you count simple dispositions, not dispositions with repetition (5^4)."
+        }
+      }
+    },
+    {
+      "id": "disposizioni-semplici-codice-002",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "difficulty": "base",
+      "text": {
+        "it": "Quanti codici di 3 cifre tutte diverse si possono formare usando le cifre da 1 a 5?",
+        "en": "How many 3-digit codes with all different digits can be formed using the digits from 1 to 5?"
+      },
+      "options": {
+        "A": "10",
+        "B": "125",
+        "C": "120",
+        "D": "60"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "L'ordine conta e le cifre non si ripetono: sono disposizioni semplici D(5,3) = 5 · 4 · 3 = 60. Se le cifre potessero ripetersi sarebbero 5^3 = 125; se l'ordine non contasse sarebbero C(5,3) = 10.",
+        "en": "Order matters and digits cannot repeat, so these are simple dispositions D(5,3) = 5 · 4 · 3 = 60. With repetition allowed it would be 5^3 = 125; ignoring order it would be C(5,3) = 10."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai ignorato l'ordine: un codice è una sequenza ordinata, quindi scambiare due cifre produce un codice diverso.",
+          "en": "You ignored the order: a code is an ordered sequence, so swapping two digits produces a different code."
+        },
+        "B": {
+          "it": "Hai consentito di ripetere le cifre: «tutte diverse» esclude i codici con cifre ripetute, quindi si contano disposizioni semplici, non disposizioni con ripetizione (5^3).",
+          "en": "You allowed digits to repeat: “all different” rules out codes with repeated digits, so you count simple dispositions, not dispositions with repetition (5^3)."
+        },
+        "C": {
+          "it": "Hai contato le permutazioni di tutte le 5 cifre: il codice usa solo 3 posizioni, quindi il prodotto si arresta dopo 3 fattori.",
+          "en": "You counted the permutations of all 5 digits: the code uses only 3 positions, so the product stops after 3 factors."
+        }
+      }
+    },
+    {
+      "id": "disposizioni-semplici-codice-003",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "difficulty": "base",
+      "text": {
+        "it": "Quanti codici di 2 cifre tutte diverse si possono formare usando le cifre da 1 a 6?",
+        "en": "How many 2-digit codes with all different digits can be formed using the digits from 1 to 6?"
+      },
+      "options": {
+        "A": "720",
+        "B": "36",
+        "C": "15",
+        "D": "30"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "L'ordine conta e le cifre non si ripetono: sono disposizioni semplici D(6,2) = 6 · 5 = 30. Se le cifre potessero ripetersi sarebbero 6^2 = 36; se l'ordine non contasse sarebbero C(6,2) = 15.",
+        "en": "Order matters and digits cannot repeat, so these are simple dispositions D(6,2) = 6 · 5 = 30. With repetition allowed it would be 6^2 = 36; ignoring order it would be C(6,2) = 15."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai contato le permutazioni di tutte le 6 cifre: il codice usa solo 2 posizioni, quindi il prodotto si arresta dopo 2 fattori.",
+          "en": "You counted the permutations of all 6 digits: the code uses only 2 positions, so the product stops after 2 factors."
+        },
+        "B": {
+          "it": "Hai consentito di ripetere le cifre: «tutte diverse» esclude i codici con cifre ripetute, quindi si contano disposizioni semplici, non disposizioni con ripetizione (6^2).",
+          "en": "You allowed digits to repeat: “all different” rules out codes with repeated digits, so you count simple dispositions, not dispositions with repetition (6^2)."
+        },
+        "C": {
+          "it": "Hai ignorato l'ordine: un codice è una sequenza ordinata, quindi scambiare due cifre produce un codice diverso.",
+          "en": "You ignored the order: a code is an ordered sequence, so swapping two digits produces a different code."
+        }
+      }
+    },
+    {
+      "id": "disposizioni-ripetizione-targa-004",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "difficulty": "base",
+      "text": {
+        "it": "Un lucchetto ha 3 caselle e su ogni casella si possono impostare 5 simboli diversi, anche ripetuti. Quante combinazioni diverse esistono?",
+        "en": "A padlock has 3 slots and each slot can be set to 5 different symbols, repetitions allowed. How many different combinations exist?"
+      },
+      "options": {
+        "A": "125",
+        "B": "60",
+        "C": "243",
+        "D": "10"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "Ogni casella è indipendente e i simboli si possono ripetere: 5^3 = 125. 60 sarebbe il risultato se i simboli dovessero essere tutti diversi, mentre 243 scambia la base con l'esponente.",
+        "en": "Each slot is independent and symbols may repeat: 5^3 = 125. 60 would apply if all symbols had to differ, while 243 swaps base and exponent."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai escluso le ripetizioni: il testo dice esplicitamente che i simboli si possono ripetere su caselle diverse.",
+          "en": "You ruled out repetitions: the text explicitly says symbols may repeat on different slots."
+        },
+        "C": {
+          "it": "Hai scambiato la base con l'esponente: sono 3 caselle con 5 simboli ciascuna, quindi la base è 5 e l'esponente è 3.",
+          "en": "You swapped the base and the exponent: there are 3 slots with 5 symbols each, so the base is 5 and the exponent is 3."
+        },
+        "D": {
+          "it": "Hai trattato il codice come un insieme senza ordine: invece ogni posizione del lucchetto è distinta, quindi l'ordine conta.",
+          "en": "You treated the code as an unordered set: each padlock position is distinct, so order matters."
+        }
+      }
+    },
+    {
+      "id": "disposizioni-ripetizione-targa-005",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "difficulty": "base",
+      "text": {
+        "it": "Un lucchetto ha 4 caselle e su ogni casella si possono impostare 3 simboli diversi, anche ripetuti. Quante combinazioni diverse esistono?",
+        "en": "A padlock has 4 slots and each slot can be set to 3 different symbols, repetitions allowed. How many different combinations exist?"
+      },
+      "options": {
+        "A": "82",
+        "B": "0",
+        "C": "64",
+        "D": "81"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "Ogni casella è indipendente e i simboli si possono ripetere: 3^4 = 81. 0 sarebbe il risultato se i simboli dovessero essere tutti diversi, mentre 64 scambia la base con l'esponente.",
+        "en": "Each slot is independent and symbols may repeat: 3^4 = 81. 0 would apply if all symbols had to differ, while 64 swaps base and exponent."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai escluso le ripetizioni: il testo dice esplicitamente che i simboli si possono ripetere su caselle diverse.",
+          "en": "You ruled out repetitions: the text explicitly says symbols may repeat on different slots."
+        },
+        "C": {
+          "it": "Hai scambiato la base con l'esponente: sono 4 caselle con 3 simboli ciascuna, quindi la base è 3 e l'esponente è 4.",
+          "en": "You swapped the base and the exponent: there are 4 slots with 3 symbols each, so the base is 3 and the exponent is 4."
+        }
+      }
+    },
+    {
+      "id": "disposizioni-ripetizione-targa-006",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "difficulty": "base",
+      "text": {
+        "it": "Un lucchetto ha 3 caselle e su ogni casella si possono impostare 4 simboli diversi, anche ripetuti. Quante combinazioni diverse esistono?",
+        "en": "A padlock has 3 slots and each slot can be set to 4 different symbols, repetitions allowed. How many different combinations exist?"
+      },
+      "options": {
+        "A": "24",
+        "B": "4",
+        "C": "81",
+        "D": "64"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "Ogni casella è indipendente e i simboli si possono ripetere: 4^3 = 64. 24 sarebbe il risultato se i simboli dovessero essere tutti diversi, mentre 81 scambia la base con l'esponente.",
+        "en": "Each slot is independent and symbols may repeat: 4^3 = 64. 24 would apply if all symbols had to differ, while 81 swaps base and exponent."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai escluso le ripetizioni: il testo dice esplicitamente che i simboli si possono ripetere su caselle diverse.",
+          "en": "You ruled out repetitions: the text explicitly says symbols may repeat on different slots."
+        },
+        "B": {
+          "it": "Hai trattato il codice come un insieme senza ordine: invece ogni posizione del lucchetto è distinta, quindi l'ordine conta.",
+          "en": "You treated the code as an unordered set: each padlock position is distinct, so order matters."
+        },
+        "C": {
+          "it": "Hai scambiato la base con l'esponente: sono 3 caselle con 4 simboli ciascuna, quindi la base è 4 e l'esponente è 3.",
+          "en": "You swapped the base and the exponent: there are 3 slots with 4 symbols each, so the base is 4 and the exponent is 3."
+        }
+      }
+    },
+    {
+      "id": "disposizioni-ripetizione-targa-007",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "difficulty": "base",
+      "text": {
+        "it": "Un lucchetto ha 3 caselle e su ogni casella si possono impostare 3 simboli diversi, anche ripetuti. Quante combinazioni diverse esistono?",
+        "en": "A padlock has 3 slots and each slot can be set to 3 different symbols, repetitions allowed. How many different combinations exist?"
+      },
+      "options": {
+        "A": "6",
+        "B": "27",
+        "C": "1",
+        "D": "28"
+      },
+      "correct": "B",
+      "explanation": {
+        "it": "Ogni casella è indipendente e i simboli si possono ripetere: 3^3 = 27. 6 sarebbe il risultato se i simboli dovessero essere tutti diversi, mentre 27 scambia la base con l'esponente.",
+        "en": "Each slot is independent and symbols may repeat: 3^3 = 27. 6 would apply if all symbols had to differ, while 27 swaps base and exponent."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai escluso le ripetizioni: il testo dice esplicitamente che i simboli si possono ripetere su caselle diverse.",
+          "en": "You ruled out repetitions: the text explicitly says symbols may repeat on different slots."
+        },
+        "C": {
+          "it": "Hai trattato il codice come un insieme senza ordine: invece ogni posizione del lucchetto è distinta, quindi l'ordine conta.",
+          "en": "You treated the code as an unordered set: each padlock position is distinct, so order matters."
+        }
+      }
+    },
+    {
+      "id": "disposizioni-podio-008",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "A una gara partecipano 9 atleti. In quanti modi diversi possono essere assegnate le medaglie d'oro, d'argento e di bronzo?",
+        "en": "9 athletes take part in a race. In how many different ways can the gold, silver and bronze medals be awarded?"
+      },
+      "options": {
+        "A": "504",
+        "B": "27",
+        "C": "729",
+        "D": "84"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "Le tre medaglie sono diverse, quindi l'ordine conta: D(9,3) = 9 · 8 · 7 = 504. C(9,3) = 84 conterebbe solo i gruppi di tre atleti, senza distinguere chi vince l'oro.",
+        "en": "The three medals are distinct, so order matters: D(9,3) = 9 · 8 · 7 = 504. C(9,3) = 84 would only count groups of three athletes, without saying who takes gold."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai moltiplicato per 3 come se le tre medaglie fossero scelte indipendenti: a ogni assegnazione gli atleti disponibili diminuiscono (9 · 8 · 7).",
+          "en": "You multiplied by 3 as if the three medals were independent choices: at each award the available athletes shrink (9 · 8 · 7)."
+        },
+        "C": {
+          "it": "Hai permesso che lo stesso atleta vincesse più medaglie: chi prende l'oro non può più prendere l'argento, quindi i fattori calano a ogni assegnazione.",
+          "en": "You allowed the same athlete to win more than one medal: whoever takes gold cannot also take silver, so the factors drop at each award."
+        },
+        "D": {
+          "it": "Hai contato solo i gruppi di tre atleti: il podio distingue oro, argento e bronzo, quindi l'ordine conta e servono le disposizioni.",
+          "en": "You counted only the groups of three athletes: the podium distinguishes gold, silver and bronze, so order matters and you need dispositions."
+        }
+      }
+    },
+    {
+      "id": "disposizioni-podio-009",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "A una gara partecipano 7 atleti. In quanti modi diversi possono essere assegnate le medaglie d'oro, d'argento e di bronzo?",
+        "en": "7 athletes take part in a race. In how many different ways can the gold, silver and bronze medals be awarded?"
+      },
+      "options": {
+        "A": "343",
+        "B": "35",
+        "C": "21",
+        "D": "210"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "Le tre medaglie sono diverse, quindi l'ordine conta: D(7,3) = 7 · 6 · 5 = 210. C(7,3) = 35 conterebbe solo i gruppi di tre atleti, senza distinguere chi vince l'oro.",
+        "en": "The three medals are distinct, so order matters: D(7,3) = 7 · 6 · 5 = 210. C(7,3) = 35 would only count groups of three athletes, without saying who takes gold."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai permesso che lo stesso atleta vincesse più medaglie: chi prende l'oro non può più prendere l'argento, quindi i fattori calano a ogni assegnazione.",
+          "en": "You allowed the same athlete to win more than one medal: whoever takes gold cannot also take silver, so the factors drop at each award."
+        },
+        "B": {
+          "it": "Hai contato solo i gruppi di tre atleti: il podio distingue oro, argento e bronzo, quindi l'ordine conta e servono le disposizioni.",
+          "en": "You counted only the groups of three athletes: the podium distinguishes gold, silver and bronze, so order matters and you need dispositions."
+        },
+        "C": {
+          "it": "Hai moltiplicato per 3 come se le tre medaglie fossero scelte indipendenti: a ogni assegnazione gli atleti disponibili diminuiscono (7 · 6 · 5).",
+          "en": "You multiplied by 3 as if the three medals were independent choices: at each award the available athletes shrink (7 · 6 · 5)."
+        }
+      }
+    },
+    {
+      "id": "disposizioni-podio-010",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "A una gara partecipano 10 atleti. In quanti modi diversi possono essere assegnate le medaglie d'oro, d'argento e di bronzo?",
+        "en": "10 athletes take part in a race. In how many different ways can the gold, silver and bronze medals be awarded?"
+      },
+      "options": {
+        "A": "720",
+        "B": "120",
+        "C": "1000",
+        "D": "30"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "Le tre medaglie sono diverse, quindi l'ordine conta: D(10,3) = 10 · 9 · 8 = 720. C(10,3) = 120 conterebbe solo i gruppi di tre atleti, senza distinguere chi vince l'oro.",
+        "en": "The three medals are distinct, so order matters: D(10,3) = 10 · 9 · 8 = 720. C(10,3) = 120 would only count groups of three athletes, without saying who takes gold."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai contato solo i gruppi di tre atleti: il podio distingue oro, argento e bronzo, quindi l'ordine conta e servono le disposizioni.",
+          "en": "You counted only the groups of three athletes: the podium distinguishes gold, silver and bronze, so order matters and you need dispositions."
+        },
+        "C": {
+          "it": "Hai permesso che lo stesso atleta vincesse più medaglie: chi prende l'oro non può più prendere l'argento, quindi i fattori calano a ogni assegnazione.",
+          "en": "You allowed the same athlete to win more than one medal: whoever takes gold cannot also take silver, so the factors drop at each award."
+        },
+        "D": {
+          "it": "Hai moltiplicato per 3 come se le tre medaglie fossero scelte indipendenti: a ogni assegnazione gli atleti disponibili diminuiscono (10 · 9 · 8).",
+          "en": "You multiplied by 3 as if the three medals were independent choices: at each award the available athletes shrink (10 · 9 · 8)."
+        }
+      }
+    },
+    {
+      "id": "disposizioni-podio-011",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "A una gara partecipano 7 atleti. In quanti modi diversi possono essere assegnate le medaglie d'oro, d'argento e di bronzo?",
+        "en": "7 athletes take part in a race. In how many different ways can the gold, silver and bronze medals be awarded?"
+      },
+      "options": {
+        "A": "210",
+        "B": "35",
+        "C": "343",
+        "D": "21"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "Le tre medaglie sono diverse, quindi l'ordine conta: D(7,3) = 7 · 6 · 5 = 210. C(7,3) = 35 conterebbe solo i gruppi di tre atleti, senza distinguere chi vince l'oro.",
+        "en": "The three medals are distinct, so order matters: D(7,3) = 7 · 6 · 5 = 210. C(7,3) = 35 would only count groups of three athletes, without saying who takes gold."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai contato solo i gruppi di tre atleti: il podio distingue oro, argento e bronzo, quindi l'ordine conta e servono le disposizioni.",
+          "en": "You counted only the groups of three athletes: the podium distinguishes gold, silver and bronze, so order matters and you need dispositions."
+        },
+        "C": {
+          "it": "Hai permesso che lo stesso atleta vincesse più medaglie: chi prende l'oro non può più prendere l'argento, quindi i fattori calano a ogni assegnazione.",
+          "en": "You allowed the same athlete to win more than one medal: whoever takes gold cannot also take silver, so the factors drop at each award."
+        },
+        "D": {
+          "it": "Hai moltiplicato per 3 come se le tre medaglie fossero scelte indipendenti: a ogni assegnazione gli atleti disponibili diminuiscono (7 · 6 · 5).",
+          "en": "You multiplied by 3 as if the three medals were independent choices: at each award the available athletes shrink (7 · 6 · 5)."
+        }
+      }
+    },
+    {
+      "id": "permutazioni-semplici-anagrammi-012",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "difficulty": "base",
+      "text": {
+        "it": "Quanti anagrammi, anche privi di significato, si possono formare con le lettere della parola PIANTE?",
+        "en": "How many anagrams, meaningful or not, can be formed with the letters of the word PIANTE?"
+      },
+      "options": {
+        "A": "30",
+        "B": "720",
+        "C": "120",
+        "D": "64"
+      },
+      "correct": "B",
+      "explanation": {
+        "it": "La parola PIANTE ha 6 lettere tutte diverse: gli anagrammi sono le permutazioni di 6 elementi, cioè 6! = 720.",
+        "en": "The word PIANTE has 6 letters, all different: the anagrams are the permutations of 6 elements, that is 6! = 720."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai arrestato il prodotto a due fattori: ogni lettera occupa una posizione, quindi il prodotto arriva a 6 fattori.",
+          "en": "You stopped the product after two factors: every letter takes a position, so the product runs to 6 factors."
+        },
+        "C": {
+          "it": "Hai fissato una lettera in una posizione fissa: nessuna lettera è vincolata, quindi tutte le 6 vanno permutate.",
+          "en": "You fixed one letter in a fixed position: no letter is bound, so all 6 of them must be permuted."
+        },
+        "D": {
+          "it": "Hai dato solo due alternative per lettera: in realtà ogni posizione può ospitare qualunque lettera non ancora usata.",
+          "en": "You allowed only two alternatives per letter: in fact every position can host any letter not yet used."
+        }
+      }
+    },
+    {
+      "id": "permutazioni-semplici-anagrammi-013",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "difficulty": "base",
+      "text": {
+        "it": "Quanti anagrammi, anche privi di significato, si possono formare con le lettere della parola TAVOLO?",
+        "en": "How many anagrams, meaningful or not, can be formed with the letters of the word TAVOLO?"
+      },
+      "options": {
+        "A": "120",
+        "B": "64",
+        "C": "30",
+        "D": "720"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "La parola TAVOLO ha 6 lettere tutte diverse: gli anagrammi sono le permutazioni di 6 elementi, cioè 6! = 720.",
+        "en": "The word TAVOLO has 6 letters, all different: the anagrams are the permutations of 6 elements, that is 6! = 720."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai fissato una lettera in una posizione fissa: nessuna lettera è vincolata, quindi tutte le 6 vanno permutate.",
+          "en": "You fixed one letter in a fixed position: no letter is bound, so all 6 of them must be permuted."
+        },
+        "B": {
+          "it": "Hai dato solo due alternative per lettera: in realtà ogni posizione può ospitare qualunque lettera non ancora usata.",
+          "en": "You allowed only two alternatives per letter: in fact every position can host any letter not yet used."
+        },
+        "C": {
+          "it": "Hai arrestato il prodotto a due fattori: ogni lettera occupa una posizione, quindi il prodotto arriva a 6 fattori.",
+          "en": "You stopped the product after two factors: every letter takes a position, so the product runs to 6 factors."
+        }
+      }
+    },
+    {
+      "id": "permutazioni-semplici-anagrammi-014",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "difficulty": "base",
+      "text": {
+        "it": "Quanti anagrammi, anche privi di significato, si possono formare con le lettere della parola CAMPO?",
+        "en": "How many anagrams, meaningful or not, can be formed with the letters of the word CAMPO?"
+      },
+      "options": {
+        "A": "120",
+        "B": "20",
+        "C": "24",
+        "D": "32"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "La parola CAMPO ha 5 lettere tutte diverse: gli anagrammi sono le permutazioni di 5 elementi, cioè 5! = 120.",
+        "en": "The word CAMPO has 5 letters, all different: the anagrams are the permutations of 5 elements, that is 5! = 120."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai arrestato il prodotto a due fattori: ogni lettera occupa una posizione, quindi il prodotto arriva a 5 fattori.",
+          "en": "You stopped the product after two factors: every letter takes a position, so the product runs to 5 factors."
+        },
+        "C": {
+          "it": "Hai fissato una lettera in una posizione fissa: nessuna lettera è vincolata, quindi tutte le 5 vanno permutate.",
+          "en": "You fixed one letter in a fixed position: no letter is bound, so all 5 of them must be permuted."
+        },
+        "D": {
+          "it": "Hai dato solo due alternative per lettera: in realtà ogni posizione può ospitare qualunque lettera non ancora usata.",
+          "en": "You allowed only two alternatives per letter: in fact every position can host any letter not yet used."
+        }
+      }
+    },
+    {
+      "id": "permutazioni-semplici-anagrammi-015",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "difficulty": "base",
+      "text": {
+        "it": "Quanti anagrammi, anche privi di significato, si possono formare con le lettere della parola LIBRO?",
+        "en": "How many anagrams, meaningful or not, can be formed with the letters of the word LIBRO?"
+      },
+      "options": {
+        "A": "32",
+        "B": "120",
+        "C": "24",
+        "D": "20"
+      },
+      "correct": "B",
+      "explanation": {
+        "it": "La parola LIBRO ha 5 lettere tutte diverse: gli anagrammi sono le permutazioni di 5 elementi, cioè 5! = 120.",
+        "en": "The word LIBRO has 5 letters, all different: the anagrams are the permutations of 5 elements, that is 5! = 120."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai dato solo due alternative per lettera: in realtà ogni posizione può ospitare qualunque lettera non ancora usata.",
+          "en": "You allowed only two alternatives per letter: in fact every position can host any letter not yet used."
+        },
+        "C": {
+          "it": "Hai fissato una lettera in una posizione fissa: nessuna lettera è vincolata, quindi tutte le 5 vanno permutate.",
+          "en": "You fixed one letter in a fixed position: no letter is bound, so all 5 of them must be permuted."
+        },
+        "D": {
+          "it": "Hai arrestato il prodotto a due fattori: ogni lettera occupa una posizione, quindi il prodotto arriva a 5 fattori.",
+          "en": "You stopped the product after two factors: every letter takes a position, so the product runs to 5 factors."
+        }
+      }
+    },
+    {
+      "id": "permutazioni-ripetizione-anagrammi-016",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Quanti anagrammi distinti, anche privi di significato, si possono formare con le lettere della parola CASA?",
+        "en": "How many distinct anagrams, meaningful or not, can be formed with the letters of the word CASA?"
+      },
+      "options": {
+        "A": "12",
+        "B": "24",
+        "C": "13",
+        "D": "11"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "CASA ha 4 lettere con ripetizioni (A×2). Gli anagrammi distinti sono 4! / (2!) = 12. Usare solo 4! = 24 conterebbe più volte lo stesso anagramma, perché scambiare fra loro lettere uguali non produce parole diverse.",
+        "en": "CASA has 4 letters with repetitions (A×2). The distinct anagrams are 4! / (2!) = 12. Using 4! = 24 alone would count the same anagram several times, since swapping identical letters produces no new word."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai contato più volte lo stesso anagramma: scambiare fra loro le lettere uguali (qui A×2) non produce parole diverse.",
+          "en": "You counted the same anagram several times: swapping identical letters (here A×2) produces no new word."
+        }
+      }
+    },
+    {
+      "id": "permutazioni-ripetizione-anagrammi-017",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Quanti anagrammi distinti, anche privi di significato, si possono formare con le lettere della parola NONNO?",
+        "en": "How many distinct anagrams, meaningful or not, can be formed with the letters of the word NONNO?"
+      },
+      "options": {
+        "A": "10",
+        "B": "20",
+        "C": "120",
+        "D": "24"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "NONNO ha 5 lettere con ripetizioni (N×3, O×2). Gli anagrammi distinti sono 5! / (3! · 2!) = 10. Usare solo 5! = 120 conterebbe più volte lo stesso anagramma, perché scambiare fra loro lettere uguali non produce parole diverse.",
+        "en": "NONNO has 5 letters with repetitions (N×3, O×2). The distinct anagrams are 5! / (3! · 2!) = 10. Using 5! = 120 alone would count the same anagram several times, since swapping identical letters produces no new word."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai corretto solo per la prima lettera ripetuta: tutte le lettere con ripetizioni richiedono la divisione per il loro fattoriale (3! · 2!).",
+          "en": "You corrected only for the first repeated letter: every repeated letter requires dividing by its factorial (3! · 2!)."
+        },
+        "C": {
+          "it": "Hai contato più volte lo stesso anagramma: scambiare fra loro le lettere uguali (qui N×3, O×2) non produce parole diverse.",
+          "en": "You counted the same anagram several times: swapping identical letters (here N×3, O×2) produces no new word."
+        },
+        "D": {
+          "it": "Hai diviso per la somma delle ripetizioni: nel denominatore vanno i prodotti dei fattoriali delle ripetizioni, cioè 3! · 2!.",
+          "en": "You divided by the sum of the repetitions: the denominator is the product of their factorials, that is 3! · 2!."
+        }
+      }
+    },
+    {
+      "id": "permutazioni-ripetizione-anagrammi-018",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Quanti anagrammi distinti, anche privi di significato, si possono formare con le lettere della parola MAMMA?",
+        "en": "How many distinct anagrams, meaningful or not, can be formed with the letters of the word MAMMA?"
+      },
+      "options": {
+        "A": "24",
+        "B": "10",
+        "C": "20",
+        "D": "120"
+      },
+      "correct": "B",
+      "explanation": {
+        "it": "MAMMA ha 5 lettere con ripetizioni (M×3, A×2). Gli anagrammi distinti sono 5! / (3! · 2!) = 10. Usare solo 5! = 120 conterebbe più volte lo stesso anagramma, perché scambiare fra loro lettere uguali non produce parole diverse.",
+        "en": "MAMMA has 5 letters with repetitions (M×3, A×2). The distinct anagrams are 5! / (3! · 2!) = 10. Using 5! = 120 alone would count the same anagram several times, since swapping identical letters produces no new word."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai diviso per la somma delle ripetizioni: nel denominatore vanno i prodotti dei fattoriali delle ripetizioni, cioè 3! · 2!.",
+          "en": "You divided by the sum of the repetitions: the denominator is the product of their factorials, that is 3! · 2!."
+        },
+        "C": {
+          "it": "Hai corretto solo per la prima lettera ripetuta: tutte le lettere con ripetizioni richiedono la divisione per il loro fattoriale (3! · 2!).",
+          "en": "You corrected only for the first repeated letter: every repeated letter requires dividing by its factorial (3! · 2!)."
+        },
+        "D": {
+          "it": "Hai contato più volte lo stesso anagramma: scambiare fra loro le lettere uguali (qui M×3, A×2) non produce parole diverse.",
+          "en": "You counted the same anagram several times: swapping identical letters (here M×3, A×2) produces no new word."
+        }
+      }
+    },
+    {
+      "id": "permutazioni-ripetizione-anagrammi-019",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Quanti anagrammi distinti, anche privi di significato, si possono formare con le lettere della parola RAGAZZA?",
+        "en": "How many distinct anagrams, meaningful or not, can be formed with the letters of the word RAGAZZA?"
+      },
+      "options": {
+        "A": "1008",
+        "B": "840",
+        "C": "5040",
+        "D": "420"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "RAGAZZA ha 7 lettere con ripetizioni (A×3, Z×2). Gli anagrammi distinti sono 7! / (3! · 2!) = 420. Usare solo 7! = 5040 conterebbe più volte lo stesso anagramma, perché scambiare fra loro lettere uguali non produce parole diverse.",
+        "en": "RAGAZZA has 7 letters with repetitions (A×3, Z×2). The distinct anagrams are 7! / (3! · 2!) = 420. Using 7! = 5040 alone would count the same anagram several times, since swapping identical letters produces no new word."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai diviso per la somma delle ripetizioni: nel denominatore vanno i prodotti dei fattoriali delle ripetizioni, cioè 3! · 2!.",
+          "en": "You divided by the sum of the repetitions: the denominator is the product of their factorials, that is 3! · 2!."
+        },
+        "B": {
+          "it": "Hai corretto solo per la prima lettera ripetuta: tutte le lettere con ripetizioni richiedono la divisione per il loro fattoriale (3! · 2!).",
+          "en": "You corrected only for the first repeated letter: every repeated letter requires dividing by its factorial (3! · 2!)."
+        },
+        "C": {
+          "it": "Hai contato più volte lo stesso anagramma: scambiare fra loro le lettere uguali (qui A×3, Z×2) non produce parole diverse.",
+          "en": "You counted the same anagram several times: swapping identical letters (here A×3, Z×2) produces no new word."
+        }
+      }
+    },
+    {
+      "id": "permutazioni-vincolo-vicinanza-020",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "difficulty": "advanced",
+      "text": {
+        "it": "7 amici si mettono in fila per una foto. In quanti modi possono disporsi se due di loro, Anna e Bruno, vogliono stare sempre uno accanto all'altro?",
+        "en": "7 friends line up for a photo. In how many ways can they stand if two of them, Anna and Bruno, always want to be next to each other?"
+      },
+      "options": {
+        "A": "1440",
+        "B": "5040",
+        "C": "4320",
+        "D": "720"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "Si considerano Anna e Bruno come un unico blocco: restano 6 elementi da permutare, cioè 6! = 720 modi. Dentro il blocco i due possono scambiarsi fra loro in 2 modi, quindi 2 · 6! = 1440. Dimenticare lo scambio interno porta a 720; ignorare il vincolo porta a 7! = 5040.",
+        "en": "Treat Anna and Bruno as a single block: 6 items remain to permute, that is 6! = 720 ways. Inside the block the two can swap in 2 ways, so 2 · 6! = 1440. Forgetting the internal swap gives 720; ignoring the constraint gives 7! = 5040."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai ignorato il vincolo: i due amici vanno trattati come un unico blocco, che riduce gli elementi da permutare a 6.",
+          "en": "You ignored the constraint: the two friends must be treated as a single block, which reduces the items to permute to 6."
+        },
+        "C": {
+          "it": "Hai sottratto invece di ragionare sul blocco: il vincolo riduce gli elementi da permutare, non è un'esclusione di casi.",
+          "en": "You subtracted instead of reasoning with the block: the constraint reduces the items to permute, it is not an exclusion of cases."
+        },
+        "D": {
+          "it": "Hai dimenticato lo scambio interno al blocco: Anna e Bruno possono permutarsi fra loro in 2 modi.",
+          "en": "You forgot the swap inside the block: Anna and Bruno can permute with each other in 2 ways."
+        }
+      }
+    },
+    {
+      "id": "permutazioni-vincolo-vicinanza-021",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "difficulty": "advanced",
+      "text": {
+        "it": "5 amici si mettono in fila per una foto. In quanti modi possono disporsi se due di loro, Anna e Bruno, vogliono stare sempre uno accanto all'altro?",
+        "en": "5 friends line up for a photo. In how many ways can they stand if two of them, Anna and Bruno, always want to be next to each other?"
+      },
+      "options": {
+        "A": "48",
+        "B": "96",
+        "C": "24",
+        "D": "120"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "Si considerano Anna e Bruno come un unico blocco: restano 4 elementi da permutare, cioè 4! = 24 modi. Dentro il blocco i due possono scambiarsi fra loro in 2 modi, quindi 2 · 4! = 48. Dimenticare lo scambio interno porta a 24; ignorare il vincolo porta a 5! = 120.",
+        "en": "Treat Anna and Bruno as a single block: 4 items remain to permute, that is 4! = 24 ways. Inside the block the two can swap in 2 ways, so 2 · 4! = 48. Forgetting the internal swap gives 24; ignoring the constraint gives 5! = 120."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai sottratto invece di ragionare sul blocco: il vincolo riduce gli elementi da permutare, non è un'esclusione di casi.",
+          "en": "You subtracted instead of reasoning with the block: the constraint reduces the items to permute, it is not an exclusion of cases."
+        },
+        "C": {
+          "it": "Hai dimenticato lo scambio interno al blocco: Anna e Bruno possono permutarsi fra loro in 2 modi.",
+          "en": "You forgot the swap inside the block: Anna and Bruno can permute with each other in 2 ways."
+        },
+        "D": {
+          "it": "Hai ignorato il vincolo: i due amici vanno trattati come un unico blocco, che riduce gli elementi da permutare a 4.",
+          "en": "You ignored the constraint: the two friends must be treated as a single block, which reduces the items to permute to 4."
+        }
+      }
+    },
+    {
+      "id": "permutazioni-vincolo-vicinanza-022",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "difficulty": "advanced",
+      "text": {
+        "it": "7 amici si mettono in fila per una foto. In quanti modi possono disporsi se due di loro, Anna e Bruno, vogliono stare sempre uno accanto all'altro?",
+        "en": "7 friends line up for a photo. In how many ways can they stand if two of them, Anna and Bruno, always want to be next to each other?"
+      },
+      "options": {
+        "A": "5040",
+        "B": "720",
+        "C": "4320",
+        "D": "1440"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "Si considerano Anna e Bruno come un unico blocco: restano 6 elementi da permutare, cioè 6! = 720 modi. Dentro il blocco i due possono scambiarsi fra loro in 2 modi, quindi 2 · 6! = 1440. Dimenticare lo scambio interno porta a 720; ignorare il vincolo porta a 7! = 5040.",
+        "en": "Treat Anna and Bruno as a single block: 6 items remain to permute, that is 6! = 720 ways. Inside the block the two can swap in 2 ways, so 2 · 6! = 1440. Forgetting the internal swap gives 720; ignoring the constraint gives 7! = 5040."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai ignorato il vincolo: i due amici vanno trattati come un unico blocco, che riduce gli elementi da permutare a 6.",
+          "en": "You ignored the constraint: the two friends must be treated as a single block, which reduces the items to permute to 6."
+        },
+        "B": {
+          "it": "Hai dimenticato lo scambio interno al blocco: Anna e Bruno possono permutarsi fra loro in 2 modi.",
+          "en": "You forgot the swap inside the block: Anna and Bruno can permute with each other in 2 ways."
+        },
+        "C": {
+          "it": "Hai sottratto invece di ragionare sul blocco: il vincolo riduce gli elementi da permutare, non è un'esclusione di casi.",
+          "en": "You subtracted instead of reasoning with the block: the constraint reduces the items to permute, it is not an exclusion of cases."
+        }
+      }
+    },
+    {
+      "id": "permutazioni-vincolo-vicinanza-023",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "difficulty": "advanced",
+      "text": {
+        "it": "5 amici si mettono in fila per una foto. In quanti modi possono disporsi se due di loro, Anna e Bruno, vogliono stare sempre uno accanto all'altro?",
+        "en": "5 friends line up for a photo. In how many ways can they stand if two of them, Anna and Bruno, always want to be next to each other?"
+      },
+      "options": {
+        "A": "120",
+        "B": "24",
+        "C": "48",
+        "D": "96"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "Si considerano Anna e Bruno come un unico blocco: restano 4 elementi da permutare, cioè 4! = 24 modi. Dentro il blocco i due possono scambiarsi fra loro in 2 modi, quindi 2 · 4! = 48. Dimenticare lo scambio interno porta a 24; ignorare il vincolo porta a 5! = 120.",
+        "en": "Treat Anna and Bruno as a single block: 4 items remain to permute, that is 4! = 24 ways. Inside the block the two can swap in 2 ways, so 2 · 4! = 48. Forgetting the internal swap gives 24; ignoring the constraint gives 5! = 120."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai ignorato il vincolo: i due amici vanno trattati come un unico blocco, che riduce gli elementi da permutare a 4.",
+          "en": "You ignored the constraint: the two friends must be treated as a single block, which reduces the items to permute to 4."
+        },
+        "B": {
+          "it": "Hai dimenticato lo scambio interno al blocco: Anna e Bruno possono permutarsi fra loro in 2 modi.",
+          "en": "You forgot the swap inside the block: Anna and Bruno can permute with each other in 2 ways."
+        },
+        "D": {
+          "it": "Hai sottratto invece di ragionare sul blocco: il vincolo riduce gli elementi da permutare, non è un'esclusione di casi.",
+          "en": "You subtracted instead of reasoning with the block: the constraint reduces the items to permute, it is not an exclusion of cases."
+        }
+      }
+    },
+    {
+      "id": "combinazioni-semplici-commissione-024",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "difficulty": "base",
+      "text": {
+        "it": "In una classe di 6 studenti si deve scegliere una delegazione di 4 persone, senza assegnare incarichi diversi. Quante delegazioni diverse sono possibili?",
+        "en": "From a class of 6 students a delegation of 4 people must be chosen, with no distinct roles assigned. How many different delegations are possible?"
+      },
+      "options": {
+        "A": "24",
+        "B": "360",
+        "C": "20",
+        "D": "15"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "Nessun incarico distingue i membri, quindi l'ordine non conta: C(6,4) = 6! / (4! · 2!) = 15. Se i ruoli fossero diversi l'ordine conterebbe e si otterrebbe D(6,4) = 360.",
+        "en": "No role distinguishes the members, so order does not matter: C(6,4) = 6! / (4! · 2!) = 15. With distinct roles order would matter and the answer would be D(6,4) = 360."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai moltiplicato come se i membri fossero scelte indipendenti con ripetizione: le persone si scelgono una dopo l'altra senza mai ripeterle.",
+          "en": "You multiplied as if the members were independent choices with repetition: the people are chosen one after another and never repeated."
+        },
+        "B": {
+          "it": "Hai trattato l'ordine come rilevante: la delegazione non ha incarichi, quindi ogni gruppo di persone è una sola scelta e servono le combinazioni.",
+          "en": "You treated order as relevant: the delegation has no roles, so each group of people is a single choice and you need combinations."
+        },
+        "C": {
+          "it": "Hai contato un membro di meno: la delegazione è di 4 persone, non 3.",
+          "en": "You counted one member too few: the delegation has 4 people, not 3."
+        }
+      }
+    },
+    {
+      "id": "combinazioni-semplici-commissione-025",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "difficulty": "base",
+      "text": {
+        "it": "In una classe di 12 studenti si deve scegliere una delegazione di 4 persone, senza assegnare incarichi diversi. Quante delegazioni diverse sono possibili?",
+        "en": "From a class of 12 students a delegation of 4 people must be chosen, with no distinct roles assigned. How many different delegations are possible?"
+      },
+      "options": {
+        "A": "48",
+        "B": "11880",
+        "C": "220",
+        "D": "495"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "Nessun incarico distingue i membri, quindi l'ordine non conta: C(12,4) = 12! / (4! · 8!) = 495. Se i ruoli fossero diversi l'ordine conterebbe e si otterrebbe D(12,4) = 11880.",
+        "en": "No role distinguishes the members, so order does not matter: C(12,4) = 12! / (4! · 8!) = 495. With distinct roles order would matter and the answer would be D(12,4) = 11880."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai moltiplicato come se i membri fossero scelte indipendenti con ripetizione: le persone si scelgono una dopo l'altra senza mai ripeterle.",
+          "en": "You multiplied as if the members were independent choices with repetition: the people are chosen one after another and never repeated."
+        },
+        "B": {
+          "it": "Hai trattato l'ordine come rilevante: la delegazione non ha incarichi, quindi ogni gruppo di persone è una sola scelta e servono le combinazioni.",
+          "en": "You treated order as relevant: the delegation has no roles, so each group of people is a single choice and you need combinations."
+        },
+        "C": {
+          "it": "Hai contato un membro di meno: la delegazione è di 4 persone, non 3.",
+          "en": "You counted one member too few: the delegation has 4 people, not 3."
+        }
+      }
+    },
+    {
+      "id": "combinazioni-semplici-commissione-026",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "difficulty": "base",
+      "text": {
+        "it": "In una classe di 8 studenti si deve scegliere una delegazione di 3 persone, senza assegnare incarichi diversi. Quante delegazioni diverse sono possibili?",
+        "en": "From a class of 8 students a delegation of 3 people must be chosen, with no distinct roles assigned. How many different delegations are possible?"
+      },
+      "options": {
+        "A": "24",
+        "B": "28",
+        "C": "336",
+        "D": "56"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "Nessun incarico distingue i membri, quindi l'ordine non conta: C(8,3) = 8! / (3! · 5!) = 56. Se i ruoli fossero diversi l'ordine conterebbe e si otterrebbe D(8,3) = 336.",
+        "en": "No role distinguishes the members, so order does not matter: C(8,3) = 8! / (3! · 5!) = 56. With distinct roles order would matter and the answer would be D(8,3) = 336."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai moltiplicato come se i membri fossero scelte indipendenti con ripetizione: le persone si scelgono una dopo l'altra senza mai ripeterle.",
+          "en": "You multiplied as if the members were independent choices with repetition: the people are chosen one after another and never repeated."
+        },
+        "B": {
+          "it": "Hai contato un membro di meno: la delegazione è di 3 persone, non 2.",
+          "en": "You counted one member too few: the delegation has 3 people, not 2."
+        },
+        "C": {
+          "it": "Hai trattato l'ordine come rilevante: la delegazione non ha incarichi, quindi ogni gruppo di persone è una sola scelta e servono le combinazioni.",
+          "en": "You treated order as relevant: the delegation has no roles, so each group of people is a single choice and you need combinations."
+        }
+      }
+    },
+    {
+      "id": "combinazioni-semplici-commissione-027",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "difficulty": "base",
+      "text": {
+        "it": "In una classe di 10 studenti si deve scegliere una delegazione di 3 persone, senza assegnare incarichi diversi. Quante delegazioni diverse sono possibili?",
+        "en": "From a class of 10 students a delegation of 3 people must be chosen, with no distinct roles assigned. How many different delegations are possible?"
+      },
+      "options": {
+        "A": "720",
+        "B": "45",
+        "C": "120",
+        "D": "30"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "Nessun incarico distingue i membri, quindi l'ordine non conta: C(10,3) = 10! / (3! · 7!) = 120. Se i ruoli fossero diversi l'ordine conterebbe e si otterrebbe D(10,3) = 720.",
+        "en": "No role distinguishes the members, so order does not matter: C(10,3) = 10! / (3! · 7!) = 120. With distinct roles order would matter and the answer would be D(10,3) = 720."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai trattato l'ordine come rilevante: la delegazione non ha incarichi, quindi ogni gruppo di persone è una sola scelta e servono le combinazioni.",
+          "en": "You treated order as relevant: the delegation has no roles, so each group of people is a single choice and you need combinations."
+        },
+        "B": {
+          "it": "Hai contato un membro di meno: la delegazione è di 3 persone, non 2.",
+          "en": "You counted one member too few: the delegation has 3 people, not 2."
+        },
+        "D": {
+          "it": "Hai moltiplicato come se i membri fossero scelte indipendenti con ripetizione: le persone si scelgono una dopo l'altra senza mai ripeterle.",
+          "en": "You multiplied as if the members were independent choices with repetition: the people are chosen one after another and never repeated."
+        }
+      }
+    },
+    {
+      "id": "combinazioni-quote-gruppi-028",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Un gruppo è formato da 4 ragazze e 5 ragazzi. In quanti modi si può comporre una squadra di 3 ragazze e 1 ragazzi?",
+        "en": "A group consists of 4 girls and 5 boys. In how many ways can a team of 3 girls and 1 boys be formed?"
+      },
+      "options": {
+        "A": "126",
+        "B": "9",
+        "C": "120",
+        "D": "20"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "Le due scelte sono indipendenti e vanno moltiplicate: C(4,3) · C(5,1) = 4 · 5 = 20. Sommare i due valori (9) sarebbe corretto solo per scelte alternative, non simultanee; C(9,4) = 126 ignora le quote richieste.",
+        "en": "The two choices are independent and must be multiplied: C(4,3) · C(5,1) = 4 · 5 = 20. Adding them (9) would only fit alternative, not simultaneous, choices; C(9,4) = 126 ignores the required quotas."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai unito i due gruppi ignorando le quote: la squadra deve avere esattamente 3 ragazze e 1 ragazzi, non 4 persone a caso.",
+          "en": "You merged the two groups ignoring the quotas: the team needs exactly 3 girls and 1 boys, not any 4 people."
+        },
+        "B": {
+          "it": "Hai sommato le due scelte: la somma vale per scelte alternative, ma qui le quote vanno soddisfatte contemporaneamente, quindi si moltiplicano.",
+          "en": "You added the two choices: addition fits alternative choices, but here both quotas must be met at the same time, so you multiply."
+        },
+        "C": {
+          "it": "Hai introdotto un ordine che non esiste: all'interno di ciascun gruppo le persone si scelgono senza incarichi, quindi servono le combinazioni.",
+          "en": "You introduced an order that does not exist: within each group people are chosen without roles, so you need combinations."
+        }
+      }
+    },
+    {
+      "id": "combinazioni-quote-gruppi-029",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Un gruppo è formato da 8 ragazze e 8 ragazzi. In quanti modi si può comporre una squadra di 2 ragazze e 1 ragazzi?",
+        "en": "A group consists of 8 girls and 8 boys. In how many ways can a team of 2 girls and 1 boys be formed?"
+      },
+      "options": {
+        "A": "224",
+        "B": "560",
+        "C": "36",
+        "D": "448"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "Le due scelte sono indipendenti e vanno moltiplicate: C(8,2) · C(8,1) = 28 · 8 = 224. Sommare i due valori (36) sarebbe corretto solo per scelte alternative, non simultanee; C(16,3) = 560 ignora le quote richieste.",
+        "en": "The two choices are independent and must be multiplied: C(8,2) · C(8,1) = 28 · 8 = 224. Adding them (36) would only fit alternative, not simultaneous, choices; C(16,3) = 560 ignores the required quotas."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai unito i due gruppi ignorando le quote: la squadra deve avere esattamente 2 ragazze e 1 ragazzi, non 3 persone a caso.",
+          "en": "You merged the two groups ignoring the quotas: the team needs exactly 2 girls and 1 boys, not any 3 people."
+        },
+        "C": {
+          "it": "Hai sommato le due scelte: la somma vale per scelte alternative, ma qui le quote vanno soddisfatte contemporaneamente, quindi si moltiplicano.",
+          "en": "You added the two choices: addition fits alternative choices, but here both quotas must be met at the same time, so you multiply."
+        },
+        "D": {
+          "it": "Hai introdotto un ordine che non esiste: all'interno di ciascun gruppo le persone si scelgono senza incarichi, quindi servono le combinazioni.",
+          "en": "You introduced an order that does not exist: within each group people are chosen without roles, so you need combinations."
+        }
+      }
+    },
+    {
+      "id": "combinazioni-quote-gruppi-030",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Un gruppo è formato da 7 ragazze e 5 ragazzi. In quanti modi si può comporre una squadra di 2 ragazze e 2 ragazzi?",
+        "en": "A group consists of 7 girls and 5 boys. In how many ways can a team of 2 girls and 2 boys be formed?"
+      },
+      "options": {
+        "A": "495",
+        "B": "31",
+        "C": "210",
+        "D": "840"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "Le due scelte sono indipendenti e vanno moltiplicate: C(7,2) · C(5,2) = 21 · 10 = 210. Sommare i due valori (31) sarebbe corretto solo per scelte alternative, non simultanee; C(12,4) = 495 ignora le quote richieste.",
+        "en": "The two choices are independent and must be multiplied: C(7,2) · C(5,2) = 21 · 10 = 210. Adding them (31) would only fit alternative, not simultaneous, choices; C(12,4) = 495 ignores the required quotas."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai unito i due gruppi ignorando le quote: la squadra deve avere esattamente 2 ragazze e 2 ragazzi, non 4 persone a caso.",
+          "en": "You merged the two groups ignoring the quotas: the team needs exactly 2 girls and 2 boys, not any 4 people."
+        },
+        "B": {
+          "it": "Hai sommato le due scelte: la somma vale per scelte alternative, ma qui le quote vanno soddisfatte contemporaneamente, quindi si moltiplicano.",
+          "en": "You added the two choices: addition fits alternative choices, but here both quotas must be met at the same time, so you multiply."
+        },
+        "D": {
+          "it": "Hai introdotto un ordine che non esiste: all'interno di ciascun gruppo le persone si scelgono senza incarichi, quindi servono le combinazioni.",
+          "en": "You introduced an order that does not exist: within each group people are chosen without roles, so you need combinations."
+        }
+      }
+    },
+    {
+      "id": "combinazioni-quote-gruppi-031",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Un gruppo è formato da 4 ragazze e 5 ragazzi. In quanti modi si può comporre una squadra di 2 ragazze e 1 ragazzi?",
+        "en": "A group consists of 4 girls and 5 boys. In how many ways can a team of 2 girls and 1 boys be formed?"
+      },
+      "options": {
+        "A": "30",
+        "B": "11",
+        "C": "84",
+        "D": "60"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "Le due scelte sono indipendenti e vanno moltiplicate: C(4,2) · C(5,1) = 6 · 5 = 30. Sommare i due valori (11) sarebbe corretto solo per scelte alternative, non simultanee; C(9,3) = 84 ignora le quote richieste.",
+        "en": "The two choices are independent and must be multiplied: C(4,2) · C(5,1) = 6 · 5 = 30. Adding them (11) would only fit alternative, not simultaneous, choices; C(9,3) = 84 ignores the required quotas."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai sommato le due scelte: la somma vale per scelte alternative, ma qui le quote vanno soddisfatte contemporaneamente, quindi si moltiplicano.",
+          "en": "You added the two choices: addition fits alternative choices, but here both quotas must be met at the same time, so you multiply."
+        },
+        "C": {
+          "it": "Hai unito i due gruppi ignorando le quote: la squadra deve avere esattamente 2 ragazze e 1 ragazzi, non 3 persone a caso.",
+          "en": "You merged the two groups ignoring the quotas: the team needs exactly 2 girls and 1 boys, not any 3 people."
+        },
+        "D": {
+          "it": "Hai introdotto un ordine che non esiste: all'interno di ciascun gruppo le persone si scelgono senza incarichi, quindi servono le combinazioni.",
+          "en": "You introduced an order that does not exist: within each group people are chosen without roles, so you need combinations."
+        }
+      }
+    },
+    {
+      "id": "combinazioni-diagonali-poligono-032",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Quante diagonali ha un poligono convesso con 9 vertici?",
+        "en": "How many diagonals does a convex polygon with 9 vertices have?"
+      },
+      "options": {
+        "A": "27",
+        "B": "36",
+        "C": "72",
+        "D": "9"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "Ogni coppia di vertici determina un segmento: C(9,2) = 36. Di questi, 9 sono i lati del poligono e non diagonali, quindi 36 − 9 = 27.",
+        "en": "Each pair of vertices determines a segment: C(9,2) = 36. Of these, 9 are the polygon's sides rather than diagonals, so 36 − 9 = 27."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai contato anche i lati: ogni coppia di vertici consecutivi dà un lato, non una diagonale; vanno tolti gli 9 lati.",
+          "en": "You counted the sides too: each pair of consecutive vertices gives a side, not a diagonal; the 9 sides must be removed."
+        },
+        "C": {
+          "it": "Hai contato ogni diagonale due volte: il segmento che va da A a B è lo stesso che va da B ad A.",
+          "en": "You counted each diagonal twice: the segment from A to B is the same as the one from B to A."
+        },
+        "D": {
+          "it": "Hai contato solo le diagonali che passano per un vertice: ognuno dei 9 vertici è capolinea di 6 diagonali.",
+          "en": "You counted only the diagonals through one vertex: each of the 9 vertices is the endpoint of 6 diagonals."
+        }
+      }
+    },
+    {
+      "id": "combinazioni-diagonali-poligono-033",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Quante diagonali ha un poligono convesso con 9 vertici?",
+        "en": "How many diagonals does a convex polygon with 9 vertices have?"
+      },
+      "options": {
+        "A": "9",
+        "B": "27",
+        "C": "72",
+        "D": "36"
+      },
+      "correct": "B",
+      "explanation": {
+        "it": "Ogni coppia di vertici determina un segmento: C(9,2) = 36. Di questi, 9 sono i lati del poligono e non diagonali, quindi 36 − 9 = 27.",
+        "en": "Each pair of vertices determines a segment: C(9,2) = 36. Of these, 9 are the polygon's sides rather than diagonals, so 36 − 9 = 27."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai contato solo le diagonali che passano per un vertice: ognuno dei 9 vertici è capolinea di 6 diagonali.",
+          "en": "You counted only the diagonals through one vertex: each of the 9 vertices is the endpoint of 6 diagonals."
+        },
+        "C": {
+          "it": "Hai contato ogni diagonale due volte: il segmento che va da A a B è lo stesso che va da B ad A.",
+          "en": "You counted each diagonal twice: the segment from A to B is the same as the one from B to A."
+        },
+        "D": {
+          "it": "Hai contato anche i lati: ogni coppia di vertici consecutivi dà un lato, non una diagonale; vanno tolti gli 9 lati.",
+          "en": "You counted the sides too: each pair of consecutive vertices gives a side, not a diagonal; the 9 sides must be removed."
+        }
+      }
+    },
+    {
+      "id": "combinazioni-diagonali-poligono-034",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Quante diagonali ha un poligono convesso con 6 vertici?",
+        "en": "How many diagonals does a convex polygon with 6 vertices have?"
+      },
+      "options": {
+        "A": "9",
+        "B": "6",
+        "C": "30",
+        "D": "15"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "Ogni coppia di vertici determina un segmento: C(6,2) = 15. Di questi, 6 sono i lati del poligono e non diagonali, quindi 15 − 6 = 9.",
+        "en": "Each pair of vertices determines a segment: C(6,2) = 15. Of these, 6 are the polygon's sides rather than diagonals, so 15 − 6 = 9."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai contato solo le diagonali che passano per un vertice: ognuno dei 6 vertici è capolinea di 3 diagonali.",
+          "en": "You counted only the diagonals through one vertex: each of the 6 vertices is the endpoint of 3 diagonals."
+        },
+        "C": {
+          "it": "Hai contato ogni diagonale due volte: il segmento che va da A a B è lo stesso che va da B ad A.",
+          "en": "You counted each diagonal twice: the segment from A to B is the same as the one from B to A."
+        },
+        "D": {
+          "it": "Hai contato anche i lati: ogni coppia di vertici consecutivi dà un lato, non una diagonale; vanno tolti gli 6 lati.",
+          "en": "You counted the sides too: each pair of consecutive vertices gives a side, not a diagonal; the 6 sides must be removed."
+        }
+      }
+    },
+    {
+      "id": "combinazioni-diagonali-poligono-035",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Quante diagonali ha un poligono convesso con 9 vertici?",
+        "en": "How many diagonals does a convex polygon with 9 vertices have?"
+      },
+      "options": {
+        "A": "36",
+        "B": "72",
+        "C": "9",
+        "D": "27"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "Ogni coppia di vertici determina un segmento: C(9,2) = 36. Di questi, 9 sono i lati del poligono e non diagonali, quindi 36 − 9 = 27.",
+        "en": "Each pair of vertices determines a segment: C(9,2) = 36. Of these, 9 are the polygon's sides rather than diagonals, so 36 − 9 = 27."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai contato anche i lati: ogni coppia di vertici consecutivi dà un lato, non una diagonale; vanno tolti gli 9 lati.",
+          "en": "You counted the sides too: each pair of consecutive vertices gives a side, not a diagonal; the 9 sides must be removed."
+        },
+        "B": {
+          "it": "Hai contato ogni diagonale due volte: il segmento che va da A a B è lo stesso che va da B ad A.",
+          "en": "You counted each diagonal twice: the segment from A to B is the same as the one from B to A."
+        },
+        "C": {
+          "it": "Hai contato solo le diagonali che passano per un vertice: ognuno dei 9 vertici è capolinea di 6 diagonali.",
+          "en": "You counted only the diagonals through one vertex: each of the 9 vertices is the endpoint of 6 diagonals."
+        }
+      }
+    },
+    {
+      "id": "combinazioni-sottoinsiemi-036",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "difficulty": "advanced",
+      "text": {
+        "it": "Quanti sottoinsiemi, compresi l'insieme vuoto e l'insieme stesso, ha un insieme di 6 elementi?",
+        "en": "How many subsets, including the empty set and the set itself, does a set of 6 elements have?"
+      },
+      "options": {
+        "A": "15",
+        "B": "720",
+        "C": "64",
+        "D": "63"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "Per ogni elemento si decide se includerlo o no: 2 · 2 · … = 2^6 = 64. Equivalentemente è la somma di tutte le combinazioni C(6,0) + … + C(6,6). Il valore 63 esclude l'insieme vuoto.",
+        "en": "For each element you decide whether to include it: 2 · 2 · … = 2^6 = 64. Equivalently it is the sum of all combinations C(6,0) + … + C(6,6). The value 63 leaves out the empty set."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai contato solo i sottoinsiemi di due elementi: invece ogni cardinalità da 0 a 6 contribuisce al totale.",
+          "en": "You counted only the two-element subsets: in fact every cardinality from 0 to 6 contributes."
+        },
+        "B": {
+          "it": "Hai contato gli ordinamenti degli elementi: un sottoinsieme non ha ordine interno, quindi non servono le permutazioni.",
+          "en": "You counted orderings of the elements: a subset has no internal order, so permutations are not needed."
+        },
+        "D": {
+          "it": "Hai escluso l'insieme vuoto: il testo chiede di comprenderlo insieme all'insieme stesso.",
+          "en": "You left out the empty set: the text asks to include it together with the set itself."
+        }
+      }
+    },
+    {
+      "id": "combinazioni-sottoinsiemi-037",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "difficulty": "advanced",
+      "text": {
+        "it": "Quanti sottoinsiemi, compresi l'insieme vuoto e l'insieme stesso, ha un insieme di 4 elementi?",
+        "en": "How many subsets, including the empty set and the set itself, does a set of 4 elements have?"
+      },
+      "options": {
+        "A": "16",
+        "B": "15",
+        "C": "6",
+        "D": "24"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "Per ogni elemento si decide se includerlo o no: 2 · 2 · … = 2^4 = 16. Equivalentemente è la somma di tutte le combinazioni C(4,0) + … + C(4,4). Il valore 15 esclude l'insieme vuoto.",
+        "en": "For each element you decide whether to include it: 2 · 2 · … = 2^4 = 16. Equivalently it is the sum of all combinations C(4,0) + … + C(4,4). The value 15 leaves out the empty set."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai escluso l'insieme vuoto: il testo chiede di comprenderlo insieme all'insieme stesso.",
+          "en": "You left out the empty set: the text asks to include it together with the set itself."
+        },
+        "C": {
+          "it": "Hai contato solo i sottoinsiemi di due elementi: invece ogni cardinalità da 0 a 4 contribuisce al totale.",
+          "en": "You counted only the two-element subsets: in fact every cardinality from 0 to 4 contributes."
+        },
+        "D": {
+          "it": "Hai contato gli ordinamenti degli elementi: un sottoinsieme non ha ordine interno, quindi non servono le permutazioni.",
+          "en": "You counted orderings of the elements: a subset has no internal order, so permutations are not needed."
+        }
+      }
+    },
+    {
+      "id": "combinazioni-sottoinsiemi-038",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "difficulty": "advanced",
+      "text": {
+        "it": "Quanti sottoinsiemi, compresi l'insieme vuoto e l'insieme stesso, ha un insieme di 5 elementi?",
+        "en": "How many subsets, including the empty set and the set itself, does a set of 5 elements have?"
+      },
+      "options": {
+        "A": "31",
+        "B": "32",
+        "C": "10",
+        "D": "120"
+      },
+      "correct": "B",
+      "explanation": {
+        "it": "Per ogni elemento si decide se includerlo o no: 2 · 2 · … = 2^5 = 32. Equivalentemente è la somma di tutte le combinazioni C(5,0) + … + C(5,5). Il valore 31 esclude l'insieme vuoto.",
+        "en": "For each element you decide whether to include it: 2 · 2 · … = 2^5 = 32. Equivalently it is the sum of all combinations C(5,0) + … + C(5,5). The value 31 leaves out the empty set."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai escluso l'insieme vuoto: il testo chiede di comprenderlo insieme all'insieme stesso.",
+          "en": "You left out the empty set: the text asks to include it together with the set itself."
+        },
+        "C": {
+          "it": "Hai contato solo i sottoinsiemi di due elementi: invece ogni cardinalità da 0 a 5 contribuisce al totale.",
+          "en": "You counted only the two-element subsets: in fact every cardinality from 0 to 5 contributes."
+        },
+        "D": {
+          "it": "Hai contato gli ordinamenti degli elementi: un sottoinsieme non ha ordine interno, quindi non servono le permutazioni.",
+          "en": "You counted orderings of the elements: a subset has no internal order, so permutations are not needed."
+        }
+      }
+    },
+    {
+      "id": "combinazioni-sottoinsiemi-039",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "difficulty": "advanced",
+      "text": {
+        "it": "Quanti sottoinsiemi, compresi l'insieme vuoto e l'insieme stesso, ha un insieme di 4 elementi?",
+        "en": "How many subsets, including the empty set and the set itself, does a set of 4 elements have?"
+      },
+      "options": {
+        "A": "6",
+        "B": "24",
+        "C": "16",
+        "D": "15"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "Per ogni elemento si decide se includerlo o no: 2 · 2 · … = 2^4 = 16. Equivalentemente è la somma di tutte le combinazioni C(4,0) + … + C(4,4). Il valore 15 esclude l'insieme vuoto.",
+        "en": "For each element you decide whether to include it: 2 · 2 · … = 2^4 = 16. Equivalently it is the sum of all combinations C(4,0) + … + C(4,4). The value 15 leaves out the empty set."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai contato solo i sottoinsiemi di due elementi: invece ogni cardinalità da 0 a 4 contribuisce al totale.",
+          "en": "You counted only the two-element subsets: in fact every cardinality from 0 to 4 contributes."
+        },
+        "B": {
+          "it": "Hai contato gli ordinamenti degli elementi: un sottoinsieme non ha ordine interno, quindi non servono le permutazioni.",
+          "en": "You counted orderings of the elements: a subset has no internal order, so permutations are not needed."
+        },
+        "D": {
+          "it": "Hai escluso l'insieme vuoto: il testo chiede di comprenderlo insieme all'insieme stesso.",
+          "en": "You left out the empty set: the text asks to include it together with the set itself."
+        }
+      }
+    },
+    {
+      "id": "urna-senza-reimmissione-stesso-colore-040",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Un'urna contiene 7 palline rosse e 4 palline blu. Si estraggono due palline contemporaneamente. Qual è la probabilità che abbiano lo stesso colore?",
+        "en": "An urn contains 7 red and 4 blue balls. Two balls are drawn together. What is the probability they have the same colour?"
+      },
+      "options": {
+        "A": "65/121",
+        "B": "1",
+        "C": "27/55",
+        "D": "28/55"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "I casi possibili sono C(11,2) = 55 coppie. I casi favorevoli sono le coppie tutte rosse più quelle tutte blu: C(7,2) + C(4,2) = 21 + 6. Quindi P = 27/55 = 27/55.",
+        "en": "The possible cases are C(11,2) = 55 pairs. The favourable cases are all-red plus all-blue pairs: C(7,2) + C(4,2) = 21 + 6. So P = 27/55 = 27/55."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai trattato le due estrazioni come indipendenti (con reimmissione): estraendo contemporaneamente la prima pallina non torna nell'urna, quindi le coppie vanno contate senza ripetizioni.",
+          "en": "You treated the two draws as independent (with replacement): drawing together means the first ball never goes back, so pairs must be counted without repetition."
+        },
+        "B": {
+          "it": "Non è un evento certo: le due palline possono anche avere colori diversi, quindi la probabilità è minore di 1.",
+          "en": "This is not a certain event: the two balls may well have different colours, so the probability is less than 1."
+        }
+      }
+    },
+    {
+      "id": "urna-senza-reimmissione-stesso-colore-041",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Un'urna contiene 5 palline rosse e 4 palline blu. Si estraggono due palline contemporaneamente. Qual è la probabilità che abbiano lo stesso colore?",
+        "en": "An urn contains 5 red and 4 blue balls. Two balls are drawn together. What is the probability they have the same colour?"
+      },
+      "options": {
+        "A": "77/81",
+        "B": "4/9",
+        "C": "1",
+        "D": "41/81"
+      },
+      "correct": "B",
+      "explanation": {
+        "it": "I casi possibili sono C(9,2) = 36 coppie. I casi favorevoli sono le coppie tutte rosse più quelle tutte blu: C(5,2) + C(4,2) = 10 + 6. Quindi P = 16/36 = 4/9.",
+        "en": "The possible cases are C(9,2) = 36 pairs. The favourable cases are all-red plus all-blue pairs: C(5,2) + C(4,2) = 10 + 6. So P = 16/36 = 4/9."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai sommato due probabilità calcolate con modelli diversi: la stessa coppia andrebbe contata due volte, il che non ha senso. Va bene il conteggio diretto delle coppie favorevoli.",
+          "en": "You added two probabilities computed with different models: the same pair would be counted twice, which makes no sense. Count the favourable pairs directly."
+        },
+        "C": {
+          "it": "Non è un evento certo: le due palline possono anche avere colori diversi, quindi la probabilità è minore di 1.",
+          "en": "This is not a certain event: the two balls may well have different colours, so the probability is less than 1."
+        },
+        "D": {
+          "it": "Hai trattato le due estrazioni come indipendenti (con reimmissione): estraendo contemporaneamente la prima pallina non torna nell'urna, quindi le coppie vanno contate senza ripetizioni.",
+          "en": "You treated the two draws as independent (with replacement): drawing together means the first ball never goes back, so pairs must be counted without repetition."
+        }
+      }
+    },
+    {
+      "id": "urna-senza-reimmissione-stesso-colore-042",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Un'urna contiene 3 palline rosse e 7 palline blu. Si estraggono due palline contemporaneamente. Qual è la probabilità che abbiano lo stesso colore?",
+        "en": "An urn contains 3 red and 7 blue balls. Two balls are drawn together. What is the probability they have the same colour?"
+      },
+      "options": {
+        "A": "3/5",
+        "B": "29/50",
+        "C": "8/15",
+        "D": "1"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "I casi possibili sono C(10,2) = 45 coppie. I casi favorevoli sono le coppie tutte rosse più quelle tutte blu: C(3,2) + C(7,2) = 3 + 21. Quindi P = 24/45 = 8/15.",
+        "en": "The possible cases are C(10,2) = 45 pairs. The favourable cases are all-red plus all-blue pairs: C(3,2) + C(7,2) = 3 + 21. So P = 24/45 = 8/15."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai trattato le due estrazioni come indipendenti (con reimmissione): estraendo contemporaneamente la prima pallina non torna nell'urna, quindi le coppie vanno contate senza ripetizioni.",
+          "en": "You treated the two draws as independent (with replacement): drawing together means the first ball never goes back, so pairs must be counted without repetition."
+        },
+        "D": {
+          "it": "Non è un evento certo: le due palline possono anche avere colori diversi, quindi la probabilità è minore di 1.",
+          "en": "This is not a certain event: the two balls may well have different colours, so the probability is less than 1."
+        }
+      }
+    },
+    {
+      "id": "urna-senza-reimmissione-stesso-colore-043",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Un'urna contiene 6 palline rosse e 4 palline blu. Si estraggono due palline contemporaneamente. Qual è la probabilità che abbiano lo stesso colore?",
+        "en": "An urn contains 6 red and 4 blue balls. Two balls are drawn together. What is the probability they have the same colour?"
+      },
+      "options": {
+        "A": "1",
+        "B": "74/75",
+        "C": "13/25",
+        "D": "7/15"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "I casi possibili sono C(10,2) = 45 coppie. I casi favorevoli sono le coppie tutte rosse più quelle tutte blu: C(6,2) + C(4,2) = 15 + 6. Quindi P = 21/45 = 7/15.",
+        "en": "The possible cases are C(10,2) = 45 pairs. The favourable cases are all-red plus all-blue pairs: C(6,2) + C(4,2) = 15 + 6. So P = 21/45 = 7/15."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Non è un evento certo: le due palline possono anche avere colori diversi, quindi la probabilità è minore di 1.",
+          "en": "This is not a certain event: the two balls may well have different colours, so the probability is less than 1."
+        },
+        "B": {
+          "it": "Hai sommato due probabilità calcolate con modelli diversi: la stessa coppia andrebbe contata due volte, il che non ha senso. Va bene il conteggio diretto delle coppie favorevoli.",
+          "en": "You added two probabilities computed with different models: the same pair would be counted twice, which makes no sense. Count the favourable pairs directly."
+        },
+        "C": {
+          "it": "Hai trattato le due estrazioni come indipendenti (con reimmissione): estraendo contemporaneamente la prima pallina non torna nell'urna, quindi le coppie vanno contate senza ripetizioni.",
+          "en": "You treated the two draws as independent (with replacement): drawing together means the first ball never goes back, so pairs must be counted without repetition."
+        }
+      }
+    },
+    {
+      "id": "urna-senza-reimmissione-entrambe-rosse-044",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Un'urna contiene 6 palline rosse e 6 palline blu. Si estraggono due palline in sequenza senza reimmissione. Qual è la probabilità che entrambe siano rosse?",
+        "en": "An urn contains 6 red and 6 blue balls. Two balls are drawn in sequence without replacement. What is the probability both are red?"
+      },
+      "options": {
+        "A": "5/22",
+        "B": "1/2",
+        "C": "2/11",
+        "D": "3/11"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "La prima estrazione ha probabilità 6/12. La seconda, sapendo che è rimasta una rossa in meno, ha probabilità 5/11. Il prodotto è 6/12 · 5/11 = 5/22. Usare 6/12 anche alla seconda estrazione ignora che l'urna è cambiata.",
+        "en": "The first draw has probability 6/12. The second, knowing one red ball is gone, has probability 5/11. The product is 6/12 · 5/11 = 5/22. Using 6/12 for the second draw too ignores that the urn has changed."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai sommato invece di moltiplicare: «entrambe rosse» è un evento simultaneo, non un'alternativa fra i due colori.",
+          "en": "You added instead of multiplying: “both red” is a simultaneous event, not an alternative between the two colours."
+        },
+        "D": {
+          "it": "Alla seconda estrazione hai usato la probabilità di una blu: la seconda estrazione avviene senza reimmissione, quindi dopo una rossa restano 5 rosse su 11.",
+          "en": "For the second draw you used the probability of a blue ball: the second draw happens without replacement, so after one red there are 5 reds left out of 11."
+        }
+      }
+    },
+    {
+      "id": "urna-senza-reimmissione-entrambe-rosse-045",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Un'urna contiene 3 palline rosse e 3 palline blu. Si estraggono due palline in sequenza senza reimmissione. Qual è la probabilità che entrambe siano rosse?",
+        "en": "An urn contains 3 red and 3 blue balls. Two balls are drawn in sequence without replacement. What is the probability both are red?"
+      },
+      "options": {
+        "A": "1/2",
+        "B": "3/10",
+        "C": "1/5",
+        "D": "2/5"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "La prima estrazione ha probabilità 3/6. La seconda, sapendo che è rimasta una rossa in meno, ha probabilità 2/5. Il prodotto è 3/6 · 2/5 = 1/5. Usare 3/6 anche alla seconda estrazione ignora che l'urna è cambiata.",
+        "en": "The first draw has probability 3/6. The second, knowing one red ball is gone, has probability 2/5. The product is 3/6 · 2/5 = 1/5. Using 3/6 for the second draw too ignores that the urn has changed."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai sommato invece di moltiplicare: «entrambe rosse» è un evento simultaneo, non un'alternativa fra i due colori.",
+          "en": "You added instead of multiplying: “both red” is a simultaneous event, not an alternative between the two colours."
+        },
+        "B": {
+          "it": "Alla seconda estrazione hai usato la probabilità di una blu: la seconda estrazione avviene senza reimmissione, quindi dopo una rossa restano 2 rosse su 5.",
+          "en": "For the second draw you used the probability of a blue ball: the second draw happens without replacement, so after one red there are 2 reds left out of 5."
+        }
+      }
+    },
+    {
+      "id": "urna-senza-reimmissione-entrambe-rosse-046",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Un'urna contiene 6 palline rosse e 4 palline blu. Si estraggono due palline in sequenza senza reimmissione. Qual è la probabilità che entrambe siano rosse?",
+        "en": "An urn contains 6 red and 4 blue balls. Two balls are drawn in sequence without replacement. What is the probability both are red?"
+      },
+      "options": {
+        "A": "4/15",
+        "B": "3/5",
+        "C": "1/3",
+        "D": "2/3"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "La prima estrazione ha probabilità 6/10. La seconda, sapendo che è rimasta una rossa in meno, ha probabilità 5/9. Il prodotto è 6/10 · 5/9 = 1/3. Usare 6/10 anche alla seconda estrazione ignora che l'urna è cambiata.",
+        "en": "The first draw has probability 6/10. The second, knowing one red ball is gone, has probability 5/9. The product is 6/10 · 5/9 = 1/3. Using 6/10 for the second draw too ignores that the urn has changed."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Alla seconda estrazione hai usato la probabilità di una blu: la seconda estrazione avviene senza reimmissione, quindi dopo una rossa restano 5 rosse su 9.",
+          "en": "For the second draw you used the probability of a blue ball: the second draw happens without replacement, so after one red there are 5 reds left out of 9."
+        },
+        "B": {
+          "it": "Hai sommato invece di moltiplicare: «entrambe rosse» è un evento simultaneo, non un'alternativa fra i due colori.",
+          "en": "You added instead of multiplying: “both red” is a simultaneous event, not an alternative between the two colours."
+        }
+      }
+    },
+    {
+      "id": "urna-senza-reimmissione-entrambe-rosse-047",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Un'urna contiene 6 palline rosse e 4 palline blu. Si estraggono due palline in sequenza senza reimmissione. Qual è la probabilità che entrambe siano rosse?",
+        "en": "An urn contains 6 red and 4 blue balls. Two balls are drawn in sequence without replacement. What is the probability both are red?"
+      },
+      "options": {
+        "A": "4/15",
+        "B": "2/3",
+        "C": "1/3",
+        "D": "3/5"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "La prima estrazione ha probabilità 6/10. La seconda, sapendo che è rimasta una rossa in meno, ha probabilità 5/9. Il prodotto è 6/10 · 5/9 = 1/3. Usare 6/10 anche alla seconda estrazione ignora che l'urna è cambiata.",
+        "en": "The first draw has probability 6/10. The second, knowing one red ball is gone, has probability 5/9. The product is 6/10 · 5/9 = 1/3. Using 6/10 for the second draw too ignores that the urn has changed."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Alla seconda estrazione hai usato la probabilità di una blu: la seconda estrazione avviene senza reimmissione, quindi dopo una rossa restano 5 rosse su 9.",
+          "en": "For the second draw you used the probability of a blue ball: the second draw happens without replacement, so after one red there are 5 reds left out of 9."
+        },
+        "D": {
+          "it": "Hai sommato invece di moltiplicare: «entrambe rosse» è un evento simultaneo, non un'alternativa fra i due colori.",
+          "en": "You added instead of multiplying: “both red” is a simultaneous event, not an alternative between the two colours."
+        }
+      }
+    },
+    {
+      "id": "urna-almeno-uno-048",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "difficulty": "advanced",
+      "text": {
+        "it": "Un'urna contiene 6 palline rosse e 3 palline blu. Si estraggono due palline contemporaneamente. Qual è la probabilità che sia presente almeno una pallina rossa?",
+        "en": "An urn contains 6 red and 3 blue balls. Two balls are drawn together. What is the probability that at least one red ball appears?"
+      },
+      "options": {
+        "A": "11/18",
+        "B": "5/12",
+        "C": "2/3",
+        "D": "7/12"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "È più semplice usare l'evento complementare \"nessuna rossa\", cioè due blu: C(3,2)/C(9,2) = 3/36 = 5/12. Quindi P(almeno una rossa) = 1 − 5/12 = 7/12.",
+        "en": "It is easier to use the complementary event \"no red\", i.e. two blue: C(3,2)/C(9,2) = 3/36 = 5/12. So P(at least one red) = 1 − 5/12 = 7/12."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai aggiunto un pezzo invece di sottrarre: la formula del complementare è 1 − P(nessuna rossa), senza ulteriori correzioni.",
+          "en": "You added a piece instead of subtracting: the complement formula is 1 − P(no red), with no further correction."
+        },
+        "B": {
+          "it": "È la probabilità dell'evento contrario (nessuna rossa, cioè due blu): il risultato richiede 1 − quel valore.",
+          "en": "That is the probability of the opposite event (no red, i.e. two blue): the answer requires 1 − that value."
+        },
+        "C": {
+          "it": "È la probabilità che la prima pallina sia rossa: «almeno una» su due estrazioni va calcolato con il complementare dell'evento contrario.",
+          "en": "That is the probability that the first ball is red: “at least one” over two draws is computed with the complement of the opposite event."
+        }
+      }
+    },
+    {
+      "id": "urna-almeno-uno-049",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "difficulty": "advanced",
+      "text": {
+        "it": "Un'urna contiene 5 palline rosse e 7 palline blu. Si estraggono due palline contemporaneamente. Qual è la probabilità che sia presente almeno una pallina rossa?",
+        "en": "An urn contains 5 red and 7 blue balls. Two balls are drawn together. What is the probability that at least one red ball appears?"
+      },
+      "options": {
+        "A": "5/33",
+        "B": "28/33",
+        "C": "19/22",
+        "D": "5/12"
+      },
+      "correct": "B",
+      "explanation": {
+        "it": "È più semplice usare l'evento complementare \"nessuna rossa\", cioè due blu: C(7,2)/C(12,2) = 21/66 = 5/33. Quindi P(almeno una rossa) = 1 − 5/33 = 28/33.",
+        "en": "It is easier to use the complementary event \"no red\", i.e. two blue: C(7,2)/C(12,2) = 21/66 = 5/33. So P(at least one red) = 1 − 5/33 = 28/33."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "È la probabilità dell'evento contrario (nessuna rossa, cioè due blu): il risultato richiede 1 − quel valore.",
+          "en": "That is the probability of the opposite event (no red, i.e. two blue): the answer requires 1 − that value."
+        },
+        "C": {
+          "it": "Hai aggiunto un pezzo invece di sottrarre: la formula del complementare è 1 − P(nessuna rossa), senza ulteriori correzioni.",
+          "en": "You added a piece instead of subtracting: the complement formula is 1 − P(no red), with no further correction."
+        },
+        "D": {
+          "it": "È la probabilità che la prima pallina sia rossa: «almeno una» su due estrazioni va calcolato con il complementare dell'evento contrario.",
+          "en": "That is the probability that the first ball is red: “at least one” over two draws is computed with the complement of the opposite event."
+        }
+      }
+    },
+    {
+      "id": "urna-almeno-uno-050",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "difficulty": "advanced",
+      "text": {
+        "it": "Un'urna contiene 4 palline rosse e 3 palline blu. Si estraggono due palline contemporaneamente. Qual è la probabilità che sia presente almeno una pallina rossa?",
+        "en": "An urn contains 4 red and 3 blue balls. Two balls are drawn together. What is the probability that at least one red ball appears?"
+      },
+      "options": {
+        "A": "4/7",
+        "B": "2/7",
+        "C": "16/21",
+        "D": "5/7"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "È più semplice usare l'evento complementare \"nessuna rossa\", cioè due blu: C(3,2)/C(7,2) = 3/21 = 2/7. Quindi P(almeno una rossa) = 1 − 2/7 = 5/7.",
+        "en": "It is easier to use the complementary event \"no red\", i.e. two blue: C(3,2)/C(7,2) = 3/21 = 2/7. So P(at least one red) = 1 − 2/7 = 5/7."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "È la probabilità che la prima pallina sia rossa: «almeno una» su due estrazioni va calcolato con il complementare dell'evento contrario.",
+          "en": "That is the probability that the first ball is red: “at least one” over two draws is computed with the complement of the opposite event."
+        },
+        "B": {
+          "it": "È la probabilità dell'evento contrario (nessuna rossa, cioè due blu): il risultato richiede 1 − quel valore.",
+          "en": "That is the probability of the opposite event (no red, i.e. two blue): the answer requires 1 − that value."
+        },
+        "C": {
+          "it": "Hai aggiunto un pezzo invece di sottrarre: la formula del complementare è 1 − P(nessuna rossa), senza ulteriori correzioni.",
+          "en": "You added a piece instead of subtracting: the complement formula is 1 − P(no red), with no further correction."
+        }
+      }
+    },
+    {
+      "id": "urna-almeno-uno-051",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "difficulty": "advanced",
+      "text": {
+        "it": "Un'urna contiene 6 palline rosse e 8 palline blu. Si estraggono due palline contemporaneamente. Qual è la probabilità che sia presente almeno una pallina rossa?",
+        "en": "An urn contains 6 red and 8 blue balls. Two balls are drawn together. What is the probability that at least one red ball appears?"
+      },
+      "options": {
+        "A": "15/91",
+        "B": "11/13",
+        "C": "76/91",
+        "D": "3/7"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "È più semplice usare l'evento complementare \"nessuna rossa\", cioè due blu: C(8,2)/C(14,2) = 28/91 = 15/91. Quindi P(almeno una rossa) = 1 − 15/91 = 76/91.",
+        "en": "It is easier to use the complementary event \"no red\", i.e. two blue: C(8,2)/C(14,2) = 28/91 = 15/91. So P(at least one red) = 1 − 15/91 = 76/91."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "È la probabilità dell'evento contrario (nessuna rossa, cioè due blu): il risultato richiede 1 − quel valore.",
+          "en": "That is the probability of the opposite event (no red, i.e. two blue): the answer requires 1 − that value."
+        },
+        "B": {
+          "it": "Hai aggiunto un pezzo invece di sottrarre: la formula del complementare è 1 − P(nessuna rossa), senza ulteriori correzioni.",
+          "en": "You added a piece instead of subtracting: the complement formula is 1 − P(no red), with no further correction."
+        },
+        "D": {
+          "it": "È la probabilità che la prima pallina sia rossa: «almeno una» su due estrazioni va calcolato con il complementare dell'evento contrario.",
+          "en": "That is the probability that the first ball is red: “at least one” over two draws is computed with the complement of the opposite event."
+        }
+      }
+    },
+    {
+      "id": "probabilita-dadi-somma-052",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "difficulty": "base",
+      "text": {
+        "it": "Si lanciano due dadi equi a sei facce. Qual è la probabilità che la somma dei punteggi sia 6?",
+        "en": "Two fair six-sided dice are rolled. What is the probability that the sum of the scores is 6?"
+      },
+      "options": {
+        "A": "1/6",
+        "B": "1/3",
+        "C": "0",
+        "D": "1/2"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "I casi possibili sono 6 · 6 = 36 coppie ordinate. I casi favorevoli sono 6: le coppie (a, b) con a + b = 6. Quindi P = 6/36 = 1/6.",
+        "en": "The possible cases are 6 · 6 = 36 ordered pairs. The favourable cases are 6: the pairs (a, b) with a + b = 6. So P = 6/36 = 1/6."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai diviso per 18: i casi possibili sono 6 · 6 = 36, perché coppie come (4, 2) e la sua simmetrica vanno distinte.",
+          "en": "You divided by 18: the possible cases are 6 · 6 = 36, because pairs like (4, 2) and its mirror must be kept distinct."
+        },
+        "D": {
+          "it": "Hai contato i casi favorevoli su 12: i casi possibili sono le 6 · 6 = 36 coppie ordinate, non 12.",
+          "en": "You counted the favourable cases out of 12: the possible cases are the 6 · 6 = 36 ordered pairs, not 12."
+        }
+      }
+    },
+    {
+      "id": "probabilita-dadi-somma-053",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "difficulty": "base",
+      "text": {
+        "it": "Si lanciano due dadi equi a sei facce. Qual è la probabilità che la somma dei punteggi sia 8?",
+        "en": "Two fair six-sided dice are rolled. What is the probability that the sum of the scores is 8?"
+      },
+      "options": {
+        "A": "1/6",
+        "B": "1/3",
+        "C": "1/2",
+        "D": "5/36"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "I casi possibili sono 6 · 6 = 36 coppie ordinate. I casi favorevoli sono 6: le coppie (a, b) con a + b = 8. Quindi P = 6/36 = 1/6.",
+        "en": "The possible cases are 6 · 6 = 36 ordered pairs. The favourable cases are 6: the pairs (a, b) with a + b = 8. So P = 6/36 = 1/6."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai diviso per 18: i casi possibili sono 6 · 6 = 36, perché coppie come (4, 4) e la sua simmetrica vanno distinte.",
+          "en": "You divided by 18: the possible cases are 6 · 6 = 36, because pairs like (4, 4) and its mirror must be kept distinct."
+        },
+        "C": {
+          "it": "Hai contato i casi favorevoli su 12: i casi possibili sono le 6 · 6 = 36 coppie ordinate, non 12.",
+          "en": "You counted the favourable cases out of 12: the possible cases are the 6 · 6 = 36 ordered pairs, not 12."
+        },
+        "D": {
+          "it": "Hai contato le coppie di una somma diversa: ricontrolla l'elenco delle coppie che danno 8.",
+          "en": "You counted the pairs of a different sum: double-check the list of pairs giving 8."
+        }
+      }
+    },
+    {
+      "id": "probabilita-dadi-somma-054",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "difficulty": "base",
+      "text": {
+        "it": "Si lanciano due dadi equi a sei facce. Qual è la probabilità che la somma dei punteggi sia 4?",
+        "en": "Two fair six-sided dice are rolled. What is the probability that the sum of the scores is 4?"
+      },
+      "options": {
+        "A": "1/3",
+        "B": "5/36",
+        "C": "1/9",
+        "D": "2/9"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "I casi possibili sono 6 · 6 = 36 coppie ordinate. I casi favorevoli sono 4: le coppie (a, b) con a + b = 4. Quindi P = 4/36 = 1/9.",
+        "en": "The possible cases are 6 · 6 = 36 ordered pairs. The favourable cases are 4: the pairs (a, b) with a + b = 4. So P = 4/36 = 1/9."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai contato i casi favorevoli su 12: i casi possibili sono le 6 · 6 = 36 coppie ordinate, non 12.",
+          "en": "You counted the favourable cases out of 12: the possible cases are the 6 · 6 = 36 ordered pairs, not 12."
+        },
+        "B": {
+          "it": "Hai contato le coppie di una somma diversa: ricontrolla l'elenco delle coppie che danno 4.",
+          "en": "You counted the pairs of a different sum: double-check the list of pairs giving 4."
+        },
+        "D": {
+          "it": "Hai diviso per 18: i casi possibili sono 6 · 6 = 36, perché coppie come (4, 0) e la sua simmetrica vanno distinte.",
+          "en": "You divided by 18: the possible cases are 6 · 6 = 36, because pairs like (4, 0) and its mirror must be kept distinct."
+        }
+      }
+    },
+    {
+      "id": "probabilita-dadi-somma-055",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "difficulty": "base",
+      "text": {
+        "it": "Si lanciano due dadi equi a sei facce. Qual è la probabilità che la somma dei punteggi sia 4?",
+        "en": "Two fair six-sided dice are rolled. What is the probability that the sum of the scores is 4?"
+      },
+      "options": {
+        "A": "1/3",
+        "B": "1/9",
+        "C": "5/36",
+        "D": "2/9"
+      },
+      "correct": "B",
+      "explanation": {
+        "it": "I casi possibili sono 6 · 6 = 36 coppie ordinate. I casi favorevoli sono 4: le coppie (a, b) con a + b = 4. Quindi P = 4/36 = 1/9.",
+        "en": "The possible cases are 6 · 6 = 36 ordered pairs. The favourable cases are 4: the pairs (a, b) with a + b = 4. So P = 4/36 = 1/9."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai contato i casi favorevoli su 12: i casi possibili sono le 6 · 6 = 36 coppie ordinate, non 12.",
+          "en": "You counted the favourable cases out of 12: the possible cases are the 6 · 6 = 36 ordered pairs, not 12."
+        },
+        "C": {
+          "it": "Hai contato le coppie di una somma diversa: ricontrolla l'elenco delle coppie che danno 4.",
+          "en": "You counted the pairs of a different sum: double-check the list of pairs giving 4."
+        },
+        "D": {
+          "it": "Hai diviso per 18: i casi possibili sono 6 · 6 = 36, perché coppie come (4, 0) e la sua simmetrica vanno distinte.",
+          "en": "You divided by 18: the possible cases are 6 · 6 = 36, because pairs like (4, 0) and its mirror must be kept distinct."
+        }
+      }
+    },
+    {
+      "id": "probabilita-unione-eventi-056",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Da un mazzo di 52 carte si estrae una carta. Qual è la probabilità che sia una figura (fante, donna o re) oppure di picche?",
+        "en": "One card is drawn from a deck of 52. What is the probability that it is a face card (jack, queen or king) or a spade?"
+      },
+      "options": {
+        "A": "9/52",
+        "B": "25/52",
+        "C": "11/26",
+        "D": "1/4"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "P(A ∪ B) = P(A) + P(B) − P(A ∩ B): 12/52 + 13/52 − 3/52, perché le figure di picche sono 3. Risultato 22/52 = 11/26. Dimenticare di togliere l'intersezione porterebbe a 25/52, contando due volte le carte che sono una figura (fante, donna o re) e di picche insieme.",
+        "en": "P(A ∪ B) = P(A) + P(B) − P(A ∩ B): 12/52 + 13/52 − 3/52, because the face cards in spades are 3. Result 22/52 = 11/26. Forgetting to remove the intersection would give 25/52, counting the cards that are both a face card (jack, queen or king) and spades twice."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai sottratto l'intersezione invece di includerla: nella formula dell'unione P(A) + P(B) − P(A ∩ B) l'intersezione va tolta una sola volta dal totale, non dal primo evento.",
+          "en": "You subtracted the intersection instead of including it: in the union formula P(A) + P(B) − P(A ∩ B) the intersection is removed once from the total, not from the first event."
+        },
+        "B": {
+          "it": "Hai sommato le due probabilità senza togliere l'intersezione: le carte che sono una figura (fante, donna o re) e di picche (3 in tutto) verrebbero contate due volte.",
+          "en": "You added the two probabilities without removing the intersection: the cards that are both a face card (jack, queen or king) and spades (3 of them) would be counted twice."
+        },
+        "D": {
+          "it": "Hai considerato solo l'evento «picche», dimenticando la prima condizione del quesito.",
+          "en": "You considered only the “spades” event, forgetting the first condition of the question."
+        }
+      }
+    },
+    {
+      "id": "probabilita-unione-eventi-057",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Da un mazzo di 52 carte si estrae una carta. Qual è la probabilità che sia un asso oppure di picche?",
+        "en": "One card is drawn from a deck of 52. What is the probability that it is an ace or a spade?"
+      },
+      "options": {
+        "A": "4/13",
+        "B": "1/4",
+        "C": "3/52",
+        "D": "17/52"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "P(A ∪ B) = P(A) + P(B) − P(A ∩ B): 4/52 + 13/52 − 1/52, perché l'asso di picche è 1. Risultato 16/52 = 4/13. Dimenticare di togliere l'intersezione porterebbe a 17/52, contando due volte le carte che sono un asso e di picche insieme.",
+        "en": "P(A ∪ B) = P(A) + P(B) − P(A ∩ B): 4/52 + 13/52 − 1/52, because the ace of spades is 1. Result 16/52 = 4/13. Forgetting to remove the intersection would give 17/52, counting the cards that are both an ace and spades twice."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai considerato solo l'evento «picche», dimenticando la prima condizione del quesito.",
+          "en": "You considered only the “spades” event, forgetting the first condition of the question."
+        },
+        "C": {
+          "it": "Hai sottratto l'intersezione invece di includerla: nella formula dell'unione P(A) + P(B) − P(A ∩ B) l'intersezione va tolta una sola volta dal totale, non dal primo evento.",
+          "en": "You subtracted the intersection instead of including it: in the union formula P(A) + P(B) − P(A ∩ B) the intersection is removed once from the total, not from the first event."
+        },
+        "D": {
+          "it": "Hai sommato le due probabilità senza togliere l'intersezione: le carte che sono un asso e di picche (1 in tutto) verrebbero contate due volte.",
+          "en": "You added the two probabilities without removing the intersection: the cards that are both an ace and spades (1 of them) would be counted twice."
+        }
+      }
+    },
+    {
+      "id": "probabilita-unione-eventi-058",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Da un mazzo di 52 carte si estrae una carta. Qual è la probabilità che sia un asso oppure di picche?",
+        "en": "One card is drawn from a deck of 52. What is the probability that it is an ace or a spade?"
+      },
+      "options": {
+        "A": "17/52",
+        "B": "3/52",
+        "C": "1/4",
+        "D": "4/13"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "P(A ∪ B) = P(A) + P(B) − P(A ∩ B): 4/52 + 13/52 − 1/52, perché l'asso di picche è 1. Risultato 16/52 = 4/13. Dimenticare di togliere l'intersezione porterebbe a 17/52, contando due volte le carte che sono un asso e di picche insieme.",
+        "en": "P(A ∪ B) = P(A) + P(B) − P(A ∩ B): 4/52 + 13/52 − 1/52, because the ace of spades is 1. Result 16/52 = 4/13. Forgetting to remove the intersection would give 17/52, counting the cards that are both an ace and spades twice."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai sommato le due probabilità senza togliere l'intersezione: le carte che sono un asso e di picche (1 in tutto) verrebbero contate due volte.",
+          "en": "You added the two probabilities without removing the intersection: the cards that are both an ace and spades (1 of them) would be counted twice."
+        },
+        "B": {
+          "it": "Hai sottratto l'intersezione invece di includerla: nella formula dell'unione P(A) + P(B) − P(A ∩ B) l'intersezione va tolta una sola volta dal totale, non dal primo evento.",
+          "en": "You subtracted the intersection instead of including it: in the union formula P(A) + P(B) − P(A ∩ B) the intersection is removed once from the total, not from the first event."
+        },
+        "C": {
+          "it": "Hai considerato solo l'evento «picche», dimenticando la prima condizione del quesito.",
+          "en": "You considered only the “spades” event, forgetting the first condition of the question."
+        }
+      }
+    },
+    {
+      "id": "probabilita-unione-eventi-059",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Da un mazzo di 52 carte si estrae una carta. Qual è la probabilità che sia un asso oppure di picche?",
+        "en": "One card is drawn from a deck of 52. What is the probability that it is an ace or a spade?"
+      },
+      "options": {
+        "A": "3/52",
+        "B": "17/52",
+        "C": "1/4",
+        "D": "4/13"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "P(A ∪ B) = P(A) + P(B) − P(A ∩ B): 4/52 + 13/52 − 1/52, perché l'asso di picche è 1. Risultato 16/52 = 4/13. Dimenticare di togliere l'intersezione porterebbe a 17/52, contando due volte le carte che sono un asso e di picche insieme.",
+        "en": "P(A ∪ B) = P(A) + P(B) − P(A ∩ B): 4/52 + 13/52 − 1/52, because the ace of spades is 1. Result 16/52 = 4/13. Forgetting to remove the intersection would give 17/52, counting the cards that are both an ace and spades twice."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai sottratto l'intersezione invece di includerla: nella formula dell'unione P(A) + P(B) − P(A ∩ B) l'intersezione va tolta una sola volta dal totale, non dal primo evento.",
+          "en": "You subtracted the intersection instead of including it: in the union formula P(A) + P(B) − P(A ∩ B) the intersection is removed once from the total, not from the first event."
+        },
+        "B": {
+          "it": "Hai sommato le due probabilità senza togliere l'intersezione: le carte che sono un asso e di picche (1 in tutto) verrebbero contate due volte.",
+          "en": "You added the two probabilities without removing the intersection: the cards that are both an ace and spades (1 of them) would be counted twice."
+        },
+        "C": {
+          "it": "Hai considerato solo l'evento «picche», dimenticando la prima condizione del quesito.",
+          "en": "You considered only the “spades” event, forgetting the first condition of the question."
+        }
+      }
+    },
+    {
+      "id": "bernoulli-esattamente-k-060",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "difficulty": "advanced",
+      "text": {
+        "it": "Una moneta equa viene lanciata 3 volte. Qual è la probabilità di ottenere esattamente 1 teste?",
+        "en": "A fair coin is tossed 3 times. What is the probability of getting exactly 1 heads?"
+      },
+      "options": {
+        "A": "3/8",
+        "B": "1/8",
+        "C": "3/16",
+        "D": "1/4"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "Schema di Bernoulli con n = 3, k = 1, p = 1/2. Il coefficiente binomiale è C(3,1) = 3, perché conta le sequenze con esattamente 1 teste. La probabilità di ciascuna sequenza è (1/2)^3. Quindi P = C(3,1) · (1/2)^3 = 3/8 = 3/8.",
+        "en": "Bernoulli scheme with n = 3, k = 1, p = 1/2. The binomial coefficient is C(3,1) = 3, counting the sequences with exactly 1 heads. Each sequence has probability (1/2)^3. So P = C(3,1) · (1/2)^3 = 3/8 = 3/8."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai contato una sola sequenza: esistono C(3,1) = 3 sequenze con esattamente 1 teste, e vanno tutte contate.",
+          "en": "You counted a single sequence: there are C(3,1) = 3 sequences with exactly 1 heads, and all of them must be counted."
+        },
+        "C": {
+          "it": "Hai diviso per 2^4: i lanci sono 3, quindi le sequenze possibili sono 2^3.",
+          "en": "You divided by 2^4: there are 3 tosses, so the possible sequences are 2^3."
+        },
+        "D": {
+          "it": "Hai calcolato la probabilità di un successo e un insuccesso in due lanci: qui i lanci sono 3 e i successi esattamente 1.",
+          "en": "You computed the probability of one success and one failure in two tosses: here there are 3 tosses and exactly 1 successes."
+        }
+      }
+    },
+    {
+      "id": "bernoulli-esattamente-k-061",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "difficulty": "advanced",
+      "text": {
+        "it": "Una moneta equa viene lanciata 4 volte. Qual è la probabilità di ottenere esattamente 2 teste?",
+        "en": "A fair coin is tossed 4 times. What is the probability of getting exactly 2 heads?"
+      },
+      "options": {
+        "A": "3/16",
+        "B": "1/16",
+        "C": "1/4",
+        "D": "3/8"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "Schema di Bernoulli con n = 4, k = 2, p = 1/2. Il coefficiente binomiale è C(4,2) = 6, perché conta le sequenze con esattamente 2 teste. La probabilità di ciascuna sequenza è (1/2)^4. Quindi P = C(4,2) · (1/2)^4 = 6/16 = 3/8.",
+        "en": "Bernoulli scheme with n = 4, k = 2, p = 1/2. The binomial coefficient is C(4,2) = 6, counting the sequences with exactly 2 heads. Each sequence has probability (1/2)^4. So P = C(4,2) · (1/2)^4 = 6/16 = 3/8."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai diviso per 2^5: i lanci sono 4, quindi le sequenze possibili sono 2^4.",
+          "en": "You divided by 2^5: there are 4 tosses, so the possible sequences are 2^4."
+        },
+        "B": {
+          "it": "Hai contato una sola sequenza: esistono C(4,2) = 6 sequenze con esattamente 2 teste, e vanno tutte contate.",
+          "en": "You counted a single sequence: there are C(4,2) = 6 sequences with exactly 2 heads, and all of them must be counted."
+        },
+        "C": {
+          "it": "Hai calcolato la probabilità di un successo e un insuccesso in due lanci: qui i lanci sono 4 e i successi esattamente 2.",
+          "en": "You computed the probability of one success and one failure in two tosses: here there are 4 tosses and exactly 2 successes."
+        }
+      }
+    },
+    {
+      "id": "bernoulli-esattamente-k-062",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "difficulty": "advanced",
+      "text": {
+        "it": "Una moneta equa viene lanciata 3 volte. Qual è la probabilità di ottenere esattamente 1 teste?",
+        "en": "A fair coin is tossed 3 times. What is the probability of getting exactly 1 heads?"
+      },
+      "options": {
+        "A": "3/16",
+        "B": "3/8",
+        "C": "1/8",
+        "D": "1/4"
+      },
+      "correct": "B",
+      "explanation": {
+        "it": "Schema di Bernoulli con n = 3, k = 1, p = 1/2. Il coefficiente binomiale è C(3,1) = 3, perché conta le sequenze con esattamente 1 teste. La probabilità di ciascuna sequenza è (1/2)^3. Quindi P = C(3,1) · (1/2)^3 = 3/8 = 3/8.",
+        "en": "Bernoulli scheme with n = 3, k = 1, p = 1/2. The binomial coefficient is C(3,1) = 3, counting the sequences with exactly 1 heads. Each sequence has probability (1/2)^3. So P = C(3,1) · (1/2)^3 = 3/8 = 3/8."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai diviso per 2^4: i lanci sono 3, quindi le sequenze possibili sono 2^3.",
+          "en": "You divided by 2^4: there are 3 tosses, so the possible sequences are 2^3."
+        },
+        "C": {
+          "it": "Hai contato una sola sequenza: esistono C(3,1) = 3 sequenze con esattamente 1 teste, e vanno tutte contate.",
+          "en": "You counted a single sequence: there are C(3,1) = 3 sequences with exactly 1 heads, and all of them must be counted."
+        },
+        "D": {
+          "it": "Hai calcolato la probabilità di un successo e un insuccesso in due lanci: qui i lanci sono 3 e i successi esattamente 1.",
+          "en": "You computed the probability of one success and one failure in two tosses: here there are 3 tosses and exactly 1 successes."
+        }
+      }
+    },
+    {
+      "id": "bernoulli-esattamente-k-063",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "difficulty": "advanced",
+      "text": {
+        "it": "Una moneta equa viene lanciata 3 volte. Qual è la probabilità di ottenere esattamente 2 teste?",
+        "en": "A fair coin is tossed 3 times. What is the probability of getting exactly 2 heads?"
+      },
+      "options": {
+        "A": "3/8",
+        "B": "1/4",
+        "C": "3/16",
+        "D": "1/8"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "Schema di Bernoulli con n = 3, k = 2, p = 1/2. Il coefficiente binomiale è C(3,2) = 3, perché conta le sequenze con esattamente 2 teste. La probabilità di ciascuna sequenza è (1/2)^3. Quindi P = C(3,2) · (1/2)^3 = 3/8 = 3/8.",
+        "en": "Bernoulli scheme with n = 3, k = 2, p = 1/2. The binomial coefficient is C(3,2) = 3, counting the sequences with exactly 2 heads. Each sequence has probability (1/2)^3. So P = C(3,2) · (1/2)^3 = 3/8 = 3/8."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai calcolato la probabilità di un successo e un insuccesso in due lanci: qui i lanci sono 3 e i successi esattamente 2.",
+          "en": "You computed the probability of one success and one failure in two tosses: here there are 3 tosses and exactly 2 successes."
+        },
+        "C": {
+          "it": "Hai diviso per 2^4: i lanci sono 3, quindi le sequenze possibili sono 2^3.",
+          "en": "You divided by 2^4: there are 3 tosses, so the possible sequences are 2^3."
+        },
+        "D": {
+          "it": "Hai contato una sola sequenza: esistono C(3,2) = 3 sequenze con esattamente 2 teste, e vanno tutte contate.",
+          "en": "You counted a single sequence: there are C(3,2) = 3 sequences with exactly 2 heads, and all of them must be counted."
+        }
+      }
+    },
+    {
+      "id": "probabilita-totale-bayes-064",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "difficulty": "advanced",
+      "text": {
+        "it": "In una fabbrica la macchina 1 produce 240 pezzi su 400 e ne difetta il 1/24, mentre la macchina 2 ne produce 160 su 400 con tasso di difetti 1/8. Si estrae a caso un pezzo dell'intera produzione. Qual è la probabilità che sia difettoso?",
+        "en": "In a factory machine 1 produces 240 of the 400 pieces with a defect rate of 1/24, while machine 2 produces 160 of them with a defect rate of 1/8. One piece is drawn at random from the whole output. What is the probability that it is defective?"
+      },
+      "options": {
+        "A": "1/40",
+        "B": "3/40",
+        "C": "1/24",
+        "D": "1/20"
+      },
+      "correct": "B",
+      "explanation": {
+        "it": "Con un lotto di 400 pezzi: la macchina 1 ne difetta 10 e la macchina 2 ne difetta 20. In totale i difettosi sono 30, quindi P(difettoso) = 30/400 = 3/40. È la probabilità totale: P(D) = P(D|M₁)·P(M₁) + P(D|M₂)·P(M₂).",
+        "en": "With a batch of 400 pieces: machine 1 makes 10 defective ones and machine 2 makes 20. In total 30 are defective, so P(defective) = 30/400 = 3/40. This is the total probability: P(D) = P(D|M₁)·P(M₁) + P(D|M₂)·P(M₂)."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai contato solo i difetti della macchina 1: la macchina 2 ne produce anch'essa 20 su 400, e tutti finiscono nello stesso lotto.",
+          "en": "You counted only machine 1's defects: machine 2 also produces 20 defective pieces out of 400, and they all end up in the same batch."
+        },
+        "C": {
+          "it": "Hai dato il tasso di difetti della sola macchina 1 (1/24): la domanda riguarda l'intera produzione, quindi pesa anche la quota di pezzi delle due macchine.",
+          "en": "You gave the defect rate of machine 1 alone (1/24): the question concerns the whole output, so the share of pieces each machine produces matters too."
+        },
+        "D": {
+          "it": "Hai contato solo i difetti della macchina 2: la macchina 1 ne produce anch'essa 10 su 400, e tutti finiscono nello stesso lotto.",
+          "en": "You counted only machine 2's defects: machine 1 also produces 10 defective pieces out of 400, and they all end up in the same batch."
+        }
+      }
+    },
+    {
+      "id": "probabilita-totale-bayes-065",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "difficulty": "advanced",
+      "text": {
+        "it": "In una fabbrica la macchina 1 produce 240 pezzi su 400 e ne difetta il 1/24, mentre la macchina 2 ne produce 160 su 400 con tasso di difetti 1/8. Si estrae a caso un pezzo dell'intera produzione. Qual è la probabilità che sia difettoso?",
+        "en": "In a factory machine 1 produces 240 of the 400 pieces with a defect rate of 1/24, while machine 2 produces 160 of them with a defect rate of 1/8. One piece is drawn at random from the whole output. What is the probability that it is defective?"
+      },
+      "options": {
+        "A": "1/20",
+        "B": "1/40",
+        "C": "1/24",
+        "D": "3/40"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "Con un lotto di 400 pezzi: la macchina 1 ne difetta 10 e la macchina 2 ne difetta 20. In totale i difettosi sono 30, quindi P(difettoso) = 30/400 = 3/40. È la probabilità totale: P(D) = P(D|M₁)·P(M₁) + P(D|M₂)·P(M₂).",
+        "en": "With a batch of 400 pieces: machine 1 makes 10 defective ones and machine 2 makes 20. In total 30 are defective, so P(defective) = 30/400 = 3/40. This is the total probability: P(D) = P(D|M₁)·P(M₁) + P(D|M₂)·P(M₂)."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai contato solo i difetti della macchina 2: la macchina 1 ne produce anch'essa 10 su 400, e tutti finiscono nello stesso lotto.",
+          "en": "You counted only machine 2's defects: machine 1 also produces 10 defective pieces out of 400, and they all end up in the same batch."
+        },
+        "B": {
+          "it": "Hai contato solo i difetti della macchina 1: la macchina 2 ne produce anch'essa 20 su 400, e tutti finiscono nello stesso lotto.",
+          "en": "You counted only machine 1's defects: machine 2 also produces 20 defective pieces out of 400, and they all end up in the same batch."
+        },
+        "C": {
+          "it": "Hai dato il tasso di difetti della sola macchina 1 (1/24): la domanda riguarda l'intera produzione, quindi pesa anche la quota di pezzi delle due macchine.",
+          "en": "You gave the defect rate of machine 1 alone (1/24): the question concerns the whole output, so the share of pieces each machine produces matters too."
+        }
+      }
+    },
+    {
+      "id": "probabilita-totale-bayes-066",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "difficulty": "advanced",
+      "text": {
+        "it": "In una fabbrica la macchina 1 produce 180 pezzi su 300 e ne difetta il 1/30, mentre la macchina 2 ne produce 120 su 300 con tasso di difetti 1/10. Si estrae a caso un pezzo dell'intera produzione. Qual è la probabilità che sia difettoso?",
+        "en": "In a factory machine 1 produces 180 of the 300 pieces with a defect rate of 1/30, while machine 2 produces 120 of them with a defect rate of 1/10. One piece is drawn at random from the whole output. What is the probability that it is defective?"
+      },
+      "options": {
+        "A": "1/30",
+        "B": "1/25",
+        "C": "1/50",
+        "D": "3/50"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "Con un lotto di 300 pezzi: la macchina 1 ne difetta 6 e la macchina 2 ne difetta 12. In totale i difettosi sono 18, quindi P(difettoso) = 18/300 = 3/50. È la probabilità totale: P(D) = P(D|M₁)·P(M₁) + P(D|M₂)·P(M₂).",
+        "en": "With a batch of 300 pieces: machine 1 makes 6 defective ones and machine 2 makes 12. In total 18 are defective, so P(defective) = 18/300 = 3/50. This is the total probability: P(D) = P(D|M₁)·P(M₁) + P(D|M₂)·P(M₂)."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai dato il tasso di difetti della sola macchina 1 (1/30): la domanda riguarda l'intera produzione, quindi pesa anche la quota di pezzi delle due macchine.",
+          "en": "You gave the defect rate of machine 1 alone (1/30): the question concerns the whole output, so the share of pieces each machine produces matters too."
+        },
+        "B": {
+          "it": "Hai contato solo i difetti della macchina 2: la macchina 1 ne produce anch'essa 6 su 300, e tutti finiscono nello stesso lotto.",
+          "en": "You counted only machine 2's defects: machine 1 also produces 6 defective pieces out of 300, and they all end up in the same batch."
+        },
+        "C": {
+          "it": "Hai contato solo i difetti della macchina 1: la macchina 2 ne produce anch'essa 12 su 300, e tutti finiscono nello stesso lotto.",
+          "en": "You counted only machine 1's defects: machine 2 also produces 12 defective pieces out of 300, and they all end up in the same batch."
+        }
+      }
+    },
+    {
+      "id": "probabilita-totale-bayes-067",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "difficulty": "advanced",
+      "text": {
+        "it": "In una fabbrica la macchina 1 produce 70 pezzi su 100 e ne difetta il 1/7, mentre la macchina 2 ne produce 30 su 100 con tasso di difetti 1/5. Si estrae a caso un pezzo e si scopre che è difettoso. Qual è la probabilità che provenga dalla macchina 1?",
+        "en": "In a factory machine 1 produces 70 of the 100 pieces with a defect rate of 1/7, while machine 2 produces 30 of them with a defect rate of 1/5. A piece drawn at random turns out to be defective. What is the probability that it came from machine 1?"
+      },
+      "options": {
+        "A": "5/8",
+        "B": "1/7",
+        "C": "7/10",
+        "D": "3/8"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "Fra i 16 pezzi difettosi, 10 vengono dalla macchina 1 e 6 dalla macchina 2. Quindi P(M₁|difettoso) = 10/16 = 5/8. È il teorema di Bayes: P(M₁|D) = P(D|M₁)·P(M₁) / P(D).",
+        "en": "Among the 16 defective pieces, 10 come from machine 1 and 6 from machine 2. So P(M₁|defective) = 10/16 = 5/8. This is Bayes' theorem: P(M₁|D) = P(D|M₁)·P(M₁) / P(D)."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai confuso P(macchina 1 | difettoso) con il tasso di difetti P(difettoso | macchina 1): il teorema di Bayes inverte proprio la direzione del condizionamento.",
+          "en": "You confused P(machine 1 | defective) with the defect rate P(defective | machine 1): Bayes' theorem reverses exactly the direction of conditioning."
+        },
+        "C": {
+          "it": "È la probabilità a priori che un pezzo venga dalla macchina 1: la condizione «sapendo che è difettoso» restringe il campione ai soli difettosi, e in quel gruppo le proporzioni cambiano.",
+          "en": "That is the prior probability that a piece comes from machine 1: the condition “knowing it is defective” restricts the sample to defective pieces only, and within that group the proportions change."
+        },
+        "D": {
+          "it": "Hai calcolato la quota della macchina 2 fra i difettosi: per la macchina 1 basta prenderne il complementare.",
+          "en": "You computed machine 2's share among the defective pieces: for machine 1 just take the complement."
+        }
+      }
+    },
+    {
+      "id": "principio-cassetti-dirichlet-068",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Una scatola contiene matite di 3 colori diversi, in gran quantità. Quante matite occorre estrarre a occhi chiusi per essere certi di averne almeno 3 dello stesso colore?",
+        "en": "A box holds pencils in 3 different colours, plenty of them. How many pencils must be drawn with your eyes shut to be sure of getting at least 3 of the same colour?"
+      },
+      "options": {
+        "A": "6",
+        "B": "9",
+        "C": "7",
+        "D": "3"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "Caso peggiore: le prime 6 estrazioni distribuiscono al massimo 2 pezzi per ciascuno dei 3 colori. Il pezzo successivo, il numero 7, non ha scelta: completa il 3-esimo esemplare di qualche colore. Quindi bastano 7 estrazioni.",
+        "en": "Worst case: the first 6 draws distribute at most 2 items per each of the 3 colours. The next item, number 7, has no choice: it completes the 3-th of some colour. So 7 draws suffice."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Ci manca l'ultima estrazione: con 6 pezzi puoi ancora avere solo 2 esemplari per ciascun colore; quello successivo crea per forza il 3-esimo di un colore.",
+          "en": "The last draw is missing: with 6 items you may still have only 2 of each colour; the next one necessarily creates the 3-th of some colour."
+        },
+        "B": {
+          "it": "Ne conta 2 di troppo: il 3-esimo pezzo dello stesso colore compare già con 7 estrazioni, senza doverne riunire 3 per ogni colore.",
+          "en": "That is 2 too many: the 3-th item of the same colour already appears after 7 draws, without gathering 3 of every colour."
+        },
+        "D": {
+          "it": "È il minimo sperabile: 3 estrazioni possono anche risultare tutte di colori diversi. La certezza si ottiene solo ragionando sul caso peggiore del principio dei cassetti.",
+          "en": "That is the best you can hope for: 3 draws may all come out in different colours. Certainty comes only from the worst case of the pigeonhole principle."
+        }
+      }
+    },
+    {
+      "id": "principio-cassetti-dirichlet-069",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "In un cassetto ci sono calzini di 4 colori diversi, in gran quantità e confusi fra loro. Quanti calzini occorre estrarre al buio, senza guardare, per essere certi di averne almeno 3 dello stesso colore?",
+        "en": "A drawer holds socks in 4 different colours, plenty of them and all mixed up. How many socks must be drawn in the dark, without looking, to be sure of getting at least 3 of the same colour?"
+      },
+      "options": {
+        "A": "3",
+        "B": "12",
+        "C": "9",
+        "D": "8"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "Caso peggiore: le prime 8 estrazioni distribuiscono al massimo 2 pezzi per ciascuno dei 4 colori. Il pezzo successivo, il numero 9, non ha scelta: completa il 3-esimo esemplare di qualche colore. Quindi bastano 9 estrazioni.",
+        "en": "Worst case: the first 8 draws distribute at most 2 items per each of the 4 colours. The next item, number 9, has no choice: it completes the 3-th of some colour. So 9 draws suffice."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "È il minimo sperabile: 3 estrazioni possono anche risultare tutte di colori diversi. La certezza si ottiene solo ragionando sul caso peggiore del principio dei cassetti.",
+          "en": "That is the best you can hope for: 3 draws may all come out in different colours. Certainty comes only from the worst case of the pigeonhole principle."
+        },
+        "B": {
+          "it": "Ne conta 3 di troppo: il 3-esimo pezzo dello stesso colore compare già con 9 estrazioni, senza doverne riunire 3 per ogni colore.",
+          "en": "That is 3 too many: the 3-th item of the same colour already appears after 9 draws, without gathering 3 of every colour."
+        },
+        "D": {
+          "it": "Ci manca l'ultima estrazione: con 8 pezzi puoi ancora avere solo 2 esemplari per ciascun colore; quello successivo crea per forza il 3-esimo di un colore.",
+          "en": "The last draw is missing: with 8 items you may still have only 2 of each colour; the next one necessarily creates the 3-th of some colour."
+        }
+      }
+    },
+    {
+      "id": "principio-cassetti-dirichlet-070",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Un mazzo è diviso in 2 semi diversi, con tante carte per ciascun seme. Quante carte occorre estrarre dal mazzo mescolato per essere certi di averne almeno 2 dello stesso seme?",
+        "en": "A deck is divided into 2 different suits, with many cards in each suit. How many cards must be drawn from the shuffled deck to be sure of getting at least 2 of the same suit?"
+      },
+      "options": {
+        "A": "2",
+        "B": "4",
+        "C": "6",
+        "D": "3"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "Caso peggiore: le prime 2 estrazioni distribuiscono al massimo 1 pezzi per ciascuno dei 2 colori. Il pezzo successivo, il numero 3, non ha scelta: completa il 2-esimo esemplare di qualche colore. Quindi bastano 3 estrazioni.",
+        "en": "Worst case: the first 2 draws distribute at most 1 items per each of the 2 colours. The next item, number 3, has no choice: it completes the 2-th of some colour. So 3 draws suffice."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "È il minimo sperabile: 2 estrazioni possono anche risultare tutte di colori diversi. La certezza si ottiene solo ragionando sul caso peggiore del principio dei cassetti.",
+          "en": "That is the best you can hope for: 2 draws may all come out in different colours. Certainty comes only from the worst case of the pigeonhole principle."
+        }
+      }
+    },
+    {
+      "id": "principio-cassetti-dirichlet-071",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Un mazzo è diviso in 2 semi diversi, con tante carte per ciascun seme. Quante carte occorre estrarre dal mazzo mescolato per essere certi di averne almeno 3 dello stesso seme?",
+        "en": "A deck is divided into 2 different suits, with many cards in each suit. How many cards must be drawn from the shuffled deck to be sure of getting at least 3 of the same suit?"
+      },
+      "options": {
+        "A": "5",
+        "B": "6",
+        "C": "3",
+        "D": "4"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "Caso peggiore: le prime 4 estrazioni distribuiscono al massimo 2 pezzi per ciascuno dei 2 colori. Il pezzo successivo, il numero 5, non ha scelta: completa il 3-esimo esemplare di qualche colore. Quindi bastano 5 estrazioni.",
+        "en": "Worst case: the first 4 draws distribute at most 2 items per each of the 2 colours. The next item, number 5, has no choice: it completes the 3-th of some colour. So 5 draws suffice."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Ne conta 1 di troppo: il 3-esimo pezzo dello stesso colore compare già con 5 estrazioni, senza doverne riunire 3 per ogni colore.",
+          "en": "That is 1 too many: the 3-th item of the same colour already appears after 5 draws, without gathering 3 of every colour."
+        },
+        "C": {
+          "it": "È il minimo sperabile: 3 estrazioni possono anche risultare tutte di colori diversi. La certezza si ottiene solo ragionando sul caso peggiore del principio dei cassetti.",
+          "en": "That is the best you can hope for: 3 draws may all come out in different colours. Certainty comes only from the worst case of the pigeonhole principle."
+        },
+        "D": {
+          "it": "Ci manca l'ultima estrazione: con 4 pezzi puoi ancora avere solo 2 esemplari per ciascun colore; quello successivo crea per forza il 3-esimo di un colore.",
+          "en": "The last draw is missing: with 4 items you may still have only 2 of each colour; the next one necessarily creates the 3-th of some colour."
+        }
+      }
+    },
+    {
+      "id": "probabilita-almeno-uno-072",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "La probabilità di centrare il bersaglio a ogni tiro è 1/4. Effettuando 3 tiri indipendenti, qual è la probabilità di centrarlo almeno una volta?",
+        "en": "The probability of hitting the target on each shot is 1/4. Taking 3 independent shots, what is the probability of hitting it at least once?"
+      },
+      "options": {
+        "A": "27/64",
+        "B": "27/256",
+        "C": "37/64",
+        "D": "3/4"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "Ogni tentativo fallisce con probabilità q = 1 − 1/4 = 3/4. Tutti i 3 tentativi falliscono con probabilità q^3 = 27/64. Quindi P(almeno uno) = 1 − 27/64 = 37/64.",
+        "en": "Each attempt fails with probability q = 1 − 1/4 = 3/4. All 3 attempts fail with probability q^3 = 27/64. So P(at least one) = 1 − 27/64 = 37/64."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "È la probabilità dell'evento contrario, cioè che nessun tentativo riesca: «almeno uno» si ottiene con 1 − qⁿ.",
+          "en": "That is the probability of the opposite event, that no attempt succeeds: “at least one” is obtained with 1 − qⁿ."
+        },
+        "B": {
+          "it": "Corrisponde a un successo in una posizione precisa (per esempio solo il primo tentativo), non a un successo in qualsiasi posizione.",
+          "en": "That corresponds to one success in a specific position (for instance only the first attempt), not a success in any position."
+        },
+        "D": {
+          "it": "Hai sommato le probabilità dei singoli tentativi (3 × 1/4): così conti più volte i casi in cui più tentativi riescono insieme. Il metodo corretto passa dal complementare 1 − qⁿ.",
+          "en": "You added up the single-attempt probabilities (3 × 1/4): that counts several times the cases where more attempts succeed together. The correct route goes through the complement 1 − qⁿ."
+        }
+      }
+    },
+    {
+      "id": "probabilita-almeno-uno-073",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Una moneta equa viene lanciata 4 volte. Qual è la probabilità di ottenere almeno una testa?",
+        "en": "A fair coin is tossed 4 times. What is the probability of getting at least one head?"
+      },
+      "options": {
+        "A": "1/32",
+        "B": "1/2",
+        "C": "15/16",
+        "D": "1/16"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "Ogni tentativo fallisce con probabilità q = 1 − 1/2 = 1/2. Tutti i 4 tentativi falliscono con probabilità q^4 = 1/16. Quindi P(almeno uno) = 1 − 1/16 = 15/16.",
+        "en": "Each attempt fails with probability q = 1 − 1/2 = 1/2. All 4 attempts fail with probability q^4 = 1/16. So P(at least one) = 1 − 1/16 = 15/16."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Corrisponde a un successo in una posizione precisa (per esempio solo il primo tentativo), non a un successo in qualsiasi posizione.",
+          "en": "That corresponds to one success in a specific position (for instance only the first attempt), not a success in any position."
+        },
+        "B": {
+          "it": "È la probabilità di un solo tentativo: con 4 tentativi indipendenti la probabilità di successo sale.",
+          "en": "That is the probability of a single attempt: with 4 independent attempts the success probability rises."
+        },
+        "D": {
+          "it": "È la probabilità dell'evento contrario, cioè che nessun tentativo riesca: «almeno uno» si ottiene con 1 − qⁿ.",
+          "en": "That is the probability of the opposite event, that no attempt succeeds: “at least one” is obtained with 1 − qⁿ."
+        }
+      }
+    },
+    {
+      "id": "probabilita-almeno-uno-074",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Una moneta equa viene lanciata 4 volte. Qual è la probabilità di ottenere almeno una testa?",
+        "en": "A fair coin is tossed 4 times. What is the probability of getting at least one head?"
+      },
+      "options": {
+        "A": "1/16",
+        "B": "1/2",
+        "C": "1/32",
+        "D": "15/16"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "Ogni tentativo fallisce con probabilità q = 1 − 1/2 = 1/2. Tutti i 4 tentativi falliscono con probabilità q^4 = 1/16. Quindi P(almeno uno) = 1 − 1/16 = 15/16.",
+        "en": "Each attempt fails with probability q = 1 − 1/2 = 1/2. All 4 attempts fail with probability q^4 = 1/16. So P(at least one) = 1 − 1/16 = 15/16."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "È la probabilità dell'evento contrario, cioè che nessun tentativo riesca: «almeno uno» si ottiene con 1 − qⁿ.",
+          "en": "That is the probability of the opposite event, that no attempt succeeds: “at least one” is obtained with 1 − qⁿ."
+        },
+        "B": {
+          "it": "È la probabilità di un solo tentativo: con 4 tentativi indipendenti la probabilità di successo sale.",
+          "en": "That is the probability of a single attempt: with 4 independent attempts the success probability rises."
+        },
+        "C": {
+          "it": "Corrisponde a un successo in una posizione precisa (per esempio solo il primo tentativo), non a un successo in qualsiasi posizione.",
+          "en": "That corresponds to one success in a specific position (for instance only the first attempt), not a success in any position."
+        }
+      }
+    },
+    {
+      "id": "probabilita-almeno-uno-075",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Una moneta equa viene lanciata 2 volte. Qual è la probabilità di ottenere almeno una testa?",
+        "en": "A fair coin is tossed 2 times. What is the probability of getting at least one head?"
+      },
+      "options": {
+        "A": "1/8",
+        "B": "1/4",
+        "C": "3/4",
+        "D": "1/2"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "Ogni tentativo fallisce con probabilità q = 1 − 1/2 = 1/2. Tutti i 2 tentativi falliscono con probabilità q^2 = 1/4. Quindi P(almeno uno) = 1 − 1/4 = 3/4.",
+        "en": "Each attempt fails with probability q = 1 − 1/2 = 1/2. All 2 attempts fail with probability q^2 = 1/4. So P(at least one) = 1 − 1/4 = 3/4."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Corrisponde a un successo in una posizione precisa (per esempio solo il primo tentativo), non a un successo in qualsiasi posizione.",
+          "en": "That corresponds to one success in a specific position (for instance only the first attempt), not a success in any position."
+        },
+        "B": {
+          "it": "È la probabilità dell'evento contrario, cioè che nessun tentativo riesca: «almeno uno» si ottiene con 1 − qⁿ.",
+          "en": "That is the probability of the opposite event, that no attempt succeeds: “at least one” is obtained with 1 − qⁿ."
+        },
+        "D": {
+          "it": "È la probabilità di un solo tentativo: con 2 tentativi indipendenti la probabilità di successo sale.",
+          "en": "That is the probability of a single attempt: with 2 independent attempts the success probability rises."
+        }
+      }
+    },
+    {
+      "id": "disposizioni-vincolo-posizione-076",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Quanti codici di 4 cifre tutte diverse iniziano con una cifra pari? (Lo 0 è pari e può comparire ovunque.)",
+        "en": "How many 4-digit codes with all different digits start with an even digit? (0 is even and may appear anywhere.)"
+      },
+      "options": {
+        "A": "2520",
+        "B": "2016",
+        "C": "5040",
+        "D": "10000"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "La prima cifra ha 5 scelte (0, 2, 4, 6, 8). A quel punto restano 9 cifre, poi 8, poi 7: totale 5 · 9 · 8 · 7 = 2520.",
+        "en": "The first digit has 5 choices (0, 2, 4, 6, 8). Then 9, 8 and 7 digits remain: total 5 · 9 · 8 · 7 = 2520."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai escluso lo zero dalle cifre pari: 0 è pari e, in un codice, può stare anche al primo posto.",
+          "en": "You left zero out of the even digits: 0 is even and, in a code, may well come first."
+        },
+        "C": {
+          "it": "Hai contato tutti i codici con cifre distinte senza applicare il vincolo sulla prima cifra pari.",
+          "en": "You counted all codes with distinct digits without applying the first-digit-even constraint."
+        },
+        "D": {
+          "it": "Hai permesso di ripetere le cifre: «tutte diverse» richiede le disposizioni semplici, in cui ogni cifra scelta si esclude dalle successive.",
+          "en": "You allowed digits to repeat: “all different” calls for simple dispositions, where each chosen digit is excluded afterwards."
+        }
+      }
+    },
+    {
+      "id": "disposizioni-vincolo-posizione-077",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Quanti codici di 4 cifre tutte diverse iniziano con una cifra dispari e terminano con una cifra pari?",
+        "en": "How many 4-digit codes with all different digits start with an odd digit and end with an even digit?"
+      },
+      "options": {
+        "A": "1400",
+        "B": "10000",
+        "C": "1800",
+        "D": "5040"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "Scegli prima le estremità: ultima cifra pari (5 scelte), prima cifra dispari (5 scelte, tutti i dispari sono ancora disponibili). Restano 8 cifre per la seconda e 7 per la terza: 5 · 5 · 8 · 7 = 1400.",
+        "en": "Choose the ends first: last digit even (5 choices), first digit odd (5 choices, all odds still available). Then 8 digits remain for the second position and 7 for the third: 5 · 5 · 8 · 7 = 1400."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai permesso di ripetere le cifre: «tutte diverse» richiede di escludere a ogni passo le cifre già usate.",
+          "en": "You allowed digits to repeat: “all different” requires excluding, at every step, the digits already used."
+        },
+        "C": {
+          "it": "Hai scelto le posizioni nell'ordine di lettura: ma dopo le due cifre centrali le pari disponibili non sono sempre 5. Conviene fissare prima le due estremità (5 · 5) e poi riempire il centro (8 · 7).",
+          "en": "You filled the positions in reading order: but after the two middle digits the number of available evens is not always 5. Fix the two ends first (5 · 5), then fill the middle (8 · 7)."
+        },
+        "D": {
+          "it": "Hai contato tutti i codici con cifre distinte, ignorando entrambi i vincoli di parità sulle estremità.",
+          "en": "You counted all codes with distinct digits, ignoring both parity constraints on the ends."
+        }
+      }
+    },
+    {
+      "id": "disposizioni-vincolo-posizione-078",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Quanti codici di 4 cifre tutte diverse terminano con una cifra dispari?",
+        "en": "How many 4-digit codes with all different digits end with an odd digit?"
+      },
+      "options": {
+        "A": "5040",
+        "B": "3600",
+        "C": "10000",
+        "D": "2520"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "Conviene partire dalla posizione vincolata: l'ultima cifra ha 5 scelte (1, 3, 5, 7, 9); le altre si riempiono con le cifre rimaste: 9 · 8 · 7. Totale 9 · 8 · 7 · 5 = 2520.",
+        "en": "Start from the constrained position: the last digit has 5 choices (1, 3, 5, 7, 9); the others are filled with the remaining digits: 9 · 8 · 7. Total 9 · 8 · 7 · 5 = 2520."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai contato tutti i codici con cifre distinte, senza applicare il vincolo sull'ultima cifra dispari.",
+          "en": "You counted all codes with distinct digits, without applying the last-digit-odd constraint."
+        },
+        "B": {
+          "it": "Hai fissato l'ultima cifra prima delle altre ma hai contato 10 scelte per la prima: una delle cifre dispari è già usata alla fine, quindi le restanti sono 9.",
+          "en": "You fixed the last digit first but counted 10 choices for the first: one odd digit is already used at the end, so only 9 remain."
+        },
+        "C": {
+          "it": "Hai permesso di ripetere le cifre: «tutte diverse» esclude i codici in cui una cifra compare più volte.",
+          "en": "You allowed digits to repeat: “all different” rules out codes where a digit appears more than once."
+        }
+      }
+    },
+    {
+      "id": "disposizioni-vincolo-posizione-079",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "Quanti codici di 4 cifre tutte diverse terminano con una cifra dispari?",
+        "en": "How many 4-digit codes with all different digits end with an odd digit?"
+      },
+      "options": {
+        "A": "5040",
+        "B": "2520",
+        "C": "3600",
+        "D": "10000"
+      },
+      "correct": "B",
+      "explanation": {
+        "it": "Conviene partire dalla posizione vincolata: l'ultima cifra ha 5 scelte (1, 3, 5, 7, 9); le altre si riempiono con le cifre rimaste: 9 · 8 · 7. Totale 9 · 8 · 7 · 5 = 2520.",
+        "en": "Start from the constrained position: the last digit has 5 choices (1, 3, 5, 7, 9); the others are filled with the remaining digits: 9 · 8 · 7. Total 9 · 8 · 7 · 5 = 2520."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai contato tutti i codici con cifre distinte, senza applicare il vincolo sull'ultima cifra dispari.",
+          "en": "You counted all codes with distinct digits, without applying the last-digit-odd constraint."
+        },
+        "C": {
+          "it": "Hai fissato l'ultima cifra prima delle altre ma hai contato 10 scelte per la prima: una delle cifre dispari è già usata alla fine, quindi le restanti sono 9.",
+          "en": "You fixed the last digit first but counted 10 choices for the first: one odd digit is already used at the end, so only 9 remain."
+        },
+        "D": {
+          "it": "Hai permesso di ripetere le cifre: «tutte diverse» esclude i codici in cui una cifra compare più volte.",
+          "en": "You allowed digits to repeat: “all different” rules out codes where a digit appears more than once."
+        }
+      }
+    },
+    {
+      "id": "distribuzione-oggetti-stelle-barre-080",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "difficulty": "advanced",
+      "text": {
+        "it": "In quanti modi distinti si possono distribuire 7 caramelle identiche fra 3 bambini, senza alcun vincolo (qualcuno può restare a bocca asciutta)?",
+        "en": "In how many distinct ways can you hand out 7 identical sweets among 3 children, with no constraint (someone may get none at all)?"
+      },
+      "options": {
+        "A": "15",
+        "B": "2187",
+        "C": "36",
+        "D": "35"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "Oggetti identici e destinatari distinti: è il modello «stelle e barre». Disponiamo 7 stelle e 2 barre separatrici, e scegliamo dove mettere le barre: C(7 + 3 − 1, 3 − 1) = C(9, 2) = 36.",
+        "en": "Identical objects and distinct recipients: this is the \"stars and bars\" model. Lay out 7 stars and 2 separating bars and choose where the bars go: C(7 + 3 − 1, 3 − 1) = C(9, 2) = 36."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai applicato una pre-assegnazione che il testo non chiede: senza vincolo di minimo si distribuiscono tutti gli oggetti liberamente.",
+          "en": "You applied a pre-assignment the text does not ask for: with no minimum constraint all objects are distributed freely."
+        },
+        "B": {
+          "it": "Hai trattato caramelle identiche come distinguibili: 3^7 conta le assegnazioni di oggetti diversi. Qui gli oggetti sono identici, quindi conta solo quanti ne riceve ciascuno.",
+          "en": "You treated the identical sweets as distinguishable: 3^7 counts assignments of different objects. Here the objects are identical, so only how many each child receives matters."
+        },
+        "D": {
+          "it": "Hai usato le combinazioni semplici: qui le ripetizioni sono ammesse (uno stesso destinatario può ricevere più oggetti), quindi serve la formula delle combinazioni con ripetizione C(k+n−1, n−1).",
+          "en": "You used simple combinations: repetitions are allowed here (one recipient may receive several objects), so you need combinations with repetition, C(k+n−1, n−1)."
+        }
+      }
+    },
+    {
+      "id": "distribuzione-oggetti-stelle-barre-081",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "difficulty": "advanced",
+      "text": {
+        "it": "In quanti modi distinti si possono ripartire 7 monete da un euro identiche fra 3 salvadanai distinti, senza alcun vincolo (qualcuno può restare a bocca asciutta)?",
+        "en": "In how many distinct ways can you split 7 identical one-euro coins among 3 distinct piggy banks, with no constraint (someone may get none at all)?"
+      },
+      "options": {
+        "A": "36",
+        "B": "15",
+        "C": "2187",
+        "D": "35"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "Oggetti identici e destinatari distinti: è il modello «stelle e barre». Disponiamo 7 stelle e 2 barre separatrici, e scegliamo dove mettere le barre: C(7 + 3 − 1, 3 − 1) = C(9, 2) = 36.",
+        "en": "Identical objects and distinct recipients: this is the \"stars and bars\" model. Lay out 7 stars and 2 separating bars and choose where the bars go: C(7 + 3 − 1, 3 − 1) = C(9, 2) = 36."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai applicato una pre-assegnazione che il testo non chiede: senza vincolo di minimo si distribuiscono tutti gli oggetti liberamente.",
+          "en": "You applied a pre-assignment the text does not ask for: with no minimum constraint all objects are distributed freely."
+        },
+        "C": {
+          "it": "Hai trattato monete da un euro identiche come distinguibili: 3^7 conta le assegnazioni di oggetti diversi. Qui gli oggetti sono identici, quindi conta solo quanti ne riceve ciascuna.",
+          "en": "You treated the identical one-euro coins as distinguishable: 3^7 counts assignments of different objects. Here the objects are identical, so only how many each piggy bank receives matters."
+        },
+        "D": {
+          "it": "Hai usato le combinazioni semplici: qui le ripetizioni sono ammesse (uno stesso destinatario può ricevere più oggetti), quindi serve la formula delle combinazioni con ripetizione C(k+n−1, n−1).",
+          "en": "You used simple combinations: repetitions are allowed here (one recipient may receive several objects), so you need combinations with repetition, C(k+n−1, n−1)."
+        }
+      }
+    },
+    {
+      "id": "distribuzione-oggetti-stelle-barre-082",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "difficulty": "advanced",
+      "text": {
+        "it": "In quanti modi distinti si possono distribuire 5 caramelle identiche fra 3 bambini, con il vincolo che ciascuno ne riceva almeno 1?",
+        "en": "In how many distinct ways can you hand out 5 identical sweets among 3 children, with the constraint that each child gets at least 1?"
+      },
+      "options": {
+        "A": "243",
+        "B": "21",
+        "C": "6",
+        "D": "10"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "Prima soddisfiamo il vincolo: 1 a testa consuma 3 oggetti, e ne restano 2. Su questi si applica il modello «stelle e barre»: C(2 + 3 − 1, 3 − 1) = C(4, 2) = 6.",
+        "en": "First satisfy the constraint: 1 each uses up 3 objects, leaving 2. On those apply \"stars and bars\": C(2 + 3 − 1, 3 − 1) = C(4, 2) = 6."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai trattato caramelle identiche come distinguibili: 3^5 conta le assegnazioni di oggetti diversi. Qui gli oggetti sono identici, quindi conta solo quanti ne riceve ciascuno.",
+          "en": "You treated the identical sweets as distinguishable: 3^5 counts assignments of different objects. Here the objects are identical, so only how many each child receives matters."
+        },
+        "B": {
+          "it": "Hai dimenticato la pre-assegnazione: prima si consegnano 1 caramelle identiche a testa (3 in tutto) e solo le 2 restanti si distribuiscono liberamente.",
+          "en": "You forgot the pre-assignment: first give 1 to each (3 in total) and only the remaining 2 are distributed freely."
+        },
+        "D": {
+          "it": "Hai usato le combinazioni semplici: qui le ripetizioni sono ammesse (uno stesso destinatario può ricevere più oggetti), quindi serve la formula delle combinazioni con ripetizione C(k+n−1, n−1).",
+          "en": "You used simple combinations: repetitions are allowed here (one recipient may receive several objects), so you need combinations with repetition, C(k+n−1, n−1)."
+        }
+      }
+    },
+    {
+      "id": "distribuzione-oggetti-stelle-barre-083",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "difficulty": "advanced",
+      "text": {
+        "it": "In quanti modi distinti si possono ripartire 7 monete da un euro identiche fra 4 salvadanai distinti, senza alcun vincolo (qualcuno può restare a bocca asciutta)?",
+        "en": "In how many distinct ways can you split 7 identical one-euro coins among 4 distinct piggy banks, with no constraint (someone may get none at all)?"
+      },
+      "options": {
+        "A": "20",
+        "B": "120",
+        "C": "16384",
+        "D": "35"
+      },
+      "correct": "B",
+      "explanation": {
+        "it": "Oggetti identici e destinatari distinti: è il modello «stelle e barre». Disponiamo 7 stelle e 3 barre separatrici, e scegliamo dove mettere le barre: C(7 + 4 − 1, 4 − 1) = C(10, 3) = 120.",
+        "en": "Identical objects and distinct recipients: this is the \"stars and bars\" model. Lay out 7 stars and 3 separating bars and choose where the bars go: C(7 + 4 − 1, 4 − 1) = C(10, 3) = 120."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai applicato una pre-assegnazione che il testo non chiede: senza vincolo di minimo si distribuiscono tutti gli oggetti liberamente.",
+          "en": "You applied a pre-assignment the text does not ask for: with no minimum constraint all objects are distributed freely."
+        },
+        "C": {
+          "it": "Hai trattato monete da un euro identiche come distinguibili: 4^7 conta le assegnazioni di oggetti diversi. Qui gli oggetti sono identici, quindi conta solo quanti ne riceve ciascuna.",
+          "en": "You treated the identical one-euro coins as distinguishable: 4^7 counts assignments of different objects. Here the objects are identical, so only how many each piggy bank receives matters."
+        },
+        "D": {
+          "it": "Hai usato le combinazioni semplici: qui le ripetizioni sono ammesse (uno stesso destinatario può ricevere più oggetti), quindi serve la formula delle combinazioni con ripetizione C(k+n−1, n−1).",
+          "en": "You used simple combinations: repetitions are allowed here (one recipient may receive several objects), so you need combinations with repetition, C(k+n−1, n−1)."
+        }
+      }
+    },
+    {
+      "id": "permutazioni-cicliche-084",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "difficulty": "advanced",
+      "text": {
+        "it": "Si infilano 7 perline di colori diversi su un braccialetto chiuso ad anello. Quante collane distinte si ottengono, se due sistemazioni che differiscono per una rotazione o per un ribaltamento si considerano uguali?",
+        "en": "You thread 7 beads of different colours onto a closed bracelet. How many distinct bracelets are obtained, if two arrangements differing by a rotation or by a flip count as the same?"
+      },
+      "options": {
+        "A": "720",
+        "B": "5040",
+        "C": "360",
+        "D": "2520"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "Fissata una perlina si eliminano le rotazioni: (7 − 1)! = 720. Poiché il braccialetto si può ribaltare, ogni collana compare due volte: 720/2 = 360.",
+        "en": "Fixing one bead removes the rotations: (7 − 1)! = 720. Since the bracelet can be flipped, each one appears twice: 720/2 = 360."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai eliminato solo le rotazioni: su un braccialetto si può anche ribaltare, quindi ogni collana viene contata due volte e serve dividere per 2.",
+          "en": "You removed rotations only: a bracelet can also be flipped over, so each one is counted twice and you must divide by 2."
+        },
+        "B": {
+          "it": "Hai contato come una fila: 7! ignora sia le 7 rotazioni sia il ribaltamento.",
+          "en": "You counted as a line: 7! ignores both the 7 rotations and the flip."
+        },
+        "D": {
+          "it": "Hai diviso solo per il ribaltamento: restano da eliminare anche le rotazioni, fissando una perlina come riferimento.",
+          "en": "You divided by the flip only: the rotations still have to be removed by fixing one bead as reference."
+        }
+      }
+    },
+    {
+      "id": "permutazioni-cicliche-085",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "difficulty": "advanced",
+      "text": {
+        "it": "Si infilano 6 perline di colori diversi su un braccialetto chiuso ad anello. Quante collane distinte si ottengono, se due sistemazioni che differiscono per una rotazione o per un ribaltamento si considerano uguali?",
+        "en": "You thread 6 beads of different colours onto a closed bracelet. How many distinct bracelets are obtained, if two arrangements differing by a rotation or by a flip count as the same?"
+      },
+      "options": {
+        "A": "120",
+        "B": "360",
+        "C": "720",
+        "D": "60"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "Fissata una perlina si eliminano le rotazioni: (6 − 1)! = 120. Poiché il braccialetto si può ribaltare, ogni collana compare due volte: 120/2 = 60.",
+        "en": "Fixing one bead removes the rotations: (6 − 1)! = 120. Since the bracelet can be flipped, each one appears twice: 120/2 = 60."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai eliminato solo le rotazioni: su un braccialetto si può anche ribaltare, quindi ogni collana viene contata due volte e serve dividere per 2.",
+          "en": "You removed rotations only: a bracelet can also be flipped over, so each one is counted twice and you must divide by 2."
+        },
+        "B": {
+          "it": "Hai diviso solo per il ribaltamento: restano da eliminare anche le rotazioni, fissando una perlina come riferimento.",
+          "en": "You divided by the flip only: the rotations still have to be removed by fixing one bead as reference."
+        },
+        "C": {
+          "it": "Hai contato come una fila: 6! ignora sia le 6 rotazioni sia il ribaltamento.",
+          "en": "You counted as a line: 6! ignores both the 6 rotations and the flip."
+        }
+      }
+    },
+    {
+      "id": "permutazioni-cicliche-086",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "difficulty": "advanced",
+      "text": {
+        "it": "Si infilano 7 perline di colori diversi su un braccialetto chiuso ad anello. Quante collane distinte si ottengono, se due sistemazioni che differiscono per una rotazione o per un ribaltamento si considerano uguali?",
+        "en": "You thread 7 beads of different colours onto a closed bracelet. How many distinct bracelets are obtained, if two arrangements differing by a rotation or by a flip count as the same?"
+      },
+      "options": {
+        "A": "720",
+        "B": "360",
+        "C": "5040",
+        "D": "2520"
+      },
+      "correct": "B",
+      "explanation": {
+        "it": "Fissata una perlina si eliminano le rotazioni: (7 − 1)! = 720. Poiché il braccialetto si può ribaltare, ogni collana compare due volte: 720/2 = 360.",
+        "en": "Fixing one bead removes the rotations: (7 − 1)! = 720. Since the bracelet can be flipped, each one appears twice: 720/2 = 360."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai eliminato solo le rotazioni: su un braccialetto si può anche ribaltare, quindi ogni collana viene contata due volte e serve dividere per 2.",
+          "en": "You removed rotations only: a bracelet can also be flipped over, so each one is counted twice and you must divide by 2."
+        },
+        "C": {
+          "it": "Hai contato come una fila: 7! ignora sia le 7 rotazioni sia il ribaltamento.",
+          "en": "You counted as a line: 7! ignores both the 7 rotations and the flip."
+        },
+        "D": {
+          "it": "Hai diviso solo per il ribaltamento: restano da eliminare anche le rotazioni, fissando una perlina come riferimento.",
+          "en": "You divided by the flip only: the rotations still have to be removed by fixing one bead as reference."
+        }
+      }
+    },
+    {
+      "id": "permutazioni-cicliche-087",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "In quanti modi distinti si possono far sedere 8 persone attorno a un tavolo rotondo, se due sistemazioni che differiscono solo per una rotazione si considerano uguali?",
+        "en": "In how many distinct ways can 8 people be seated around a round table, if two arrangements differing only by a rotation count as the same?"
+      },
+      "options": {
+        "A": "720",
+        "B": "2520",
+        "C": "40320",
+        "D": "5040"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "Fissiamo una persona come riferimento per eliminare le rotazioni: le altre 7 si dispongono liberamente, quindi (8 − 1)! = 5040. Equivalentemente 8!/8.",
+        "en": "Fix one person as reference to remove rotations: the other 7 are arranged freely, so (8 − 1)! = 5040. Equivalently 8!/8."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai fissato due persone come riferimento invece di una sola: per eliminare le rotazioni basta bloccare un unico posto.",
+          "en": "You fixed two people as reference instead of one: removing rotations requires blocking a single seat only."
+        },
+        "B": {
+          "it": "Hai diviso anche per le simmetrie speculari: il testo identifica solo le rotazioni, non le riflessioni (orario e antiorario restano diversi).",
+          "en": "You also divided by mirror symmetries: the text identifies rotations only, not reflections (clockwise and anticlockwise stay different)."
+        },
+        "C": {
+          "it": "Hai contato come se fosse una fila: 8! conta anche le 8 rotazioni di una stessa disposizione circolare, che il testo dichiara indistinguibili.",
+          "en": "You counted as if it were a line: 8! also counts the 8 rotations of the same circular arrangement, which the text declares indistinguishable."
+        }
+      }
+    },
+    {
+      "id": "binomio-newton-088",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "difficulty": "advanced",
+      "text": {
+        "it": "Nello sviluppo di (2x + 2)^7 secondo la formula del binomio di Newton, quale è il coefficiente numerico del termine in x^1?",
+        "en": "In the expansion of (2x + 2)^7 by Newton's binomial formula, what is the numerical coefficient of the x^1 term?"
+      },
+      "options": {
+        "A": "896",
+        "B": "2688",
+        "C": "128",
+        "D": "7"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "La formula del binomio dà il termine generale C(7,k)·(2x)^k·(2)^(7−k). Per k = 1: C(7,1) = 7, 2^1 = 2 e 2^6 = 64. Coefficiente = 7 · 2 · 64 = 896.",
+        "en": "The binomial formula gives the general term C(7,k)·(2x)^k·(2)^(7−k). For k = 1: C(7,1) = 7, 2^1 = 2 and 2^6 = 64. Coefficient = 7 · 2 · 64 = 896."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai letto l'esponente della variabile sbagliato: il termine richiesto ha x^1, non x^2.",
+          "en": "You read the wrong exponent of the variable: the requested term has x^1, not x^2."
+        },
+        "C": {
+          "it": "Hai letto l'esponente della variabile sbagliato: il termine richiesto ha x^1, non x^0.",
+          "en": "You read the wrong exponent of the variable: the requested term has x^1, not x^0."
+        },
+        "D": {
+          "it": "Hai preso solo il coefficiente binomiale C(7,1) = 7: va moltiplicato anche per le potenze delle basi, 2^1 e 2^6.",
+          "en": "You took only the binomial coefficient C(7,1) = 7: it must also be multiplied by the powers of the bases, 2^1 and 2^6."
+        }
+      }
+    },
+    {
+      "id": "binomio-newton-089",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "difficulty": "advanced",
+      "text": {
+        "it": "Nello sviluppo di (2x + 1)^6 secondo la formula del binomio di Newton, quale è il coefficiente numerico del termine in x^1?",
+        "en": "In the expansion of (2x + 1)^6 by Newton's binomial formula, what is the numerical coefficient of the x^1 term?"
+      },
+      "options": {
+        "A": "60",
+        "B": "192",
+        "C": "6",
+        "D": "12"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "La formula del binomio dà il termine generale C(6,k)·(2x)^k·(1)^(6−k). Per k = 1: C(6,1) = 6, 2^1 = 2 e 1^5 = 1. Coefficiente = 6 · 2 · 1 = 12.",
+        "en": "The binomial formula gives the general term C(6,k)·(2x)^k·(1)^(6−k). For k = 1: C(6,1) = 6, 2^1 = 2 and 1^5 = 1. Coefficient = 6 · 2 · 1 = 12."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai letto l'esponente della variabile sbagliato: il termine richiesto ha x^1, non x^2.",
+          "en": "You read the wrong exponent of the variable: the requested term has x^1, not x^2."
+        },
+        "B": {
+          "it": "Hai scambiato gli esponenti: nel termine in x^1 la potenza 1 spetta al primo addendo e la potenza 5 al secondo, non il contrario.",
+          "en": "You swapped the exponents: in the x^1 term the power 1 belongs to the first addend and 5 to the second, not the other way round."
+        },
+        "C": {
+          "it": "Hai preso solo il coefficiente binomiale C(6,1) = 6: va moltiplicato anche per le potenze delle basi, 2^1 e 1^5.",
+          "en": "You took only the binomial coefficient C(6,1) = 6: it must also be multiplied by the powers of the bases, 2^1 and 1^5."
+        }
+      }
+    },
+    {
+      "id": "binomio-newton-090",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "difficulty": "advanced",
+      "text": {
+        "it": "Nello sviluppo di (x + 2)^6 secondo la formula del binomio di Newton, quale è il coefficiente numerico del termine in x^5?",
+        "en": "In the expansion of (x + 2)^6 by Newton's binomial formula, what is the numerical coefficient of the x^5 term?"
+      },
+      "options": {
+        "A": "6",
+        "B": "12",
+        "C": "1440",
+        "D": "192"
+      },
+      "correct": "B",
+      "explanation": {
+        "it": "La formula del binomio dà il termine generale C(6,k)·(x)^k·(2)^(6−k). Per k = 5: C(6,5) = 6, 1^5 = 1 e 2^1 = 2. Coefficiente = 6 · 1 · 2 = 12.",
+        "en": "The binomial formula gives the general term C(6,k)·(x)^k·(2)^(6−k). For k = 5: C(6,5) = 6, 1^5 = 1 and 2^1 = 2. Coefficient = 6 · 1 · 2 = 12."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai preso solo il coefficiente binomiale C(6,5) = 6: va moltiplicato anche per le potenze delle basi, 1^5 e 2^1.",
+          "en": "You took only the binomial coefficient C(6,5) = 6: it must also be multiplied by the powers of the bases, 1^5 and 2^1."
+        },
+        "C": {
+          "it": "Hai usato le disposizioni 6!/(6−5)! al posto del coefficiente binomiale: nel binomio di Newton serve C(6,5) = 6, che divide anche per 5!.",
+          "en": "You used dispositions 6!/(6−5)! instead of the binomial coefficient: Newton's binomial needs C(6,5) = 6, which also divides by 5!."
+        },
+        "D": {
+          "it": "Hai scambiato gli esponenti: nel termine in x^5 la potenza 5 spetta al primo addendo e la potenza 1 al secondo, non il contrario.",
+          "en": "You swapped the exponents: in the x^5 term the power 5 belongs to the first addend and 1 to the second, not the other way round."
+        }
+      }
+    },
+    {
+      "id": "binomio-newton-091",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "difficulty": "advanced",
+      "text": {
+        "it": "Nello sviluppo di (3x + 2)^6 secondo la formula del binomio di Newton, quale è il coefficiente numerico del termine in x^4?",
+        "en": "In the expansion of (3x + 2)^6 by Newton's binomial formula, what is the numerical coefficient of the x^4 term?"
+      },
+      "options": {
+        "A": "15",
+        "B": "2160",
+        "C": "4860",
+        "D": "116640"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "La formula del binomio dà il termine generale C(6,k)·(3x)^k·(2)^(6−k). Per k = 4: C(6,4) = 15, 3^4 = 81 e 2^2 = 4. Coefficiente = 15 · 81 · 4 = 4860.",
+        "en": "The binomial formula gives the general term C(6,k)·(3x)^k·(2)^(6−k). For k = 4: C(6,4) = 15, 3^4 = 81 and 2^2 = 4. Coefficient = 15 · 81 · 4 = 4860."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai preso solo il coefficiente binomiale C(6,4) = 15: va moltiplicato anche per le potenze delle basi, 3^4 e 2^2.",
+          "en": "You took only the binomial coefficient C(6,4) = 15: it must also be multiplied by the powers of the bases, 3^4 and 2^2."
+        },
+        "B": {
+          "it": "Hai scambiato gli esponenti: nel termine in x^4 la potenza 4 spetta al primo addendo e la potenza 2 al secondo, non il contrario.",
+          "en": "You swapped the exponents: in the x^4 term the power 4 belongs to the first addend and 2 to the second, not the other way round."
+        },
+        "D": {
+          "it": "Hai usato le disposizioni 6!/(6−4)! al posto del coefficiente binomiale: nel binomio di Newton serve C(6,4) = 15, che divide anche per 4!.",
+          "en": "You used dispositions 6!/(6−4)! instead of the binomial coefficient: Newton's binomial needs C(6,4) = 15, which also divides by 4!."
+        }
+      }
+    },
+    {
+      "id": "inclusione-esclusione-092",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "In una scuola di 120 studenti, 43 praticano il nuoto e 37 praticano l'atletica; 10 praticano entrambe le discipline. Quanti studenti praticano almeno una delle due discipline?",
+        "en": "In a school of 120 students, 43 do swimming and 37 do athletics; 10 do both. How many students do at least one of the two?"
+      },
+      "options": {
+        "A": "110",
+        "B": "60",
+        "C": "70",
+        "D": "80"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "Principio di inclusione-esclusione per due insiemi: |A ∪ B| = |A| + |B| − |A ∩ B| = 43 + 37 − 10 = 70.",
+        "en": "Inclusion–exclusion for two sets: |A ∪ B| = |A| + |B| − |A ∩ B| = 43 + 37 − 10 = 70."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai lavorato sul totale della scuola: la domanda riguarda solo chi pratica almeno una disciplina, non chi resta escluso.",
+          "en": "You worked from the school total: the question is only about those doing at least one sport, not about who is left out."
+        },
+        "B": {
+          "it": "Hai sottratto l'intersezione due volte: chi pratica entrambe le discipline va contato una volta, quindi si toglie 10 una sola volta.",
+          "en": "You subtracted the intersection twice: those doing both must be counted once, so 10 is removed only once."
+        },
+        "D": {
+          "it": "Hai sommato i due gruppi senza togliere l'intersezione: i 10 studenti che praticano entrambe le discipline vengono così contati due volte.",
+          "en": "You added the two groups without removing the intersection: the 10 students doing both get counted twice."
+        }
+      }
+    },
+    {
+      "id": "inclusione-esclusione-093",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "difficulty": "advanced",
+      "text": {
+        "it": "Quanti interi da 1 a 120 sono divisibili per 2, per 3 oppure per 5?",
+        "en": "How many integers from 1 to 120 are divisible by 2, by 3 or by 5?"
+      },
+      "options": {
+        "A": "88",
+        "B": "124",
+        "C": "80",
+        "D": "84"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "Contiamo i multipli: 60 di 2, 40 di 3, 24 di 5. Togliamo le coppie: 20 di 6, 12 di 10, 8 di 15. Ri-aggiungiamo la tripla: 4 di 30. Totale 60 + 40 + 24 − 20 − 12 − 8 + 4 = 88.",
+        "en": "Count the multiples: 60 of 2, 40 of 3, 24 of 5. Remove the pairs: 20 of 6, 12 of 10, 8 of 15. Add the triple back: 4 of 30. Total 60 + 40 + 24 − 20 − 12 − 8 + 4 = 88."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai sommato i tre insiemi senza togliere le sovrapposizioni: i multipli comuni (per esempio quelli divisibili sia per 2 sia per 3) verrebbero contati più volte.",
+          "en": "You added the three sets without removing the overlaps: common multiples (for instance those divisible by both 2 and 3) would be counted several times."
+        },
+        "C": {
+          "it": "Hai sottratto l'intersezione tripla invece di sommarla: nel principio di inclusione-esclusione i termini si alternano di segno, quindi il termine triplo va sommato.",
+          "en": "You subtracted the triple intersection instead of adding it: the signs in inclusion–exclusion alternate, so the triple term is added."
+        },
+        "D": {
+          "it": "Hai sottratto le intersezioni a due a due ma non hai ri-aggiunto l'intersezione tripla: i 4 numeri divisibili per 2·3·5 sono stati tolti una volta di troppo.",
+          "en": "You subtracted the pairwise intersections but did not add the triple intersection back: the 4 numbers divisible by 2·3·5 were removed once too many."
+        }
+      }
+    },
+    {
+      "id": "inclusione-esclusione-094",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "In una scuola di 100 studenti, 42 praticano il nuoto e 38 praticano l'atletica; 15 praticano entrambe le discipline. Quanti studenti praticano almeno una delle due discipline?",
+        "en": "In a school of 100 students, 42 do swimming and 38 do athletics; 15 do both. How many students do at least one of the two?"
+      },
+      "options": {
+        "A": "50",
+        "B": "80",
+        "C": "65",
+        "D": "85"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "Principio di inclusione-esclusione per due insiemi: |A ∪ B| = |A| + |B| − |A ∩ B| = 42 + 38 − 15 = 65.",
+        "en": "Inclusion–exclusion for two sets: |A ∪ B| = |A| + |B| − |A ∩ B| = 42 + 38 − 15 = 65."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai sottratto l'intersezione due volte: chi pratica entrambe le discipline va contato una volta, quindi si toglie 15 una sola volta.",
+          "en": "You subtracted the intersection twice: those doing both must be counted once, so 15 is removed only once."
+        },
+        "B": {
+          "it": "Hai sommato i due gruppi senza togliere l'intersezione: i 15 studenti che praticano entrambe le discipline vengono così contati due volte.",
+          "en": "You added the two groups without removing the intersection: the 15 students doing both get counted twice."
+        },
+        "D": {
+          "it": "Hai lavorato sul totale della scuola: la domanda riguarda solo chi pratica almeno una disciplina, non chi resta escluso.",
+          "en": "You worked from the school total: the question is only about those doing at least one sport, not about who is left out."
+        }
+      }
+    },
+    {
+      "id": "inclusione-esclusione-095",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "difficulty": "intermediate",
+      "text": {
+        "it": "In una scuola di 150 studenti, 45 praticano il nuoto e 58 praticano l'atletica; 32 praticano entrambe le discipline. Quanti studenti praticano almeno una delle due discipline?",
+        "en": "In a school of 150 students, 45 do swimming and 58 do athletics; 32 do both. How many students do at least one of the two?"
+      },
+      "options": {
+        "A": "71",
+        "B": "39",
+        "C": "118",
+        "D": "103"
+      },
+      "correct": "A",
+      "explanation": {
+        "it": "Principio di inclusione-esclusione per due insiemi: |A ∪ B| = |A| + |B| − |A ∩ B| = 45 + 58 − 32 = 71.",
+        "en": "Inclusion–exclusion for two sets: |A ∪ B| = |A| + |B| − |A ∩ B| = 45 + 58 − 32 = 71."
+      },
+      "diagnoses": {
+        "B": {
+          "it": "Hai sottratto l'intersezione due volte: chi pratica entrambe le discipline va contato una volta, quindi si toglie 32 una sola volta.",
+          "en": "You subtracted the intersection twice: those doing both must be counted once, so 32 is removed only once."
+        },
+        "C": {
+          "it": "Hai lavorato sul totale della scuola: la domanda riguarda solo chi pratica almeno una disciplina, non chi resta escluso.",
+          "en": "You worked from the school total: the question is only about those doing at least one sport, not about who is left out."
+        },
+        "D": {
+          "it": "Hai sommato i due gruppi senza togliere l'intersezione: i 32 studenti che praticano entrambe le discipline vengono così contati due volte.",
+          "en": "You added the two groups without removing the intersection: the 32 students doing both get counted twice."
+        }
+      }
+    }
+  ]
+}
