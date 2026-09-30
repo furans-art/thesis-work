@@ -222,6 +222,7 @@ export const it = {
     correct: "Risposta corretta",
     wrong: "Risposta errata",
     askFeedback: "Chiedi feedback",
+    diagnosisTitle: "Analisi del tuo errore · Risposta {letter}",
     feedbackTitle: "Perché la risposta è errata",
     close: "Chiudi",
     done: "Simulazione completata",
