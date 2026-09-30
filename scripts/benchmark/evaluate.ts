@@ -170,13 +170,14 @@ function renderLatex(): string {
   const esc = (v: string) => v.replace(/%/g, "\\%").replace(/&/g, "\\&");
   const lines: string[] = [];
   lines.push("\\begin{table}[ht]\n\\centering");
-  lines.push("\\begin{tabular}{lrrrr}\n\\hline");
-  lines.push("Modello & Quesiti & Accuratezza & Allineamento & Non conformi \\\\\n\\hline");
+  lines.push("\\begin{tabular}{llrrrr}\n\\hline");
+  lines.push("Modello & Lingua & Quesiti & Accuratezza & Allineamento & Non conformi \\\\\n\\hline");
   for (const s of summaries) {
     lines.push(
-      `${esc(s.modelLabel)} & ${s.total} & ${esc(pct(s.correct, s.total))} & ${esc(pct(s.alignedWrong, s.wrong))} & ${s.unparsable + s.errors} \\\\`,
+      `${esc(s.modelLabel)} & ${esc(s.locale)} & ${s.total} & ${esc(pct(s.correct, s.total))} & ${esc(pct(s.alignedWrong, s.wrong))} & ${s.unparsable + s.errors} \\\\`,
     );
   }
+
   lines.push("\\hline\n\\end{tabular}");
   lines.push(
     `\\caption{Accuratezza e allineamento ai distrattori cognitivi (dataset seed ${dataset.seed}).}`,
