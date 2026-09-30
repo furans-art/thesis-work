@@ -4,7 +4,10 @@ import { ArrowLeft, BookOpen, FlaskConical } from "lucide-react";
 import { PageShell } from "@/components/layout/page-shell";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/context/i18n-context";
+import { lessonContentEn } from "@/data/lesson-content.en";
+import { lessonContentIt } from "@/data/lesson-content.it";
 import { lessons } from "@/data/lessons";
+import { LessonBody } from "@/components/lessons/lesson-body";
 
 export const Route = createFileRoute("/lessons_/$lessonId")({
   head: () => ({
@@ -13,13 +16,15 @@ export const Route = createFileRoute("/lessons_/$lessonId")({
       { name: "description", content: "Lezione di teoria per la preparazione al test CISIA TOLC-S." },
       { property: "og:title", content: "Lezione — TOLC-S Trainer" },
       { property: "og:description", content: "Lezione di teoria per la preparazione al test CISIA TOLC-S." },
+      { property: "og:type", content: "article" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: LessonPage,
 });
 
 function LessonPage() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const { lessonId } = Route.useParams();
   const lesson = lessons.find((l) => l.id === Number(lessonId));
 
@@ -43,7 +48,14 @@ function LessonPage() {
     <PageShell title={lessonKey(lesson.titleKey)}>
       <article className="max-w-3xl space-y-6">
         <p className="font-serif text-lg leading-relaxed">{lessonKey(lesson.summaryKey)}</p>
-        <p className="leading-relaxed text-foreground/90">{lessonKey(lesson.bodyKey)}</p>
+        {(() => {
+          const blocks = (locale === "en" ? lessonContentEn : lessonContentIt)[lesson.id];
+          return blocks && blocks.length > 0 ? (
+            <LessonBody blocks={blocks} />
+          ) : (
+            <p className="leading-relaxed text-foreground/90">{lessonKey(lesson.bodyKey)}</p>
+          );
+        })()}
         <div className="flex flex-wrap gap-3 border-t pt-6">
           <Button asChild>
             <Link
