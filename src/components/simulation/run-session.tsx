@@ -177,11 +177,32 @@ function RunInner({ target, plan, settings, onRetake }: RunInnerProps) {
           {canAskFeedback && (
             <div className="space-y-3">
               {run.feedbackOpen && (
-                <Alert variant={isCorrect ? "default" : "destructive"}>
-                  <Lightbulb aria-hidden="true" className="size-4" />
-                  <AlertTitle>{isCorrect ? t.run.correct : t.run.feedbackTitle}</AlertTitle>
-                  <AlertDescription>{run.q.explanation[locale]}</AlertDescription>
-                </Alert>
+                <>
+                  <Alert variant={isCorrect ? "default" : "destructive"}>
+                    <Lightbulb aria-hidden="true" className="size-4" />
+                    <AlertTitle>{isCorrect ? t.run.correct : t.run.feedbackTitle}</AlertTitle>
+                    <AlertDescription>{run.q.explanation[locale]}</AlertDescription>
+                  </Alert>
+                  {(() => {
+                    const diagnosis =
+                      !isCorrect && run.selected !== null
+                        ? (run.q.rationales?.[run.selected] ?? null)
+                        : null;
+                    if (!diagnosis) return null;
+                    return (
+                      <div
+                        role="note"
+                        aria-label={t.run.diagnosisTitle.replace("{letter}", "ABCD"[run.selected] ?? "")}
+                        className="rounded-lg border border-destructive/40 bg-destructive/5 p-4"
+                      >
+                        <p className="text-sm font-semibold">
+                          {t.run.diagnosisTitle.replace("{letter}", "ABCD"[run.selected] ?? "")}
+                        </p>
+                        <p className="mt-1 text-sm text-foreground/90">{diagnosis[locale]}</p>
+                      </div>
+                    );
+                  })()}
+                </>
               )}
               {!run.feedbackOpen && (
                 <Button type="button" variant="outline" onClick={() => run.setFeedbackOpen(true)}>

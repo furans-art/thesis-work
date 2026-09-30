@@ -4,7 +4,8 @@ import { permutationArchetypes } from "./archetypes/permutations";
 import { combinationArchetypes } from "./archetypes/combinations";
 import { urnArchetypes } from "./archetypes/urns";
 import { probabilityArchetypes } from "./archetypes/probability";
-import type { Archetype, GeneratedExercise } from "./types";
+import { advancedArchetypes } from "./archetypes/advanced";
+import type { Archetype, GeneratedExercise, Localized } from "./types";
 import type { PracticeSectionId } from "@/types/tolc";
 import type { Question } from "@/services/questionService";
 
@@ -16,6 +17,7 @@ const ARCHETYPES: Archetype[] = [
   ...combinationArchetypes,
   ...urnArchetypes,
   ...probabilityArchetypes,
+  ...advancedArchetypes,
 ];
 
 function parseValue(value: string): { a: number; b: number } {
@@ -50,47 +52,64 @@ function fallbackDistractors(correct: string): string[] {
   return [a + 1, a - 1 > 0 ? a - 1 : a + 2, 2 * a, a + 3].map(String);
 }
 
-function uniqueDistractors(exercise: GeneratedExercise): string[] {
+/**
+ * Selects three usable distractors, keeping each one's error diagnosis alive.
+ * A distractor replaced by a fallback loses its diagnosis (undefined), because
+ * the fallback value no longer corresponds to a known mistake.
+ */
+function pickDistractors(exercise: GeneratedExercise): {
+  labels: string[];
+  whys: (Localized | undefined)[];
+} {
   const seen = new Set<string>([exercise.correct]);
-  const out: string[] = [];
-  for (const raw of exercise.distractors) {
-    let value = raw;
+  const labels: string[] = [];
+  const whys: (Localized | undefined)[] = [];
+  const rawWhys = exercise.diagnoses ?? [];
+
+  const candidates = exercise.distractors.map((label, i) => ({ label, why: rawWhys[i] }));
+  for (const { label, why } of candidates) {
+    let value = label;
+    let resolvedWhy: Localized | undefined = why;
     const { a, b } = parseValue(value);
     // a probability can never exceed 1: sums of probabilities may, so replace them
     if (b > 1 && a > b) {
-      value = fallbackDistractors(exercise.correct).find((c) => !seen.has(c)) ?? value;
+      const fb = fallbackDistractors(exercise.correct).find((c) => !seen.has(c));
+      if (!fb) continue;
+      value = fb;
+      resolvedWhy = undefined;
     }
     if (seen.has(value)) {
-      const fallback = fallbackDistractors(exercise.correct).find((c) => !seen.has(c));
-      if (!fallback) continue; // extremely unlikely: skip rather than duplicate
-      value = fallback;
+      const fb = fallbackDistractors(exercise.correct).find((c) => !seen.has(c));
+      if (!fb) continue;
+      value = fb;
+      resolvedWhy = undefined;
     }
     seen.add(value);
-    out.push(value);
-    if (out.length === 3) break;
+    labels.push(value);
+    whys.push(resolvedWhy);
+    if (labels.length === 3) break;
   }
   // top-up if the archetype provided fewer than three usable distractors
+  const fallbacks = fallbackDistractors(exercise.correct);
   let index = 0;
-  while (out.length < 3) {
-    const fallback = fallbackDistractors(exercise.correct)[index];
-    if (fallback === undefined || seen.has(fallback)) {
-      index += 1;
-      if (index > 20) break;
-      continue;
-    }
-    seen.add(fallback);
-    out.push(fallback);
+  while (labels.length < 3 && index < 20) {
+    const fb = fallbacks[index];
     index += 1;
+    if (fb === undefined || seen.has(fb)) continue;
+    seen.add(fb);
+    labels.push(fb);
+    whys.push(undefined);
   }
-  return out;
+  return { labels, whys };
 }
 
 function toQuestion(exercise: GeneratedExercise, index: number, rng: Rng): Question {
-  const distractors = uniqueDistractors(exercise);
+  const { labels, whys } = pickDistractors(exercise);
   const entries = rng.shuffle([
-    { label: exercise.correct, correct: true },
-    ...distractors.map((label) => ({ label, correct: false })),
+    { label: exercise.correct, correct: true, why: undefined as Localized | undefined },
+    ...labels.map((label, i) => ({ label, correct: false, why: whys[i] })),
   ]);
+  const hasDiagnoses = whys.some((w) => w !== undefined);
   return {
     id: `combinatoria-${exercise.archetype}-${index}-${rng.int(1000, 9999)}`,
     sectionId: COMBINATORICS_SECTION,
@@ -98,6 +117,9 @@ function toQuestion(exercise: GeneratedExercise, index: number, rng: Rng): Quest
     options: entries.map((e) => ({ it: e.label, en: e.label })),
     correctIndex: entries.findIndex((e) => e.correct),
     explanation: exercise.explanation,
+    ...(hasDiagnoses
+      ? { rationales: entries.map((e) => (e.why ? { it: e.why.it, en: e.why.en } : null)) }
+      : {}),
   };
 }
 
