@@ -162,40 +162,66 @@ async function callAnthropic(
 ): Promise<CompletionResult> {
   const key = config.apiKeyEnv ? process.env[config.apiKeyEnv] : undefined;
   if (!key) return { raw: "", error: `missing env ${config.apiKeyEnv}` };
-  const response = await fetch(`${config.baseUrl}/messages`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": key,
-      "anthropic-version": "2023-06-01",
-    },
-    body: JSON.stringify({
-      model: config.model,
-      // Reasoning models deprecate `temperature` and need a larger output
-      // budget so internal thinking doesn't exhaust the token limit.
-      ...(config.reasoning ? {} : { temperature: config.temperature ?? 0 }),
-      max_tokens: config.maxTokens ?? (config.reasoning ? 8000 : 1200),
-      system,
-      messages: [{ role: "user", content: user }],
-    }),
+  const body = JSON.stringify({
+    model: config.model,
+    // Reasoning models deprecate `temperature` and need a larger output
+    // budget so internal thinking doesn't exhaust the token limit.
+    ...(config.reasoning ? {} : { temperature: config.temperature ?? 0 }),
+    max_tokens: config.maxTokens ?? (config.reasoning ? 8000 : 1200),
+    system,
+    messages: [{ role: "user", content: user }],
   });
-  if (!response.ok) {
-    return { raw: "", error: `HTTP ${response.status}: ${(await response.text()).slice(0, 200)}` };
+
+  // HTTP 200 responses with an empty `content` array happen (e.g. stop_reason
+  // "refusal" or transient empty turns). Retry a few times, then record the
+  // stop_reason and the response body as an explicit error so the run can be
+  // resumed (errored items are retried on resume) instead of counted as wrong.
+  const maxAttempts = 3;
+  let lastDiag = "";
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    const response = await fetch(`${config.baseUrl}/messages`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "x-api-key": key,
+        "anthropic-version": "2023-06-01",
+      },
+      body,
+    });
+    if (!response.ok) {
+      const text = (await response.text()).slice(0, 300);
+      if ((response.status === 429 || response.status >= 500) && attempt < maxAttempts) {
+        await new Promise((r) => setTimeout(r, 2000 * attempt));
+        continue;
+      }
+      return { raw: "", error: `HTTP ${response.status}: ${text}` };
+    }
+    const bodyText = await response.text();
+    let json: {
+      content?: { type?: string; text?: string; thinking?: string }[];
+      stop_reason?: string;
+    };
+    try {
+      json = JSON.parse(bodyText);
+    } catch {
+      return { raw: "", error: `invalid JSON response: ${bodyText.slice(0, 300)}` };
+    }
+    // Reasoning models may place the answer inside a `thinking` block; keep any
+    // thinking text as fallback so parseChoice can still recover the choice.
+    const raw = (json.content ?? [])
+      .map((c) => c.text || c.thinking || "")
+      .join("\n")
+      .trim();
+    if (raw) return { raw };
+
+    const types = (json.content ?? []).map((c) => c.type ?? "?").join(",") || "none";
+    lastDiag = `empty response (stop_reason=${json.stop_reason ?? "?"}, blocks=${types}): ${bodyText.slice(0, 400)}`;
+    if (json.stop_reason === "max_tokens") {
+      return { raw: "", error: `token limit exhausted during thinking — ${lastDiag}` };
+    }
+    if (attempt < maxAttempts) await new Promise((r) => setTimeout(r, 1500 * attempt));
   }
-  const json = (await response.json()) as {
-    content?: { type?: string; text?: string; thinking?: string }[];
-    stop_reason?: string;
-  };
-  // Reasoning models may place the answer inside a `thinking` block; keep any
-  // thinking text as fallback so parseChoice can still recover the choice.
-  const raw = (json.content ?? [])
-    .map((c) => c.text || c.thinking || "")
-    .join("\n")
-    .trim();
-  if (!raw && json.stop_reason === "max_tokens") {
-    return { raw: "", error: "token limit exhausted during thinking (max_tokens)" };
-  }
-  return { raw };
+  return { raw: "", error: lastDiag };
 }
 
 /** Deterministic pseudo-model: picks an option from a hash of the prompt. */
