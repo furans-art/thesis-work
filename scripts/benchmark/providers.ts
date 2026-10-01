@@ -59,6 +59,7 @@ export const MODELS: ModelConfig[] = [
     model: "gpt-6.1-sol",
     baseUrl: "https://api.openai.com/v1",
     apiKeyEnv: "OPENAI_API_KEY",
+    reasoning: true,
   },
   {
     id: "gpt-6-astra",
@@ -67,7 +68,9 @@ export const MODELS: ModelConfig[] = [
     model: "gpt-6-astra",
     baseUrl: "https://api.openai.com/v1",
     apiKeyEnv: "OPENAI_API_KEY",
+    reasoning: true,
   },
+
   {
     id: "deepseek-reasoner",
     label: "DeepSeek R1 (reasoning)",
