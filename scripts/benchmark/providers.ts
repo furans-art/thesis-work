@@ -99,6 +99,7 @@ export const MODELS: ModelConfig[] = [
     model: "claude-opus-5",
     baseUrl: "https://api.anthropic.com/v1",
     apiKeyEnv: "ANTHROPIC_API_KEY",
+    reasoning: true,
   },
 ];
 
@@ -170,8 +171,10 @@ async function callAnthropic(
     },
     body: JSON.stringify({
       model: config.model,
-      max_tokens: config.maxTokens ?? 1200,
-      temperature: config.temperature ?? 0,
+      // Reasoning models deprecate `temperature` and need a larger output
+      // budget so internal thinking doesn't exhaust the token limit.
+      ...(config.reasoning ? {} : { temperature: config.temperature ?? 0 }),
+      max_tokens: config.maxTokens ?? (config.reasoning ? 8000 : 1200),
       system,
       messages: [{ role: "user", content: user }],
     }),
