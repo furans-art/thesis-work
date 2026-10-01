@@ -103,17 +103,44 @@ function save(): void {
 let cursor = 0;
 let completed = 0;
 
+// Warm-up: some providers (notably Anthropic reasoning models) return empty
+// 200 responses for the first couple of requests of a fresh session. Send a
+// throwaway ping and wait a few seconds so the real items hit a warm model.
+if (pending.length > 0 && config.transport !== "mock") {
+  console.log("warm-up .... sending throwaway ping");
+  await complete(config, "Reply with the single word: ok", "ping");
+  await new Promise((r) => setTimeout(r, 4000));
+}
+
+async function ask(item: (typeof pending)[number]) {
+  const started = Date.now();
+  let result = await complete(
+    config,
+    SYSTEM_PROMPT[locale],
+    buildUserPrompt(item, locale),
+  );
+  // Empty 200 responses are transient (cold start, empty turns): retry once
+  // after a short pause before recording the item.
+  if (!result.error && !result.raw.trim()) {
+    await new Promise((r) => setTimeout(r, 3000));
+    result = await complete(
+      config,
+      SYSTEM_PROMPT[locale],
+      buildUserPrompt(item, locale),
+    );
+    if (!result.error && !result.raw.trim()) {
+      result = { raw: "", error: "empty response after retry" };
+    }
+  }
+  return { result, latencyMs: Date.now() - started };
+}
+
 async function worker(): Promise<void> {
   while (cursor < pending.length) {
     const item = pending[cursor];
     cursor += 1;
     if (!item) return;
-    const started = Date.now();
-    const result = await complete(
-      config,
-      SYSTEM_PROMPT[locale],
-      buildUserPrompt(item, locale),
-    );
+    const { result, latencyMs } = await ask(item);
     run.answers.push({
       itemId: item.id,
       archetype: item.archetype,
@@ -122,7 +149,7 @@ async function worker(): Promise<void> {
       choice: result.error ? null : parseChoice(result.raw),
       raw: result.raw.slice(0, 4000),
       ...(result.error ? { error: result.error } : {}),
-      latencyMs: Date.now() - started,
+      latencyMs,
     });
     completed += 1;
     if (completed % 5 === 0 || completed === pending.length) {
