@@ -106,13 +106,16 @@ async function callOpenAi(
     },
     body: JSON.stringify({
       model: config.model,
-      temperature: config.temperature ?? 0,
-      max_tokens: config.maxTokens ?? 1200,
+      // Reasoning models reject an explicit temperature and need room for the
+      // hidden thought tokens before the final JSON answer.
+      ...(config.reasoning ? {} : { temperature: config.temperature ?? 0 }),
+      max_tokens: config.maxTokens ?? (config.reasoning ? 8000 : 1200),
       messages: [
         { role: "system", content: system },
         { role: "user", content: user },
       ],
     }),
+
   });
   if (!response.ok) {
     return { raw: "", error: `HTTP ${response.status}: ${(await response.text()).slice(0, 200)}` };
