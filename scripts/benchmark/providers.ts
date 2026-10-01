@@ -75,7 +75,9 @@ export const MODELS: ModelConfig[] = [
     model: "deepseek-reasoner",
     baseUrl: "https://api.deepseek.com/v1",
     apiKeyEnv: "DEEPSEEK_API_KEY",
+    reasoning: true,
   },
+
   {
     id: "claude-opus-5",
     label: "Claude Opus 5 (Anthropic)",
