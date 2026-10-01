@@ -3,7 +3,7 @@
  *
  *   bun scripts/benchmark/run-benchmark.ts --model mock
  *   bun scripts/benchmark/run-benchmark.ts --model llama32-3b --locale it
- *   bun scripts/benchmark/run-benchmark.ts --model gpt-4o --limit 24 --concurrency 4
+ *   bun scripts/benchmark/run-benchmark.ts --model gpt-61-sol --limit 24 --concurrency 4
  *
  * Output: scripts/benchmark/data/results/<model>-<locale>.json
  * Runs are resumable: existing answers for the same item are kept unless
