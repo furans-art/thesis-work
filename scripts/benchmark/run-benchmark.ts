@@ -103,15 +103,6 @@ function save(): void {
 let cursor = 0;
 let completed = 0;
 
-// Warm-up: some providers (notably Anthropic reasoning models) return empty
-// 200 responses for the first couple of requests of a fresh session. Send a
-// throwaway ping and wait a few seconds so the real items hit a warm model.
-if (pending.length > 0 && config.transport !== "mock") {
-  console.log("warm-up .... sending throwaway ping");
-  await complete(config, "Reply with the single word: ok", "ping");
-  await new Promise((r) => setTimeout(r, 4000));
-}
-
 async function ask(item: (typeof pending)[number]) {
   const started = Date.now();
   let result = await complete(
