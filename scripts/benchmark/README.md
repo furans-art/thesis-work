@@ -25,7 +25,7 @@ bun scripts/benchmark/run-benchmark.ts --model qwen25-7b
 
 # modelli via API (chiave in variabile d'ambiente)
 OPENAI_API_KEY=... bun scripts/benchmark/run-benchmark.ts --model gpt-61-sol --concurrency 4
-DEEPSEEK_API_KEY=... bun scripts/benchmark/run-benchmark.ts --model deepseek-reasoner
+DEEPSEEK_API_KEY=... bun scripts/benchmark/run-benchmark.ts --model deepseek-flash
 ANTHROPIC_API_KEY=... bun scripts/benchmark/run-benchmark.ts --model claude-opus-5
 ```
 
