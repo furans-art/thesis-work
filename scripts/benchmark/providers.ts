@@ -25,6 +25,9 @@ export interface ModelConfig {
   apiKeyEnv?: string;
   temperature?: number;
   maxTokens?: number;
+  /** deliberative reasoning model: no temperature, larger output budget */
+  reasoning?: boolean;
+
 }
 
 /** Registry: edit freely, the runner selects entries by id. */
