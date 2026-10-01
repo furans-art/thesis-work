@@ -106,6 +106,12 @@ async function callOpenAi(
   if (config.apiKeyEnv && !key) {
     return { raw: "", error: `missing env ${config.apiKeyEnv}` };
   }
+  // OpenAI's own endpoint dropped `max_tokens` in favour of
+  // `max_completion_tokens` (which also covers hidden reasoning tokens), and
+  // expects the instruction turn under the `developer` role on those models.
+  // Local/compatible servers (Ollama, vLLM, DeepSeek) keep the legacy field.
+  const isOpenAiHost = config.baseUrl?.includes("api.openai.com") ?? false;
+  const tokenBudget = config.maxTokens ?? (config.reasoning ? 8000 : 1200);
   const response = await fetch(`${config.baseUrl}/chat/completions`, {
     method: "POST",
     headers: {
@@ -114,16 +120,19 @@ async function callOpenAi(
     },
     body: JSON.stringify({
       model: config.model,
-      // Reasoning models reject an explicit temperature and need room for the
-      // hidden thought tokens before the final JSON answer.
+      // Reasoning models reject an explicit temperature.
       ...(config.reasoning ? {} : { temperature: config.temperature ?? 0 }),
-      max_tokens: config.maxTokens ?? (config.reasoning ? 8000 : 1200),
+      ...(isOpenAiHost
+        ? { max_completion_tokens: tokenBudget }
+        : { max_tokens: tokenBudget }),
       messages: [
-        { role: "system", content: system },
+        {
+          role: isOpenAiHost && config.reasoning ? "developer" : "system",
+          content: system,
+        },
         { role: "user", content: user },
       ],
     }),
-
   });
   if (!response.ok) {
     return { raw: "", error: `HTTP ${response.status}: ${(await response.text()).slice(0, 200)}` };
