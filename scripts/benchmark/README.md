@@ -24,9 +24,9 @@ bun scripts/benchmark/run-benchmark.ts --model llama32-3b
 bun scripts/benchmark/run-benchmark.ts --model qwen25-7b
 
 # modelli via API (chiave in variabile d'ambiente)
-OPENAI_API_KEY=... bun scripts/benchmark/run-benchmark.ts --model gpt-4o --concurrency 4
+OPENAI_API_KEY=... bun scripts/benchmark/run-benchmark.ts --model gpt-61-sol --concurrency 4
 DEEPSEEK_API_KEY=... bun scripts/benchmark/run-benchmark.ts --model deepseek-reasoner
-ANTHROPIC_API_KEY=... bun scripts/benchmark/run-benchmark.ts --model claude-sonnet
+ANTHROPIC_API_KEY=... bun scripts/benchmark/run-benchmark.ts --model claude-opus-5
 ```
 
 Opzioni: `--locale it|en`, `--limit N`, `--concurrency N`, `--fresh`.

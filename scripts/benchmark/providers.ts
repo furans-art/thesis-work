@@ -25,6 +25,9 @@ export interface ModelConfig {
   apiKeyEnv?: string;
   temperature?: number;
   maxTokens?: number;
+  /** deliberative reasoning model: no temperature, larger output budget */
+  reasoning?: boolean;
+
 }
 
 /** Registry: edit freely, the runner selects entries by id. */
@@ -50,30 +53,44 @@ export const MODELS: ModelConfig[] = [
     baseUrl: "http://localhost:11434/v1",
   },
   {
-    id: "gpt-4o",
-    label: "GPT-4o",
+    id: "gpt-61-sol",
+    label: "GPT-6.1 Sol (OpenAI)",
     transport: "openai",
-    model: "gpt-4o",
+    model: "gpt-6.1-sol",
     baseUrl: "https://api.openai.com/v1",
     apiKeyEnv: "OPENAI_API_KEY",
+    reasoning: true,
   },
   {
+    id: "gpt-6-astra",
+    label: "GPT-6 Astra (OpenAI)",
+    transport: "openai",
+    model: "gpt-6-astra",
+    baseUrl: "https://api.openai.com/v1",
+    apiKeyEnv: "OPENAI_API_KEY",
+    reasoning: true,
+  },
+
+  {
     id: "deepseek-reasoner",
-    label: "DeepSeek R1",
+    label: "DeepSeek R1 (reasoning)",
     transport: "openai",
     model: "deepseek-reasoner",
     baseUrl: "https://api.deepseek.com/v1",
     apiKeyEnv: "DEEPSEEK_API_KEY",
+    reasoning: true,
   },
+
   {
-    id: "claude-sonnet",
-    label: "Claude Sonnet",
+    id: "claude-opus-5",
+    label: "Claude Opus 5 (Anthropic)",
     transport: "anthropic",
-    model: "claude-3-7-sonnet-latest",
+    model: "claude-opus-5",
     baseUrl: "https://api.anthropic.com/v1",
     apiKeyEnv: "ANTHROPIC_API_KEY",
   },
 ];
+
 
 export interface CompletionResult {
   raw: string;
@@ -97,13 +114,16 @@ async function callOpenAi(
     },
     body: JSON.stringify({
       model: config.model,
-      temperature: config.temperature ?? 0,
-      max_tokens: config.maxTokens ?? 1200,
+      // Reasoning models reject an explicit temperature and need room for the
+      // hidden thought tokens before the final JSON answer.
+      ...(config.reasoning ? {} : { temperature: config.temperature ?? 0 }),
+      max_tokens: config.maxTokens ?? (config.reasoning ? 8000 : 1200),
       messages: [
         { role: "system", content: system },
         { role: "user", content: user },
       ],
     }),
+
   });
   if (!response.ok) {
     return { raw: "", error: `HTTP ${response.status}: ${(await response.text()).slice(0, 200)}` };
