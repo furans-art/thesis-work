@@ -72,6 +72,16 @@ export const MODELS: ModelConfig[] = [
   },
 
   {
+    id: "deepseek-flash",
+    label: "DeepSeek Flash",
+    transport: "openai",
+    model: "deepseek-flash",
+    baseUrl: "https://api.deepseek.com/v1",
+    apiKeyEnv: "DEEPSEEK_API_KEY",
+    reasoning: true,
+  },
+
+  {
     id: "deepseek-reasoner",
     label: "DeepSeek R1 (reasoning)",
     transport: "openai",
@@ -80,6 +90,7 @@ export const MODELS: ModelConfig[] = [
     apiKeyEnv: "DEEPSEEK_API_KEY",
     reasoning: true,
   },
+
 
   {
     id: "claude-opus-5",
