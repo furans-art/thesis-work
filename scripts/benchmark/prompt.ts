@@ -14,15 +14,15 @@ export type PromptLocale = "it" | "en";
 export const SYSTEM_PROMPT: Record<PromptLocale, string> = {
   it: [
     "Sei un risolutore esperto di calcolo combinatorio e probabilità elementare.",
-    "Risolvi il quesito a scelta multipla ragionando passo per passo.",
+    "Risolvi il quesito a scelta multipla.",
     "Rispondi esclusivamente con un oggetto JSON valido, senza testo aggiuntivo,",
-    'nella forma {"reasoning": "<ragionamento sintetico>", "choice": "A"|"B"|"C"|"D"}.',
+    'nella forma {"solution": "<sintetico passaggio di calcolo>", "choice": "A"|"B"|"C"|"D"}.',
   ].join(" "),
   en: [
     "You are an expert solver of combinatorics and elementary probability problems.",
-    "Solve the multiple-choice question reasoning step by step.",
+    "Solve the multiple-choice question.",
     "Answer only with a valid JSON object, with no extra text,",
-    'shaped as {"reasoning": "<concise reasoning>", "choice": "A"|"B"|"C"|"D"}.',
+    'shaped as {"solution": "<concise calculation step>", "choice": "A"|"B"|"C"|"D"}.',
   ].join(" "),
 };
 
@@ -52,7 +52,8 @@ export function parseChoice(raw: string): OptionLabel | null {
       // fall through to the textual heuristics below
     }
   }
-  const quoted = text.match(/"choice"\s*:\s*"?([ABCD])"?/i);
+  // Accept both "choice" and legacy "answer"/"solution" key spellings.
+  const quoted = text.match(/"(?:choice|answer)"\s*:\s*"?([ABCD])"?/i);
   if (quoted?.[1]) return quoted[1].toUpperCase() as OptionLabel;
   const trailing = text.match(/\b([ABCD])\b(?![\s\S]*\b[ABCD]\b)/);
   if (trailing?.[1]) return trailing[1].toUpperCase() as OptionLabel;
