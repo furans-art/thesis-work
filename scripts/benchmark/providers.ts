@@ -182,8 +182,20 @@ async function callAnthropic(
   if (!response.ok) {
     return { raw: "", error: `HTTP ${response.status}: ${(await response.text()).slice(0, 200)}` };
   }
-  const json = (await response.json()) as { content?: { text?: string }[] };
-  return { raw: json.content?.map((c) => c.text ?? "").join("") ?? "" };
+  const json = (await response.json()) as {
+    content?: { type?: string; text?: string; thinking?: string }[];
+    stop_reason?: string;
+  };
+  // Reasoning models may place the answer inside a `thinking` block; keep any
+  // thinking text as fallback so parseChoice can still recover the choice.
+  const raw = (json.content ?? [])
+    .map((c) => c.text || c.thinking || "")
+    .join("\n")
+    .trim();
+  if (!raw && json.stop_reason === "max_tokens") {
+    return { raw: "", error: "token limit exhausted during thinking (max_tokens)" };
+  }
+  return { raw };
 }
 
 /** Deterministic pseudo-model: picks an option from a hash of the prompt. */
