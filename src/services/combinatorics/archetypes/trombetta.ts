@@ -45,7 +45,7 @@ function starsAndBarsExercise(rng: Rng): GeneratedExercise {
   // mistake A: treating the identical objects as distinguishable
   const wrongDistinct = n ** k;
   // mistake B: using simple combinations, i.e. forgetting repetition is allowed
-  const wrongSimple = combinations(Math.max(k, n), Math.min(k, n));
+  const wrongSimple = combinations(k, n - 1);
   // mistake C: forgetting the minimum pre-assignment (or applying it when absent)
   const wrongNoMin =
     minEach > 0 ? combinations(k + n - 1, n - 1) : combinations(k - n + n - 1, n - 1);

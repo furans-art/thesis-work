@@ -52,7 +52,45 @@ export const urnArchetypes: Archetype[] = [
       const blue = rng.int(2, 6);
       const total = red + blue;
       const correct = new Fraction(red, total).mul(new Fraction(red - 1, total - 1));
-      const independent = new Fraction(red, total).mul(new Fraction(blue, total - 1));
+      const redThenBlue = new Fraction(red, total).mul(new Fraction(blue, total - 1));
+      const firstDrawOnly = new Fraction(red, total);
+      const candidates = [
+        {
+          value: redThenBlue,
+          why: {
+            it: `Alla seconda estrazione hai usato la probabilità di una blu: dopo una rossa restano ${red - 1} rosse su ${total - 1}.`,
+            en: `For the second draw you used the probability of a blue ball: after one red there are ${red - 1} reds left out of ${total - 1}.`,
+          },
+        },
+        {
+          value: correct.add(redThenBlue),
+          why: {
+            it: `Hai sommato invece di moltiplicare: «entrambe rosse» è un evento simultaneo, non un'alternativa fra i due colori.`,
+            en: `You added instead of multiplying: “both red” is a simultaneous event, not an alternative between the two colours.`,
+          },
+        },
+        {
+          value: firstDrawOnly,
+          why: {
+            it: `È la probabilità della sola prima estrazione: serve anche che la seconda sia rossa, e l'urna nel frattempo è cambiata.`,
+            en: `That is the probability of the first draw alone: the second must also be red, and the urn has changed in the meantime.`,
+          },
+        },
+        {
+          value: firstDrawOnly.mul(firstDrawOnly),
+          why: {
+            it: `Hai trattato le estrazioni come indipendenti: senza reimmissione, alla seconda estrazione il totale e il numero di rosse diminuiscono.`,
+            en: `You treated the draws as independent: without replacement, both the total and the number of red balls decrease on the second draw.`,
+          },
+        },
+      ];
+      const seen = new Set<string>([correct.toString()]);
+      const picked = candidates.filter(({ value }) => {
+        const rendered = value.toString();
+        if (seen.has(rendered)) return false;
+        seen.add(rendered);
+        return true;
+      }).slice(0, 3);
       return {
         archetype: "urna-senza-reimmissione-entrambe-rosse",
         difficulty: "intermediate",
@@ -61,25 +99,8 @@ export const urnArchetypes: Archetype[] = [
           en: `An urn contains ${red} red and ${blue} blue balls. Two balls are drawn in sequence without replacement. What is the probability both are red?`,
         },
         correct: correct.toString(),
-        distractors: [
-          independent.toString(),
-          correct.add(independent).toString(),
-          new Fraction(red, total).toString(),
-        ],
-        diagnoses: [
-          {
-            it: `Alla seconda estrazione hai usato la probabilità di una blu: la seconda estrazione avviene senza reimmissione, quindi dopo una rossa restano ${red - 1} rosse su ${total - 1}.`,
-            en: `For the second draw you used the probability of a blue ball: the second draw happens without replacement, so after one red there are ${red - 1} reds left out of ${total - 1}.`,
-          },
-          {
-            it: `Hai sommato invece di moltiplicare: «entrambe rosse» è un evento simultaneo, non un'alternativa fra i due colori.`,
-            en: `You added instead of multiplying: “both red” is a simultaneous event, not an alternative between the two colours.`,
-          },
-          {
-            it: `È la probabilità della sola prima estrazione: serve anche che la seconda sia rossa, e l'urna nel frattempo è cambiata.`,
-            en: `That is the probability of the first draw alone: the second must also be red, and the urn has changed in the meantime.`,
-          },
-        ],
+        distractors: picked.map(({ value }) => value.toString()),
+        diagnoses: picked.map(({ why }) => why),
         explanation: {
           it: `La prima estrazione ha probabilità ${red}/${total}. La seconda, sapendo che è rimasta una rossa in meno, ha probabilità ${red - 1}/${total - 1}. Il prodotto è ${red}/${total} · ${red - 1}/${total - 1} = ${correct.toString()}. Usare ${red}/${total} anche alla seconda estrazione ignora che l'urna è cambiata.`,
           en: `The first draw has probability ${red}/${total}. The second, knowing one red ball is gone, has probability ${red - 1}/${total - 1}. The product is ${red}/${total} · ${red - 1}/${total - 1} = ${correct.toString()}. Using ${red}/${total} for the second draw too ignores that the urn has changed.`,
@@ -94,8 +115,8 @@ export const urnArchetypes: Archetype[] = [
       const red = rng.int(3, 8);
       const blue = rng.int(3, 8);
       const total = red + blue;
-      const noneBlue = new Fraction(combinations(red, 2), combinations(total, 2));
-      const correct = noneBlue.complement();
+      const noneRed = new Fraction(combinations(blue, 2), combinations(total, 2));
+      const correct = noneRed.complement();
       return {
         archetype: "urna-almeno-uno",
         difficulty: "advanced",
@@ -106,7 +127,7 @@ export const urnArchetypes: Archetype[] = [
         correct: correct.toString(),
         distractors: [
           new Fraction(red, total).toString(),
-          noneBlue.toString(),
+          noneRed.toString(),
           correct.add(new Fraction(1, combinations(total, 2))).toString(),
         ],
         diagnoses: [
@@ -124,8 +145,8 @@ export const urnArchetypes: Archetype[] = [
           },
         ],
         explanation: {
-          it: `È più semplice usare l'evento complementare "nessuna rossa", cioè due blu: C(${blue},2)/C(${total},2) = ${combinations(blue, 2)}/${combinations(total, 2)} = ${noneBlue.toString()}. Quindi P(almeno una rossa) = 1 − ${noneBlue.toString()} = ${correct.toString()}.`,
-          en: `It is easier to use the complementary event "no red", i.e. two blue: C(${blue},2)/C(${total},2) = ${combinations(blue, 2)}/${combinations(total, 2)} = ${noneBlue.toString()}. So P(at least one red) = 1 − ${noneBlue.toString()} = ${correct.toString()}.`,
+          it: `È più semplice usare l'evento complementare "nessuna rossa", cioè due blu: C(${blue},2)/C(${total},2) = ${combinations(blue, 2)}/${combinations(total, 2)} = ${noneRed.toString()}. Quindi P(almeno una rossa) = 1 − ${noneRed.toString()} = ${correct.toString()}.`,
+          en: `It is easier to use the complementary event "no red", i.e. two blue: C(${blue},2)/C(${total},2) = ${combinations(blue, 2)}/${combinations(total, 2)} = ${noneRed.toString()}. So P(at least one red) = 1 − ${noneRed.toString()} = ${correct.toString()}.`,
         },
       };
     },
