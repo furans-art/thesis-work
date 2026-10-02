@@ -250,6 +250,8 @@ for (const locale of locales) {
 interface Table {
   caption: string;
   label: string;
+  /** output file name (without .tex) */
+  file: string;
   head: string[];
   rows: string[][];
 }
@@ -283,7 +285,7 @@ const tables: Table[] = [];
 
 tables.push({
   caption: `Accuratezza complessiva (dataset seed ${v2.seed}; integrità attesa 100\\%).`,
-  label: "tab:risultati",
+  label: "tab:risultati", file: "benchmark-accuracy",
   head: ["Modello", "Lingua", "Dataset", "Quesiti", "Accuratezza", "Errati", "Non conformi", "Latenza mediana", "Integrità"],
   rows: summaries.map((s) => [
     s.modelLabel,
@@ -300,7 +302,7 @@ tables.push({
 
 tables.push({
   caption: "Accuratezza per categoria di rendicontazione.",
-  label: "tab:categorie",
+  label: "tab:categorie", file: "benchmark-categories",
   head: ["Modello", "Lingua", ...CATEGORY_IDS.map((c) => CATEGORY_LABELS_IT[c] ?? c)],
   rows: summaries.map((s) => [
     s.modelLabel,
@@ -314,7 +316,7 @@ for (const locale of locales) {
   const frontier = group.filter((s) => FRONTIER.includes(s.modelId));
   tables.push({
     caption: `Distribuzione degli errori per tipo di misconcezione (${locale}); «Frontier» somma i quattro modelli remoti.`,
-    label: `tab:misconcezioni-${locale}`,
+    label: `tab:misconcezioni-${locale}`, file: `benchmark-misconceptions-${locale}`,
     head: ["Tipo", ...group.map((s) => s.modelLabel), "Frontier"],
     rows: TYPE_KEYS.filter((t) => group.some((s) => s.byType[t] > 0)).map((t) => [
       TYPE_LABELS_IT[t] ?? t,
@@ -326,7 +328,7 @@ for (const locale of locales) {
 
 tables.push({
   caption: "Accordo inter-modello sugli errori condivisi (baseline casuale 1/3 = 33.3\\%).",
-  label: "tab:accordo",
+  label: "tab:accordo", file: "benchmark-agreement",
   head: ["Lingua", "Modello A", "Modello B", "Errori condivisi", "Stesso distrattore", "Accordo", "Baseline"],
   rows: agreements.map((g) => [g.locale, g.a, g.b, `${g.shared}`, `${g.same}`, pct(g.same, g.shared), "33.3%"]),
 });
@@ -339,7 +341,7 @@ for (const locale of locales) {
 
 tables.push({
   caption: "Errori quesito per quesito dei modelli con al più 5 errori.",
-  label: "tab:errori-quesiti",
+  label: "tab:errori-quesiti", file: "benchmark-item-errors",
   head: ["Modello", "Lingua", "Quesito", "Archetipo", "Opzione scelta", "Misconcezione"],
   rows: summaries
     .filter((s) => s.wrong <= 5)
@@ -396,5 +398,5 @@ console.log(md);
 for (const w of warnings) console.error(w);
 writeFileSync(join(dataDir, "report.md"), `${md}\n`, "utf8");
 mkdirSync(latexDir, { recursive: true });
-for (const t of tables) writeFileSync(join(latexDir, `${t.label.replace(/^tab:/, "")}.tex`), latex(t), "utf8");
+for (const t of tables) writeFileSync(join(latexDir, `${t.file}.tex`), latex(t), "utf8");
 console.error(`\nreport written to ${join(dataDir, "report.md")}; LaTeX tables in ${latexDir}`);
