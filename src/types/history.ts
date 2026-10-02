@@ -34,4 +34,6 @@ export interface SessionRecord {
   score: number;
   /** Questions exactly as served; absent on sessions recorded before this feature. */
   snapshot?: SessionSnapshotBlock[];
+  /** Combinatorics engine version at recording time; absent before v2. */
+  engineVersion?: number;
 }

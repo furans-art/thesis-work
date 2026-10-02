@@ -20,3 +20,6 @@
 - CVD palettes include achromatopsia (lightness-only, no hue); success/error must stay distinguishable by lightness in that palette.
 - Socratic feedback: browser calls a local Ollama (`src/services/socratic-feedback.service.ts`, URL/model set on /admin) with the deterministic diagnosis as binding facts; outputs leaking the correct answer are discarded — the engine stays the only source of mathematical truth.
 - Classroom collection: anonymous, consent-gated send of session snapshots to a configurable university endpoint (`src/services/collection.service.ts`, address set on /admin); nothing sent without the explicit checkbox in History.
+- Combinatorics distractor invariant lives in `src/services/combinatorics/engine.ts` (`resolveExercise`, `ENGINE_VERSION`): archetypes return ordered typed misconception candidates, the engine picks 3 valid/distinct ones or resamples on a derived RNG — never a numeric fallback; keeps every option diagnosed and seeded datasets stable.
+- Brute-force oracle in `src/services/combinatorics/oracle/` (no shared formulas) gates `bun run test:oracle` and `generate-dataset.ts`; reporting categories come only from `combinatorics/categories.ts`.
+
