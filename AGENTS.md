@@ -19,3 +19,4 @@
 - Accessibility icon is neutral (SlidersHorizontal), never the disability icon; quick customisation in the header, full page at /accessibility only other entry point; footer links Privacy | Data | About.
 - CVD palettes include achromatopsia (lightness-only, no hue); success/error must stay distinguishable by lightness in that palette.
 - Socratic feedback: browser calls a local Ollama (`src/services/socratic-feedback.service.ts`, URL/model set on /admin) with the deterministic diagnosis as binding facts; outputs leaking the correct answer are discarded — the engine stays the only source of mathematical truth.
+- Classroom collection: anonymous, consent-gated send of session snapshots to a configurable university endpoint (`src/services/collection.service.ts`, address set on /admin); nothing sent without the explicit checkbox in History.
