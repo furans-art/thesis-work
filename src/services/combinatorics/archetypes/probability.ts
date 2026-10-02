@@ -5,8 +5,7 @@ import type { Archetype } from "../types";
 const diceSums = [4, 5, 6, 7, 8, 9, 10] as const;
 
 function diceCount(sum: number): number {
-  if (sum === 7) return 6;
-  return 7 - Math.abs(7 - sum);
+  return Math.max(0, 6 - Math.abs(7 - sum));
 }
 
 export const probabilityArchetypes: Archetype[] = [

@@ -60,6 +60,49 @@ export const permutationArchetypes: Archetype[] = [
       const n = word.length;
       const correct = permutationsWithRepetition(n, repeats);
       const denominator = repeats.map((r) => `${r}!`).join(" · ");
+      const candidates = [
+        {
+          value: factorial(n),
+          why: {
+            it: `Hai contato più volte lo stesso anagramma: scambiare fra loro le lettere uguali (qui ${detail}) non produce parole diverse.`,
+            en: `You counted the same anagram several times: swapping identical letters (here ${detail}) produces no new word.`,
+          },
+        },
+        {
+          value: factorial(n) / factorial(repeats[0] ?? 1),
+          why: {
+            it: `Hai corretto solo per la prima lettera ripetuta: tutte le lettere con ripetizioni richiedono la divisione per il loro fattoriale (${denominator}).`,
+            en: `You corrected only for the first repeated letter: every repeated letter requires dividing by its factorial (${denominator}).`,
+          },
+        },
+        {
+          value: factorial(n) / repeats.reduce((a, b) => a + b, 0),
+          why: {
+            it: `Hai diviso per la somma delle ripetizioni: nel denominatore vanno i prodotti dei fattoriali delle ripetizioni, cioè ${denominator}.`,
+            en: `You divided by the sum of the repetitions: the denominator is the product of their factorials, that is ${denominator}.`,
+          },
+        },
+        {
+          value: factorial(n - 1),
+          why: {
+            it: `Hai eliminato una posizione invece di correggere le ripetizioni: tutte le ${n} lettere partecipano agli anagrammi.`,
+            en: `You removed one position instead of correcting for repetitions: all ${n} letters take part in the anagrams.`,
+          },
+        },
+        {
+          value: 2 ** n,
+          why: {
+            it: `Hai assegnato due alternative indipendenti a ciascuna posizione: un anagramma usa invece tutte le ${n} lettere disponibili, rispettandone le molteplicità.`,
+            en: `You assigned two independent alternatives to each position: an anagram instead uses all ${n} available letters with their given multiplicities.`,
+          },
+        },
+      ];
+      const seen = new Set<number>([correct]);
+      const picked = candidates.filter(({ value }) => {
+        if (!Number.isInteger(value) || value <= 0 || seen.has(value)) return false;
+        seen.add(value);
+        return true;
+      }).slice(0, 3);
       return {
         archetype: "permutazioni-ripetizione-anagrammi",
         difficulty: "intermediate",
@@ -68,25 +111,8 @@ export const permutationArchetypes: Archetype[] = [
           en: `How many distinct anagrams, meaningful or not, can be formed with the letters of the word ${word}?`,
         },
         correct: `${correct}`,
-        distractors: [
-          `${factorial(n)}`,
-          `${factorial(n) / factorial(repeats[0]!)}`,
-          `${factorial(n) / repeats.reduce((a, b) => a + b, 0)}`,
-        ],
-        diagnoses: [
-          {
-            it: `Hai contato più volte lo stesso anagramma: scambiare fra loro le lettere uguali (qui ${detail}) non produce parole diverse.`,
-            en: `You counted the same anagram several times: swapping identical letters (here ${detail}) produces no new word.`,
-          },
-          {
-            it: `Hai corretto solo per la prima lettera ripetuta: tutte le lettere con ripetizioni richiedono la divisione per il loro fattoriale (${denominator}).`,
-            en: `You corrected only for the first repeated letter: every repeated letter requires dividing by its factorial (${denominator}).`,
-          },
-          {
-            it: `Hai diviso per la somma delle ripetizioni: nel denominatore vanno i prodotti dei fattoriali delle ripetizioni, cioè ${denominator}.`,
-            en: `You divided by the sum of the repetitions: the denominator is the product of their factorials, that is ${denominator}.`,
-          },
-        ],
+        distractors: picked.map(({ value }) => `${value}`),
+        diagnoses: picked.map(({ why }) => why),
         explanation: {
           it: `${word} ha ${n} lettere con ripetizioni (${detail}). Gli anagrammi distinti sono ${n}! / (${denominator}) = ${correct}. Usare solo ${n}! = ${factorial(n)} conterebbe più volte lo stesso anagramma, perché scambiare fra loro lettere uguali non produce parole diverse.`,
           en: `${word} has ${n} letters with repetitions (${detail}). The distinct anagrams are ${n}! / (${denominator}) = ${correct}. Using ${n}! = ${factorial(n)} alone would count the same anagram several times, since swapping identical letters produces no new word.`,
