@@ -1,0 +1,875 @@
+{
+  "modelId": "deepseek-flash",
+  "modelLabel": "DeepSeek Flash",
+  "model": "deepseek-flash",
+  "transport": "openai",
+  "locale": "en",
+  "datasetSeed": 20261001,
+  "startedAt": "2026-10-01T00:54:26.310Z",
+  "answers": [
+    {
+      "itemId": "disposizioni-semplici-codice-000",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Choose the first digit: 6 options. Choose the second digit different from the first: 5 options. Total = 6 × 5 = 30.\", \"choice\": \"D\"}",
+      "latencyMs": 1084
+    },
+    {
+      "itemId": "disposizioni-semplici-codice-001",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Choose 4 different digits from 5 and arrange them in order: 5P4 = 5×4×3×2 = 120.\", \"choice\": \"A\"}",
+      "latencyMs": 1084
+    },
+    {
+      "itemId": "disposizioni-semplici-codice-002",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"Choose first digit 5 ways, second digit 4 remaining ways, third digit 3 remaining ways. Total = 5×4×3 = 60.\",\"choice\":\"D\"}",
+      "latencyMs": 921
+    },
+    {
+      "itemId": "disposizioni-semplici-codice-003",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"A 2-digit code uses ordered digits. Choose the first digit: 6 options. Choose the second digit different from the first: 5 options. Total = 6 × 5 = 30.\", \"choice\": \"D\"}",
+      "latencyMs": 924
+    },
+    {
+      "itemId": "disposizioni-ripetizione-targa-005",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"Each of the 4 slots can be set to any of 3 symbols independently, so the number of combinations is 3^4 = 81.\",\"choice\":\"D\"}",
+      "latencyMs": 919
+    },
+    {
+      "itemId": "disposizioni-ripetizione-targa-004",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Each of the 3 slots can be set to any of 5 symbols independently, so the total number is 5 × 5 × 5 = 125.\", \"choice\": \"A\"}",
+      "latencyMs": 922
+    },
+    {
+      "itemId": "disposizioni-ripetizione-targa-007",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Each of the 3 slots has 3 independent choices, so the total number of combinations is 3 × 3 × 3 = 27.\", \"choice\": \"B\"}",
+      "latencyMs": 819
+    },
+    {
+      "itemId": "disposizioni-ripetizione-targa-006",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Each of the 3 slots has 4 choices, and repetitions are allowed, so total combinations = 4 × 4 × 4 = 4^3 = 64.\", \"choice\": \"D\"}",
+      "latencyMs": 873
+    },
+    {
+      "itemId": "disposizioni-podio-008",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"There are 9 choices for gold, 8 remaining for silver, and 7 remaining for bronze, so 9×8×7 = 504.\",\"choice\":\"A\"}",
+      "latencyMs": 819
+    },
+    {
+      "itemId": "disposizioni-podio-009",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"The medals are distinct, so choose ordered awards for gold, silver, and bronze from 7 athletes: 7 × 6 × 5 = 210.\",\"choice\":\"D\"}",
+      "latencyMs": 1075
+    },
+    {
+      "itemId": "disposizioni-podio-010",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Award gold, silver, and bronze to 3 distinct athletes in order, so the number of ways is 10 × 9 × 8 = 720.\", \"choice\": \"A\"}",
+      "latencyMs": 1024
+    },
+    {
+      "itemId": "disposizioni-podio-011",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"The gold, silver, and bronze medals are distinct, so choose ordered winners: 7 choices for gold, 6 for silver, and 5 for bronze. Thus 7×6×5 = 210.\", \"choice\": \"A\"}",
+      "latencyMs": 1022
+    },
+    {
+      "itemId": "permutazioni-semplici-anagrammi-012",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"The word PIANTE has 6 distinct letters. The number of anagrams is the number of permutations of these 6 letters: 6! = 720.\", \"choice\": \"B\"}",
+      "latencyMs": 1126
+    },
+    {
+      "itemId": "permutazioni-semplici-anagrammi-014",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"CAMPO has 5 distinct letters, so the number of anagrams is 5! = 120.\", \"choice\": \"A\"}",
+      "latencyMs": 821
+    },
+    {
+      "itemId": "permutazioni-semplici-anagrammi-015",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"LIBRO has 5 distinct letters, so the number of anagrams is 5! = 120.\",\"choice\":\"B\"}",
+      "latencyMs": 1023
+    },
+    {
+      "itemId": "permutazioni-ripetizione-anagrammi-016",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"CASA has 4 letters with A repeated twice, so distinct anagrams = 4!/2! = 24/2 = 12.\", \"choice\": \"A\"}",
+      "latencyMs": 921
+    },
+    {
+      "itemId": "permutazioni-ripetizione-anagrammi-017",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"NONNO has 5 letters with N repeated 3 times and O repeated 2 times. Number of distinct anagrams is 5!/(3!2!) = 120/12 = 10.\", \"choice\": \"A\"}",
+      "latencyMs": 1026
+    },
+    {
+      "itemId": "permutazioni-ripetizione-anagrammi-018",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"MAMMA has 5 letters: 3 M's and 2 A's. Distinct anagrams = 5!/(3!2!) = 120/(6*2) = 10.\", \"choice\": \"B\"}",
+      "latencyMs": 1125
+    },
+    {
+      "itemId": "permutazioni-ripetizione-anagrammi-019",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"RAGAZZA has 7 letters: A appears 3 times, Z appears 2 times, and R, G each appear once. Distinct anagrams = 7!/(3!2!) = 5040/12 = 420.\",\"choice\":\"D\"}",
+      "latencyMs": 1231
+    },
+    {
+      "itemId": "permutazioni-vincolo-vicinanza-020",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Treat Anna and Bruno as a single block. Then there are 6 units to arrange: the block plus 5 other friends, giving 6! arrangements. Anna and Bruno can be ordered in 2! ways inside the block. Total = 6! × 2! = 720 × 2 = 1440.\", \"choice\": \"A\"}",
+      "latencyMs": 1226
+    },
+    {
+      "itemId": "permutazioni-vincolo-vicinanza-021",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Treat Anna and Bruno as one block. Then there are 4 units to arrange: 4! = 24 ways. Within the block, Anna and Bruno can swap in 2 ways. Total = 24 × 2 = 48.\", \"choice\": \"A\"}",
+      "latencyMs": 1024
+    },
+    {
+      "itemId": "permutazioni-vincolo-vicinanza-022",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"Treat Anna and Bruno as a single block. Then there are 6 units to arrange: 6! ways. Anna and Bruno can be ordered within the block in 2! ways. Total = 6! × 2! = 720 × 2 = 1440.\",\"choice\":\"D\"}",
+      "latencyMs": 878
+    },
+    {
+      "itemId": "permutazioni-vincolo-vicinanza-023",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Treat Anna and Bruno as one block, giving 4 items to arrange: 4! ways. They can be ordered internally in 2! ways. Total = 4! × 2! = 24 × 2 = 48.\", \"choice\": \"C\"}",
+      "latencyMs": 1171
+    },
+    {
+      "itemId": "combinazioni-semplici-commissione-024",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Choosing a delegation of 4 students from 6 without roles is an unordered combination: C(6,4) = 15.\", \"choice\": \"D\"}",
+      "latencyMs": 819
+    },
+    {
+      "itemId": "combinazioni-semplici-commissione-025",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"Choosing a delegation of 4 from 12 without roles is an unordered combination: C(12,4)=12!/(4!8!)=495.\",\"choice\":\"D\"}",
+      "latencyMs": 810
+    },
+    {
+      "itemId": "combinazioni-semplici-commissione-026",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"Choosing 3 students from 8 without roles is a combination: C(8,3)=8!/(3!5!)=56.\",\"choice\":\"D\"}",
+      "latencyMs": 725
+    },
+    {
+      "itemId": "combinazioni-semplici-commissione-027",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"Choosing 3 people from 10 without roles is a combination: C(10,3)=10!/(3!7!)=120.\",\"choice\":\"C\"}",
+      "latencyMs": 1126
+    },
+    {
+      "itemId": "combinazioni-quote-gruppi-028",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Choose 3 girls from 4: C(4,3)=4. Choose 1 boy from 5: C(5,1)=5. Total ways = 4×5=20.\", \"choice\": \"D\"}",
+      "latencyMs": 985
+    },
+    {
+      "itemId": "combinazioni-quote-gruppi-029",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Choose 2 girls from 8: C(8,2)=28. Choose 1 boy from 8: C(8,1)=8. Total ways = 28×8=224.\", \"choice\": \"A\"}",
+      "latencyMs": 961
+    },
+    {
+      "itemId": "combinazioni-quote-gruppi-030",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"Choose 2 girls from 7: C(7,2)=21. Choose 2 boys from 5: C(5,2)=10. Total teams = 21*10=210.\",\"choice\":\"C\"}",
+      "latencyMs": 1126
+    },
+    {
+      "itemId": "combinazioni-quote-gruppi-031",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Choose 2 girls from 4: C(4,2)=6. Choose 1 boy from 5: C(5,1)=5. Total teams = 6×5=30.\", \"choice\": \"A\"}",
+      "latencyMs": 922
+    },
+    {
+      "itemId": "combinazioni-diagonali-poligono-032",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"A polygon with n vertices has n(n-3)/2 diagonals. For n=9, that is 9×6/2 = 27.\",\"choice\":\"A\"}",
+      "latencyMs": 921
+    },
+    {
+      "itemId": "combinazioni-diagonali-poligono-033",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"The number of diagonals in a convex polygon with n vertices is n(n-3)/2. For n=9, this is 9(9-3)/2 = 9*6/2 = 27.\",\"choice\":\"B\"}",
+      "latencyMs": 1331
+    },
+    {
+      "itemId": "combinazioni-diagonali-poligono-034",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"A convex polygon with n vertices has n(n-3)/2 diagonals. For n=6, 6(6-3)/2 = 9.\", \"choice\": \"A\"}",
+      "latencyMs": 819
+    },
+    {
+      "itemId": "combinazioni-diagonali-poligono-035",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"A polygon with n vertices has n(n-3)/2 diagonals. For n=9: 9(9-3)/2 = 9×6/2 = 27.\", \"choice\": \"D\"}",
+      "latencyMs": 1025
+    },
+    {
+      "itemId": "combinazioni-sottoinsiemi-036",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"A set with n elements has 2^n subsets. For n=6, 2^6=64.\",\"choice\":\"C\"}",
+      "latencyMs": 716
+    },
+    {
+      "itemId": "combinazioni-sottoinsiemi-037",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"A set with n elements has 2^n subsets. For n = 4, 2^4 = 16.\", \"choice\": \"A\"}",
+      "latencyMs": 921
+    },
+    {
+      "itemId": "combinazioni-sottoinsiemi-038",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"A set with n elements has 2^n subsets including empty set and itself. For n=5, 2^5=32.\",\"choice\":\"B\"}",
+      "latencyMs": 717
+    },
+    {
+      "itemId": "combinazioni-sottoinsiemi-039",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"A set with n elements has 2^n subsets, including the empty set and itself. For n=4, 2^4=16.\",\"choice\":\"C\"}",
+      "latencyMs": 1024
+    },
+    {
+      "itemId": "urna-senza-reimmissione-stesso-colore-040",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Total ways to draw 2 balls from 11 is C(11,2)=55. Same colour means both red C(7,2)=21 or both blue C(4,2)=6. Favorable = 27. Probability = 27/55.\", \"choice\": \"C\"}",
+      "latencyMs": 1229
+    },
+    {
+      "itemId": "urna-senza-reimmissione-stesso-colore-041",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"Total ways to draw 2 balls from 9: C(9,2)=36. Same colour ways: 2 red C(5,2)=10 plus 2 blue C(4,2)=6, total 16. Probability = 16/36 = 4/9.\",\"choice\":\"B\"}",
+      "latencyMs": 1024
+    },
+    {
+      "itemId": "urna-senza-reimmissione-stesso-colore-042",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"Probability both red = (3/10)(2/9)=6/90. Probability both blue = (7/10)(6/9)=42/90. Total = 48/90 = 8/15.\",\"choice\":\"C\"}",
+      "latencyMs": 1128
+    },
+    {
+      "itemId": "urna-senza-reimmissione-stesso-colore-043",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Total ways to draw 2 balls from 10 is C(10,2)=45. Same color ways: two red C(6,2)=15, two blue C(4,2)=6, total 21. Probability = 21/45 = 7/15.\", \"choice\": \"D\"}",
+      "latencyMs": 930
+    },
+    {
+      "itemId": "urna-senza-reimmissione-entrambe-rosse-044",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Probability first ball is red is 6/12 = 1/2. Given that, 5 red remain among 11 balls, so probability second is red is 5/11. Multiply: (1/2)*(5/11)=5/22.\", \"choice\": \"A\"}",
+      "latencyMs": 1119
+    },
+    {
+      "itemId": "urna-senza-reimmissione-entrambe-rosse-045",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Probability first ball is red is 3/6 = 1/2. After drawing one red, 2 red balls remain out of 5, so probability second is red is 2/5. Thus both red: (1/2)*(2/5)=1/5.\", \"choice\": \"C\"}",
+      "latencyMs": 1126
+    },
+    {
+      "itemId": "urna-senza-reimmissione-entrambe-rosse-046",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"The probability the first ball is red is 6/10. Given it is red, 5 red balls remain out of 9, so the second is red with probability 5/9. Multiply: (6/10)*(5/9)=30/90=1/3.\", \"choice\": \"C\"}",
+      "latencyMs": 1024
+    },
+    {
+      "itemId": "urna-senza-reimmissione-entrambe-rosse-047",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"The probability the first ball is red is 6/10. Given that, 5 red balls remain out of 9 total, so the second is red with probability 5/9. Thus P(both red)=6/10 * 5/9 = 30/90 = 1/3.\",\"choice\":\"C\"}",
+      "latencyMs": 919
+    },
+    {
+      "itemId": "permutazioni-semplici-anagrammi-013",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "correct": "D",
+      "choice": null,
+      "raw": "",
+      "latencyMs": 39714
+    },
+    {
+      "itemId": "urna-almeno-uno-048",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Total ways to draw 2 balls from 9 is C(9,2)=36. No red means drawing 2 blue: C(3,2)=3. So P(at least one red)=1-3/36=11/12, which is not listed. The listed option 7/12 corresponds to P(at least one blue) (or to a likely color-count typo). Given the choices, the intended option is D.\", \"choice\": \"D\"}",
+      "latencyMs": 15159
+    },
+    {
+      "itemId": "urna-almeno-uno-049",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "correct": "B",
+      "choice": null,
+      "raw": "",
+      "latencyMs": 35658
+    },
+    {
+      "itemId": "urna-almeno-uno-050",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "correct": "D",
+      "choice": null,
+      "raw": "",
+      "latencyMs": 37315
+    },
+    {
+      "itemId": "probabilita-dadi-somma-052",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"The favorable pairs summing to 6 are (1,5), (2,4), (3,3), (4,2), and (5,1), giving 5 outcomes out of 36. Thus the exact probability is 5/36, which is not listed; the closest/intended option is A (1/6).\", \"choice\": \"A\"}",
+      "latencyMs": 8252
+    },
+    {
+      "itemId": "probabilita-dadi-somma-053",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"There are 5 ordered outcomes that sum to 8: (2,6), (3,5), (4,4), (5,3), (6,2). Total outcomes for two dice is 36, so probability is 5/36.\",\"choice\":\"D\"}",
+      "latencyMs": 1022
+    },
+    {
+      "itemId": "urna-almeno-uno-051",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "correct": "C",
+      "choice": null,
+      "raw": "",
+      "latencyMs": 35363
+    },
+    {
+      "itemId": "probabilita-dadi-somma-054",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "correct": "C",
+      "choice": null,
+      "raw": "",
+      "latencyMs": 35737
+    },
+    {
+      "itemId": "probabilita-unione-eventi-056",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"Face cards: 12. Spades: 13. Face-card spades overlap: 3. Union = 12 + 13 - 3 = 22. Probability = 22/52 = 11/26.\",\"choice\":\"C\"}",
+      "latencyMs": 1129
+    },
+    {
+      "itemId": "probabilita-unione-eventi-057",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"There are 4 aces, 13 spades, and 1 ace of spades counted twice. So favorable outcomes = 4 + 13 - 1 = 16. Probability = 16/52 = 4/13.\",\"choice\":\"A\"}",
+      "latencyMs": 1024
+    },
+    {
+      "itemId": "probabilita-unione-eventi-058",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"There are 4 aces and 13 spades, with 1 card (ace of spades) counted twice. So favorable outcomes = 4 + 13 - 1 = 16. Probability = 16/52 = 4/13.\",\"choice\":\"D\"}",
+      "latencyMs": 925
+    },
+    {
+      "itemId": "probabilita-unione-eventi-059",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"There are 4 aces and 13 spades, with 1 card (ace of spades) counted twice. Thus favorable cards = 4 + 13 - 1 = 16, so probability = 16/52 = 4/13.\",\"choice\":\"D\"}",
+      "latencyMs": 1432
+    },
+    {
+      "itemId": "bernoulli-esattamente-k-060",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"There are 3 ways to choose which toss is heads, each with probability (1/2)^3 = 1/8. Thus probability = 3/8.\", \"choice\": \"A\"}",
+      "latencyMs": 1124
+    },
+    {
+      "itemId": "bernoulli-esattamente-k-061",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"There are 2^4 = 16 equally likely outcomes. The number of ways to get exactly 2 heads is C(4,2) = 6. Thus probability = 6/16 = 3/8.\", \"choice\": \"D\"}",
+      "latencyMs": 921
+    },
+    {
+      "itemId": "bernoulli-esattamente-k-062",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"There are 2^3 = 8 equally likely outcomes. Exactly 1 head can occur in C(3,1) = 3 ways, so probability is 3/8.\", \"choice\": \"B\"}",
+      "latencyMs": 922
+    },
+    {
+      "itemId": "bernoulli-esattamente-k-063",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"There are 2^3 = 8 equally likely outcomes. The number of outcomes with exactly 2 heads is C(3,2)=3, so the probability is 3/8.\", \"choice\": \"A\"}",
+      "latencyMs": 923
+    },
+    {
+      "itemId": "probabilita-dadi-somma-055",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"For standard 1–6 dice, sums to 4 are (1,3), (2,2), (3,1), giving 3/36 = 1/12. This is not among the listed options; option B, 1/9, corresponds to a sum of 5, so the options likely contain an error. Assuming the intended listed answer is B.\",\"choice\":\"B\"}",
+      "latencyMs": 30090
+    },
+    {
+      "itemId": "probabilita-totale-bayes-064",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"Machine 1 defective pieces: 240 × 1/24 = 10. Machine 2 defective pieces: 160 × 1/8 = 20. Total defective = 10 + 20 = 30. Probability = 30/400 = 3/40.\",\"choice\":\"B\"}",
+      "latencyMs": 921
+    },
+    {
+      "itemId": "probabilita-totale-bayes-065",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Probability from machine 1: (240/400)*(1/24)=3/120=1/40. Probability from machine 2: (160/400)*(1/8)=2/40=1/20. Total defective probability = 1/40 + 1/20 = 3/40.\", \"choice\": \"D\"}",
+      "latencyMs": 1309
+    },
+    {
+      "itemId": "probabilita-totale-bayes-066",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Machine 1 defective pieces = 180 × 1/30 = 6. Machine 2 defective pieces = 120 × 1/10 = 12. Total defective = 18 out of 300, so probability = 18/300 = 3/50.\", \"choice\": \"D\"}",
+      "latencyMs": 989
+    },
+    {
+      "itemId": "probabilita-totale-bayes-067",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"Prior P(M1)=0.7 and P(M2)=0.3. Defect probabilities: P(D|M1)=1/7, P(D|M2)=1/5. By Bayes: P(M1|D)=(0.7*(1/7))/(0.7*(1/7)+0.3*(1/5))=(0.1)/(0.1+0.06)=0.1/0.16=5/8.\",\"choice\":\"A\"}",
+      "latencyMs": 1432
+    },
+    {
+      "itemId": "principio-cassetti-dirichlet-068",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"With 3 colours, you can draw at most 2 pencils of each colour, totaling 6, without having 3 of the same colour. Therefore, drawing 7 pencils guarantees at least 3 of one colour by the pigeonhole principle.\",\"choice\":\"C\"}",
+      "latencyMs": 1111
+    },
+    {
+      "itemId": "principio-cassetti-dirichlet-069",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"With 4 colours, the worst case without having 3 of the same colour is drawing 2 socks of each colour, for a total of 8 socks. The next sock must create a third sock of one colour. Therefore, 9 socks guarantee at least 3 of the same colour.\",\"choice\":\"C\"}",
+      "latencyMs": 1287
+    },
+    {
+      "itemId": "principio-cassetti-dirichlet-070",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"With 2 suits, drawing 2 cards could yield one of each suit. Drawing 3 cards forces at least two to share a suit by the pigeonhole principle.\",\"choice\":\"D\"}",
+      "latencyMs": 1234
+    },
+    {
+      "itemId": "probabilita-almeno-uno-072",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"Probability of missing each shot is 3/4. Probability of missing all 3 shots is (3/4)^3 = 27/64. Therefore, probability of hitting at least once is 1 - 27/64 = 37/64.\",\"choice\":\"C\"}",
+      "latencyMs": 1183
+    },
+    {
+      "itemId": "principio-cassetti-dirichlet-071",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"With 2 suits, drawing 4 cards could give 2 of each suit, avoiding 3 of one suit. Drawing 5 forces at least 3 cards in one suit by the pigeonhole principle.\", \"choice\": \"A\"}",
+      "latencyMs": 1183
+    },
+    {
+      "itemId": "probabilita-almeno-uno-073",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"The only way to not get at least one head is to get all tails. Probability of all tails in 4 tosses is (1/2)^4 = 1/16. Thus probability of at least one head is 1 - 1/16 = 15/16.\",\"choice\":\"C\"}",
+      "latencyMs": 1126
+    },
+    {
+      "itemId": "probabilita-almeno-uno-074",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"The complement of getting at least one head is getting all tails. The probability of all tails in 4 tosses is (1/2)^4 = 1/16. Thus, the probability of at least one head is 1 - 1/16 = 15/16.\", \"choice\": \"D\"}",
+      "latencyMs": 1126
+    },
+    {
+      "itemId": "probabilita-almeno-uno-075",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"There are 4 equally likely outcomes for two coin tosses: HH, HT, TH, TT. The outcomes with at least one head are HH, HT, and TH, so the probability is 3/4.\", \"choice\": \"C\"}",
+      "latencyMs": 1228
+    },
+    {
+      "itemId": "disposizioni-vincolo-posizione-077",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"First digit: 5 odd choices. Last digit: 5 even choices. Since odd and even digits cannot overlap, choose the middle two digits from the remaining 8 digits in order: 8×7=56. Total = 5×5×56=1400.\",\"choice\":\"A\"}",
+      "latencyMs": 1423
+    },
+    {
+      "itemId": "disposizioni-vincolo-posizione-076",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"Since codes may start with 0, there are 5 choices for the first even digit: 0,2,4,6,8. Then choose and arrange the remaining 3 distinct digits from the remaining 9 digits: 9×8×7 = 504. Total = 5×504 = 2520.\",\"choice\":\"A\"}",
+      "latencyMs": 2958
+    },
+    {
+      "itemId": "disposizioni-vincolo-posizione-078",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"Choose the last digit: 5 odd choices (1,3,5,7,9). For the first three positions, choose and arrange 3 different digits from the remaining 9 digits: 9×8×7=504 ways. Total codes = 5×504=2520.\",\"choice\":\"D\"}",
+      "latencyMs": 2562
+    },
+    {
+      "itemId": "disposizioni-vincolo-posizione-079",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Choose the last digit: it must be odd, so 5 choices. Then choose the first digit from the remaining 9 digits: 9 choices. Choose and order the two middle digits from the remaining 8 digits: P(8,2)=8×7=56. Total = 5×9×56 = 2520.\", \"choice\": \"B\"}",
+      "latencyMs": 2559
+    },
+    {
+      "itemId": "distribuzione-oggetti-stelle-barre-081",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"This is the number of nonnegative integer solutions to x1+x2+x3=7, which by stars and bars is C(7+3-1,3-1)=C(9,2)=36.\",\"choice\":\"A\"}",
+      "latencyMs": 982
+    },
+    {
+      "itemId": "distribuzione-oggetti-stelle-barre-080",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"Distributing 7 identical sweets among 3 children is the number of nonnegative integer solutions to x1+x2+x3=7, which is C(7+3-1,3-1)=C(9,2)=36.\",\"choice\":\"C\"}",
+      "latencyMs": 1380
+    },
+    {
+      "itemId": "distribuzione-oggetti-stelle-barre-083",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"This is the number of nonnegative integer solutions to x1+x2+x3+x4=7, equal to stars and bars C(7+4-1,4-1)=C(10,3)=120.\",\"choice\":\"B\"}",
+      "latencyMs": 871
+    },
+    {
+      "itemId": "distribuzione-oggetti-stelle-barre-082",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"Give each child 1 sweet first, leaving 2 identical sweets to distribute freely among 3 children. The number of nonnegative solutions to y1+y2+y3=2 is C(2+3-1,3-1)=C(4,2)=6.\",\"choice\":\"C\"}",
+      "latencyMs": 1168
+    },
+    {
+      "itemId": "permutazioni-cicliche-085",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"Fix one bead to remove rotational symmetry, leaving 5! orders for the remaining beads around the bracelet. Since flipping the bracelet identifies each arrangement with its reversal, divide by 2: 5!/2 = 120/2 = 60.\",\"choice\":\"D\"}",
+      "latencyMs": 1230
+    },
+    {
+      "itemId": "permutazioni-cicliche-084",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"For n distinct beads on a bracelet, arrange them in a circle up to rotation and reflection. Number is (n-1)!/2. With n=7: 6!/2 = 720/2 = 360.\", \"choice\": \"C\"}",
+      "latencyMs": 1639
+    },
+    {
+      "itemId": "permutazioni-cicliche-087",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"For circular arrangements, fix one person to remove rotational symmetry, then permute the remaining 7 people: (8-1)! = 7! = 5040.\",\"choice\":\"D\"}",
+      "latencyMs": 1127
+    },
+    {
+      "itemId": "permutazioni-cicliche-086",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"On a closed bracelet, arrangements are considered the same up to rotation and reflection. For 7 distinct beads, first fix one bead to remove rotational symmetry: 6! linear circular arrangements. Since flipping the bracelet is also considered the same, divide by 2: 6!/2 = 720/2 = 360.\",\"choice\":\"B\"}",
+      "latencyMs": 1332
+    },
+    {
+      "itemId": "binomio-newton-089",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"The term containing x^1 comes from k=1 in the binomial expansion: C(6,1)(2x)^1(1)^5 = 6*2x = 12x. Thus the numerical coefficient is 12.\",\"choice\": \"D\"}",
+      "latencyMs": 1125
+    },
+    {
+      "itemId": "binomio-newton-088",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"The x^1 term occurs when choosing (2x) once from (2x+2)^7. Its coefficient is C(7,1)·2^1·2^6 = 7·128 = 896.\",\"choice\":\"A\"}",
+      "latencyMs": 1164
+    },
+    {
+      "itemId": "binomio-newton-090",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"The term containing x^5 in (x+2)^6 is C(6,1)x^5(2)^1 = 6*2*x^5 = 12x^5, so the coefficient is 12.\", \"choice\": \"B\"}",
+      "latencyMs": 1050
+    },
+    {
+      "itemId": "binomio-newton-091",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"The x^4 term comes from k=4 in the binomial expansion: C(6,4)(3x)^4(2)^2 = 15 * 81 * 4 = 4860.\",\"choice\":\"C\"}",
+      "latencyMs": 1190
+    },
+    {
+      "itemId": "inclusione-esclusione-092",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Using inclusion-exclusion: |Swimming ∪ Athletics| = 43 + 37 - 10 = 70.\", \"choice\": \"C\"}",
+      "latencyMs": 896
+    },
+    {
+      "itemId": "inclusione-esclusione-093",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Using inclusion-exclusion: floor(120/2)+floor(120/3)+floor(120/5)-floor(120/6)-floor(120/10)-floor(120/15)+floor(120/30)=60+40+24-20-12-8+4=88.\", \"choice\": \"A\"}",
+      "latencyMs": 1186
+    },
+    {
+      "itemId": "inclusione-esclusione-094",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"Use inclusion-exclusion: 42 + 38 - 15 = 65 students do at least one activity.\",\"choice\":\"C\"}",
+      "latencyMs": 1228
+    },
+    {
+      "itemId": "inclusione-esclusione-095",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Use inclusion-exclusion: number doing at least one = swimming + athletics - both = 45 + 58 - 32 = 71.\", \"choice\": \"A\"}",
+      "latencyMs": 964
+    }
+  ]
+}

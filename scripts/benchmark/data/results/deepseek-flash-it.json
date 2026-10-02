@@ -1,0 +1,875 @@
+{
+  "modelId": "deepseek-flash",
+  "modelLabel": "DeepSeek Flash",
+  "model": "deepseek-flash",
+  "transport": "openai",
+  "locale": "it",
+  "datasetSeed": 20261001,
+  "startedAt": "2026-10-01T00:51:09.387Z",
+  "answers": [
+    {
+      "itemId": "disposizioni-semplici-codice-001",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Si scelgono 4 cifre diverse tra 5 e l'ordine conta: 5 × 4 × 3 × 2 = 120.\", \"choice\": \"A\"}",
+      "latencyMs": 1189
+    },
+    {
+      "itemId": "disposizioni-semplici-codice-000",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Per formare un codice di 2 cifre con cifre diverse scegliamo la prima cifra tra 6 possibilità e la seconda tra le 5 rimanenti: 6 × 5 = 30.\", \"choice\": \"D\"}",
+      "latencyMs": 1248
+    },
+    {
+      "itemId": "disposizioni-semplici-codice-002",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Si scelgono 3 cifre diverse da 5 senza ripetizione e l'ordine conta: 5 × 4 × 3 = 60.\", \"choice\": \"D\"}",
+      "latencyMs": 1025
+    },
+    {
+      "itemId": "disposizioni-semplici-codice-003",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Per il primo posto si può scegliere una qualsiasi delle 6 cifre; per il secondo posto restano 5 cifre diverse dalla prima. Quindi i codici possibili sono 6 × 5 = 30.\", \"choice\": \"D\"}",
+      "latencyMs": 1274
+    },
+    {
+      "itemId": "disposizioni-ripetizione-targa-004",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Ogni casella può assumere 5 simboli indipendentemente dalle altre, quindi il numero di combinazioni è 5 × 5 × 5 = 125.\", \"choice\": \"A\"}",
+      "latencyMs": 1229
+    },
+    {
+      "itemId": "disposizioni-ripetizione-targa-005",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Ogni casella può assumere 3 simboli indipendentemente dalle altre. Con 4 caselle, il numero di combinazioni è 3^4 = 81.\", \"choice\": \"D\"}",
+      "latencyMs": 1125
+    },
+    {
+      "itemId": "disposizioni-ripetizione-targa-006",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Ogni casella può assumere 4 simboli indipendentemente e i simboli possono ripetersi. Con 3 caselle, il numero totale di combinazioni è 4 × 4 × 4 = 4^3 = 64.\", \"choice\": \"D\"}",
+      "latencyMs": 1024
+    },
+    {
+      "itemId": "disposizioni-ripetizione-targa-007",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Ogni casella può assumere 3 simboli indipendentemente dalle altre, quindi il numero totale di combinazioni è 3 × 3 × 3 = 27.\", \"choice\": \"B\"}",
+      "latencyMs": 872
+    },
+    {
+      "itemId": "disposizioni-podio-008",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Le medaglie sono distinte e assegnate a 3 atleti diversi tra 9. Il numero di modi è 9 × 8 × 7 = 504.\", \"choice\": \"A\"}",
+      "latencyMs": 1008
+    },
+    {
+      "itemId": "disposizioni-podio-009",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Le medaglie sono assegnate a tre atleti distinti: 7 scelte per l'oro, 6 per l'argento e 5 per il bronzo. Quindi 7·6·5 = 210.\", \"choice\": \"D\"}",
+      "latencyMs": 1282
+    },
+    {
+      "itemId": "disposizioni-podio-010",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Per l'oro si può scegliere uno dei 10 atleti, per l'argento uno dei restanti 9, per il bronzo uno dei restanti 8. Quindi il numero di modi è 10 × 9 × 8 = 720.\", \"choice\": \"A\"}",
+      "latencyMs": 1142
+    },
+    {
+      "itemId": "disposizioni-podio-011",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Le medaglie sono assegnate a tre atleti distinti e l'ordine conta: oro, argento e bronzo. Quindi si calcola 7 × 6 × 5 = 210.\", \"choice\": \"A\"}",
+      "latencyMs": 1431
+    },
+    {
+      "itemId": "permutazioni-semplici-anagrammi-012",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"La parola PIANTE è composta da 6 lettere tutte diverse. Il numero di anagrammi, anche senza significato, è dato dalle permutazioni di 6 lettere distinte: 6! = 720.\", \"choice\": \"B\"}",
+      "latencyMs": 998
+    },
+    {
+      "itemId": "permutazioni-semplici-anagrammi-014",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"La parola CAMPO è composta da 5 lettere tutte diverse. Il numero di anagrammi è dato dalle permutazioni di 5 lettere distinte: 5! = 120.\", \"choice\": \"A\"}",
+      "latencyMs": 1153
+    },
+    {
+      "itemId": "permutazioni-semplici-anagrammi-015",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"La parola LIBRO è composta da 5 lettere tutte distinte. Il numero di anagrammi è quindi il numero di permutazioni di 5 lettere: 5! = 120.\",\"choice\":\"B\"}",
+      "latencyMs": 1024
+    },
+    {
+      "itemId": "permutazioni-ripetizione-anagrammi-016",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"La parola CASA ha 4 lettere, di cui la A compare 2 volte. Il numero di anagrammi distinti è 4!/2! = 24/2 = 12.\", \"choice\": \"A\"}",
+      "latencyMs": 1026
+    },
+    {
+      "itemId": "permutazioni-ripetizione-anagrammi-017",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"La parola NONNO contiene 5 lettere: 3 N e 2 O. Il numero di anagrammi distinti è dato dalle permutazioni con ripetizione: 5!/(3!2!) = 120/(6·2) = 10.\", \"choice\": \"A\"}",
+      "latencyMs": 1351
+    },
+    {
+      "itemId": "permutazioni-ripetizione-anagrammi-018",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"La parola MAMMA ha 5 lettere: 3 M e 2 A. Il numero di anagrammi distinti è dato da 5!/(3!2!) = 120/12 = 10.\", \"choice\": \"B\"}",
+      "latencyMs": 1276
+    },
+    {
+      "itemId": "permutazioni-semplici-anagrammi-013",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"La parola TAVOLO ha 6 lettere, ma la lettera O compare due volte. Il numero corretto di anagrammi distinti sarebbe 6!/2! = 360, valore non presente tra le opzioni. Tra le opzioni fornite, quella che corrisponde a 6! = 720 considera erroneamente le due O come distinte.\", \"choice\": \"D\"}",
+      "latencyMs": 6561
+    },
+    {
+      "itemId": "permutazioni-ripetizione-anagrammi-019",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"La parola RAGAZZA ha 7 lettere con A ripetuta 3 volte e Z ripetuta 2 volte. Il numero di anagrammi distinti è 7!/(3!·2!) = 5040/12 = 420.\", \"choice\": \"D\"}",
+      "latencyMs": 1268
+    },
+    {
+      "itemId": "permutazioni-vincolo-vicinanza-020",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Trattiamo Anna e Bruno come un unico blocco. Così abbiamo 6 elementi da disporre: 6! = 720. All'interno del blocco, Anna e Bruno possono scambiarsi in 2! = 2 modi. Totale: 720 × 2 = 1440.\", \"choice\": \"A\"}",
+      "latencyMs": 1221
+    },
+    {
+      "itemId": "permutazioni-vincolo-vicinanza-021",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Trattiamo Anna e Bruno come un unico blocco: insieme agli altri 3 amici abbiamo 4 unità da disporre, quindi 4! = 24 modi. Anna e Bruno possono scambiarsi di posto in 2! = 2 modi. Totale: 24 × 2 = 48.\", \"choice\": \"A\"}",
+      "latencyMs": 1324
+    },
+    {
+      "itemId": "permutazioni-vincolo-vicinanza-022",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Consideriamo Anna e Bruno come un unico blocco. Così abbiamo 6 elementi da disporre: il blocco AB e gli altri 5 amici, quindi 6! = 720 modi. Inoltre Anna e Bruno possono scambiarsi di posto tra loro in 2 modi. Totale = 720 × 2 = 1440.\", \"choice\": \"D\"}",
+      "latencyMs": 1230
+    },
+    {
+      "itemId": "combinazioni-semplici-commissione-024",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Si sceglie un sottoinsieme di 4 studenti da 6, senza ordine né incarichi. Il numero è C(6,4)=C(6,2)=6*5/2=15.\", \"choice\": \"D\"}",
+      "latencyMs": 1228
+    },
+    {
+      "itemId": "permutazioni-vincolo-vicinanza-023",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Trattando Anna e Bruno come un unico blocco, si hanno 4 elementi da disporre: 4! = 24. I due dentro il blocco possono scambiarsi in 2 modi. Totale = 24 × 2 = 48.\", \"choice\": \"C\"}",
+      "latencyMs": 1434
+    },
+    {
+      "itemId": "combinazioni-semplici-commissione-026",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"La delegazione è un insieme di 3 studenti scelti tra 8, senza incarichi diversi, quindi l'ordine non conta. Il numero è C(8,3) = 8!/(3!5!) = (8·7·6)/(3·2·1) = 56.\", \"choice\": \"D\"}",
+      "latencyMs": 1024
+    },
+    {
+      "itemId": "combinazioni-semplici-commissione-025",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Si tratta di scegliere 4 studenti su 12 senza incarichi, quindi combinazioni semplici: C(12,4)=12!/(4!8!)=495.\", \"choice\": \"D\"}",
+      "latencyMs": 1138
+    },
+    {
+      "itemId": "combinazioni-semplici-commissione-027",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Si tratta di combinazioni semplici senza incarichi distinti: C(10,3) = 10!/(3!7!) = (10·9·8)/(3·2·1) = 120.\", \"choice\": \"C\"}",
+      "latencyMs": 1024
+    },
+    {
+      "itemId": "combinazioni-quote-gruppi-028",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Si scelgono 3 ragazze tra 4 e 1 ragazzo tra 5: C(4,3)*C(5,1)=4*5=20.\", \"choice\": \"D\"}",
+      "latencyMs": 1469
+    },
+    {
+      "itemId": "combinazioni-quote-gruppi-029",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Si scelgono 2 ragazze tra 8: C(8,2)=28. Si sceglie 1 ragazzo tra 8: C(8,1)=8. Totale: 28×8=224.\", \"choice\": \"A\"}",
+      "latencyMs": 1089
+    },
+    {
+      "itemId": "combinazioni-quote-gruppi-030",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Si scelgono 2 ragazze tra 7: C(7,2)=21. Si scelgono 2 ragazzi tra 5: C(5,2)=10. Totale = 21×10 = 210.\", \"choice\": \"C\"}",
+      "latencyMs": 1285
+    },
+    {
+      "itemId": "combinazioni-quote-gruppi-031",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Si scelgono 2 ragazze tra 4: C(4,2)=6. Si sceglie 1 ragazzo tra 5: C(5,1)=5. Totale = 6×5=30.\", \"choice\": \"A\"}",
+      "latencyMs": 1063
+    },
+    {
+      "itemId": "combinazioni-diagonali-poligono-032",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Il numero di diagonali di un poligono convesso con n vertici è n(n-3)/2. Con n=9: 9(9-3)/2 = 9·6/2 = 27.\", \"choice\": \"A\"}",
+      "latencyMs": 1433
+    },
+    {
+      "itemId": "combinazioni-diagonali-poligono-033",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Il numero di diagonali di un poligono convesso con n vertici è n(n-3)/2. Per n=9: 9·6/2 = 27.\", \"choice\": \"B\"}",
+      "latencyMs": 1232
+    },
+    {
+      "itemId": "combinazioni-diagonali-poligono-034",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Un esagono ha n=6 vertici. Il numero di diagonali è dato da n(n-3)/2 = 6(6-3)/2 = 9.\", \"choice\": \"A\"}",
+      "latencyMs": 921
+    },
+    {
+      "itemId": "combinazioni-diagonali-poligono-035",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Il numero di diagonali di un poligono convesso con n vertici è n(n-3)/2. Per n=9: 9(9-3)/2 = 9×6/2 = 27.\", \"choice\": \"D\"}",
+      "latencyMs": 911
+    },
+    {
+      "itemId": "combinazioni-sottoinsiemi-036",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Il numero di sottoinsiemi di un insieme con n elementi è 2^n, includendo insieme vuoto e insieme stesso. Per n=6: 2^6 = 64.\", \"choice\": \"C\"}",
+      "latencyMs": 822
+    },
+    {
+      "itemId": "combinazioni-sottoinsiemi-037",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Un insieme con n elementi ha 2^n sottoinsiemi, inclusi vuoto e insieme stesso. Per n=4, 2^4=16.\", \"choice\": \"A\"}",
+      "latencyMs": 1030
+    },
+    {
+      "itemId": "combinazioni-sottoinsiemi-038",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Il numero di sottoinsiemi di un insieme con 5 elementi è 2^5 = 32, includendo l'insieme vuoto e l'insieme stesso.\", \"choice\": \"B\"}",
+      "latencyMs": 1123
+    },
+    {
+      "itemId": "combinazioni-sottoinsiemi-039",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Un insieme di n elementi ha 2^n sottoinsiemi. Con n=4, il numero è 2^4 = 16.\", \"choice\": \"C\"}",
+      "latencyMs": 1023
+    },
+    {
+      "itemId": "urna-senza-reimmissione-stesso-colore-040",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Casi totali: C(11,2)=55. Casi favorevoli: due rosse C(7,2)=21, due blu C(4,2)=6, totale 27. Probabilità = 27/55.\", \"choice\": \"C\"}",
+      "latencyMs": 1229
+    },
+    {
+      "itemId": "urna-senza-reimmissione-stesso-colore-041",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Casi totali: C(9,2)=36. Casi favorevoli: stessa colore = 2 rosse C(5,2)=10 oppure 2 blu C(4,2)=6, quindi 16. Probabilità = 16/36 = 4/9.\", \"choice\": \"B\"}",
+      "latencyMs": 1351
+    },
+    {
+      "itemId": "urna-senza-reimmissione-stesso-colore-042",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Casi totali: C(10,2)=45. Casi favorevoli stesso colore: C(3,2)+C(7,2)=3+21=24. Probabilità = 24/45 = 8/15.\", \"choice\": \"C\"}",
+      "latencyMs": 1172
+    },
+    {
+      "itemId": "urna-senza-reimmissione-stesso-colore-043",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Casi favorevoli: due rosse C(6,2)=15 oppure due blu C(4,2)=6, totale 21. Casi totali: C(10,2)=45. Probabilità = 21/45 = 7/15.\", \"choice\": \"D\"}",
+      "latencyMs": 1335
+    },
+    {
+      "itemId": "urna-senza-reimmissione-entrambe-rosse-044",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\":\"Probabilità che la prima sia rossa: 6/12 = 1/2. Dopo aver estratto una rossa, restano 5 rosse su 11 palline, quindi probabilità che anche la seconda sia rossa: 5/11. Moltiplicando: (1/2)*(5/11)=5/22.\",\"choice\":\"A\"}",
+      "latencyMs": 1080
+    },
+    {
+      "itemId": "urna-senza-reimmissione-entrambe-rosse-045",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"La probabilità che la prima pallina sia rossa è 3/6 = 1/2. Dopo aver estratto una pallina rossa, restano 2 rosse su 5 palline, quindi la probabilità che anche la seconda sia rossa è 2/5. Moltiplicando: 1/2 × 2/5 = 1/5.\", \"choice\": \"C\"}",
+      "latencyMs": 1513
+    },
+    {
+      "itemId": "urna-senza-reimmissione-entrambe-rosse-046",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"La probabilità che la prima pallina sia rossa è 6/10. Dopo l'estrazione resta 5 palline rosse su 9 totali, quindi la probabilità che anche la seconda sia rossa è 5/9. Moltiplicando: (6/10)*(5/9)=30/90=1/3.\", \"choice\": \"C\"}",
+      "latencyMs": 1536
+    },
+    {
+      "itemId": "urna-senza-reimmissione-entrambe-rosse-047",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"La probabilità che la prima pallina sia rossa è 6/10. Dopo l'estrazione, restano 5 palline rosse su 9 totali, quindi la probabilità che anche la seconda sia rossa è 5/9. Moltiplicando: (6/10)*(5/9)=30/90=1/3.\", \"choice\": \"C\"}",
+      "latencyMs": 1331
+    },
+    {
+      "itemId": "urna-almeno-uno-049",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "correct": "B",
+      "choice": null,
+      "raw": "",
+      "latencyMs": 36022
+    },
+    {
+      "itemId": "urna-almeno-uno-048",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "correct": "D",
+      "choice": null,
+      "raw": "",
+      "latencyMs": 37630
+    },
+    {
+      "itemId": "urna-almeno-uno-050",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "correct": "D",
+      "choice": null,
+      "raw": "",
+      "latencyMs": 35503
+    },
+    {
+      "itemId": "urna-almeno-uno-051",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "correct": "C",
+      "choice": null,
+      "raw": "",
+      "latencyMs": 37080
+    },
+    {
+      "itemId": "probabilita-dadi-somma-053",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"I casi totali lanciando due dadi sono 36. Le coppie con somma 8 sono (2,6), (3,5), (4,4), (5,3), (6,2): 5 casi favorevoli. Quindi la probabilità è 5/36.\",\"choice\":\"D\"}",
+      "latencyMs": 1376
+    },
+    {
+      "itemId": "probabilita-dadi-somma-052",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Casi possibili: 6×6 = 36. Casi favorevoli per somma 6: (1,5), (2,4), (3,3), (4,2), (5,1), cioè 5 casi. La probabilità corretta sarebbe 5/36, che non compare tra le opzioni; tra quelle proposte, l'opzione usualmente attesa è A (1/6).\", \"choice\": \"A\"}",
+      "latencyMs": 9784
+    },
+    {
+      "itemId": "probabilita-dadi-somma-054",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Per somma 4 i casi favorevoli sono (1,3),(2,2),(3,1): 3/36 = 1/12, valore non presente tra le opzioni. L'opzione C (1/9 = 4/36) è la più plausibile se il quesito intendeva in realtà una somma di ",
+      "latencyMs": 36662
+    },
+    {
+      "itemId": "probabilita-unione-eventi-056",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"Le figure sono 12 (3 per seme × 4 semi). Le carte di picche sono 13. Le figure di picche sono 3, quindi vanno sottratte per evitare doppio conteggio: 12 + 13 - 3 = 22. Probabilità = 22/52 = 11/26.\", \"choice\": \"C\"}",
+      "latencyMs": 1635
+    },
+    {
+      "itemId": "probabilita-unione-eventi-057",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Eventi: A = asso (4 carte), B = picche (13 carte). L'intersezione è l'asso di picche (1 carta). Casi favorevoli = 4 + 13 - 1 = 16. Probabilità = 16/52 = 4/13.\", \"choice\": \"A\"}",
+      "latencyMs": 1228
+    },
+    {
+      "itemId": "probabilita-unione-eventi-058",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Ci sono 4 assi, 13 picche e 1 carta che è sia asso sia di picche. Usando il principio di inclusione-esclusione: 4 + 13 - 1 = 16 carte favorevoli su 52. Quindi la probabilità è 16/52 = 4/13.\", \"choice\": \"D\"}",
+      "latencyMs": 1230
+    },
+    {
+      "itemId": "probabilita-dadi-somma-055",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "correct": "B",
+      "choice": null,
+      "raw": "",
+      "latencyMs": 35800
+    },
+    {
+      "itemId": "probabilita-unione-eventi-059",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"La probabilità di estrarre un asso è 4/52, quella di estrarre una carta di picche è 13/52. L'asso di picche è contato in entrambi gli eventi, quindi va sottratto una volta: 4/52 + 13/52 - 1/52 = 16/52 = 4/13.\", \"choice\": \"D\"}",
+      "latencyMs": 1228
+    },
+    {
+      "itemId": "bernoulli-esattamente-k-060",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"La probabilità di ottenere esattamente 1 testa in 3 lanci è data dalla binomiale: C(3,1)*(1/2)^1*(1/2)^2 = 3*(1/8) = 3/8.\", \"choice\": \"A\"}",
+      "latencyMs": 1165
+    },
+    {
+      "itemId": "bernoulli-esattamente-k-061",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Numero totale di esiti possibili in 4 lanci: 2^4 = 16. Casi favorevoli con esattamente 2 teste: C(4,2) = 6. Probabilità = 6/16 = 3/8.\", \"choice\": \"D\"}",
+      "latencyMs": 1229
+    },
+    {
+      "itemId": "bernoulli-esattamente-k-062",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"La probabilità di ottenere esattamente 1 testa in 3 lanci è data dal coefficiente binomiale C(3,1) moltiplicato per (1/2)^3: 3/8.\", \"choice\": \"B\"}",
+      "latencyMs": 1229
+    },
+    {
+      "itemId": "bernoulli-esattamente-k-063",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"I casi totali sono 2^3=8. I casi favorevoli con esattamente 2 teste sono C(3,2)=3 (TTC, TCT, CTT). Quindi la probabilità è 3/8.\", \"choice\": \"A\"}",
+      "latencyMs": 1334
+    },
+    {
+      "itemId": "probabilita-totale-bayes-064",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Probabilità difettoso = (240/400)·(1/24) + (160/400)·(1/8) = (3/5)(1/24) + (2/5)(1/8) = 1/40 + 1/20 = 3/40.\", \"choice\": \"B\"}",
+      "latencyMs": 1433
+    },
+    {
+      "itemId": "probabilita-totale-bayes-065",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Macchina 1 produce 240/400 = 3/5 dei pezzi, con difettosità 1/24. Macchina 2 produce 160/400 = 2/5, con difettosità 1/8. Probabilità totale = (3/5)(1/24) + (2/5)(1/8) = 1/40 + 1/20 = 3/40.\", \"choice\": \"D\"}",
+      "latencyMs": 1636
+    },
+    {
+      "itemId": "probabilita-totale-bayes-066",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Probabilità difettoso = P(M1)*P(D|M1)+P(M2)*P(D|M2) = (180/300)(1/30)+(120/300)(1/10) = (3/5)(1/30)+(2/5)(1/10) = 1/50 + 1/25 = 1/50 + 2/50 = 3/50.\", \"choice\": \"D\"}",
+      "latencyMs": 1434
+    },
+    {
+      "itemId": "probabilita-totale-bayes-067",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Probabilità difettoso da macchina 1: 0.7 × 1/7 = 0.1. Da macchina 2: 0.3 × 1/5 = 0.06. Totale difettosi = 0.16. Probabilità che provenga dalla macchina 1 dato che è difettoso = 0.1 / 0.16 = 5/8.\", \"choice\": \"A\"}",
+      "latencyMs": 1434
+    },
+    {
+      "itemId": "principio-cassetti-dirichlet-068",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Con 3 colori, il caso peggiore senza avere 3 matite dello stesso colore è estrarre 2 matite per ciascun colore, cioè 6 matite. Alla settima estrazione, qualunque sia il colore, si formerà sicuramente un gruppo di almeno 3 matite dello stesso colore.\", \"choice\": \"C\"}",
+      "latencyMs": 1435
+    },
+    {
+      "itemId": "principio-cassetti-dirichlet-069",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Con 4 colori, il caso peggiore senza avere 3 calzini dello stesso colore è prendere al massimo 2 calzini per ciascun colore, cioè 4×2=8 calzini. Al nono calzino, per il principio della casella, almeno un colore avrà 3 calzini.\", \"choice\": \"C\"}",
+      "latencyMs": 1433
+    },
+    {
+      "itemId": "principio-cassetti-dirichlet-070",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Ci sono 2 semi possibili. Nel caso peggiore, le prime 2 carte estratte possono essere una per seme. Alla terza estrazione, per il principio dei cassetti, si deve ripetere uno dei due semi. Quindi servono 3 carte.\", \"choice\": \"D\"}",
+      "latencyMs": 1288
+    },
+    {
+      "itemId": "principio-cassetti-dirichlet-071",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Con 2 semi, per evitare di avere 3 carte dello stesso seme posso estrarre al massimo 2 carte per seme, cioè 4 carte. Alla quinta estrazione, per il principio dei cassetti, almeno un seme avrà 3 carte.\", \"choice\": \"A\"}",
+      "latencyMs": 1435
+    },
+    {
+      "itemId": "probabilita-almeno-uno-072",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"La probabilità di non centrare il bersaglio in un tiro è 3/4. In 3 tiri indipendenti, la probabilità di non centrarlo mai è (3/4)^3 = 27/64. Quindi la probabilità di centrarlo almeno una volta è 1 - 27/64 = 37/64.\", \"choice\": \"C\"}",
+      "latencyMs": 1067
+    },
+    {
+      "itemId": "probabilita-almeno-uno-073",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"La probabilità di non ottenere mai testa in 4 lanci è (1/2)^4 = 1/16. Quindi la probabilità di ottenere almeno una testa è 1 - 1/16 = 15/16.\", \"choice\": \"C\"}",
+      "latencyMs": 1248
+    },
+    {
+      "itemId": "probabilita-almeno-uno-074",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\":\"La probabilità di non ottenere alcuna testa in 4 lanci è (1/2)^4 = 1/16. Quindi la probabilità di ottenere almeno una testa è 1 - 1/16 = 15/16.\",\"choice\":\"D\"}",
+      "latencyMs": 1025
+    },
+    {
+      "itemId": "probabilita-almeno-uno-075",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"La probabilità di non ottenere alcuna testa in 2 lanci è (1/2)^2 = 1/4. Quindi la probabilità di ottenere almeno una testa è 1 - 1/4 = 3/4.\", \"choice\": \"C\"}",
+      "latencyMs": 1208
+    },
+    {
+      "itemId": "disposizioni-vincolo-posizione-076",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Le cifre pari sono 0,2,4,6,8: 5 scelte per la prima cifra. Per le altre 3 cifre, tutte diverse, scegliamo ordinatamente tra le restanti 9 cifre: 9·8·7 = 504. Totale: 5·504 = 2520.\", \"choice\": \"A\"}",
+      "latencyMs": 2148
+    },
+    {
+      "itemId": "disposizioni-vincolo-posizione-077",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"La prima cifra deve essere dispari: 5 scelte. L'ultima deve essere pari: 5 scelte. Restano 8 cifre per le due posizioni centrali, che possono essere scelte in 8·7 modi. Totale: 5·5·8·7 = 1400.\", \"choice\": \"A\"}",
+      "latencyMs": 1639
+    },
+    {
+      "itemId": "disposizioni-vincolo-posizione-078",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"L'ultima cifra deve essere dispari: 5 scelte (1,3,5,7,9). Per le prime tre cifre, tutte diverse tra loro e diverse dall'ultima, scegliamo e ordiniamo 3 cifre dalle 9 rimanenti: P(9,3)=9×8×7=504. Totale: 5×504=2520.\", \"choice\": \"D\"}",
+      "latencyMs": 2972
+    },
+    {
+      "itemId": "disposizioni-vincolo-posizione-079",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\":\"La cifra finale dispari ha 5 scelte. Per le prime tre cifre, tutte diverse tra loro e dalla cifra finale, si scelgono ordinatamente 3 cifre tra le restanti 9: 9·8·7. Totale: 5·9·8·7 = 2520.\",\"choice\":\"B\"}",
+      "latencyMs": 3073
+    },
+    {
+      "itemId": "distribuzione-oggetti-stelle-barre-080",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"Si cercano le soluzioni intere non negative di x1+x2+x3=7. Il numero è C(7+3-1,3-1)=C(9,2)=36.\",\"choice\":\"C\"}",
+      "latencyMs": 1086
+    },
+    {
+      "itemId": "distribuzione-oggetti-stelle-barre-081",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Si tratta di combinazioni con ripetizione: distribuire 7 oggetti identici in 3 contenitori distinti equivale a C(7+3-1, 3-1)=C(9,2)=36.\", \"choice\": \"A\"}",
+      "latencyMs": 1433
+    },
+    {
+      "itemId": "distribuzione-oggetti-stelle-barre-082",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Dopo aver dato 1 caramella a ciascuno dei 3 bambini, restano 2 caramelle identiche da distribuire senza vincoli. Il numero di soluzioni intere non negative di y1+y2+y3=2 è C(2+3-1,3-1)=C(4,2)=6.\", \"choice\": \"C\"}",
+      "latencyMs": 1415
+    },
+    {
+      "itemId": "distribuzione-oggetti-stelle-barre-083",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Si cercano le soluzioni intere non negative di x1+x2+x3+x4=7. Il numero è C(7+4-1,4-1)=C(10,3)=120.\", \"choice\": \"B\"}",
+      "latencyMs": 1126
+    },
+    {
+      "itemId": "permutazioni-cicliche-084",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Con 7 perline tutte diverse su un bracciale chiuso, considerando uguali rotazioni e ribaltamenti, il numero di disposizioni è (7-1)!/2 = 6!/2 = 720/2 = 360.\", \"choice\": \"C\"}",
+      "latencyMs": 1082
+    },
+    {
+      "itemId": "permutazioni-cicliche-085",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Con 6 perline tutte diverse su un braccialetto circolare, fissate le rotazioni si hanno (6-1)! = 5! = 120 disposizioni. Poiché anche i ribaltamenti sono considerati equivalenti, si divide per 2: 120/2 = 60.\", \"choice\": \"D\"}",
+      "latencyMs": 1433
+    },
+    {
+      "itemId": "permutazioni-cicliche-086",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Con 7 perline tutte diverse su un braccialetto circolare, le disposizioni distinte a meno di rotazioni sono (7-1)! = 6! = 720. Poiché anche un ribaltamento è considerato equivalente, si divide per 2: 720/2 = 360.\", \"choice\": \"B\"}",
+      "latencyMs": 1459
+    },
+    {
+      "itemId": "permutazioni-cicliche-087",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Le disposizioni attorno a un tavolo rotondo si contano come permutazioni circolari: (n-1)!. Con n=8, si ottiene 7! = 5040. Quindi la risposta corretta è D.\", \"choice\": \"D\"}",
+      "latencyMs": 1435
+    },
+    {
+      "itemId": "binomio-newton-088",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Il termine in x^1 si ottiene per k=1 nello sviluppo: C(7,1)(2x)^1(2)^6 = 7·2·64 = 896.\", \"choice\": \"A\"}",
+      "latencyMs": 1101
+    },
+    {
+      "itemId": "binomio-newton-090",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Il termine con x^5 nello sviluppo di (x+2)^6 è dato da C(6,5)·x^5·2^1 = 6·2·x^5 = 12x^5, quindi il coefficiente numerico è 12.\", \"choice\": \"B\"}",
+      "latencyMs": 1228
+    },
+    {
+      "itemId": "binomio-newton-089",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Il termine in x^1 si ottiene con k=1 nello sviluppo di (2x+1)^6: C(6,1)(2x)^1(1)^5 = 6·2x = 12x. Quindi il coefficiente numerico è 12.\", \"choice\": \"D\"}",
+      "latencyMs": 1305
+    },
+    {
+      "itemId": "inclusione-esclusione-092",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Per il principio di inclusione-esclusione, gli studenti che praticano almeno una delle due discipline sono 43 + 37 - 10 = 70.\", \"choice\": \"C\"}",
+      "latencyMs": 1254
+    },
+    {
+      "itemId": "binomio-newton-091",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\":\"Il termine in x^4 si ottiene con k=4 nella formula del binomio: C(6,4)(3x)^4 2^2. Il coefficiente è C(6,4)·3^4·2^2 = 15·81·4 = 4860.\",\"choice\":\"C\"}",
+      "latencyMs": 1433
+    },
+    {
+      "itemId": "inclusione-esclusione-094",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Per il principio di inclusione-esclusione, il numero di studenti che praticano almeno una delle due discipline è 42 + 38 - 15 = 65.\", \"choice\": \"C\"}",
+      "latencyMs": 922
+    },
+    {
+      "itemId": "inclusione-esclusione-093",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Usando il principio di inclusione-esclusione: divisibili per 2: 60, per 3: 40, per 5: 24. Intersezioni: per 6: 20, per 10: 12, per 15: 8, per 30: 4. Totale = 60+40+24-20-12-8+4 = 88.\", \"choice\": \"A\"}",
+      "latencyMs": 1539
+    },
+    {
+      "itemId": "inclusione-esclusione-095",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Usando il principio di inclusione-esclusione: studenti che praticano almeno una disciplina = 45 + 58 - 32 = 71.\", \"choice\": \"A\"}",
+      "latencyMs": 1025
+    }
+  ]
+}

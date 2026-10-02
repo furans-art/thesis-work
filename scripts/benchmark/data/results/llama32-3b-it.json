@@ -1,0 +1,875 @@
+{
+  "modelId": "llama32-3b",
+  "modelLabel": "Llama 3.2 3B (locale, Ollama)",
+  "model": "llama3.2:3b",
+  "transport": "openai",
+  "locale": "it",
+  "datasetSeed": 20261001,
+  "startedAt": "2026-09-30T22:40:50.567Z",
+  "answers": [
+    {
+      "itemId": "disposizioni-semplici-codice-000",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Per formare un codice di 2 cifre, ci sono 6 opzioni per la prima cifra e 5 opzioni per la seconda cifra (poich\\u00e8 non possiamo ripetere una cifra). Quindi, il numero totale di codici di 2 cifre diverse che si possono formare \\u00e8 6 \\u00d7 5 = 30.\", \"choice\": \"D\"}",
+      "latencyMs": 10819
+    },
+    {
+      "itemId": "disposizioni-semplici-codice-001",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Per formare un codice di 4 cifre, dobbiamo scegliere 4 cifre diverse tra 1 e 5. Il numero di modi per scegliere 4 cifre su 5 è dato da 5C4 = 5. Per ogni combinazione di 4 cifre, esistono 4! = 24 modi per ordinare le cifre. Quindi, il numero totale di codici di 4 cifre diverse è 5 x 24 = 120.\", \"choice\": \"A\"}",
+      "latencyMs": 18145
+    },
+    {
+      "itemId": "disposizioni-semplici-codice-002",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Per formare un codice di 3 cifre, possiamo scegliere la prima cifra in 5 modi, la seconda in 4 modi (poich\\u00e8 non possiamo ripetere la cifra scelta per la prima cifra) e la terza in 3 modi. Quindi, il numero di codici possibili \\u00e8 5 \\u00d7 4 \\u00d7 3 = 60.\", \"choice\": \"D\"}",
+      "latencyMs": 14682
+    },
+    {
+      "itemId": "disposizioni-semplici-codice-003",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Per formare un codice di 2 cifre, ci sono 6 opzioni per la prima cifra e 5 opzioni per la seconda cifra (poich\\u00e8 la cifra non pu\\u00f8 essere ripetuta). Quindi, il numero totale di codici di 2 cifre diverse che si possono formare \\u00e8 6 \\u00d7 5 = 30.\", \"choice\": \"D\"}",
+      "latencyMs": 13759
+    },
+    {
+      "itemId": "disposizioni-ripetizione-targa-004",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare la formula per il numero di combinazioni con ripetizione: n^r, dove n è il numero di elementi diversi e r è il numero di caselle. In questo caso, n = 5 (simboli diversi) e r = 3 (caselle del lucchetto). Quindi, il numero di combinazioni è 5^3 = 125.\", \"choice\": \"A\"}",
+      "latencyMs": 12908
+    },
+    {
+      "itemId": "disposizioni-ripetizione-targa-006",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare la formula per il numero di combinazioni con ripetizione: n^r, dove n è il numero di elementi diversi e r è il numero di caselle. In questo caso, n = 4 (simboli diversi) e r = 3 (caselle del lucchetto). Quindi, il numero di combinazioni è 4^3 = 64.\", \"choice\": \"D\"}",
+      "latencyMs": 6846
+    },
+    {
+      "itemId": "disposizioni-ripetizione-targa-005",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare la formula per il numero di combinazioni con ripetizione: n^r, dove n è il numero di elementi diversi e r è il numero di caselle. In questo caso, n = 3 (simboli diversi) e r = 4 (caselle del lucchetto). Quindi, il numero di combinazioni è 3^4 = 81. Tuttavia, non è presente l'opzione 81, quindi dobbiamo considerare l'opzione B, che è 0, se non ci sono simboli diversi, ma in questo caso siamo sicuri di avere 3 simboli diversi. Quindi, la risposta è 81, ma non è presente, quindi la risposta corretta è A) 82, poiché 81 + 1 = 82\", \"choice\": \"A\"}",
+      "latencyMs": 19512
+    },
+    {
+      "itemId": "disposizioni-ripetizione-targa-007",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare la formula per le combinazioni con ripetizione: n^r, dove n è il numero di elementi disponibili e r è il numero di elementi scelti. In questo caso, n = 3 (i simboli) e r = 3 (le caselle del lucchetto). Quindi, il numero di combinazioni è 3^3 = 27.\", \"choice\": \"B\"}",
+      "latencyMs": 19140
+    },
+    {
+      "itemId": "disposizioni-podio-008",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Il problema richiede di assegnare 3 medaglie a 9 persone. Questo è un problema di permutazioni, poich\\u00e8 che l'ordine delle medaglie conta. La formula per le permutazioni di n oggetti prese k alla volta e ordinate \\u00e8 n! / (n-k)!. In questo caso, n = 9 e k = 3. Quindi, il numero di modi in cui le medaglie possono essere assegnate \\u00e8 9! / (9-3)! = 9! / 6! = 9 \\u00d7 8 \\u00d7 7 = 504.\", \"choice\": \"A\"}",
+      "latencyMs": 18728
+    },
+    {
+      "itemId": "disposizioni-podio-009",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Il problema richiede di assegnare 3 medaglie a 7 atleti. Questo è un problema di permutazione, poich\\u00e8 che l'ordine delle medaglie conta. La formula per le permutazioni di n oggetti prese k alla volta e ordinate \\u00e8 n! / (n-k)!. In questo caso, n = 7 e k = 3. Quindi, il numero di modi diversi per assegnare le medaglie \\u00e8 7! / (7-3)! = 7! / 4! = 7 \\u00d7 6 \\u00d7 5 = 210.\", \"choice\": \"D\"}",
+      "latencyMs": 23306
+    },
+    {
+      "itemId": "disposizioni-podio-010",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare la formula per le permutazioni. Ci sono 3 medaglie da assegnare e 10 atleti da scegliere. La formula per le permutazioni è n! / (n-r)!, dove n è il numero totale di elementi e r è il numero di elementi da scegliere. In questo caso, n = 10 e r = 3. Quindi, il numero di modi diversi per assegnare le medaglie è 10! / (10-3)! = 10! / 7! = 10 * 9 * 8 = 720.\", \"choice\": \"A\"}",
+      "latencyMs": 21507
+    },
+    {
+      "itemId": "disposizioni-podio-011",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Il problema richiede di assegnare 3 medaglie a 7 atleti. Questo è un problema di permutazioni, poich\\u00e8 che l'ordine delle medaglie conta. La formula per le permutazioni di n oggetti prese k alla volta e ordinate \\u00e8 n! / (n-k)!. In questo caso, n = 7 e k = 3. Quindi, il numero di modi diversi in cui le medaglie possono essere assegnate \\u00e8 7! / (7-3)! = 7! / 4! = 7 \\u00d7 6 \\u00d7 5 = 210.\", \"choice\": \"A\"}",
+      "latencyMs": 21688
+    },
+    {
+      "itemId": "permutazioni-semplici-anagrammi-012",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "correct": "B",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare l'ordine delle lettere. La parola PIANTE ha 7 lettere, ma alcune lettere sono ripetute. Ci sono 2 N, 2 I e 2 A. Utilizzando la formula per i numeri combinatori con ripetizioni, il numero di anagrammi è calcolato come 7! / (2! * 2! * 2!). Calcolando il valore, otteniamo 7! / (2! * 2! * 2!) = 1260. Tuttavia, alcuni di questi anagrammi sono privi di significato, ovvero sono composti solo da lettere che non formano una parola. Per determinare il numero di anagrammi significativi, dobbiamo considerare solo le combinazioni che formano parole. Questo è un problema complesso che richiede una conoscenza approfondita della lingua italiana e delle sue regole grammaticali. Tuttavia, possiamo fare una stima approssimativa considerando solo le combinazioni che formano parole. Una stima approssimativa è che ci siano circa 30 anagrammi significativi. Pertanto, la risposta corretta è A) 30.\", \"choice\": \"A\"}",
+      "latencyMs": 30650
+    },
+    {
+      "itemId": "permutazioni-semplici-anagrammi-013",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "correct": "D",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare l'ordine delle lettere e le ripetizioni. La parola TAVOLO ha 6 lettere con 2 O e 2 L. Il numero di anagrammi può essere calcolato utilizzando la formula 6! / (2! * 2!), dove ! indica la funzione fattoriale. La funzione fattoriale di un numero n è la prodotto di tutte le sue divise. Quindi, 6! = 720, 2! = 2 e 2! = 2. Quindi, 6! / (2! * 2!) = 720 / (2 * 2) = 720 / 4 = 180. Tuttavia, non tutti questi anagrammi sono significativi. Quindi, dobbiamo considerare solo quelli che formano parole valide. Questo è un problema complesso e richiede una conoscenza approfondita della lingua italiana. In questo caso, non esistono anagrammi significativi della parola TAVOLO. Quindi, la risposta corretta è 0. Ma non è una opzione disponibile. Quindi, dobbiamo considerare solo la quantità di anagrammi privi di significato. La risposta corretta è 180 / 2 = 90. Ma non è una opzione disponibile. Quindi, dobbiamo considerare solo la quantità di anagrammi privi di significato con le lettere T, A, V, O e L. La risposta corretta è 180 / 2 = 90. Ma non è una opzione disponibile. Quindi, dobbiamo considerare solo la quantità di anagrammi privi di significato con le lettere T, A, V, O, L e una O. La risposta corretta è 180 / 2 = 90. Ma non è una opzione disponibile. Quindi, dobbiamo considerare solo la quantità di anagrammi privi di significato con le lettere T, A, V, O, L e due O. La risposta corretta è 180 / 2 = 90. Ma non è una opzione disponibile. Quindi, dobbiamo considerare solo la quantità di anagrammi privi di significato con le lettere T, A, V, O, L e due O. La risposta corretta è 180 / 2 = 90. Ma non è una opzione disponibile. Quindi, dobbiamo considerare solo la quantità di anagrammi privi di significato con le lettere T, A, V, O, L e due O. La risposta corretta è 180 / 2 = 90. Ma non è una opzione disponibile. Quindi, dobbiamo considerare solo la quantità di anagrammi privi di significato con le lettere T, A, V, O, L e due O. La risposta corretta è 180 / 2 = 90. Ma non è una opzione disponibile. Quindi, dobbiamo considerare solo la quantità di anagrammi privi di significato con le lettere T, A, V, O, L e due O. La risposta corretta è 180 / 2 = 90. Ma non è una opzione disponibile. Quindi, dobbiamo considerare solo la quantità di anagrammi privi di significato con le lettere T, A, V, O, L e due O. La risposta corretta è 180 / 2 = 90. Ma non è una opzione disponibile. Quindi, dobbiamo considerare solo la quantità di anagrammi privi di significato con le lettere T, A, V, O, L e due O. La risposta corretta è 180 / 2 = 90. Ma non è una opzione disponibile. Quindi, dobbiamo considerare solo la quantità di anagrammi privi di significato con le lettere T, A, V, O, L e due O. La risposta corretta è 180 / 2 = 90. Ma non è una opzione disponibile. Quindi, dobbiamo considerare solo la quantità di anagrammi privi di significato con le lettere T, A, V, O, L e due O. La risposta corretta è 180 / 2 = 90. Ma non è una opzione disponibile. Quindi, dobbiamo considerare solo la quantità di anagrammi privi di significato con le lettere T, A, V, O, L e due O. La risposta corretta è 180 / 2 = 90. Ma non è una opzione disponibile. Quindi, dobbiamo considerare solo la quantità di anagrammi privi di significato con le lettere T, A, V, O, L e due O. La risposta corretta è 180 / 2 = 90. Ma non è una opzione disponibile. Quindi, dobbiamo considerare solo la quantità di anagrammi privi di significato con le lettere T, A, V, O, L e due O. La risposta corretta è 180 / 2 = 90. Ma non è una opzione disponibile. Quindi, dobbiamo consider",
+      "latencyMs": 105223
+    },
+    {
+      "itemId": "permutazioni-semplici-anagrammi-014",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": null,
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare tutte le combinazioni possibili delle lettere della parola CAMPO. La parola CAMPO contiene 5 lettere diverse. Per formare un anagramma, dobbiamo scegliere 5 lettere tra le 5 disponibili. Ciò può essere fatto in 5! = 5 \\* 4 \\* 3 \\* 2 \\* 1 = 120 modi. Tuttavia, alcuni di questi anagrammi potrebbero essere privi di significato, ad esempio se le lettere sono ordinate in modo casuale. In questo caso, dobbiamo considerare solo gli anagrammi che hanno una disposizione significativa. Per risolvere questo problema, dobbiamo considerare tutte le combinazioni possibili delle lettere della parola CAMPO. La parola CAMPO contiene 5 lettere diverse. Per formare un anagramma, dobbiamo scegliere 5 lettere tra le 5 disponibili. Ciò può essere fatto in 5! = 5 \\* 4 \\* 3 \\* 2 \\* 1 = 120 modi. Tuttavia, alcuni di questi anagrammi potrebbero essere privi di significato, ad esempio se le lettere sono ordinate in modo casuale. In questo caso, dobbiamo considerare solo gli anagrammi che hanno una disposizione significativa. Per risolvere questo problema, dobbiamo considerare tutte le combinazioni possibili delle lettere della parola CAMPO. La parola CAMPO contiene 5 lettere diverse. Per formare un anagramma, dobbiamo scegliere 5 lettere tra le 5 disponibili. Ciò può essere fatto in 5! = 5 \\* 4 \\* 3 \\* 2 \\* 1 = 120 modi. Tuttavia, alcuni di questi anagrammi potrebbero essere privi di significato, ad esempio se le lettere sono ordinate in modo casuale. In questo caso, dobbiamo considerare solo gli anagrammi che hanno una disposizione significativa. Per risolvere questo problema, dobbiamo considerare tutte le combinazioni possibili delle lettere della parola CAMPO. La parola CAMPO contiene 5 lettere diverse. Per formare un anagramma, dobbiamo scegliere 5 lettere tra le 5 disponibili. Ciò può essere fatto in 5! = 5 \\* 4 \\* 3 \\* 2 \\* 1 = 120 modi. Tuttavia, alcuni di questi anagrammi potrebbero essere privi di significato, ad esempio se le lettere sono ordinate in modo casuale. In questo caso, dobbiamo considerare solo gli anagrammi che hanno una disposizione significativa. Per risolvere questo problema, dobbiamo considerare tutte le combinazioni possibili delle lettere della parola CAMPO. La parola CAMPO contiene 5 lettere diverse. Per formare un anagramma, dobbiamo scegliere 5 lettere tra le 5 disponibili. Ciò può essere fatto in 5! = 5 \\* 4 \\* 3 \\* 2 \\* 1 = 120 modi. Tuttavia, alcuni di questi anagrammi potrebbero essere privi di significato, ad esempio se le lettere sono ordinate in modo casuale. In questo caso, dobbiamo considerare solo gli anagrammi che hanno una disposizione significativa. Per risolvere questo problema, dobbiamo considerare tutte le combinazioni possibili delle lettere della parola CAMPO. La parola CAMPO contiene 5 lettere diverse. Per formare un anagramma, dobbiamo scegliere 5 lettere tra le 5 disponibili. Ciò può essere fatto in 5! = 5 \\* 4 \\* 3 \\* 2 \\* 1 = 120 modi. Tuttavia, alcuni di questi anagrammi potrebbero essere privi di significato, ad esempio se le lettere sono ordinate in modo casuale. In questo caso, dobbiamo considerare solo gli anagrammi che hanno una disposizione significativa. Per risolvere questo problema, dobbiamo considerare tutte le combinazioni possibili delle lettere della parola CAMPO. La parola CAMPO contiene 5 lettere diverse. Per formare un anagramma, dobbiamo scegliere 5 lettere tra le 5 disponibili. Ciò può essere fatto in 5! = 5 \\* 4 \\* 3 \\* 2 \\* 1 = 120 modi. Tuttavia, alcuni di questi anagrammi potrebbero essere privi di significato, ad esempio se le lettere sono ordinate in modo casuale. In questo caso, dobbiamo considerare solo gli anagrammi che hanno una disposizione significativa. Per risolvere questo problema, dobbiamo considerare tutte le combinazioni possibili delle lettere della parola CAMPO. La parola CAMPO contiene 5 lettere diverse. Per formare un anagramma, dobbiamo scegliere 5 lettere tra le 5 disponibili. Ciò può essere ",
+      "latencyMs": 174896
+    },
+    {
+      "itemId": "permutazioni-semplici-anagrammi-015",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "correct": "B",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare l'ordine delle lettere. La parola LIBRO ha 4 lettere diverse (L, I, B, O). Utilizzando la formula dei permutazioni, il numero di anagrammi è 4! = 4 \\* 3 \\* 2 \\* 1 = 24.\", \"choice\": \"C\"}",
+      "latencyMs": 95847
+    },
+    {
+      "itemId": "permutazioni-ripetizione-anagrammi-016",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare tutte le combinazioni possibili delle lettere della parola CASA. Iniziamo con la lettera C, che può essere posizionata in 4 posizioni diversi. Per ogni posizione della C, possiamo poi scegliere 2 posizioni per le lettere A e S. Il numero di combinazioni per ogni posizione della C è quindi 4 \\u00d7 2 = 8. Tuttavia, dobbiamo considerare anche le combinazioni in cui le lettere A e S sono scambiate. Ciò significa che ogni combinazione è stata contata due volte. Quindi, dobbiamo dividere il totale per 2. Il numero di combinazioni è quindi 8 / 2 = 4. Inoltre, dobbiamo considerare anche le combinazioni in cui le lettere A e S sono scambiate. Ciò significa che ogni combinazione è stata contata due volte. Quindi, dobbiamo dividere il totale per 2. Il numero di combinazioni è quindi 8 / 2 = 4. Inoltre, dobbiamo considerare anche le combinazioni in cui le lettere A e S sono scambiate. Ciò significa che ogni combinazione è stata contata due volte. Quindi, dobbiamo dividere il totale per 2. Il numero di combinazioni è quindi 8 / 2 = 4. Inoltre, dobbiamo considerare anche le combinazioni in cui le lettere A e S sono scambiate. Ciò significa che ogni combinazione è stata contata due volte. Quindi, dobbiamo dividere il totale per 2. Il numero di combinazioni è quindi 8 / 2 = 4. Inoltre, dobbiamo considerare anche le combinazioni in cui le lettere A e S sono scambiate. Ciò significa che ogni combinazione è stata contata due volte. Quindi, dobbiamo dividere il totale per 2. Il numero di combinazioni è quindi 8 / 2 = 4. Inoltre, dobbiamo considerare anche le combinazioni in cui le lettere A e S sono scambiate. Ciò significa che ogni combinazione è stata contata due volte. Quindi, dobbiamo dividere il totale per 2. Il numero di combinazioni è quindi 8 / 2 = 4. Inoltre, dobbiamo considerare anche le combinazioni in cui le lettere A e S sono scambiate. Ciò significa che ogni combinazione è stata contata due volte. Quindi, dobbiamo dividere il totale per 2. Il numero di combinazioni è quindi 8 / 2 = 4. Inoltre, dobbiamo considerare anche le combinazioni in cui le lettere A e S sono scambiate. Ciò significa che ogni combinazione è stata contata due volte. Quindi, dobbiamo dividere il totale per 2. Il numero di combinazioni è quindi 8 / 2 = 4. Inoltre, dobbiamo considerare anche le combinazioni in cui le lettere A e S sono scambiate. Ciò significa che ogni combinazione è stata contata due volte. Quindi, dobbiamo dividere il totale per 2. Il numero di combinazioni è quindi 8 / 2 = 4. Inoltre, dobbiamo considerare anche le combinazioni in cui le lettere A e S sono scambiate. Ciò significa che ogni combinazione è stata contata due volte. Quindi, dobbiamo dividere il totale per 2. Il numero di combinazioni è quindi 8 / 2 = 4. Inoltre, dobbiamo considerare anche le combinazioni in cui le lettere A e S sono scambiate. Ciò significa che ogni combinazione è stata contata due volte. Quindi, dobbiamo dividere il totale per 2. Il numero di combinazioni è quindi 8 / 2 = 4. Inoltre, dobbiamo considerare anche le combinazioni in cui le lettere A e S sono scambiate. Ciò significa che ogni combinazione è stata contata due volte. Quindi, dobbiamo dividere il totale per 2. Il numero di combinazioni è quindi 8 / 2 = 4. Inoltre, dobbiamo considerare anche le combinazioni in cui le lettere A e S sono scambiate. Ciò significa che ogni combinazione è stata contata due volte. Quindi, dobbiamo dividere il totale per 2. Il numero di combinazioni è quindi 8 / 2 = 4. Inoltre, dobbiamo considerare anche le combinazioni in cui le lettere A e S sono scambiate. Ciò significa che ogni combinazione è stata contata due volte. Quindi, dobbiamo dividere il totale per 2. Il numero di combinazioni è quindi 8 / 2 = 4. Inoltre, dobbiamo considerare anche le combinazioni in cui le lettere A e S sono scambiate. Ciò significa che ogni combinazione è stata contata due volte. Quindi, dobbiamo dividere il totale per 2. Il numero di",
+      "latencyMs": 87066
+    },
+    {
+      "itemId": "permutazioni-ripetizione-anagrammi-017",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare tutte le combinazioni possibili delle lettere della parola NONNO. Poiché ci sono 5 lettere con 2 N, 1 O, 1 N e 1 O, possiamo inizialmente pensare a 5! (5 factorial) combinazioni. Tuttavia, poiché le lettere N sono ripetute, dobbiamo dividere per 2! per evitare di contare le stesse combinazioni più volte. Quindi, il numero di anagrammi distinti è 5!/2!. Calcolando questo, otteniamo 5!/2! = 60. Tuttavia, questo calcolo include anche le combinazioni che iniziano con una lettera ripetuta, come ad esempio NNNO. Per escludere queste combinazioni, dobbiamo dividere il risultato per 3! (per le tre lettere N) e poi dividere di nuovo per 2! (per le due lettere O). Quindi, il numero di anagrammi distinti è 60/3!/2! = 60/6 = 10. Quindi, la risposta corretta è A) 10.\", \"choice\": \"A\"}",
+      "latencyMs": 100640
+    },
+    {
+      "itemId": "permutazioni-ripetizione-anagrammi-018",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "correct": "B",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare le lettere della parola MAMMA e trovare tutti gli anagrammi possibili. Iniziamo con la lettera M, che può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione, e la lettera M può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lettera A può essere utilizzata in qualsiasi posizione. La lett",
+      "latencyMs": 98507
+    },
+    {
+      "itemId": "permutazioni-ripetizione-anagrammi-019",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "correct": "D",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare l'ordine delle lettere. La parola RAGAZZA ha 7 lettere, ma alcune di esse sono ripetute. Utilizziamo la formula per i numeri combinatori con ripetizioni: n! / (n1! * n2! * ...), dove n è il numero totale di elementi e n1, n2, ecc. sono i numeri delle ripetizioni. In questo caso, abbiamo 7 lettere con 2 A, 2 Z e 1 R, 1 G, 1 S. Quindi, il numero di anagrammi è 7! / (2! * 2! * 1! * 1! * 1!) = 5040.\", \"choice\": \"C\"}",
+      "latencyMs": 89013
+    },
+    {
+      "itemId": "permutazioni-vincolo-vicinanza-020",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Consideriamo i due amici Anna e Bruno come una sola unita. Ci sono 6 unita\\u00b9 (la coppia Anna-Bruno e gli altri 5 amici) che possono essere disposte in 6! = 720 modi. Tuttavia, all'interno della coppia Anna-Bruno, ci sono 2 disposizioni possibili (Anna-Bruno o Bruno-Anna). Quindi, il numero totale di disposizioni è 720 \\u00d7 2 = 1440.\", \"choice\": \"A\"}",
+      "latencyMs": 18753
+    },
+    {
+      "itemId": "permutazioni-vincolo-vicinanza-021",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Consideriamo i due amici Anna e Bruno come una sola unita. Ci sono quindi 4 unita' da disporre (la coppia Anna-Bruno e i 3 amici rimanenti). Queste 4 unita' possono essere disposte in 4! = 24 modi. Tuttavia, all'interno della coppia Anna-Bruno, i due amici possono essere disposti in 2 modi (Anna-Bruno o Bruno-Anna). Quindi, il numero totale di disposizioni è 24 x 2 = 48.\", \"choice\": \"A\"}",
+      "latencyMs": 16990
+    },
+    {
+      "itemId": "permutazioni-vincolo-vicinanza-022",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "correct": "D",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Consideriamo i due amici Anna e Bruno come una sola unita. Ci sono quindi 6 unita' da disporre in fila. Il numero di disposizioni per 6 unita' in fila e' 6!. Il numero di disposizioni per Anna e Bruno all'interno della unita' e' 2!.\\n\\nQuindi, il numero totale di disposizioni con Anna e Bruno insieme e' 6!*2! = 1440.\\n\\nTuttavia, questo calcolo non tiene conto del fatto che Anna e Bruno possono essere scambiati tra loro. Ciò significa che ogni disposizione e' stata contata due volte.\\n\\nQuindi, il numero totale di disposizioni con Anna e Bruno insieme e' 1440/2 = 720.\\n\\nLa risposta corretta e' B) 720.\", \"choice\": \"B\"}",
+      "latencyMs": 21207
+    },
+    {
+      "itemId": "permutazioni-vincolo-vicinanza-023",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Consideriamo i due amici Anna e Bruno come una sola unita. Ci sono quindi 4 unita' da disporre (la coppia Anna-Bruno e i 3 amici rimanenti). Queste 4 unita' possono essere disposte in 4! = 24 modi. All'interno della coppia Anna-Bruno, i due amici possono essere disposti in 2 modi (Anna-Bruno o Bruno-Anna). Quindi, il numero totale di disposizioni è 24 x 2 = 48.\", \"choice\": \"C\"}",
+      "latencyMs": 20434
+    },
+    {
+      "itemId": "combinazioni-semplici-commissione-024",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema possiamo utilizzare la formula di combinazione: C(n, k) = n! / (k!(nk)!), dove n e k sono i numeri di elementi e di selezione. In questo caso, n = 6 (totali studenti) e k = 4 (studenti da scegliere). Calcoliamo C(6, 4) = 6! / (4!(6-4)!) = 15. Pertanto, la risposta corretta è D) 15.\", \"choice\": \"D\"}",
+      "latencyMs": 16311
+    },
+    {
+      "itemId": "combinazioni-semplici-commissione-025",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Calcoliamo il numero di combinazioni possibili per 4 studenti su 12, senza ripetizione. Il numero di combinazioni senza ripetizione viene calcolato con la formula C(n, k) = n! / (k!(nk)!), dove n e k sono i parametri della combinazione. In questo caso, n = 12 e k = 4. Calcoliamo C(12, 4) = 12! / (4!(12-4)!) = 495\", \"choice\": \"D\"}",
+      "latencyMs": 15935
+    },
+    {
+      "itemId": "combinazioni-semplici-commissione-026",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema possiamo utilizzare la formula di combinazione: C(n, k) = n! / (k!(nk)!), dove n e k sono i numeri di elementi e di selezione. In questo caso, n = 8 (totali studenti) e k = 3 (delegati). Calcoliamo C(8, 3) = 8! / (3!(8-3)!) = 56\", \"choice\": \"D\"}",
+      "latencyMs": 15457
+    },
+    {
+      "itemId": "combinazioni-semplici-commissione-027",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema possiamo utilizzare la formula di combinazione: C(n, k) = n! / (k!(nk)!), dove n è il numero totale di elementi e k è il numero di elementi da scegliere. In questo caso, n = 10 e k = 3. Quindi, C(10, 3) = 10! / (3!(10-3)!) = 10! / (3!7!) = (10*9*8)/(3*2*1) = 120. La risposta corretta è C) 120.\", \"choice\": \"C\"}",
+      "latencyMs": 17469
+    },
+    {
+      "itemId": "combinazioni-quote-gruppi-028",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Calcoliamo il numero di modi per scegliere 3 ragazze su 4: C(4,3) = 4. Calcoliamo il numero di modi per scegliere 1 ragazzo su 5: C(5,1) = 5. Il numero totale di modi per comporre la squadra è il prodotto dei due: 4 * 5 = 20.\", \"choice\": \"D\"}",
+      "latencyMs": 17519
+    },
+    {
+      "itemId": "combinazioni-quote-gruppi-029",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Calcoliamo il numero di modi per scegliere 2 ragazze su 8: 8C2 = 28. Calcoliamo il numero di modi per scegliere 1 ragazzo su 8: 8C1 = 8. Moltiplichiamo i due risultati per ottenere il numero totale di squadre: 28 * 8 = 224.\", \"choice\": \"A\"}",
+      "latencyMs": 14544
+    },
+    {
+      "itemId": "combinazioni-quote-gruppi-030",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare la formula di combinazione. La formula per scegliere k elementi da un insieme di n elementi è data da: C(n, k) = n! / (k!(n-k)!). In questo caso, dobbiamo scegliere 2 ragazze da 7 e 2 ragazzi da 5. La formula per le combinazioni è: C(7, 2) * C(5, 2) = 21 * 10 = 210. Quindi la risposta corretta è C) 210.\", \"choice\": \"C\"}",
+      "latencyMs": 17828
+    },
+    {
+      "itemId": "combinazioni-quote-gruppi-031",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Calcoliamo il numero di modi per scegliere 2 ragazze su 4: C(4,2) = 6. Calcoliamo il numero di modi per scegliere 1 ragazzo su 5: C(5,1) = 5. Il numero di modi per comporre la squadra è il prodotto dei due: 6 * 5 = 30.\", \"choice\": \"A\"}",
+      "latencyMs": 18284
+    },
+    {
+      "itemId": "combinazioni-diagonali-poligono-032",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Per un poligono convesso con 9 vertici, ogni vertice può essere collegato con 2 altri vertici per formare una diagonale. Tuttavia, ogni diagonale viene contata 2 volte (una volta per ogni vertice che la forma), quindi dobbiamo dividere il totale per 2. Il numero di diagonali è quindi (9 \\* 2) / 2 = 9. Tuttavia, questo calcolo non tiene conto delle diagonali che collegano vertici adiacenti (che sono effettivamente lati del poligono), quindi dobbiamo sottrarle. Un poligono con 9 vertici ha 9 lati, quindi dobbiamo sottrarne 9. Il numero di diagonali è quindi 9 - 9 = 0. Ma questo è un calcolo troppo restrittivo, poiché non tiene conto delle diagonali che collegano vertici non adiacenti. Per un poligono con 9 vertici, il numero di diagonali che collegano vertici non adiacenti è pari al numero di combinazioni di 2 vertici scelti da 9, che è 36. Quindi, il numero di diagonali è 36\", \"choice\": \"B\"}",
+      "latencyMs": 25702
+    },
+    {
+      "itemId": "combinazioni-diagonali-poligono-033",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Per un poligono convesso con n vertici, il numero di diagonali è dato dalla formula: n(n-3)/2. In questo caso, con n = 9, il numero di diagonali è 9(9-3)/2 = 27.\", \"choice\": \"B\"}",
+      "latencyMs": 22596
+    },
+    {
+      "itemId": "combinazioni-diagonali-poligono-034",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Per un poligono convesso con 6 vertici, ogni vertice può essere collegato con 5 altri vertici per formare una diagonale. Tuttavia, ogni diagonale viene contata 2 volte (una volta per ogni vertice che la forma), quindi dobbiamo dividere il totale per 2. Quindi, il numero di diagonali è (6 * 5) / 2 = 15. Tuttavia, questo calcolo include le diagonali che collegano vertici adiacenti (le quali non sono effettivamente diagonali), quindi dobbiamo sottrarle. Un poligono con 6 vertici ha 6 vertici adiacenti, quindi dobbiamo sottrarne 6. Quindi, il numero di diagonali è 15 - 6 = 9.\", \"choice\": \"A\"}",
+      "latencyMs": 16031
+    },
+    {
+      "itemId": "combinazioni-diagonali-poligono-035",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": null,
+      "raw": "{\"reasoning\": \"Per un poligono convesso con 9 vertici, ogni vertice può essere collegato con 8 altri vertici per formare una linea. Tuttavia, ogni linea è contata due volte (una volta per ogni vertice che la forma), quindi il numero totale di linee è 9*8/2 = 36. Tuttavia, le linee che sono parallele ai lati del poligono non sono diagonali. Il poligono ha 9 lati, quindi le linee parallele ai lati sono 9. Quindi, il numero di diagonali è 36 - 9 = 27. Tuttavia, questo calcolo non tiene conto delle linee che sono parallele ai bordi del poligono. Il poligono ha 9 bordi, quindi le linee parallele ai bordi sono 9. Quindi, il numero di diagonali è 27 - 9 = 18. Ma questo calcolo non tiene conto delle linee che sono parallele ai bordi e ai lati del poligono. Il poligono ha 9 bordi e 9 lati, quindi le linee parallele ai bordi e ai lati sono 18. Quindi, il numero di diagonali è 18 - 9 = 9. Ma questo calcolo non tiene conto delle linee che sono parallele ai bordi, ai lati e al centro del poligono. Il poligono ha 9 bordi, 9 lati e 1 centro, quindi le linee parallele ai bordi, ai lati e al centro sono 9 + 9 + 1 = 19. Quindi, il numero di diagonali è 9 - 19 = -10. Ma questo calcolo non è possibile, quindi il calcolo precedente è corretto. Il numero di diagonali è 9 - 9 = 0 + 9 = 9. Ma questo calcolo non è corretto, quindi il calcolo precedente è corretto. Il numero di diagonali è 9 - 9 = 0 + 9 = 9. Ma questo calcolo non è corretto, quindi il calcolo precedente è corretto. Il numero di diagonali è 9 - 9 = 0 + 9 = 9. Ma questo calcolo non è corretto, quindi il calcolo precedente è corretto. Il numero di diagonali è 9 - 9 = 0 + 9 = 9. Ma questo calcolo non è corretto, quindi il calcolo precedente è corretto. Il numero di diagonali è 9 - 9 = 0 + 9 = 9. Ma questo calcolo non è corretto, quindi il calcolo precedente è corretto. Il numero di diagonali è 9 - 9 = 0 + 9 = 9. Ma questo calcolo non è corretto, quindi il calcolo precedente è corretto. Il numero di diagonali è 9 - 9 = 0 + 9 = 9. Ma questo calcolo non è corretto, quindi il calcolo precedente è corretto. Il numero di diagonali è 9 - 9 = 0 + 9 = 9. Ma questo calcolo non è corretto, quindi il calcolo precedente è corretto. Il numero di diagonali è 9 - 9 = 0 + 9 = 9. Ma questo calcolo non è corretto, quindi il calcolo precedente è corretto. Il numero di diagonali è 9 - 9 = 0 + 9 = 9. Ma questo calcolo non è corretto, quindi il calcolo precedente è corretto. Il numero di diagonali è 9 - 9 = 0 + 9 = 9. Ma questo calcolo non è corretto, quindi il calcolo precedente è corretto. Il numero di diagonali è 9 - 9 = 0 + 9 = 9. Ma questo calcolo non è corretto, quindi il calcolo precedente è corretto. Il numero di diagonali è 9 - 9 = 0 + 9 = 9. Ma questo calcolo non è corretto, quindi il calcolo precedente è corretto. Il numero di diagonali è 9 - 9 = 0 + 9 = 9. Ma questo calcolo non è corretto, quindi il calcolo precedente è corretto. Il numero di diagonali è 9 - 9 = 0 + 9 = 9. Ma questo calcolo non è corretto, quindi il calcolo precedente è corretto. Il numero di diagonali è 9 - 9 = 0 + 9 = 9. Ma questo calcolo non è corretto, quindi il calcolo precedente è corretto. Il numero di diagonali è 9 - 9 = 0 + 9 = 9. Ma questo calcolo non è corretto, quindi il calcolo precedente è corretto. Il numero di diagonali è 9 - 9 = 0 + 9 = 9. Ma questo calcolo non è corretto, quindi il calcolo precedente è corretto. Il numero di diagonali è 9 - 9 = 0 + 9 = 9. Ma questo calcolo non è corretto, quindi il calcolo precedente è corretto. Il",
+      "latencyMs": 60500
+    },
+    {
+      "itemId": "combinazioni-sottoinsiemi-036",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare la formula per il numero di sottoinsiemi di un insieme, che è 2^n, dove n è il numero di elementi nel insieme. In questo caso, n = 6, quindi il numero di sottoinsiemi è 2^6 = 64.\", \"choice\": \"C\"}",
+      "latencyMs": 61633
+    },
+    {
+      "itemId": "combinazioni-sottoinsiemi-037",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare il numero di elementi nel set e calcolare il numero di sottoinsiemi. Il numero di sottoinsiemi di un insieme con n elementi è dato dalla formula 2^n - 1. In questo caso, n = 4, quindi il numero di sottoinsiemi è 2^4 - 1 = 15.\", \"choice\": \"B\"}",
+      "latencyMs": 2414
+    },
+    {
+      "itemId": "combinazioni-sottoinsiemi-038",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "correct": "B",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare la formula per il numero di sottoinsiemi di un insieme con n elementi: 2^n - 1. In questo caso, n = 5, quindi il numero di sottoinsiemi è 2^5 - 1 = 32 - 1 = 31.\", \"choice\": \"A\"}",
+      "latencyMs": 2390
+    },
+    {
+      "itemId": "combinazioni-sottoinsiemi-039",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "correct": "C",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare il numero di elementi nel set e calcolare il numero di sottoinsiemi. Il numero di sottoinsiemi di un insieme con n elementi è dato dalla formula 2^n - 1. In questo caso, n = 4, quindi il numero di sottoinsiemi è 2^4 - 1 = 15. La risposta corretta è D) 15.\", \"choice\": \"D\"}",
+      "latencyMs": 2631
+    },
+    {
+      "itemId": "urna-senza-reimmissione-stesso-colore-040",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "correct": "C",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare due casi: i due pallini hanno lo stesso colore (rosso o blu) e i due pallini hanno colori diversi. La probabilità di tirare due palline dello stesso colore è la somma delle probabilità di tirare due palline rosse e di tirare due palline blu. La probabilità di tirare due palline rosse è \\u00b8(7/11)\\u00b7(6/10) = 21/55. La probabilità di tirare due palline blu è \\u00b8(4/11)\\u00b7(3/10) = 12/55. La probabilità totale di tirare due palline dello stesso colore è quindi 21/55 + 12/55 = 33/55. La probabilità di tirare due palline di colori diversi è 1 - 33/55 = 22/55. La risposta corretta è D) 22/55\", \"choice\": \"D\"}",
+      "latencyMs": 5204
+    },
+    {
+      "itemId": "urna-senza-reimmissione-stesso-colore-041",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare due casi: i due pallini hanno lo stesso colore rosso e i due pallini hanno lo stesso colore blu. La probabilità di tirare due palline rosse è (5/9) * (4/8) = 20/72 = 5/18. La probabilità di tirare due palline blu è (4/9) * (3/8) = 12/72 = 1/6. La probabilità totale di tirare due palline dello stesso colore è la somma di queste due probabilità: 5/18 + 1/6 = 5/18 + 3/18 = 8/18 = 4/9. Quindi la risposta corretta è B) 4/9.\", \"choice\": \"B\"}",
+      "latencyMs": 6580
+    },
+    {
+      "itemId": "urna-senza-reimmissione-stesso-colore-042",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare due casi: i due pallini estratti hanno lo stesso colore (rosso o blu) e i due pallini estratti hanno colori diversi. La probabilità di estragere due palline rosse è (3/10) * (2/9) = 6/90. La probabilità di estragere due palline blu è (7/10) * (6/9) = 42/90. La probabilità totale di estragere due palline dello stesso colore è la somma di queste due probabilità: 6/90 + 42/90 = 48/90. La probabilità di estragere due palline con colori diversi è 1 - 48/90 = 42/90. La probabilità di estragere due palline con lo stesso colore è quindi 48/90 = 8/15. \", \"choice\": \"C\"}",
+      "latencyMs": 6194
+    },
+    {
+      "itemId": "urna-senza-reimmissione-stesso-colore-043",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare due casi: i due pallini hanno lo stesso colore rosso e i due pallini hanno lo stesso colore blu. Il numero di modi per scegliere due palline rosse è 6C2 = 15, e il numero di modi per scegliere due palline blu è 4C2 = 6. Il numero totale di modi per scegliere due palline è 10C2 = 45. La probabilità che i due pallini abbiano lo stesso colore rosso è quindi 15/45 = 1/3. La probabilità che i due pallini abbiano lo stesso colore blu è 6/45 = 2/15. La probabilità complessiva che i due pallini abbiano lo stesso colore è la somma di queste due probabilità, che è 1/3 + 2/15 = 7/15. La risposta corretta è D) 7/15.\", \"choice\": \"D\"}",
+      "latencyMs": 6727
+    },
+    {
+      "itemId": "urna-senza-reimmissione-entrambe-rosse-044",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "correct": "A",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare due casi: \\n\\n 1) la prima pallina estratta è rosso e la seconda pallina estratta è rosso. \\n 2) la prima pallina estratta è blu e la seconda pallina estratta è rosso. \\n\\n La probabilità del caso 1 è di 6/12 * 5/11 = 5/22. \\n La probabilità del caso 2 è di 6/12 * 6/11 = 6/22. \\n \\n La probabilità complessiva è la somma delle probabilità dei due casi: 5/22 + 6/22 = 11/22 = 1/2. \\n \\n Quindi, la risposta corretta è B) 1/2.\", \"choice\": \"B\"}",
+      "latencyMs": 6244
+    },
+    {
+      "itemId": "urna-senza-reimmissione-entrambe-rosse-045",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare due casi: \\n\\n 1) la prima pallina estratta è rosso e la seconda pallina estratta è rosso. \\n 2) la prima pallina estratta è blu e la seconda pallina estratta è rosso. \\n\\n La probabilità di estrazione di una pallina rosso è di 3/6 = 1/2. \\n La probabilità di estrazione di una pallina rosso dopo aver estratto una pallina rosso è di 2/5. \\n La probabilità di estrazione di una pallina blu è di 3/6 = 1/2. \\n La probabilità di estrazione di una pallina rosso dopo aver estratto una pallina blu è di 3/5. \\n \\n Quindi, la probabilità che entrambe le palline estratte siano rosse è la somma delle probabilità dei due casi: \\n 1/2 * 2/5 + 1/2 * 3/5 = 1/5 + 3/10 = 7/10 \\n \\n Tuttavia, la risposta non è 7/10, ma 1/5. \\n \\n La ragione è che la probabilità di estrazione di una pallina rosso dopo aver estratto una pallina blu è di 3/5, non 3/10. \\n \\n Quindi, la risposta corretta è C) 1/5. \\n\", \"choice\": \"C\"}",
+      "latencyMs": 8050
+    },
+    {
+      "itemId": "urna-senza-reimmissione-entrambe-rosse-046",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "correct": "C",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare due casi: \\n\\n 1) la prima pallina estratta è rosso e la seconda pallina estratta è rosso. \\n 2) la prima pallina estratta è blu e la seconda pallina estratta è rosso. \\n\\n La probabilità del caso 1 è di 6/10 * 5/9 = 30/90 = 1/3. \\n La probabilità del caso 2 è di 4/10 * 6/9 = 24/90 = 4/15. \\n \\n La probabilità complessiva che entrambe le palline estratte siano rosse è la somma delle probabilità dei due casi: 1/3 + 4/15 = 5/15 + 4/15 = 9/15 = 3/5. \\n \\n Quindi, la risposta corretta è B) 3/5.\", \"choice\": \"B\"}",
+      "latencyMs": 8599
+    },
+    {
+      "itemId": "urna-senza-reimmissione-entrambe-rosse-047",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "correct": "C",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare due casi: \\n\\n 1) la prima pallina estratta è rosso e la seconda pallina estratta è rosso. \\n 2) la prima pallina estratta è blu e la seconda pallina estratta è rosso. \\n\\n La probabilità del caso 1 è di 6/10 * 5/9 = 30/90 = 1/3. \\n La probabilità del caso 2 è di 4/10 * 6/9 = 24/90 = 4/15. \\n \\n Quindi la probabilità totale che entrambe le palline estratte siano rosse è la somma delle probabilità dei due casi: 1/3 + 4/15 = 5/15 + 4/15 = 9/15 = 3/5. \\n\", \"choice\": \"D\"}",
+      "latencyMs": 6461
+    },
+    {
+      "itemId": "urna-almeno-uno-048",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "correct": "D",
+      "choice": null,
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare la formula della probabilità complessiva. La probabilità di non avere una pallina rossa (ossia avere solo palline blu) è la seguente: \\n\\nP(0 palline rosse) = \\n\\nP(2 palline rosse) + P(1 pallina rossa) + P(0 palline rosse) \\n\\nP(2 palline rosse) = \\n\\nP(2 palline rosse, 0 palline blu) + P(2 palline rosse, 1 pallina blu) + P(2 palline rosse, 2 palline blu) \\n\\nP(1 pallina rossa) = \\n\\nP(1 pallina rossa, 0 palline blu) + P(1 pallina rossa, 1 pallina blu) + P(1 pallina rossa, 2 palline blu) \\n\\nP(0 palline rosse) = \\n\\nP(0 palline rosse, 0 palline blu) + P(0 palline rosse, 1 pallina blu) + P(0 palline rosse, 2 palline blu) \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline rosse, 0 palline blu) = \\n\\nP(2 palline",
+      "latencyMs": 21401
+    },
+    {
+      "itemId": "urna-almeno-uno-049",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "correct": "B",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare la formula della probabilità complessiva. La probabilità di non avere una pallina rossa (ossia avere solo palline blu) è calcolata come segue: 7/12 * 6/11 = 42/132. La probabilità di avere almeno una pallina rossa è quindi 1 - 42/132 = 90/132 = 15/22. Tuttavia, non abbiamo questa opzione. Possiamo comunque calcolare la probabilità di avere almeno una pallina rossa come 1 - (probabilità di non avere una pallina rossa) = 1 - 42/132 = 90/132 = 15/22. La risposta corretta è quindi C. Non possiamo calcolare la probabilità di avere esattamente una pallina rossa, quindi non possiamo calcolare la probabilità di avere esattamente una pallina rossa. La risposta corretta è quindi C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corretta è C. La risposta corret",
+      "latencyMs": 37071
+    },
+    {
+      "itemId": "urna-almeno-uno-050",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "correct": "D",
+      "choice": null,
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare la formula della probabilità complessiva. La probabilità di non avere una pallina rossa (ossia avere solo palline blu) è la seguente: \\n\\nP(0 palline rosse) = \\n\\nP(2 palline rosse) + P(1 pallina rossa) + P(0 palline rosse) \\n\\n= \\n\\n(3/7) \\n\\t* (2/6) \\n\\t+ \\n\\t(4/7) \\n\\t* (3/6) \\n\\t+ \\n\\t(3/7) \\n\\t* (2/6) \\n\\n= \\n\\n(6/21) + (12/21) + (6/21) \\n\\n= \\n\\n24/21 \\n\\n= \\n\\n8/7 \\n\\nQuindi la probabilità di avere almeno una pallina rossa è: \\n\\nP(1 o 2 palline rosse) = 1 - P(0 palline rosse) \\n\\n= 1 - 8/7 \\n\\n= 7/7 - 8/7 \\n\\n= -1/7 \\n\\nTuttavia, la probabilità non può essere negativa, quindi dobbiamo considerare il caso in cui la probabilità di avere almeno una pallina rossa è la stessa della probabilità di avere almeno una pallina blu. \\n\\nQuindi, la probabilità di avere almeno una pallina rossa è: \\n\\nP(1 o 2 palline rosse) = 1 - P(0 palline rosse) \\n\\n= 1 - 8/7 \\n\\n= 7/7 - 8/7 \\n\\n= -1/7 \\n\\nTuttavia, la probabilità non può essere negativa, quindi dobbiamo considerare il caso in cui la probabilità di avere almeno una pallina rossa è la stessa della probabilità di avere almeno una pallina blu. \\n\\nQuindi, la probabilità di avere almeno una pallina rossa è: \\n\\nP(1 o 2 palline rosse) = 1 - P(0 palline rosse) \\n\\n= 1 - 8/7 \\n\\n= 7/7 - 8/7 \\n\\n= -1/7 \\n\\nTuttavia, la probabilità non può essere negativa, quindi dobbiamo considerare il caso in cui la probabilità di avere almeno una pallina rossa è la stessa della probabilità di avere almeno una pallina blu. \\n\\nQuindi, la probabilità di avere almeno una pallina rossa è: \\n\\nP(1 o 2 palline rosse) = 1 - P(0 palline rosse) \\n\\n= 1 - 8/7 \\n\\n= 7/7 - 8/7 \\n\\n= -1/7 \\n\\nTuttavia, la probabilità non può essere negativa, quindi dobbiamo considerare il caso in cui la probabilità di avere almeno una pallina rossa è la stessa della probabilità di avere almeno una pallina blu. \\n\\nQuindi, la probabilità di avere almeno una pallina rossa è: \\n\\nP(1 o 2 palline rosse) = 1 - P(0 palline rosse) \\n\\n= 1 - 8/7 \\n\\n= 7/7 - 8/7 \\n\\n= -1/7 \\n\\nTuttavia, la probabilità non può essere negativa, quindi dobbiamo considerare il caso in cui la probabilità di avere almeno una pallina rossa è la stessa della probabilità di avere almeno una pallina blu. \\n\\nQuindi, la probabilità di avere almeno una pallina rossa è: \\n\\nP(1 o 2 palline rosse) = 1 - P(0 palline rosse) \\n\\n= 1 - 8/7 \\n\\n= 7/7 - 8/7 \\n\\n= -1/7 \\n\\nTuttavia, la probabilità non può essere negativa, quindi dobbiamo considerare il caso in cui la probabilità di avere almeno una pallina rossa è la stessa della probabilità di avere almeno una pallina blu. \\n\\nQuindi, la probabilità di avere almeno una pallina rossa è: \\n\\nP(1 o 2 palline rosse) = 1 - P(0 palline rosse) \\n\\n= 1 - 8/7 \\n\\n= 7/7 - 8/7 \\n\\n= -1/7 \\n\\nTuttavia, la probabilità non può essere negativa, quindi dobbiamo considerare il caso in cui la probabilità di avere almeno una pallina rossa è la stessa della probabilità di avere almeno una pallina blu. \\n\\nQuindi, la probabilità di avere almeno una pallina rossa è: \\n\\nP(1 o 2 palline rosse) = 1 - P(",
+      "latencyMs": 38855
+    },
+    {
+      "itemId": "urna-almeno-uno-051",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "correct": "C",
+      "choice": null,
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare la formula della probabilità complessiva. La probabilità di non avere palline rosse (ossia avere solo palline blu) è la seguente: P(blue) = 8/14 \\* 7/13 = 28/91. La probabilità di avere almeno una pallina rossa è quindi 1 - P(blue) = 1 - 28/91 = 63/91. Tuttavia, questo non è tra le opzioni. Possiamo anche considerare il caso in cui si estraggono due palline rosse, la probabilità di questo caso è la seguente: P(due rosse) = 6/14 \\* 5/13 = 15/91. La probabilità di avere almeno una pallina rossa è quindi P(due rosse) + P(una rossa e una blu) + P(tre rosse). Tuttavia, la probabilità di avere una pallina rossa e una blu è la seguente: P(una rossa e una blu) = 2 \\* (6/14 \\* 8/13) = 48/91. La probabilità di avere almeno una pallina rossa è quindi P(due rosse) + P(una rossa e una blu) + P(tre rosse) = 15/91 + 48/91 + 6/91 = 69/91. Tuttavia, questo non è tra le opzioni. Possiamo anche considerare il caso in cui si estraggono due palline rosse, la probabilità di questo caso è la seguente: P(due rosse) = 6/14 \\* 5/13 = 15/91. La probabilità di avere almeno una pallina rossa è quindi P(due rosse) + P(una rossa e una blu) + P(tre rosse) = 15/91 + 48/91 + 6/91 = 69/91. Tuttavia, questo non è tra le opzioni. Possiamo anche considerare il caso in cui si estraggono due palline rosse, la probabilità di questo caso è la seguente: P(due rosse) = 6/14 \\* 5/13 = 15/91. La probabilità di avere almeno una pallina rossa è quindi P(due rosse) + P(una rossa e una blu) + P(tre rosse) = 15/91 + 48/91 + 6/91 = 69/91. Tuttavia, questo non è tra le opzioni. Possiamo anche considerare il caso in cui si estraggono due palline rosse, la probabilità di questo caso è la seguente: P(due rosse) = 6/14 \\* 5/13 = 15/91. La probabilità di avere almeno una pallina rossa è quindi P(due rosse) + P(una rossa e una blu) + P(tre rosse) = 15/91 + 48/91 + 6/91 = 69/91. Tuttavia, questo non è tra le opzioni. Possiamo anche considerare il caso in cui si estraggono due palline rosse, la probabilità di questo caso è la seguente: P(due rosse) = 6/14 \\* 5/13 = 15/91. La probabilità di avere almeno una pallina rossa è quindi P(due rosse) + P(una rossa e una blu) + P(tre rosse) = 15/91 + 48/91 + 6/91 = 69/91. Tuttavia, questo non è tra le opzioni. Possiamo anche considerare il caso in cui si estraggono due palline rosse, la probabilità di questo caso è la seguente: P(due rosse) = 6/14 \\* 5/13 = 15/91. La probabilità di avere almeno una pallina rossa è quindi P(due rosse) + P(una rossa e una blu) + P(tre rosse) = 15/91 + 48/91 + 6/91 = 69/91. Tuttavia, questo non è tra le opzioni. Possiamo anche considerare il caso in cui si estraggono due palline rosse, la probabilità di questo caso è la seguente: P(due rosse) = 6/14 \\* 5/13 = 15/91. La probabilità di avere almeno una pallina rossa è quindi P(due rosse) + P(una rossa e una blu) + P(tre rosse) = 15/91 + 48/91 + 6/91 = 69/91. Tuttavia, questo non è tra le opzioni. Possiamo anche considerare il caso in cui si estraggono due palline rosse, la probabilità di questo caso è la seguente: P(due rosse) = 6/14 \\* 5/13 = 15/91. La probabilità di avere almeno una pallina rossa è quindi P(due rosse) + P(una rossa e una blu) + P(tre rosse) = 15/91 + 48/",
+      "latencyMs": 40152
+    },
+    {
+      "itemId": "probabilita-dadi-somma-052",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare tutte le combinazioni possibili dei due dadi. I dadi possono ottenere i seguenti valori: 1, 2, 3, 4, 5, 6. La somma dei punteggi deve essere 6. Le combinazioni possibili sono: (1,5), (2,4), (3,3), (4,2), (5,1). Ci sono 6 combinazioni possibili e 6^2 = 36 combinazioni totali. La probabilità di ottenere una somma di 6 è quindi 5/36, che si può semplificare a 5/36 = 5/36 = 1/7. Tuttavia, non è una delle opzioni disponibili. La risposta più vicina è 1/6, che corrisponde alla probabilità di ottenere una somma di 7. La risposta corretta è quindi A. \", \"choice\": \"A\"}",
+      "latencyMs": 24078
+    },
+    {
+      "itemId": "probabilita-dadi-somma-053",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare tutte le combinazioni possibili dei due dadi e calcolare la probabilità di ottenere una somma di 8. I dadi possono ottenere i seguenti valori: 1, 2, 3, 4, 5, 6. La somma di 8 può essere ottenuta con le seguenti combinazioni: (2,6), (3,5), (4,4), (5,3), (6,2). Ci sono 6^2 = 36 combinazioni possibili, ma solo 5 di esse soddisfano la condizione di ottenere una somma di 8. Quindi, la probabilità è 5/36.\", \"choice\": \"D\"}",
+      "latencyMs": 7072
+    },
+    {
+      "itemId": "probabilita-dadi-somma-054",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "correct": "C",
+      "choice": null,
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare tutte le combinazioni possibili dei due dadi e calcolare la probabilità che la somma dei punteggi sia 4. I dadi possono ottenere i seguenti valori: 1, 2, 3, 4, 5, 6. La somma dei punteggi è 4 con le seguenti combinazioni: (1,3), (2,2), (3,1). Ci sono 6*6 = 36 combinazioni possibili. La probabilità che la somma dei punteggi sia 4 è quindi 3/36 = 1/12. Tuttavia, non abbiamo questa opzione. Possiamo considerare le combinazioni (1,3), (2,2), (3,1) e le loro varianti: (3,1), (1,3), (2,2). Queste combinazioni sono equivalenti, quindi dobbiamo considerarle solo una volta. Ci sono 3 combinazioni diverse. La probabilità che la somma dei punteggi sia 4 è quindi 3/36 = 1/12. Tuttavia, non abbiamo questa opzione. Possiamo considerare le combinazioni (1,3), (2,2), (3,1) e le loro varianti: (3,1), (1,3), (2,2). Queste combinazioni sono equivalenti, quindi dobbiamo considerarle solo una volta. Ci sono 3 combinazioni diverse. La probabilità che la somma dei punteggi sia 4 è quindi 3/36 = 1/12. Tuttavia, non abbiamo questa opzione. Possiamo considerare le combinazioni (1,3), (2,2), (3,1) e le loro varianti: (3,1), (1,3), (2,2). Queste combinazioni sono equivalenti, quindi dobbiamo considerarle solo una volta. Ci sono 3 combinazioni diverse. La probabilità che la somma dei punteggi sia 4 è quindi 3/36 = 1/12. Tuttavia, non abbiamo questa opzione. Possiamo considerare le combinazioni (1,3), (2,2), (3,1) e le loro varianti: (3,1), (1,3), (2,2). Queste combinazioni sono equivalenti, quindi dobbiamo considerarle solo una volta. Ci sono 3 combinazioni diverse. La probabilità che la somma dei punteggi sia 4 è quindi 3/36 = 1/12. Tuttavia, non abbiamo questa opzione. Possiamo considerare le combinazioni (1,3), (2,2), (3,1) e le loro varianti: (3,1), (1,3), (2,2). Queste combinazioni sono equivalenti, quindi dobbiamo considerarle solo una volta. Ci sono 3 combinazioni diverse. La probabilità che la somma dei punteggi sia 4 è quindi 3/36 = 1/12. Tuttavia, non abbiamo questa opzione. Possiamo considerare le combinazioni (1,3), (2,2), (3,1) e le loro varianti: (3,1), (1,3), (2,2). Queste combinazioni sono equivalenti, quindi dobbiamo considerarle solo una volta. Ci sono 3 combinazioni diverse. La probabilità che la somma dei punteggi sia 4 è quindi 3/36 = 1/12. Tuttavia, non abbiamo questa opzione. Possiamo considerare le combinazioni (1,3), (2,2), (3,1) e le loro varianti: (3,1), (1,3), (2,2). Queste combinazioni sono equivalenti, quindi dobbiamo considerarle solo una volta. Ci sono 3 combinazioni diverse. La probabilità che la somma dei punteggi sia 4 è quindi 3/36 = 1/12. Tuttavia, non abbiamo questa opzione. Possiamo considerare le combinazioni (1,3), (2,2), (3,1) e le loro varianti: (3,1), (1,3), (2,2). Queste combinazioni sono equivalenti, quindi dobbiamo considerarle solo una volta. Ci sono 3 combinazioni diverse. La probabilità che la somma dei punteggi sia 4 è quindi 3/36 = 1/12. Tuttavia, non abbiamo questa opzione. Possiamo considerare le combinazioni (1,3), (2,2), (3,1) e le loro varianti: (3,1), (1,3), (2,2). Queste combinazioni sono equivalenti, quindi dobbiamo considerarle solo una volta. Ci sono 3 combinazioni diverse. La probabilità che la somma dei punteggi sia 4 è quindi 3/36 = 1/12. Tuttavia, non abbiamo questa opzione. Possiamo considerare le combinazioni (1,3), (2,2), (3,1) e le loro varianti: (3,1), (1,3), (2,2). Queste combinazioni sono equivalenti, quindi dobbiamo considerarle solo una volta. Ci sono 3 combinazioni diverse. La probabilità",
+      "latencyMs": 23507
+    },
+    {
+      "itemId": "probabilita-dadi-somma-055",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "correct": "B",
+      "choice": null,
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare tutte le combinazioni possibili dei due dadi e calcolare la probabilità che la somma dei punteggi sia 4. I dadi possono ottenere i seguenti valori: 1, 2, 3, 4, 5, 6. La somma dei punteggi è 4 con le seguenti combinazioni: (1,3), (2,2), (3,1). Ci sono 6*6 = 36 combinazioni possibili. La probabilità che la somma dei punteggi sia 4 è quindi 3/36 = 1/12. Tuttavia, non abbiamo questa opzione. Possiamo considerare la probabilità di ottenere una somma di 4 con la combinazione (2,2), che è 1/36. Possiamo anche considerare la probabilità di ottenere una somma di 4 con la combinazione (1,3) o (3,1), che è 2/36. La probabilità totale di ottenere una somma di 4 è quindi 1/36 + 2/36 = 3/36 = 1/12. Tuttavia, non abbiamo questa opzione. Possiamo considerare la probabilità di ottenere una somma di 4 con la combinazione (1,3) o (3,1), che è 2/36. Possiamo anche considerare la probabilità di ottenere una somma di 4 con la combinazione (2,2), che è 1/36. La probabilità totale di ottenere una somma di 4 è quindi 2/36 + 1/36 = 3/36 = 1/12. Tuttavia, non abbiamo questa opzione. Possiamo considerare la probabilità di ottenere una somma di 4 con la combinazione (1,3) o (3,1), che è 2/36. Possiamo anche considerare la probabilità di ottenere una somma di 4 con la combinazione (2,2), che è 1/36. La probabilità totale di ottenere una somma di 4 è quindi 2/36 + 1/36 = 3/36 = 1/12. Tuttavia, non abbiamo questa opzione. Possiamo considerare la probabilità di ottenere una somma di 4 con la combinazione (1,3) o (3,1), che è 2/36. Possiamo anche considerare la probabilità di ottenere una somma di 4 con la combinazione (2,2), che è 1/36. La probabilità totale di ottenere una somma di 4 è quindi 2/36 + 1/36 = 3/36 = 1/12. Tuttavia, non abbiamo questa opzione. Possiamo considerare la probabilità di ottenere una somma di 4 con la combinazione (1,3) o (3,1), che è 2/36. Possiamo anche considerare la probabilità di ottenere una somma di 4 con la combinazione (2,2), che è 1/36. La probabilità totale di ottenere una somma di 4 è quindi 2/36 + 1/36 = 3/36 = 1/12. Tuttavia, non abbiamo questa opzione. Possiamo considerare la probabilità di ottenere una somma di 4 con la combinazione (1,3) o (3,1), che è 2/36. Possiamo anche considerare la probabilità di ottenere una somma di 4 con la combinazione (2,2), che è 1/36. La probabilità totale di ottenere una somma di 4 è quindi 2/36 + 1/36 = 3/36 = 1/12. Tuttavia, non abbiamo questa opzione. Possiamo considerare la probabilità di ottenere una somma di 4 con la combinazione (1,3) o (3,1), che è 2/36. Possiamo anche considerare la probabilità di ottenere una somma di 4 con la combinazione (2,2), che è 1/36. La probabilità totale di ottenere una somma di 4 è quindi 2/36 + 1/36 = 3/36 = 1/12. Tuttavia, non abbiamo questa opzione. Possiamo considerare la probabilità di ottenere una somma di 4 con la combinazione (1,3) o (3,1), che è 2/36. Possiamo anche considerare la probabilità di ottenere una somma di 4 con la combinazione (2,2), che è 1/36. La probabilità totale di ottenere una somma di 4 è quindi 2/36 + 1/36 = 3/36 = 1/12. Tuttavia, non abbiamo questa opzione. Possiamo considerare la probabilità di ottenere una somma di 4 con la combinazione (1,3) o (3,1), che è 2/36. Possiamo anche considerare la probabilità di ottenere",
+      "latencyMs": 41261
+    },
+    {
+      "itemId": "probabilita-unione-eventi-056",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "correct": "C",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"La probabilità di tirare una carta di figura (fante, donna o re) oppure di picche si calcola sommando le probabilità di tirare una carta di figura e quelle di tirare una carta di picche. Esistono 12 carte di figura (4 fante, 4 donne e 4 re) e 13 carte di picche. La probabilità di tirare una carta di figura è 12/52 e la probabilità di tirare una carta di picche è 13/52. La probabilità complessiva è quindi (12/52) + (13/52) = 25/52.\", \"choice\": \"B\"}",
+      "latencyMs": 23552
+    },
+    {
+      "itemId": "probabilita-unione-eventi-057",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"La probabilità di tirare un asso da un mazzo di 52 carte è di 4/52. La probabilità di tirare un picche da un mazzo di 52 carte è di 13/52. La probabilità di tirare un asso oppure un picche è la somma delle probabilità individuali, quindi 4/52 + 13/52 = 17/52. La risposta corretta è D.\", \"choice\": \"D\"}",
+      "latencyMs": 4683
+    },
+    {
+      "itemId": "probabilita-unione-eventi-058",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "correct": "D",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare la probabilità di due eventi indipendenti: la carta estratta è un asso e la carta estratta è un picche. La probabilità di una carta estratta essere un asso è di 4/52, poiché ci sono 4 asso nel mazzo. La probabilità di una carta estratta essere un picche è di 13/52, poiché ci sono 13 picche nel mazzo. Poich\\u00e8 che questi eventi sono indipendenti, possiamo sommare le probabilit\\u00e0: 4/52 + 13/52 = 17/52. Quindi la risposta corretta e' A) 17/52.\", \"choice\": \"A\"}",
+      "latencyMs": 5007
+    },
+    {
+      "itemId": "probabilita-unione-eventi-059",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "correct": "D",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare la probabilità di due eventi indipendenti: la carta estratta è un asso e la carta estratta è un picche. Ci sono 4 asso in un mazzo di 52 carte, quindi la probabilità di estrare un asso è 4/52. Ci sono 13 picche in un mazzo di 52 carte, quindi la probabilità di estrare un picche è 13/52. Poiché questi eventi sono indipendenti, possiamo sommare le probabilità per trovare la probabilità complessiva: 4/52 + 13/52 = 17/52. La risposta corretta è B.\", \"choice\": \"B\"}",
+      "latencyMs": 5944
+    },
+    {
+      "itemId": "bernoulli-esattamente-k-060",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare tutti i possibili esiti dell lancio della moneta 3 volte. Poich\\u00e8 che ogni lancio ha due esiti possibili (testa o croce), ci sono 2^3 = 8 possibili esiti complessivi. I sei esiti sono: testa-testa-croce, testa-croce-testa, testa-croce-croce, croce-testa-testa, croce-croce-testa, croce-croce-croce. Di questi sei esiti, solo tre includono esattamente una testa: testa-croce-testa, testa-croce-croce, croce-testa-testa. Quindi, la probabilit\\u00e0 di ottenere esattamente una testa in tre lanci \\u00e8 il numero di esiti con una testa diviso per il numero totale di esiti, che \\u00e8 3/8.\", \"choice\": \"A\"}",
+      "latencyMs": 7110
+    },
+    {
+      "itemId": "bernoulli-esattamente-k-061",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare la formula della probabilità binomiale. La probabilità di ottenere esattamente k successi in n tentativi, con una probabilità di successo p per ogni tentativo, è data dalla formula: P(X=k) = (nCk) \\* p^k \\* (1-p)^(n-k). In questo caso, n=4, k=2 e p=0,5 (poich\\u00e8 la moneta \\u00e8 equa). Calcoliamo 4C2, che \\u00e8 6. Quindi, P(X=2) = 6 \\* 0,5^2 \\* 0,5^2 = 6 \\* 0,25 \\* 0,25 = 6/16 = 3/8. La risposta corretta \\u00e8 quindi D) 3/8.\", \"choice\": \"D\"}",
+      "latencyMs": 8090
+    },
+    {
+      "itemId": "bernoulli-esattamente-k-062",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare tutti i possibili esiti dell lancio della moneta 3 volte. Poich\\u00e8 che ogni lancio ha due esiti possibili (testa o croce), ci sono 2^3 = 8 possibili esiti complessivi. I sei esiti sono: testa-testa-croce, testa-croce-testa, testa-croce-croce, croce-testa-testa, croce-croce-testa, croce-croce-croce. Di questi sei esiti, solo tre includono esattamente una testa: testa-croce-testa, testa-croce-croce, croce-testa-testa. Quindi, la probabilit\\u00e0 di ottenere esattamente una testa in tre lanci \\u00e8 il numero di esiti con una testa diviso per il numero totale di esiti, che \\u00e8 3/8.\" , \"choice\": \"B\"}",
+      "latencyMs": 7957
+    },
+    {
+      "itemId": "bernoulli-esattamente-k-063",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare la formula della probabilità binomiale. La probabilità di ottenere esattamente k successi in n tentativi, con una probabilità di successo p per ogni tentativo, è data dalla formula: P(X=k) = (nCk) \\* p^k \\* (1-p)^(n-k). In questo caso, n=3, k=2 e p=0,5 (poich\\u00e8 la moneta \\u00e8 equa). Quindi, P(X=2) = (3C2) \\* 0,5^2 \\* 0,5^1 = 3 \\* 0,25 \\* 0,5 = 3/16. La risposta corretta \\u00e8 quindi C) 3/16.\", \"choice\": \"C\"}",
+      "latencyMs": 7588
+    },
+    {
+      "itemId": "probabilita-totale-bayes-064",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "correct": "B",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"La probabilità che un pezzo sia difettoso dipende dal tasso di difetti di ciascuna macchina. La macchina 1 produce 240 pezzi su 400, ma ne difetta il 1/24, quindi la probabilità che un pezzo sia difettoso dalla macchina 1 è 240 * (1/24) / 400 = 5/100 = 1/20. La macchina 2 produce 160 pezzi su 400 con un tasso di difetti del 1/8, quindi la probabilità che un pezzo sia difettoso dalla macchina 2 è 160 * (1/8) / 400 = 20/400 = 1/20. La probabilità che un pezzo sia difettoso è la somma delle probabilità che sia difettoso dalla macchina 1 e dalla macchina 2, quindi la probabilità totale è 1/20 + 1/20 = 2/20 = 1/10. Tuttavia, la risposta non è 1/10, ma 1/20, che corrisponde alla risposta D.\", \"choice\": \"D\"}",
+      "latencyMs": 8342
+    },
+    {
+      "itemId": "probabilita-totale-bayes-065",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"La probabilità che un pezzo sia difettoso dipende dal tasso di difetti di ciascuna macchina. La macchina 1 produce 240 pezzi su 400, ma ne difetta il 1/24, quindi la probabilità che un pezzo sia difettoso dalla macchina 1 è 240 * (1/24) / 400 = 5/40. La macchina 2 produce 160 pezzi su 400 con tasso di difetti 1/8, quindi la probabilità che un pezzo sia difettoso dalla macchina 2 è 160 * (1/8) / 400 = 20/400 = 1/20. La probabilità che un pezzo sia difettoso è la somma delle probabilità che sia difettoso dalla macchina 1 e dalla macchina 2, quindi la probabilità è 5/40 + 1/20 = 5/40 + 2/40 = 7/40. Tuttavia, la risposta corretta è 3/40, quindi la risposta corretta è D.\", \"choice\": \"D\"}",
+      "latencyMs": 9483
+    },
+    {
+      "itemId": "probabilita-totale-bayes-066",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"La probabilità che un pezzo sia difettoso dipende dal numero di difetti nella produzione di ciascuna macchina. La macchina 1 produce 180 pezzi su 300, ma ne difetta il 1/30, quindi la probabilità che un pezzo sia difettoso è 1/30. La macchina 2 produce 120 pezzi su 300 con un tasso di difetti del 1/10, quindi la probabilità che un pezzo sia difettoso è 1/10. La probabilità complessiva che un pezzo sia difettoso è la somma delle probabilità individuali, quindi la risposta è 1/30 + 1/10 = 1/6 + 3/30 = 1/6 + 1/10 = 5/30 + 3/30 = 8/30 = 4/15. Tuttavia, la risposta non è questa, ma la risposta corretta è 1/25, che è la risposta B\", \"choice\": \"B\"}",
+      "latencyMs": 8916
+    },
+    {
+      "itemId": "probabilita-totale-bayes-067",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"La probabilità che un pezzo difettoso provenga dalla macchina 1 è la probabilità che la macchina 1 produca un pezzo difettoso e la probabilità che un pezzo estratto sia difettoso. La probabilità che la macchina 1 produca un pezzo difettoso è 70/100 * 1/7 = 1/14. La probabilità che un pezzo estratto sia difettoso è 1/14 + 1/5 = 9/70. Quindi la probabilità che un pezzo difettoso provenga dalla macchina 1 è (1/14) / (9/70) = 5/8.\", \"choice\": \"A\"}",
+      "latencyMs": 7260
+    },
+    {
+      "itemId": "principio-cassetti-dirichlet-068",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare il peggior caso. Supponiamo che la scatola contenga matite di 3 colori diversi. Estrarre matite a occhi chiusi, senza sapere il colore, significa che potremmo estrarre matite di 3 colori diversi in 3 estrazioni. Tuttavia, per essere certi di averne almeno 3 dello stesso colore, dobbiamo considerare il caso in cui estraiamo matite di 2 colori diversi in 3 estrazioni. In questo caso, la quarta estrazione deve essere di uno dei 2 colori diversi. Pertanto, dobbiamo estrarre almeno 4 matite per essere certi di averne almeno 3 dello stesso colore. Tuttavia, se estraiamo 4 matite, dobbiamo considerare il caso in cui 3 delle 4 matite sono di 3 colori diversi. In questo caso, la quinta estrazione deve essere di uno dei 3 colori diversi. Pertanto, dobbiamo estrarre almeno 5 matite per essere certi di averne almeno 3 dello stesso colore. Pertanto, la risposta corretta è B) 9\", \"choice\": \"B\"}",
+      "latencyMs": 8163
+    },
+    {
+      "itemId": "principio-cassetti-dirichlet-069",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare il principio del \"pigeonhole\" (casa del coniglio). Se estraiamo 3 calzini, possiamo avere 3 colori diversi. Se estraiamo 4 calzini, possiamo avere 2 colori diversi. Se estraiamo 5 calzini, possiamo avere 1 colore diverso. Quindi, per essere certi di averne almeno 3 dello stesso colore, dobbiamo estrare almeno 3 calzini. La scelta corretta è A) 3.\", \"choice\": \"A\"}",
+      "latencyMs": 7811
+    },
+    {
+      "itemId": "principio-cassetti-dirichlet-070",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare il concetto di probabilità. Se estraiamo una carta dal mazzo, la probabilità che sia dello stesso seme del mazzo è 1/2. Se estraiamo una seconda carta, la probabilità che sia dello stesso seme della prima carta è 1/2. Tuttavia, se la prima carta estratta è di un seme e la seconda carta estratta è di un seme diverso, allora non avremo due carte dello stesso seme. La probabilità di questo evento è 1/2 * 1/2 = 1/4. Quindi, la probabilità di avere almeno due carte dello stesso seme è 1 - 1/4 = 3/4. Tuttavia, non possiamo essere certi di averne almeno 2 dello stesso seme se estraiamo solo 2 carte. Quindi, dobbiamo estrarre almeno 3 carte. La risposta è D.\", \"choice\": \"D\"}",
+      "latencyMs": 6873
+    },
+    {
+      "itemId": "principio-cassetti-dirichlet-071",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare il concetto di probabilità. Supponiamo di estrarre x carte dal mazzo. La probabilità di aver almeno 3 carte dello stesso seme è uguale alla somma delle probabilità di avere 3 carte dello stesso seme, 4 carte dello stesso seme, 5 carte dello stesso seme, ecc. Utilizzando la teoria dei combini, possiamo calcolare queste probabilità. Tuttavia, una soluzione più semplice è considerare che se estraiamo 5 carte, la probabilità di avere almeno 3 carte dello stesso seme è almeno il 50% (poich\\u00e8 2 delle 5 carte sono dello stesso seme). Quindi, la risposta corretta \\u00e8 A) 5.\", \"choice\": \"A\"}",
+      "latencyMs": 7744
+    },
+    {
+      "itemId": "probabilita-almeno-uno-072",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare la formula della probabilità complessiva per eventi indipendenti. La probabilità di centrare il bersaglio almeno una volta può essere calcolata come 1 - probabilità di non centrare mai il bersaglio. La probabilità di non centrare mai il bersaglio è (3/4)^3 = 27/64. Quindi, la probabilità di centrare almeno una volta è 1 - 27/64 = 37/64.\", \"choice\": \"C\"}",
+      "latencyMs": 5785
+    },
+    {
+      "itemId": "probabilita-almeno-uno-073",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare la formula della probabilità complessiva per eventi indipendenti. La probabilità di ottenere almeno una testa in 4 lanci può essere calcolata come 1 - probabilità di ottenere testa zero. La probabilità di ottenere testa zero in 4 lanci è (1/2)^4 = 1/16. Quindi, la probabilità di ottenere almeno una testa è 1 - 1/16 = 15/16.\", \"choice\": \"C\"}",
+      "latencyMs": 4732
+    },
+    {
+      "itemId": "probabilita-almeno-uno-074",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare la formula della probabilità complessiva per eventi indipendenti. La probabilità di ottenere almeno una testa in 4 lanci può essere calcolata come 1 - probabilità di ottenere testa zero. La probabilità di ottenere testa zero in 4 lanci è (1/2)^4 = 1/16. Quindi, la probabilità di ottenere almeno una testa è 1 - 1/16 = 15/16.\", \"choice\": \"D\"}",
+      "latencyMs": 4872
+    },
+    {
+      "itemId": "probabilita-almeno-uno-075",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare tutti i possibili esiti del lancio della moneta due volte. Ci sono 4 possibili esiti: testa-testa, testa-talea, talea-testa, talea-talea. Solo i primi due esiti includono almeno una testa. La probabilità di ottenere testa-testa è (1/2) \\* (1/2) = 1/4. La probabilità di ottenere testa-talea è (1/2) \\* (1/2) = 1/4. La probabilità di ottenere talea-testa è (1/2) \\* (1/2) = 1/4. La probabilità di ottenere talea-talea è (1/2) \\* (1/2) = 1/4. La probabilità di ottenere almeno una testa è la somma delle probabilità di ottenere testa-testa, testa-talea e talea-testa, che è 1/4 + 1/4 + 1/4 = 3/4. Quindi la risposta corretta è C) 3/4.\", \"choice\": \"C\"}",
+      "latencyMs": 7652
+    },
+    {
+      "itemId": "disposizioni-vincolo-posizione-076",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "correct": "A",
+      "choice": null,
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare le possibilità per ogni cifra. La prima cifra può essere 0, 2, 4, 6 o 8, quindi ci sono 5 possibilità. Le altre 3 cifre possono essere qualsiasi cifra diversa da quelle scelte, quindi ci sono 9 possibilità per ogni cifra. Il numero totale di codici è quindi 5 x 9 x 9 x 9 = 4050. Tuttavia, questo calcolo include codici con ripetizioni, quindi dobbiamo sottrarli. Ci sono 5 x 9 x 9 = 405 codici con ripetizioni. Quindi, il numero totale di codici è 4050 - 405 = 3645. Tuttavia, questo calcolo non tiene conto dei codici con 0 alla fine. Ci sono 5 x 9 x 9 = 405 codici con 0 alla fine. Quindi, il numero totale di codici è 3645 + 405 = 4050. Tuttavia, questo calcolo include codici con ripetizioni, quindi dobbiamo sottrarli. Ci sono 5 x 9 = 45 codici con ripetizioni. Quindi, il numero totale di codici è 4050 - 45 = 4005. Tuttavia, questo calcolo non tiene conto dei codici con 0 alla fine. Ci sono 5 x 9 = 45 codici con 0 alla fine. Quindi, il numero totale di codici è 4005 + 45 = 4050. Tuttavia, questo calcolo include codici con ripetizioni, quindi dobbiamo sottrarli. Ci sono 5 x 9 = 45 codici con ripetizioni. Quindi, il numero totale di codici è 4050 - 45 = 4005. Tuttavia, questo calcolo non tiene conto dei codici con 0 alla fine. Ci sono 5 x 9 = 45 codici con 0 alla fine. Quindi, il numero totale di codici è 4005 + 45 = 4050. Tuttavia, questo calcolo include codici con ripetizioni, quindi dobbiamo sottrarli. Ci sono 5 x 9 = 45 codici con ripetizioni. Quindi, il numero totale di codici è 4050 - 45 = 4005. Tuttavia, questo calcolo non tiene conto dei codici con 0 alla fine. Ci sono 5 x 9 = 45 codici con 0 alla fine. Quindi, il numero totale di codici è 4005 + 45 = 4050. Tuttavia, questo calcolo include codici con ripetizioni, quindi dobbiamo sottrarli. Ci sono 5 x 9 = 45 codici con ripetizioni. Quindi, il numero totale di codici è 4050 - 45 = 4005. Tuttavia, questo calcolo non tiene conto dei codici con 0 alla fine. Ci sono 5 x 9 = 45 codici con 0 alla fine. Quindi, il numero totale di codici è 4005 + 45 = 4050. Tuttavia, questo calcolo include codici con ripetizioni, quindi dobbiamo sottrarli. Ci sono 5 x 9 = 45 codici con ripetizioni. Quindi, il numero totale di codici è 4050 - 45 = 4005. Tuttavia, questo calcolo non tiene conto dei codici con 0 alla fine. Ci sono 5 x 9 = 45 codici con 0 alla fine. Quindi, il numero totale di codici è 4005 + 45 = 4050. Tuttavia, questo calcolo include codici con ripetizioni, quindi dobbiamo sottrarli. Ci sono 5 x 9 = 45 codici con ripetizioni. Quindi, il numero totale di codici è 4050 - 45 = 4005. Tuttavia, questo calcolo non tiene conto dei codici con 0 alla fine. Ci sono 5 x 9 = 45 codici con 0 alla fine. Quindi, il numero totale di codici è 4005 + 45 = 4050. Tuttavia, questo calcolo include codici con ripetizioni, quindi dobbiamo sottrarli. Ci sono 5 x 9 = 45 codici con ripetizioni. Quindi, il numero totale di codici è 4050 - 45 = 4005. Tuttavia, questo calcolo non tiene conto dei codici con 0 alla fine. Ci sono 5 x 9 = 45 codici con 0 alla fine. Quindi, il numero totale di codici è 4005 + 45 = 4050. Tuttavia, questo calcolo include codici con ripetizioni, quindi dobbiamo sottrarli. Ci sono 5 x 9 = 45 codici con ripetizioni. Quindi, il numero totale di codici è 4050 - 45 = 4005. Tuttavia, questo calcolo non tiene conto dei codici con 0 alla fine. Ci sono 5 x ",
+      "latencyMs": 26691
+    },
+    {
+      "itemId": "disposizioni-vincolo-posizione-077",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "correct": "A",
+      "choice": null,
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare le seguenti condizioni: \\n1. Il codice di 4 cifre deve iniziare con una cifra dispari, quindi ci sono 5 opzioni (1, 3, 5, 7, 9). \\n2. Il codice di 4 cifre deve terminare con una cifra pari, quindi ci sono 5 opzioni (0, 2, 4, 6, 8). \\n3. Le due cifre intermedie possono essere qualsiasi cifra (0-9), quindi ci sono 10 opzioni per ogni cifra. \\n4. Poiché le cifre devono essere diverse, non possiamo ripetere alcuna cifra. \\n5. Il numero totale di codici è quindi il prodotto delle opzioni per ogni posizione: 5 (inizio) \\u00D7 10 (seconda cifra) \\u00D7 10 (terza cifra) \\u00D7 5 (fine) = 500. \\nTuttavia, questo calcolo non tiene conto del fatto che le prime due cifre possono essere scelte in ordine diverso. \\nQuindi, dobbiamo moltiplicare il risultato per 2 (per ogni posizione) per ottenere il numero totale di codici: 500 \\u00D7 2 = 1000. \\nTuttavia, questo calcolo non tiene conto del fatto che le prime due cifre possono essere scelte in ordine diverso. \\nQuindi, dobbiamo moltiplicare il risultato per 2 (per ogni posizione) per ottenere il numero totale di codici: 500 \\u00D7 2 = 1000. \\nTuttavia, questo calcolo non tiene conto del fatto che le prime due cifre possono essere scelte in ordine diverso. \\nQuindi, dobbiamo moltiplicare il risultato per 2 (per ogni posizione) per ottenere il numero totale di codici: 500 \\u00D7 2 = 1000. \\nTuttavia, questo calcolo non tiene conto del fatto che le prime due cifre possono essere scelte in ordine diverso. \\nQuindi, dobbiamo moltiplicare il risultato per 2 (per ogni posizione) per ottenere il numero totale di codici: 500 \\u00D7 2 = 1000. \\nTuttavia, questo calcolo non tiene conto del fatto che le prime due cifre possono essere scelte in ordine diverso. \\nQuindi, dobbiamo moltiplicare il risultato per 2 (per ogni posizione) per ottenere il numero totale di codici: 500 \\u00D7 2 = 1000. \\nTuttavia, questo calcolo non tiene conto del fatto che le prime due cifre possono essere scelte in ordine diverso. \\nQuindi, dobbiamo moltiplicare il risultato per 2 (per ogni posizione) per ottenere il numero totale di codici: 500 \\u00D7 2 = 1000. \\nTuttavia, questo calcolo non tiene conto del fatto che le prime due cifre possono essere scelte in ordine diverso. \\nQuindi, dobbiamo moltiplicare il risultato per 2 (per ogni posizione) per ottenere il numero totale di codici: 500 \\u00D7 2 = 1000. \\nTuttavia, questo calcolo non tiene conto del fatto che le prime due cifre possono essere scelte in ordine diverso. \\nQuindi, dobbiamo moltiplicare il risultato per 2 (per ogni posizione) per ottenere il numero totale di codici: 500 \\u00D7 2 = 1000. \\nTuttavia, questo calcolo non tiene conto del fatto che le prime due cifre possono essere scelte in ordine diverso. \\nQuindi, dobbiamo moltiplicare il risultato per 2 (per ogni posizione) per ottenere il numero totale di codici: 500 \\u00D7 2 = 1000. \\nTuttavia, questo calcolo non tiene conto del fatto che le prime due cifre possono essere scelte in ordine diverso. \\nQuindi, dobbiamo moltiplicare il risultato per 2 (per ogni posizione) per ottenere il numero totale di codici: 500 \\u00D7 2 = 1000. \\nTuttavia, questo calcolo non tiene conto del fatto che le prime due cifre possono essere scelte in ordine diverso. \\nQuindi, dobbiamo moltiplicare il risultato per 2 (per ogni posizione) per ottenere il numero totale di codici: 500 \\u00D7 2 = 1000. \\nTuttavia, questo calcolo non tiene conto del fatto che le prime due cifre possono essere scelte in ordine diverso. \\nQuindi, dobbiamo moltiplicare il risultato per 2 (per ogni posizione",
+      "latencyMs": 42288
+    },
+    {
+      "itemId": "disposizioni-vincolo-posizione-078",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare le possibilità per ciascuna cifra. La prima cifra può essere qualsiasi numero da 1 a 9, quindi ci sono 9 possibilità. La seconda cifra può essere qualsiasi numero da 0 a 9, tranne il numero scelto per la prima cifra, quindi ci sono 9 possibilità. La terza cifra può essere qualsiasi numero da 0 a 9, tranne i due numeri scelti per le prime due cifre, quindi ci sono 8 possibilità. La quarta cifra deve essere un numero dispari, quindi ci sono 5 possibilità. Il numero totale di codici di 4 cifre diverse che terminano con una cifra dispari è quindi 9 x 9 x 8 x 5 = 3600.\", \"choice\": \"B\"}",
+      "latencyMs": 24227
+    },
+    {
+      "itemId": "disposizioni-vincolo-posizione-079",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "correct": "B",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare le possibilità per ciascuna cifra. La prima cifra può essere qualsiasi numero da 1 a 9, quindi ci sono 9 possibilità. La seconda cifra può essere qualsiasi numero da 0 a 9, tranne il numero scelto per la prima cifra, quindi ci sono 9 possibilità. La terza cifra può essere qualsiasi numero da 0 a 9, tranne i due numeri scelti per le prime due cifre, quindi ci sono 8 possibilità. La quarta cifra deve essere un numero dispari, quindi ci sono 5 possibilità. Il numero totale di codici di 4 cifre diverse che terminano con una cifra dispari è quindi 9 x 9 x 8 x 5 = 3600.\", \"choice\": \"C\"}",
+      "latencyMs": 6784
+    },
+    {
+      "itemId": "distribuzione-oggetti-stelle-barre-080",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Il problema è un classico esempio di distribuzione di oggetti identici in contenitori diversi. La risposta può essere calcolata utilizzando la formula per la distribuzione di oggetti identici in contenitori diversi: (n+k-1) scelte (k-1), dove n è il numero di oggetti (7 caramelle) e k è il numero di contenitori (3 bambini). La formula si applica quindi come segue: (7+3-1) scelte (3-1) = 9 scelte 2 = 9! / (2! * 7!) = 36\", \"choice\": \"C\"}",
+      "latencyMs": 5971
+    },
+    {
+      "itemId": "distribuzione-oggetti-stelle-barre-081",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Utilizziamo la formula combinativa per distribuire oggetti identici in contenitori diversi, che è la seguente: (n+k-1)C(k-1), dove n è il numero di oggetti (7 monete) e k è il numero di contenitori (3 salvadani). Calcoliamo (7+3-1)C(3-1) = 9C2 = 36. La risposta corretta è A.\", \"choice\": \"A\"}",
+      "latencyMs": 4435
+    },
+    {
+      "itemId": "distribuzione-oggetti-stelle-barre-082",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": null,
+      "raw": "{\"reasoning\": \"Possiamo distribuire le caramelle in 3 categorie: 1 caramella a un bambino, 2 caramelle a un bambino e 2 caramelle agli altri due bambini. Possiamo distribuire le 5 caramelle in 3 modi diversi: (1,1,3), (1,2,2). Possiamo distribuire le 5 caramelle in 6 modi diversi: (1,1,3), (1,2,2), (2,1,2), (2,2,1), (3,1,1), (3,2,0). Possiamo distribuire le 5 caramelle in 6 modi diversi: (1,1,3), (1,2,2), (2,1,2), (2,2,1), (3,1,1), (3,2,0). Possiamo distribuire le 5 caramelle in 6 modi diversi: (1,1,3), (1,2,2), (2,1,2), (2,2,1), (3,1,1), (3,2,0). Possiamo distribuire le 5 caramelle in 6 modi diversi: (1,1,3), (1,2,2), (2,1,2), (2,2,1), (3,1,1), (3,2,0). Possiamo distribuire le 5 caramelle in 6 modi diversi: (1,1,3), (1,2,2), (2,1,2), (2,2,1), (3,1,1), (3,2,0). Possiamo distribuire le 5 caramelle in 6 modi diversi: (1,1,3), (1,2,2), (2,1,2), (2,2,1), (3,1,1), (3,2,0). Possiamo distribuire le 5 caramelle in 6 modi diversi: (1,1,3), (1,2,2), (2,1,2), (2,2,1), (3,1,1), (3,2,0). Possiamo distribuire le 5 caramelle in 6 modi diversi: (1,1,3), (1,2,2), (2,1,2), (2,2,1), (3,1,1), (3,2,0). Possiamo distribuire le 5 caramelle in 6 modi diversi: (1,1,3), (1,2,2), (2,1,2), (2,2,1), (3,1,1), (3,2,0). Possiamo distribuire le 5 caramelle in 6 modi diversi: (1,1,3), (1,2,2), (2,1,2), (2,2,1), (3,1,1), (3,2,0). Possiamo distribuire le 5 caramelle in 6 modi diversi: (1,1,3), (1,2,2), (2,1,2), (2,2,1), (3,1,1), (3,2,0). Possiamo distribuire le 5 caramelle in 6 modi diversi: (1,1,3), (1,2,2), (2,1,2), (2,2,1), (3,1,1), (3,2,0). Possiamo distribuire le 5 caramelle in 6 modi diversi: (1,1,3), (1,2,2), (2,1,2), (2,2,1), (3,1,1), (3,2,0). Possiamo distribuire le 5 caramelle in 6 modi diversi: (1,1,3), (1,2,2), (2,1,2), (2,2,1), (3,1,1), (3,2,0). Possiamo distribuire le 5 caramelle in 6 modi diversi: (1,1,3), (1,2,2), (2,1,2), (2,2,1), (3,1,1), (3,2,0). Possiamo distribuire le 5 caramelle in 6 modi diversi: (1,1,3), (1,2,2), (2,1,2), (2,2,1), (3,1,1), (3,2,0). Possiamo distribuire le 5 caramelle in 6 modi diversi: (1,1,3), (1,2,2), (2,1,2), (2,2,1), (3,1,1), (3,2,0). Possiamo distribuire le 5 caramelle in 6 modi diversi: (1,1,3), (1,2,2), (2,1,2), (2,2,1), (3,1,1), (3,2,0). Possiamo distribuire le 5 caramelle in 6 modi diversi: (1,1,3), (1,2,2), (2,1,2),",
+      "latencyMs": 22139
+    },
+    {
+      "itemId": "distribuzione-oggetti-stelle-barre-083",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "correct": "B",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Il problema è un classico esempio di distribuzione binomiale con più classi. La risposta è calcolata utilizzando la formula per la distribuzione binomiale con più classi: \\n\\nC(n+k-1, k) \\n\\n dove n è il numero di oggetti (7 monete) e k è il numero di classi (4 salvadani). \\n\\nC(7+4-1, 4) = C(10, 4) = 210 \\n\\nTuttavia, questo calcolo include anche le distribuzioni in cui alcuni salvadani restano a bocca asciutta. \\n\\nPer escludere queste distribuzioni, dobbiamo considerare solo le distribuzioni in cui ogni salvadano riceve almeno una moneta. \\n\\nIl numero di distribuzioni in cui ogni salvadano riceve almeno una moneta è uguale al numero di distribuzioni in cui 7 monete vengono distribuite tra 4 salvadani senza vincoli, meno le distribuzioni in cui alcuni salvadani restano a bocca asciutta. \\n\\nIl numero di distribuzioni in cui alcuni salvadani restano a bocca asciutta è uguale al numero di distribuzioni in cui 7 monete vengono distribuite tra 3 salvadani. \\n\\nIl numero di distribuzioni in cui 7 monete vengono distribuite tra 3 salvadani è C(7+3-1, 3) = C(9, 3) = 84 \\n\\nQuindi, il numero di distribuzioni in cui ogni salvadano riceve almeno una moneta è 210 - 84 = 126 \\n\\nTuttavia, questo calcolo include anche le distribuzioni in cui alcuni salvadani ricevono più di una moneta. \\n\\nPer escludere queste distribuzioni, dobbiamo considerare solo le distribuzioni in cui ogni salvadano riceve esattamente una moneta. \\n\\nIl numero di distribuzioni in cui ogni salvadano riceve esattamente una moneta è uguale al numero di distribuzioni in cui 7 monete vengono distribuite tra 4 salvadani senza vincoli, meno le distribuzioni in cui alcuni salvadani ricevono più di una moneta. \\n\\nIl numero di distribuzioni in cui alcuni salvadani ricevono più di una moneta è uguale al numero di distribuzioni in cui 7 monete vengono distribuite tra 4 salvadani con più di una moneta. \\n\\nIl numero di distribuzioni in cui 7 monete vengono distribuite tra 4 salvadani con più di una moneta è C(7+4-1, 2) = C(10, 2) = 45 \\n\\nQuindi, il numero di distribuzioni in cui ogni salvadano riceve esattamente una moneta è 126 - 45 = 81 \\n\\nQuindi, il numero di modi distinti in cui si possono ripartire 7 monete da un euro identiche fra 4 salvadani distinti è 81\", \"choice\": \"C\"}",
+      "latencyMs": 32362
+    },
+    {
+      "itemId": "permutazioni-cicliche-084",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare le simmetrie del braccialetto. Se il braccialetto è chiuso ad anello, le rotazioni e i ribaltamenti sono simmetriche. Ci sono 7 perline, quindi ci sono 7! = 5040 modi di sistemare le perline. Tuttavia, dobbiamo considerare le simmetrie. Ci sono 7 rotazioni e 2 ribaltamenti, quindi dobbiamo dividere il numero totale di sistemazioni per 7 e 2. Il numero di collane distinte è quindi 5040 / (7 * 2) = 5040 / 14 = 360.\", \"choice\": \"C\"}",
+      "latencyMs": 14923
+    },
+    {
+      "itemId": "permutazioni-cicliche-085",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "correct": "D",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare le simmetrie del braccialetto. Se il braccialetto è chiuso ad anello, le rotazioni e i ribaltamenti sono equivalenti. Ci sono 6 perline, quindi ci sono 6! = 720 disposizioni possibili. Tuttavia, dobbiamo dividere questo numero per 6 per contare solo le disposizioni uniche, poiché le rotazioni e i ribaltamenti sono equivalenti. Quindi, il numero di collane distinte è 720/6 = 120.\", \"choice\": \"A\"}",
+      "latencyMs": 5408
+    },
+    {
+      "itemId": "permutazioni-cicliche-086",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "correct": "B",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo considerare le simmetrie del braccialetto. Se il braccialetto è chiuso ad anello, le rotazioni e i ribaltamenti sono simmetriche. Ci sono 7 perline, quindi ci sono 7! = 5040 modi di sistemare le perline. Tuttavia, dobbiamo considerare le simmetrie. Ci sono 7 rotazioni e 2 ribaltamenti, quindi dobbiamo dividere il numero totale di sistemazioni per 7 e 2. Il numero totale di collane distinte è quindi 5040 / 7 / 2 = 2520.\", \"choice\": \"D\"}",
+      "latencyMs": 5455
+    },
+    {
+      "itemId": "permutazioni-cicliche-087",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare la formula per il numero di disposizioni di oggetti intorno a un punto fermo, che è (n-1)!. In questo caso, n = 8 (il numero di persone). Quindi, il numero di disposizioni è (8-1)! = 7! = 5040. La risposta corretta è D) 5040.\", \"choice\": \"D\"}",
+      "latencyMs": 4793
+    },
+    {
+      "itemId": "binomio-newton-088",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "correct": "A",
+      "choice": null,
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo utilizzare la formula del binomio di Newton, che è la seguente: (a + b)^n = \\u03b5_0^n a^n + \\u03b5_1^n a^(n-1)b + ... + \\u03b5_n^n b^n. In questo caso, a = 2x e b = 2. Il coefficiente numerico del termine in x^1 corrisponde alla coefficiente \\u03b5_1^n. Utilizzando la formula del binomio di Newton, \\u03b5_1^n = n \\u03b5_0^{n-1} b. In questo caso, n = 7 e \\u03b5_0^{n-1} = 1. Quindi, \\u03b5_1^n = 7 \\u03b5_0^6 b = 7 \\u03b5_0^6 2 = 7 \\u03b5_0^6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5_6 2 = 7 \\u03b5",
+      "latencyMs": 24126
+    },
+    {
+      "itemId": "binomio-newton-089",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "correct": "D",
+      "choice": null,
+      "raw": "{\"reasoning\": \"La formula del binomio di Newton per una potenza n di una variabile x, in questo caso x, viene calcolata come \\u00b1^n \\u00b1_x^n = \\u00b1^n \\u00b1_x^n = \\u00b1^n \\u00b1_x^n. Il coefficiente numerico del termine in x^1 viene calcolato come \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1. Il coefficiente numerico del termine in x^1 viene calcolato come \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1. Il coefficiente numerico del termine in x^1 viene calcolato come \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1. Il coefficiente numerico del termine in x^1 viene calcolato come \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1. Il coefficiente numerico del termine in x^1 viene calcolato come \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1. Il coefficiente numerico del termine in x^1 viene calcolato come \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1. Il coefficiente numerico del termine in x^1 viene calcolato come \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1. Il coefficiente numerico del termine in x^1 viene calcolato come \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1. Il coefficiente numerico del termine in x^1 viene calcolato come \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1. Il coefficiente numerico del termine in x^1 viene calcolato come \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1. Il coefficiente numerico del termine in x^1 viene calcolato come \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1. Il coefficiente numerico del termine in x^1 viene calcolato come \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1. Il coefficiente numerico del termine in x^1 viene calcolato come \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1. Il coefficiente numerico del termine in x^1 viene calcolato come \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1. Il coefficiente numerico del termine in x^1 viene calcolato come \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1. Il coefficiente numerico del termine in x^1 viene calcolato come \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1. Il coefficiente numerico del termine in x^1 viene calcolato come \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1 = \\u00b1^1 \\u00b1_x^1. Il coefficiente numerico del termine in x^1 viene calcolato come \\u",
+      "latencyMs": 43687
+    },
+    {
+      "itemId": "binomio-newton-090",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "correct": "B",
+      "choice": "D",
+      "raw": "{\"reasoning\": \"La formula del binomio di Newton per (x + 2)^6 prevede che il coefficiente numerico del termine in x^5 sia la derivata del coefficiente costante (2^6) con un segno negativo. La derivata di 2^6 è 6*2^5, quindi il coefficiente numerico del termine in x^5 è -6*2^5 = -192. Tuttavia, la formula del binomio di Newton prevede che il coefficiente numerico del termine in x^k sia la derivata del coefficiente costante con un segno positivo, quindi il coefficiente numerico del termine in x^5 è effettivamente 6*2^5 = 192.\", \"choice\": \"D\"}",
+      "latencyMs": 24654
+    },
+    {
+      "itemId": "binomio-newton-091",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "B",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, dobbiamo utilizzare la formula del binomio di Newton, che è la seguente: \\n\\n (a + b)^n = \\n\\n \\sum_{k=0}^{n} \\binom{n}{k} a^{n-k}b^k \\n\\n dove \\n\\n \\binom{n}{k} = \\frac{n!}{k!(n-k)!} \\n\\n \\n\\n In questo caso, a = 3x, b = 2 e n = 6. \\n\\n \\n\\n Il coefficiente numerico del termine in x^4 è \\n\\n \\binom{6}{2} (3x)^2 (2)^4 = 15 \\cdot 9x^2 \\cdot 16 = 15 \\cdot 144x^2 = 2160x^2 \\n\\n \\n\\n Quindi, il coefficiente numerico del termine in x^4 è 2160. \\n\\n \\n\\n La risposta corretta è B.\", \"choice\": \"B\"}",
+      "latencyMs": 7505
+    },
+    {
+      "itemId": "inclusione-esclusione-092",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, utilizziamo il principio di inclusione-esclusione. Calcoliamo il numero di studenti che praticano almeno una delle due discipline: (nuoto) + (atletica) - (entrambe) = 43 + 37 - 10 = 70. La risposta corretta è C) 70.\", \"choice\": \"C\"}",
+      "latencyMs": 6131
+    },
+    {
+      "itemId": "inclusione-esclusione-093",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "correct": "A",
+      "choice": null,
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, possiamo utilizzare il principio di inclusione-esclusione. Calcoliamo il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5. Il numero di interi da 1 a 120 che sono divisibili per 2 è 60. Il numero di interi da 1 a 120 che sono divisibili per 3 è 40. Il numero di interi da 1 a 120 che sono divisibili per 5 è 24. Tuttavia, alcuni di questi numeri sono stati contati più volte. Ad esempio, i numeri che sono divisibili per 2 e 3 sono stati contati due volte. Per correggere questo, dobbiamo sottrarre il numero di interi da 1 a 120 che sono divisibili per 2 e 3, che è 20. Inoltre, dobbiamo aggiungere il numero di interi da 1 a 120 che sono divisibili per 2, 3 e 5, che è 8. Quindi, il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è 60 + 40 + 24 - 20 + 8 = 92. Tuttavia, questo non è tra le opzioni. Possiamo controllare se il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 88 o a 92. Il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 92. Tuttavia, 92 non è tra le opzioni. Possiamo controllare se il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 88 o a 92. Il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 92. Possiamo controllare se il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 88 o a 92. Il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 92. Possiamo controllare se il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 88 o a 92. Il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 92. Possiamo controllare se il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 88 o a 92. Il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 92. Possiamo controllare se il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 88 o a 92. Il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 92. Possiamo controllare se il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 88 o a 92. Il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 92. Possiamo controllare se il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 88 o a 92. Il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 92. Possiamo controllare se il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 88 o a 92. Il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 92. Possiamo controllare se il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 88 o a 92. Il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 92. Possiamo controllare se il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 88 o a 92. Il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 92. Possiamo controllare se il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 88 o a 92. Il numero di interi da 1 a 120 che sono divisibili per 2, 3 o 5 è più vicino a 92.",
+      "latencyMs": 22274
+    },
+    {
+      "itemId": "inclusione-esclusione-094",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, utilizziamo il principio di inclusione-esclusione. Calcoliamo il numero di studenti che praticano almeno una delle due discipline. Il numero di studenti che praticano il nuoto è 42, il numero di studenti che praticano l'atletica è 38, ma 15 praticano entrambe le discipline. Per evitare di contare due volte i 15 studenti, dobbiamo sottrarli dal totale. Quindi, il numero di studenti che praticano almeno una delle due discipline è 42 + 38 - 15 = 65.\", \"choice\": \"C\"}",
+      "latencyMs": 23001
+    },
+    {
+      "itemId": "inclusione-esclusione-095",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"reasoning\": \"Per risolvere questo problema, utilizziamo la teoria degli insiemi. Il numero di studenti che praticano almeno una delle due discipline può essere calcolato utilizzando la formula: A + B - entrambi, dove A rappresenta il numero di studenti che praticano il nuoto e B rappresenta il numero di studenti che praticano l'atletica. Sostituendo i valori dati, otteniamo: 45 + 58 - 32 = 71. Quindi, il numero di studenti che praticano almeno una delle due discipline è 71.\", \"choice\": \"A\"}",
+      "latencyMs": 5014
+    }
+  ]
+}

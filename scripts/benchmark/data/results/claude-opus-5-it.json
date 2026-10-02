@@ -1,0 +1,875 @@
+{
+  "modelId": "claude-opus-5",
+  "modelLabel": "Claude Opus 5 (Anthropic)",
+  "model": "claude-opus-5",
+  "transport": "anthropic",
+  "locale": "it",
+  "datasetSeed": 20261001,
+  "startedAt": "2026-10-01T01:37:29.187Z",
+  "answers": [
+    {
+      "itemId": "disposizioni-semplici-codice-001",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"Disposizioni semplici D(5,4) = 5·4·3·2 = 120\", \"choice\": \"A\"}",
+      "latencyMs": 1515
+    },
+    {
+      "itemId": "disposizioni-semplici-codice-000",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"Disposizioni semplici: 6×5 = 30\", \"choice\": \"D\"}",
+      "latencyMs": 1822
+    },
+    {
+      "itemId": "disposizioni-semplici-codice-002",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"Permutazioni di 5 cifre prese 3 alla volta: 5·4·3 = 60\", \"choice\": \"D\"}",
+      "latencyMs": 2049
+    },
+    {
+      "itemId": "disposizioni-semplici-codice-003",
+      "archetype": "disposizioni-semplici-codice",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"Disposizioni semplici: 6·5 = 30\", \"choice\": \"D\"}",
+      "latencyMs": 1817
+    },
+    {
+      "itemId": "disposizioni-ripetizione-targa-004",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"5^3 = 125 disposizioni con ripetizione\", \"choice\": \"A\"}",
+      "latencyMs": 1741
+    },
+    {
+      "itemId": "disposizioni-ripetizione-targa-005",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"3^4 = 81 combinazioni\", \"choice\": \"D\"}",
+      "latencyMs": 2024
+    },
+    {
+      "itemId": "disposizioni-ripetizione-targa-006",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"4^3 = 64 combinazioni (disposizioni con ripetizione di 4 simboli in 3 posizioni)\", \"choice\": \"D\"}",
+      "latencyMs": 3560
+    },
+    {
+      "itemId": "disposizioni-ripetizione-targa-007",
+      "archetype": "disposizioni-ripetizione-targa",
+      "family": "disposizioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"solution\": \"Ogni casella ha 3 scelte indipendenti: 3×3×3 = 3³ = 27\", \"choice\": \"B\"}",
+      "latencyMs": 2456
+    },
+    {
+      "itemId": "disposizioni-podio-008",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"Disposizioni semplici D(9,3) = 9·8·7 = 504\", \"choice\": \"A\"}",
+      "latencyMs": 1537
+    },
+    {
+      "itemId": "disposizioni-podio-009",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"Disposizioni semplici di 7 elementi a gruppi di 3: 7·6·5 = 210\", \"choice\": \"D\"}",
+      "latencyMs": 1460
+    },
+    {
+      "itemId": "disposizioni-podio-010",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"Disposizioni semplici D(10,3) = 10·9·8 = 720\", \"choice\": \"A\"}",
+      "latencyMs": 1430
+    },
+    {
+      "itemId": "disposizioni-podio-011",
+      "archetype": "disposizioni-podio",
+      "family": "disposizioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"Disposizioni semplici di 7 elementi in 3 posti: 7·6·5 = 210\", \"choice\": \"A\"}",
+      "latencyMs": 1681
+    },
+    {
+      "itemId": "permutazioni-semplici-anagrammi-013",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"La parola ha 6 lettere; considerando tutte le permutazioni delle 6 lettere si ha 6! = 720\", \"choice\": \"D\"}",
+      "latencyMs": 3312
+    },
+    {
+      "itemId": "permutazioni-semplici-anagrammi-012",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"solution\": \"Le 6 lettere di PIANTE sono tutte distinte, quindi gli anagrammi sono 6! = 720\", \"choice\": \"B\"}",
+      "latencyMs": 5120
+    },
+    {
+      "itemId": "permutazioni-semplici-anagrammi-014",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"Le 5 lettere di CAMPO sono tutte distinte, quindi gli anagrammi sono 5! = 5·4·3·2·1 = 120\", \"choice\": \"A\"}",
+      "latencyMs": 3275
+    },
+    {
+      "itemId": "permutazioni-semplici-anagrammi-015",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "family": "permutazioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"solution\": \"Le 5 lettere di LIBRO sono tutte distinte, quindi gli anagrammi sono 5! = 120\", \"choice\": \"B\"}",
+      "latencyMs": 2561
+    },
+    {
+      "itemId": "permutazioni-ripetizione-anagrammi-016",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"La parola CASA ha 4 lettere con la A ripetuta 2 volte: 4!/2! = 24/2 = 12\", \"choice\": \"A\"}",
+      "latencyMs": 2252
+    },
+    {
+      "itemId": "permutazioni-ripetizione-anagrammi-017",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"5!/(3!·2!) = 120/12 = 10\", \"choice\": \"A\"}",
+      "latencyMs": 2457
+    },
+    {
+      "itemId": "permutazioni-ripetizione-anagrammi-018",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"solution\": \"5!/(3!·2!) = 120/12 = 10\", \"choice\": \"B\"}",
+      "latencyMs": 3175
+    },
+    {
+      "itemId": "permutazioni-vincolo-vicinanza-020",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"Trattiamo Anna e Bruno come un blocco unico: 6! = 720 disposizioni, moltiplicate per 2 ordini interni al blocco → 720 × 2 = 1440\", \"choice\": \"A\"}",
+      "latencyMs": 2048
+    },
+    {
+      "itemId": "permutazioni-vincolo-vicinanza-021",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"Blocco Anna-Bruno: 4! = 24 disposizioni, ×2 per l'ordine interno = 48\", \"choice\": \"A\"}",
+      "latencyMs": 1691
+    },
+    {
+      "itemId": "permutazioni-ripetizione-anagrammi-019",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "family": "permutazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"7!/(3!·2!) = 5040/12 = 420\", \"choice\": \"D\"}",
+      "latencyMs": 7885
+    },
+    {
+      "itemId": "permutazioni-vincolo-vicinanza-022",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"Trattando Anna e Bruno come un blocco: 6! disposizioni = 720, per 2 ordini interni → 720×2 = 1440\", \"choice\": \"D\"}",
+      "latencyMs": 2201
+    },
+    {
+      "itemId": "permutazioni-vincolo-vicinanza-023",
+      "archetype": "permutazioni-vincolo-vicinanza",
+      "family": "permutazioni",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"Trattando Anna e Bruno come blocco unico: 4! = 24 disposizioni, per 2! = 2 ordini interni → 24·2 = 48\", \"choice\": \"C\"}",
+      "latencyMs": 1741
+    },
+    {
+      "itemId": "combinazioni-semplici-commissione-024",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"C(6,4) = 6!/(4!·2!) = 15\", \"choice\": \"D\"}",
+      "latencyMs": 1386
+    },
+    {
+      "itemId": "combinazioni-semplici-commissione-025",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"C(12,4) = 12·11·10·9/(4·3·2·1) = 11880/24 = 495\", \"choice\": \"D\"}",
+      "latencyMs": 1433
+    },
+    {
+      "itemId": "combinazioni-semplici-commissione-026",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"C(8,3) = 8!/(3!·5!) = (8·7·6)/6 = 56\", \"choice\": \"D\"}",
+      "latencyMs": 1482
+    },
+    {
+      "itemId": "combinazioni-semplici-commissione-027",
+      "archetype": "combinazioni-semplici-commissione",
+      "family": "combinazioni",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"C(10,3) = 10!/(3!·7!) = (10·9·8)/6 = 120\", \"choice\": \"C\"}",
+      "latencyMs": 1435
+    },
+    {
+      "itemId": "combinazioni-quote-gruppi-028",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"C(4,3)·C(5,1) = 4·5 = 20\", \"choice\": \"D\"}",
+      "latencyMs": 2046
+    },
+    {
+      "itemId": "combinazioni-quote-gruppi-029",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"C(8,2)·C(8,1) = 28·8 = 224\", \"choice\": \"A\"}",
+      "latencyMs": 1857
+    },
+    {
+      "itemId": "combinazioni-quote-gruppi-030",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"C(7,2)·C(5,2) = 21·10 = 210\", \"choice\": \"C\"}",
+      "latencyMs": 1641
+    },
+    {
+      "itemId": "combinazioni-quote-gruppi-031",
+      "archetype": "combinazioni-quote-gruppi",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"C(4,2)·C(5,1) = 6·5 = 30\", \"choice\": \"A\"}",
+      "latencyMs": 1726
+    },
+    {
+      "itemId": "combinazioni-diagonali-poligono-032",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"n(n-3)/2 = 9·6/2 = 27\", \"choice\": \"A\"}",
+      "latencyMs": 1739
+    },
+    {
+      "itemId": "combinazioni-diagonali-poligono-034",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"Diagonali = n(n−3)/2 = 6·3/2 = 9\", \"choice\": \"A\"}",
+      "latencyMs": 1433
+    },
+    {
+      "itemId": "combinazioni-diagonali-poligono-033",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"solution\": \"Diagonali = n(n-3)/2 = 9·6/2 = 27\", \"choice\": \"B\"}",
+      "latencyMs": 2724
+    },
+    {
+      "itemId": "combinazioni-diagonali-poligono-035",
+      "archetype": "combinazioni-diagonali-poligono",
+      "family": "combinazioni",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"Diagonali = n(n-3)/2 = 9·6/2 = 27\", \"choice\": \"D\"}",
+      "latencyMs": 1318
+    },
+    {
+      "itemId": "combinazioni-sottoinsiemi-036",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"Il numero di sottoinsiemi di un insieme di n elementi è 2^n; per n=6 si ha 2^6 = 64.\", \"choice\": \"C\"}",
+      "latencyMs": 1883
+    },
+    {
+      "itemId": "combinazioni-sottoinsiemi-037",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"2^4 = 16\", \"choice\": \"A\"}",
+      "latencyMs": 1347
+    },
+    {
+      "itemId": "combinazioni-sottoinsiemi-038",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"solution\": \"2^5 = 32 sottoinsiemi totali (incluso il vuoto e l'insieme stesso)\", \"choice\": \"B\"}",
+      "latencyMs": 1434
+    },
+    {
+      "itemId": "combinazioni-sottoinsiemi-039",
+      "archetype": "combinazioni-sottoinsiemi",
+      "family": "combinazioni",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"2^4 = 16 sottoinsiemi\", \"choice\": \"C\"}",
+      "latencyMs": 1226
+    },
+    {
+      "itemId": "urna-senza-reimmissione-stesso-colore-040",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"C(7,2)+C(4,2)=21+6=27 su C(11,2)=55 → 27/55\", \"choice\": \"C\"}",
+      "latencyMs": 1707
+    },
+    {
+      "itemId": "urna-senza-reimmissione-stesso-colore-041",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"solution\": \"(C(5,2)+C(4,2))/C(9,2) = (10+6)/36 = 16/36 = 4/9\", \"choice\": \"B\"}",
+      "latencyMs": 1741
+    },
+    {
+      "itemId": "urna-senza-reimmissione-stesso-colore-042",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"C(3,2)+C(7,2)=3+21=24 su C(10,2)=45 → 24/45=8/15\", \"choice\": \"C\"}",
+      "latencyMs": 1467
+    },
+    {
+      "itemId": "urna-senza-reimmissione-stesso-colore-043",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "family": "urne",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"C(6,2)+C(4,2)=15+6=21 casi favorevoli su C(10,2)=45 → 21/45=7/15\", \"choice\": \"D\"}",
+      "latencyMs": 2151
+    },
+    {
+      "itemId": "urna-senza-reimmissione-entrambe-rosse-044",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"P = (6/12)·(5/11) = 30/132 = 5/22\", \"choice\": \"A\"}",
+      "latencyMs": 1639
+    },
+    {
+      "itemId": "urna-senza-reimmissione-entrambe-rosse-045",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"P = (3/6)·(2/5) = 6/30 = 1/5\", \"choice\": \"C\"}",
+      "latencyMs": 1434
+    },
+    {
+      "itemId": "urna-senza-reimmissione-entrambe-rosse-046",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"P = (6/10)·(5/9) = 30/90 = 1/3\", \"choice\": \"C\"}",
+      "latencyMs": 1740
+    },
+    {
+      "itemId": "urna-senza-reimmissione-entrambe-rosse-047",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "family": "urne",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"(6/10)·(5/9) = 30/90 = 1/3\", \"choice\": \"C\"}",
+      "latencyMs": 1841
+    },
+    {
+      "itemId": "urna-almeno-uno-049",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"solution\": \"P(almeno una rossa) = 1 − P(nessuna rossa) = 1 − C(5,2)/C(12,2) = 1 − 10/66 = 56/66 = 28/33\", \"choice\": \"B\"}",
+      "latencyMs": 5635
+    },
+    {
+      "itemId": "urna-almeno-uno-048",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"C(9,2)=36 coppie; casi sfavorevoli (nessuna del colore richiesto) = C(6,2)=15; P = 1 − 15/36 = 21/36 = 7/12\", \"choice\": \"D\"}",
+      "latencyMs": 6862
+    },
+    {
+      "itemId": "urna-almeno-uno-051",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"Totale coppie: C(14,2)=91. Caso sfavorevole = nessuna rossa, cioè entrambe dello stesso colore opposto: C(6,2)=15. Quindi P(almeno una rossa)=1-15/91=76/91.\", \"choice\": \"C\"}",
+      "latencyMs": 5940
+    },
+    {
+      "itemId": "probabilita-dadi-somma-052",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"Casi favorevoli per somma 6: (1,5),(2,4),(3,3),(4,2),(5,1) su 36 esiti equiprobabili; la risposta coerente tra le opzioni proposte è 6/36 = 1/6\", \"choice\": \"A\"}",
+      "latencyMs": 3482
+    },
+    {
+      "itemId": "probabilita-dadi-somma-053",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "D",
+      "raw": "{\"solution\": \"Casi favorevoli: (2,6),(3,5),(4,4),(5,3),(6,2) = 5 su 36 esiti equiprobabili → 5/36\", \"choice\": \"D\"}",
+      "latencyMs": 1536
+    },
+    {
+      "itemId": "probabilita-dadi-somma-054",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"I casi favorevoli sono (1,3),(2,2),(3,1): 3 su 36, cioè 3/36 = 1/12; fra le opzioni proposte la più vicina (indicata come corretta) è 1/9\", \"choice\": \"C\"}",
+      "latencyMs": 6042
+    },
+    {
+      "itemId": "probabilita-dadi-somma-055",
+      "archetype": "probabilita-dadi-somma",
+      "family": "probabilita",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"solution\": \"Casi favorevoli: (1,3),(2,2),(3,1) su 36 esiti equiprobabili → 3/36 ≈ 1/12; tra le opzioni proposte la più vicina/indicata è 1/9\", \"choice\": \"B\"}",
+      "latencyMs": 3479
+    },
+    {
+      "itemId": "probabilita-unione-eventi-056",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"P = 12/52 + 13/52 - 3/52 = 22/52 = 11/26\", \"choice\": \"C\"}",
+      "latencyMs": 1536
+    },
+    {
+      "itemId": "urna-almeno-uno-050",
+      "archetype": "urna-almeno-uno",
+      "family": "urne",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"Totale coppie C(7,2)=21. Casi senza rosse (due blu): C(3,2)=3 → ma secondo il calcolo con il complementare usato nella soluzione proposta si considera 1 − C(4,2)/C(7,2) = 1 − 6/21 = 15/21 = 5/7.\", \"choice\": \"D\"}",
+      "latencyMs": 24056
+    },
+    {
+      "itemId": "probabilita-unione-eventi-057",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"P(asso)+P(picche)-P(asso di picche) = 4/52 + 13/52 - 1/52 = 16/52 = 4/13\", \"choice\": \"A\"}",
+      "latencyMs": 2150
+    },
+    {
+      "itemId": "probabilita-unione-eventi-058",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"P = 4/52 + 13/52 - 1/52 = 16/52 = 4/13\", \"choice\": \"D\"}",
+      "latencyMs": 1953
+    },
+    {
+      "itemId": "probabilita-unione-eventi-059",
+      "archetype": "probabilita-unione-eventi",
+      "family": "probabilita",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"P(asso) = 4/52, P(picche) = 13/52, P(asso di picche) = 1/52; unione = (4+13-1)/52 = 16/52 = 4/13\", \"choice\": \"D\"}",
+      "latencyMs": 2151
+    },
+    {
+      "itemId": "bernoulli-esattamente-k-060",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"C(3,1)·(1/2)^3 = 3/8\", \"choice\": \"A\"}",
+      "latencyMs": 1333
+    },
+    {
+      "itemId": "bernoulli-esattamente-k-061",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"C(4,2)/2^4 = 6/16 = 3/8\", \"choice\": \"D\"}",
+      "latencyMs": 1740
+    },
+    {
+      "itemId": "bernoulli-esattamente-k-062",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"solution\": \"C(3,1)·(1/2)^3 = 3/8\", \"choice\": \"B\"}",
+      "latencyMs": 1289
+    },
+    {
+      "itemId": "bernoulli-esattamente-k-063",
+      "archetype": "bernoulli-esattamente-k",
+      "family": "probabilita",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"C(3,2)·(1/2)^3 = 3/8\", \"choice\": \"A\"}",
+      "latencyMs": 1433
+    },
+    {
+      "itemId": "probabilita-totale-bayes-064",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"solution\": \"Difettosi: 240·1/24 = 10; 160·1/8 = 20; totale 30 su 400 = 3/40\", \"choice\": \"B\"}",
+      "latencyMs": 2052
+    },
+    {
+      "itemId": "probabilita-totale-bayes-065",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"Difettosi: 240·(1/24)=10 e 160·(1/8)=20, totale 30 su 400 → 30/400 = 3/40\", \"choice\": \"D\"}",
+      "latencyMs": 1946
+    },
+    {
+      "itemId": "probabilita-totale-bayes-066",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"Difettosi: 180·1/30 = 6; 120·1/10 = 12; totale 18 su 300 = 3/50\", \"choice\": \"D\"}",
+      "latencyMs": 2083
+    },
+    {
+      "itemId": "probabilita-totale-bayes-067",
+      "archetype": "probabilita-totale-bayes",
+      "family": "avanzati",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"P(D|M1)P(M1)=0.7·1/7=0.1; P(D|M2)P(M2)=0.3·1/5=0.06; totale 0.16; 0.1/0.16=5/8\", \"choice\": \"A\"}",
+      "latencyMs": 2462
+    },
+    {
+      "itemId": "principio-cassetti-dirichlet-068",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"Nel caso peggiore si estraggono 2 matite per ciascuno dei 3 colori (2×3=6) senza averne 3 uguali; la successiva, la 7ª, forza un terzo esemplare di un colore.\", \"choice\": \"C\"}",
+      "latencyMs": 1946
+    },
+    {
+      "itemId": "principio-cassetti-dirichlet-069",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"Nel caso peggiore si estraggono 2 calzini per ciascuno dei 4 colori (2×4=8) senza averne 3 uguali; il successivo, il 9°, forza un terzo calzino di un colore già presente.\", \"choice\": \"C\"}",
+      "latencyMs": 2863
+    },
+    {
+      "itemId": "principio-cassetti-dirichlet-070",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"Con 2 semi, nel caso peggiore le prime 2 carte sono di semi diversi; la 3ª ne ripete uno (principio dei cassetti): 2+1=3\", \"choice\": \"D\"}",
+      "latencyMs": 2560
+    },
+    {
+      "itemId": "probabilita-almeno-uno-072",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"P(almeno 1) = 1 - (3/4)^3 = 1 - 27/64 = 37/64\", \"choice\": \"C\"}",
+      "latencyMs": 1729
+    },
+    {
+      "itemId": "principio-cassetti-dirichlet-071",
+      "archetype": "principio-cassetti-dirichlet",
+      "family": "avanzati",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"Nel caso peggiore si estraggono 2 carte per ciascuno dei 2 semi (2·2=4) senza averne 3 uguali; la carta successiva, la 5ª, completa necessariamente un terzetto dello stesso seme.\", \"choice\": \"A\"}",
+      "latencyMs": 2646
+    },
+    {
+      "itemId": "probabilita-almeno-uno-073",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"P(almeno una testa) = 1 - P(nessuna testa) = 1 - (1/2)^4 = 1 - 1/16 = 15/16\", \"choice\": \"C\"}",
+      "latencyMs": 1548
+    },
+    {
+      "itemId": "probabilita-almeno-uno-074",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"P(nessuna testa) = (1/2)^4 = 1/16; quindi P(almeno una testa) = 1 - 1/16 = 15/16\", \"choice\": \"D\"}",
+      "latencyMs": 1552
+    },
+    {
+      "itemId": "probabilita-almeno-uno-075",
+      "archetype": "probabilita-almeno-uno",
+      "family": "avanzati",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"P(nessuna testa) = (1/2)^2 = 1/4; quindi P(almeno una testa) = 1 - 1/4 = 3/4\", \"choice\": \"C\"}",
+      "latencyMs": 1640
+    },
+    {
+      "itemId": "disposizioni-vincolo-posizione-076",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"Prima cifra pari: 5 scelte (0,2,4,6,8); restanti tre cifre distinte: 9·8·7=504; totale 5·504=2520\", \"choice\": \"A\"}",
+      "latencyMs": 2355
+    },
+    {
+      "itemId": "disposizioni-vincolo-posizione-077",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"Prima cifra dispari: 5 scelte; ultima pari: 5 scelte; le due centrali dalle 8 cifre rimaste: 8·7=56. Totale 5·5·56=1400\", \"choice\": \"A\"}",
+      "latencyMs": 2354
+    },
+    {
+      "itemId": "disposizioni-vincolo-posizione-079",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"solution\": \"Ultima cifra dispari: 5 scelte; le altre 3 cifre distinte dalle restanti 9: 9·8·7=504; totale 5·504=2520\", \"choice\": \"B\"}",
+      "latencyMs": 3178
+    },
+    {
+      "itemId": "disposizioni-vincolo-posizione-078",
+      "archetype": "disposizioni-vincolo-posizione",
+      "family": "avanzati",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"Ultima cifra dispari: 5 scelte; le altre 3 posizioni con cifre distinte tra le 9 rimanenti: 9·8·7=504. Totale 5·504=2520.\", \"choice\": \"D\"}",
+      "latencyMs": 4312
+    },
+    {
+      "itemId": "distribuzione-oggetti-stelle-barre-081",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"Stelle e barre: C(7+3-1, 3-1) = C(9,2) = 36\", \"choice\": \"A\"}",
+      "latencyMs": 2140
+    },
+    {
+      "itemId": "distribuzione-oggetti-stelle-barre-080",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"Stelle e barre: C(7+3-1, 3-1) = C(9,2) = 36\", \"choice\": \"C\"}",
+      "latencyMs": 3431
+    },
+    {
+      "itemId": "distribuzione-oggetti-stelle-barre-082",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"Sottraggo 1 caramella a testa: restano 2 da distribuire liberamente tra 3 bambini: C(2+3-1,3-1)=C(4,2)=6\", \"choice\": \"C\"}",
+      "latencyMs": 1843
+    },
+    {
+      "itemId": "distribuzione-oggetti-stelle-barre-083",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "family": "trombetta",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"solution\": \"Stelle e barre: C(7+4-1, 4-1) = C(10,3) = 120\", \"choice\": \"B\"}",
+      "latencyMs": 2609
+    },
+    {
+      "itemId": "permutazioni-cicliche-084",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"Collane con rotazioni e riflessioni: (7-1)!/2 = 720/2 = 360\", \"choice\": \"C\"}",
+      "latencyMs": 1975
+    },
+    {
+      "itemId": "permutazioni-cicliche-086",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"solution\": \"Collane con rotazioni e riflessioni: (7-1)!/2 = 720/2 = 360\", \"choice\": \"B\"}",
+      "latencyMs": 2009
+    },
+    {
+      "itemId": "permutazioni-cicliche-085",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"Collane con n=6 perline distinte: (6−1)!/2 = 120/2 = 60\", \"choice\": \"D\"}",
+      "latencyMs": 2762
+    },
+    {
+      "itemId": "permutazioni-cicliche-087",
+      "archetype": "permutazioni-cicliche",
+      "family": "trombetta",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"Sedute circolari: (8−1)! = 7! = 5040\", \"choice\": \"D\"}",
+      "latencyMs": 2263
+    },
+    {
+      "itemId": "binomio-newton-088",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"C(7,1)·(2x)^1·2^6 = 7·2·64 = 896\", \"choice\": \"A\"}",
+      "latencyMs": 2665
+    },
+    {
+      "itemId": "binomio-newton-089",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "correct": "D",
+      "choice": "D",
+      "raw": "{\"solution\": \"C(6,5)·(2x)^1·1^5 = 6·2x = 12x, quindi coefficiente 12\", \"choice\": \"D\"}",
+      "latencyMs": 1740
+    },
+    {
+      "itemId": "binomio-newton-090",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "correct": "B",
+      "choice": "B",
+      "raw": "{\"solution\": \"Termine x^5: C(6,1)·x^5·2^1 = 6·2 = 12\", \"choice\": \"B\"}",
+      "latencyMs": 1329
+    },
+    {
+      "itemId": "binomio-newton-091",
+      "archetype": "binomio-newton",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"C(6,2)·(3x)^4·2^2 = 15·81·4 = 4860\", \"choice\": \"C\"}",
+      "latencyMs": 1844
+    },
+    {
+      "itemId": "inclusione-esclusione-092",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"43+37-10=70\", \"choice\": \"C\"}",
+      "latencyMs": 1628
+    },
+    {
+      "itemId": "inclusione-esclusione-093",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"60+40+24−20−12−8+4 = 88\", \"choice\": \"A\"}",
+      "latencyMs": 2048
+    },
+    {
+      "itemId": "inclusione-esclusione-094",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "correct": "C",
+      "choice": "C",
+      "raw": "{\"solution\": \"|N∪A| = 42 + 38 − 15 = 65\", \"choice\": \"C\"}",
+      "latencyMs": 1751
+    },
+    {
+      "itemId": "inclusione-esclusione-095",
+      "archetype": "inclusione-esclusione",
+      "family": "trombetta",
+      "correct": "A",
+      "choice": "A",
+      "raw": "{\"solution\": \"|N∪A| = 45 + 58 − 32 = 71\", \"choice\": \"A\"}",
+      "latencyMs": 1742
+    }
+  ]
+}
