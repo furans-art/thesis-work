@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ArrowLeft, ArrowRight, Check, Flag, Lightbulb, SkipForward } from "lucide-react";
 
 import { SampleNotice, ScopeBadge } from "@/components/simulation/scope-badge";
+import { SocraticHint } from "@/components/simulation/socratic-hint";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import {
   AlertDialog,
@@ -195,14 +196,23 @@ function RunInner({ target, plan, settings, onRetake }: RunInnerProps) {
                       "ABCD"[selected] ?? "",
                     );
                     return (
-                      <div
-                        role="note"
-                        aria-label={heading}
-                        className="rounded-lg border border-destructive/40 bg-destructive/5 p-4"
-                      >
-                        <p className="text-sm font-semibold">{heading}</p>
-                        <p className="mt-1 text-sm text-foreground/90">{diagnosis[locale]}</p>
-                      </div>
+                      <>
+                        <div
+                          role="note"
+                          aria-label={heading}
+                          className="rounded-lg border border-destructive/40 bg-destructive/5 p-4"
+                        >
+                          <p className="text-sm font-semibold">{heading}</p>
+                          <p className="mt-1 text-sm text-foreground/90">{diagnosis[locale]}</p>
+                        </div>
+                        <SocraticHint
+                          key={run.q.id}
+                          question={run.q.text[locale]}
+                          chosen={run.q.options[selected]?.[locale] ?? ""}
+                          correct={run.q.options[run.q.correctIndex]?.[locale] ?? ""}
+                          diagnosis={diagnosis[locale]}
+                        />
+                      </>
                     );
                   })()}
                 </>
