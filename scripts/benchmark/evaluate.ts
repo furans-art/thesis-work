@@ -250,15 +250,42 @@ for (const locale of locales) {
 interface Table {
   caption: string;
   label: string;
+  /** output file name (without .tex) */
+  file: string;
   head: string[];
   rows: string[][];
 }
+
+/** Italian row/column labels for the thesis tables. */
+const TYPE_LABELS_IT: Record<string, string> = {
+  "order-irrelevant": "Ordine ignorato",
+  repetition: "Ripetizione non gestita",
+  "labelled-groups": "Gruppi trattati come etichettati",
+  "constraint-ignored": "Vincolo ignorato",
+  "constraint-applied-once": "Vincolo applicato una sola volta",
+  "additive-union": "Unione additiva",
+  "inclusion-exclusion-truncated": "Inclusione-esclusione troncata",
+  "complement-ignored": "Complementare errato",
+  "conditioning-inverted": "Condizionamento invertito",
+  "circular-as-linear": "Disposizione circolare come lineare",
+  other: "Altro",
+  untyped: "Non diagnosticato",
+};
+const CATEGORY_LABELS_IT: Record<string, string> = {
+  disposizioni: "Disp.",
+  permutazioni: "Perm.",
+  combinazioni: "Comb.",
+  urne: "Urne",
+  "probabilita-elementare": "Prob.",
+  "probabilita-avanzata": "Avanz.",
+  trombetta: "Tromb.",
+};
 
 const tables: Table[] = [];
 
 tables.push({
   caption: `Accuratezza complessiva (dataset seed ${v2.seed}; integrità attesa 100\\%).`,
-  label: "tab:benchmark-accuracy",
+  label: "tab:risultati", file: "benchmark-accuracy",
   head: ["Modello", "Lingua", "Dataset", "Quesiti", "Accuratezza", "Errati", "Non conformi", "Latenza mediana", "Integrità"],
   rows: summaries.map((s) => [
     s.modelLabel,
@@ -275,8 +302,8 @@ tables.push({
 
 tables.push({
   caption: "Accuratezza per categoria di rendicontazione.",
-  label: "tab:benchmark-categories",
-  head: ["Modello", "Lingua", ...CATEGORY_IDS],
+  label: "tab:categorie", file: "benchmark-categories",
+  head: ["Modello", "Lingua", ...CATEGORY_IDS.map((c) => CATEGORY_LABELS_IT[c] ?? c)],
   rows: summaries.map((s) => [
     s.modelLabel,
     s.locale,
@@ -289,10 +316,10 @@ for (const locale of locales) {
   const frontier = group.filter((s) => FRONTIER.includes(s.modelId));
   tables.push({
     caption: `Distribuzione degli errori per tipo di misconcezione (${locale}); «Frontier» somma i quattro modelli remoti.`,
-    label: `tab:benchmark-misconceptions-${locale}`,
+    label: `tab:misconcezioni-${locale}`, file: `benchmark-misconceptions-${locale}`,
     head: ["Tipo", ...group.map((s) => s.modelLabel), "Frontier"],
     rows: TYPE_KEYS.filter((t) => group.some((s) => s.byType[t] > 0)).map((t) => [
-      t,
+      TYPE_LABELS_IT[t] ?? t,
       ...group.map((s) => `${s.byType[t]}`),
       `${frontier.reduce((n, s) => n + s.byType[t], 0)}`,
     ]),
@@ -301,7 +328,7 @@ for (const locale of locales) {
 
 tables.push({
   caption: "Accordo inter-modello sugli errori condivisi (baseline casuale 1/3 = 33.3\\%).",
-  label: "tab:benchmark-agreement",
+  label: "tab:accordo", file: "benchmark-agreement",
   head: ["Lingua", "Modello A", "Modello B", "Errori condivisi", "Stesso distrattore", "Accordo", "Baseline"],
   rows: agreements.map((g) => [g.locale, g.a, g.b, `${g.shared}`, `${g.same}`, pct(g.same, g.shared), "33.3%"]),
 });
@@ -314,7 +341,7 @@ for (const locale of locales) {
 
 tables.push({
   caption: "Errori quesito per quesito dei modelli con al più 5 errori.",
-  label: "tab:benchmark-item-errors",
+  label: "tab:errori-quesiti", file: "benchmark-item-errors",
   head: ["Modello", "Lingua", "Quesito", "Archetipo", "Opzione scelta", "Misconcezione"],
   rows: summaries
     .filter((s) => s.wrong <= 5)
@@ -371,5 +398,5 @@ console.log(md);
 for (const w of warnings) console.error(w);
 writeFileSync(join(dataDir, "report.md"), `${md}\n`, "utf8");
 mkdirSync(latexDir, { recursive: true });
-for (const t of tables) writeFileSync(join(latexDir, `${t.label.replace(/^tab:/, "")}.tex`), latex(t), "utf8");
+for (const t of tables) writeFileSync(join(latexDir, `${t.file}.tex`), latex(t), "utf8");
 console.error(`\nreport written to ${join(dataDir, "report.md")}; LaTeX tables in ${latexDir}`);

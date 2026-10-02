@@ -38,7 +38,7 @@ Dataset v2, motore v2: 96 quesiti, 24 archetipi.
 
 ## Accuratezza per categoria di rendicontazione.
 
-| Modello | Lingua | disposizioni | permutazioni | combinazioni | urne | probabilita-elementare | probabilita-avanzata | trombetta |
+| Modello | Lingua | Disp. | Perm. | Comb. | Urne | Prob. | Avanz. | Tromb. |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Claude Opus 5 (Anthropic) | en | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% |
 | Claude Opus 5 (Anthropic) | it | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% | 100.0% |
@@ -57,28 +57,28 @@ Dataset v2, motore v2: 96 quesiti, 24 archetipi.
 
 | Tipo | Claude Opus 5 (Anthropic) | DeepSeek Flash | DeepSeek R1 (reasoning) | GPT-6.1 Sol (OpenAI) | Qwen 2.5 7B (locale, Ollama) | Llama 3.2 3B (locale, Ollama) | Frontier |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| order-irrelevant | 0 | 0 | 0 | 0 | 0 | 2 | 0 |
-| repetition | 0 | 0 | 0 | 0 | 1 | 0 | 0 |
-| labelled-groups | 0 | 0 | 0 | 0 | 1 | 2 | 0 |
-| constraint-ignored | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
-| inclusion-exclusion-truncated | 0 | 0 | 0 | 0 | 1 | 0 | 0 |
-| complement-ignored | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
-| other | 0 | 0 | 0 | 0 | 3 | 6 | 0 |
-| untyped | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
+| Ordine ignorato | 0 | 0 | 0 | 0 | 0 | 2 | 0 |
+| Ripetizione non gestita | 0 | 0 | 0 | 0 | 1 | 0 | 0 |
+| Gruppi trattati come etichettati | 0 | 0 | 0 | 0 | 1 | 2 | 0 |
+| Vincolo ignorato | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
+| Inclusione-esclusione troncata | 0 | 0 | 0 | 0 | 1 | 0 | 0 |
+| Complementare errato | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
+| Altro | 0 | 0 | 0 | 0 | 3 | 6 | 0 |
+| Non diagnosticato | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
 
 ## Distribuzione degli errori per tipo di misconcezione (it); «Frontier» somma i quattro modelli remoti.
 
 | Tipo | Claude Opus 5 (Anthropic) | DeepSeek Flash | DeepSeek R1 (reasoning) | GPT-6.1 Sol (OpenAI) | Qwen 2.5 7B (locale, Ollama) | Llama 3.2 3B (locale, Ollama) | Frontier |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| repetition | 0 | 0 | 0 | 0 | 1 | 0 | 0 |
-| labelled-groups | 0 | 0 | 0 | 0 | 3 | 2 | 0 |
-| constraint-ignored | 0 | 0 | 0 | 0 | 0 | 4 | 0 |
-| constraint-applied-once | 0 | 0 | 0 | 0 | 0 | 6 | 0 |
-| additive-union | 0 | 0 | 0 | 0 | 3 | 6 | 0 |
-| inclusion-exclusion-truncated | 0 | 0 | 0 | 0 | 1 | 0 | 0 |
-| circular-as-linear | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
-| other | 0 | 0 | 0 | 0 | 3 | 9 | 0 |
-| untyped | 0 | 0 | 0 | 0 | 0 | 2 | 0 |
+| Ripetizione non gestita | 0 | 0 | 0 | 0 | 1 | 0 | 0 |
+| Gruppi trattati come etichettati | 0 | 0 | 0 | 0 | 3 | 2 | 0 |
+| Vincolo ignorato | 0 | 0 | 0 | 0 | 0 | 4 | 0 |
+| Vincolo applicato una sola volta | 0 | 0 | 0 | 0 | 0 | 6 | 0 |
+| Unione additiva | 0 | 0 | 0 | 0 | 3 | 6 | 0 |
+| Inclusione-esclusione troncata | 0 | 0 | 0 | 0 | 1 | 0 | 0 |
+| Disposizione circolare come lineare | 0 | 0 | 0 | 0 | 0 | 1 | 0 |
+| Altro | 0 | 0 | 0 | 0 | 3 | 9 | 0 |
+| Non diagnosticato | 0 | 0 | 0 | 0 | 0 | 2 | 0 |
 
 ## Accordo inter-modello sugli errori condivisi (baseline casuale 1/3 = 33.3%).
 
