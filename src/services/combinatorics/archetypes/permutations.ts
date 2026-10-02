@@ -2,7 +2,7 @@ import { combinations, factorial, permutationsWithRepetition } from "../math-uti
 import type { Archetype, DistractorCandidate } from "../types";
 import { cand } from "./candidate";
 
-const distinctWords = ["LIBRO", "CAMPO", "TAVOLO", "MUSICA", "SCUOLA", "PIANTE"] as const;
+const distinctWords = ["LIBRO", "CAMPO", "MOSTRA", "MUSICA", "SCUOLA", "PIANTE"] as const;
 
 /** Words whose letters repeat, with the multiplicities used by n!/(r1!·r2!…). */
 const repeatedWords: { word: string; repeats: number[]; detail: string }[] = [

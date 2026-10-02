@@ -9,7 +9,9 @@
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "test:oracle": "bun test src/services/combinatorics/oracle",
+    "export:catalog": "bun scripts/export-catalog.ts"
   },
   "overrides": {
     "rolldown": "1.2.1"
