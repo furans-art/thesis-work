@@ -22,7 +22,7 @@ export function saveCollectEndpoint(url: string): void {
 
 /** Anonymous envelope: a random code, the group variant, answers, times, outcome. */
 export interface CollectionPayload {
-  format: "tolcs.session" as const;
+  format: "tolcs.session";
   version: 1;
   sessionCode: string;
   sentAt: string;
