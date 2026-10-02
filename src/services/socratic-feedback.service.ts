@@ -65,10 +65,13 @@ export function buildSocraticPrompt(input: SocraticInput): { system: string; use
 }
 
 /** Rejects outputs that leak the correct answer; the caller then shows the deterministic diagnosis. */
-export function violatesConstraints(output: string, correct: string): boolean {
-  const c = correct.trim();
-  if (!c) return false;
-  return output.includes(c);
+export function violatesConstraints(output: string, input: Pick<SocraticInput, "correct" | "question" | "chosen" | "diagnosis">): boolean {
+  const c = input.correct.trim();
+  if (c && output.includes(c)) return true;
+  // every number in the output must already appear in the engine-provided facts
+  const facts = `${input.question} ${input.chosen} ${input.diagnosis}`;
+  const allowed = new Set(facts.match(/\d+(?:\/\d+)?/g) ?? []);
+  return (output.match(/\d+(?:\/\d+)?/g) ?? []).some((n) => !allowed.has(n));
 }
 
 export async function requestSocraticHint(
@@ -95,6 +98,6 @@ export async function requestSocraticHint(
   const json = (await res.json()) as { message?: { content?: string } };
   const text = json.message?.content?.trim() ?? "";
   if (!text) throw new Error("empty");
-  if (violatesConstraints(text, input.correct)) throw new Error("leak");
+  if (violatesConstraints(text, input)) throw new Error("leak");
   return text;
 }

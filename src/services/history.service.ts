@@ -1,3 +1,4 @@
+import { ENGINE_VERSION } from "@/services/combinatorics/engine";
 import { STORAGE_KEYS, storage } from "@/services/storage";
 import type { RunPlan } from "@/services/simulation.service";
 import type { SectionResult, SessionRecord } from "@/types/history";
@@ -66,6 +67,7 @@ export function buildRecord(input: {
     sections,
     wrongQuestionIds: Array.from(new Set(wrongQuestionIds)),
     score: tolcScore(correct, wrong),
+    engineVersion: ENGINE_VERSION,
     snapshot: input.plan.blocks.map((b) => ({
       sectionId: b.section.id,
       questions: b.questions,
