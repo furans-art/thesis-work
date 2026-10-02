@@ -63,6 +63,8 @@ export interface RunFile {
   transport: string;
   locale: PromptLocale;
   datasetSeed: number;
+  /** dataset format version; absent on runs recorded against v1 */
+  datasetVersion?: number;
   startedAt: string;
   answers: RunAnswer[];
 }
@@ -80,12 +82,18 @@ let run: RunFile = {
   transport: config.transport,
   locale,
   datasetSeed: dataset.seed,
+  datasetVersion: dataset.version,
   startedAt: new Date().toISOString(),
   answers: [],
 };
 if (!fresh && existsSync(outPath)) {
   const previous = JSON.parse(readFileSync(outPath, "utf8")) as RunFile;
-  if (previous.datasetSeed === dataset.seed && previous.modelId === config.id) {
+  // only resume answers recorded on the same dataset version: v1 options differ
+  if (
+    previous.datasetSeed === dataset.seed &&
+    previous.modelId === config.id &&
+    (previous.datasetVersion ?? 1) === dataset.version
+  ) {
     run = { ...previous, answers: previous.answers.filter((a) => !a.error) };
   }
 }
