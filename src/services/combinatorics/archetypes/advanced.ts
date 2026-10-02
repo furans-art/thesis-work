@@ -190,6 +190,12 @@ function atLeastOneExercise(rng: Rng): GeneratedExercise {
     cand("all-succeed-complement", "complement-ignored", power(p, n).complement(),
       `Hai calcolato 1 − pⁿ, cioè la probabilità che non tutti i tentativi riescano: il complementare di «almeno uno» è «nessuno», non «tutti».`,
       `You computed 1 − pⁿ, the probability that not every attempt succeeds: the complement of “at least one” is “none”, not “all”.`),
+    cand("exactly-one", "constraint-ignored", new Fraction(n).mul(p).mul(power(q, n - 1)),
+      `Hai calcolato la probabilità di esattamente un successo, ${n} · p · (1 − p)^${n - 1}: «almeno uno» comprende anche i casi con due o più successi.`,
+      `You computed the probability of exactly one success, ${n} · p · (1 − p)^${n - 1}: “at least one” also includes the cases with two or more successes.`),
+    cand("one-attempt-too-many", "other", power(q, n + 1).complement(),
+      `Hai usato ${n + 1} tentativi invece di ${n}: il complementare corretto è 1 − q^${n}.`,
+      `You used ${n + 1} attempts instead of ${n}: the correct complement is 1 − q^${n}.`),
   ];
 
   const text: Localized = p.equals(new Fraction(1, 2))

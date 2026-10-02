@@ -62,6 +62,10 @@ interface DiffEntry {
   archetype: string;
   keyChanged: boolean;
   optionsChanged: boolean;
+  /** statement changed (parameters redrawn or source text fixed) */
+  textChanged: boolean;
+  /** v1 answers on this item cannot be scored against v1's key */
+  invalidInV1: boolean;
   old: { key: string; value: string; options: Record<string, string> };
   new: { key: string; value: string; options: Record<string, string> };
 }
@@ -77,12 +81,15 @@ if (existsSync(v1Path)) {
     const sorted = (o: Record<string, string>) => OPTION_LABELS.map((l) => o[l]).sort().join("|");
     const keyChanged = oldValue !== newValue;
     const optionsChanged = sorted(old.options) !== sorted(now.options);
-    if (!keyChanged && !optionsChanged) continue;
+    const textChanged = old.text.it !== now.text.it;
+    if (!keyChanged && !optionsChanged && !textChanged) continue;
     diff.push({
       id: old.id,
       archetype: old.archetype,
       keyChanged,
       optionsChanged,
+      textChanged,
+      invalidInV1: keyChanged || textChanged,
       old: { key: old.correct, value: oldValue, options: old.options },
       new: { key: now.correct, value: newValue, options: now.options },
     });
@@ -103,4 +110,6 @@ if (existsSync(v1Path)) {
   console.log(`diff ................ ${diffPath}`);
   console.log(`  key changed ....... ${diff.filter((d) => d.keyChanged).length}`);
   console.log(`  options changed ... ${diff.filter((d) => d.optionsChanged).length}`);
+  console.log(`  text changed ...... ${diff.filter((d) => d.textChanged).length}`);
+  console.log(`  invalid in v1 ..... ${diff.filter((d) => d.invalidInV1).length}`);
 }
