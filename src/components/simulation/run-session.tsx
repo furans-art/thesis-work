@@ -3,6 +3,8 @@ import { ArrowLeft, ArrowRight, Check, Flag, Lightbulb, SkipForward } from "luci
 
 import { SampleNotice, ScopeBadge } from "@/components/simulation/scope-badge";
 import { SocraticHint } from "@/components/simulation/socratic-hint";
+import { SendSessionControl } from "@/components/simulation/send-session";
+import type { SessionRecord } from "@/types/history";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import {
   AlertDialog,
@@ -58,17 +60,18 @@ interface RunInnerProps {
 
 function RunInner({ target, plan, settings, onRetake }: RunInnerProps) {
   const { t, locale } = useI18n();
+  const [record, setRecord] = useState<SessionRecord | null>(null);
   const run = useSimulationRun(plan, settings, (answers, elapsed) => {
     if (target === null) return; // review sessions are never recorded
-    historyService.add(
-      buildRecord({
-        target,
-        mode: settings.mode,
-        plan,
-        answers,
-        durationSeconds: elapsed,
-      }),
-    );
+    const rec = buildRecord({
+      target,
+      mode: settings.mode,
+      plan,
+      answers,
+      durationSeconds: elapsed,
+    });
+    historyService.add(rec);
+    setRecord(rec);
   });
   useRunKeyboard(run, run.q.options.length, !run.finished);
 
@@ -79,6 +82,7 @@ function RunInner({ target, plan, settings, onRetake }: RunInnerProps) {
         target={target}
         settings={settings}
         onRetake={onRetake}
+        record={record}
       />
     );
   }
@@ -298,9 +302,10 @@ interface FinishScreenProps {
   target: SimulationTarget | null;
   settings: SimulationSettings;
   onRetake: () => void;
+  record: SessionRecord | null;
 }
 
-function FinishScreen({ run, target, settings, onRetake }: FinishScreenProps) {
+function FinishScreen({ run, target, settings, onRetake, record }: FinishScreenProps) {
   const { t } = useI18n();
   const correct = run.correctCount;
   const total = run.total;
@@ -323,6 +328,11 @@ function FinishScreen({ run, target, settings, onRetake }: FinishScreenProps) {
       </div>
       {run.exam && <p className="text-sm text-muted-foreground">{t.run.scoringRule}</p>}
       {run.timedOut && <p className="text-sm text-destructive">{t.run.timeUp}</p>}
+      {record && (
+        <div className="mx-auto flex max-w-md justify-center rounded-lg border p-4 text-left">
+          <SendSessionControl session={record} />
+        </div>
+      )}
       <div className="flex flex-wrap items-center justify-center gap-3">
         <Button type="button" onClick={onRetake}>
           {t.run.retakeSame}
