@@ -22,7 +22,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { useI18n } from "@/context/i18n-context";
 import { useRunKeyboard } from "@/hooks/use-run-keyboard";
-import { useSimulationRun, formatClock } from "@/hooks/use-simulation-run";
+import { useSimulationRun, formatClock, type RunProgress } from "@/hooks/use-simulation-run";
+import { resumeService } from "@/services/resume.service";
 import { contentScopeService } from "@/services/content-scope.service";
 import { buildRecord, historyService } from "@/services/history.service";
 import type { RunPlan } from "@/services/simulation.service";
@@ -34,9 +35,11 @@ export interface RunSessionProps {
   plan: RunPlan;
   settings: SimulationSettings;
   onRetry?: (() => void) | undefined;
+  /** progress of an interrupted run to resume from */
+  initialProgress?: RunProgress | null;
 }
 
-export function RunSession({ target, plan, settings, onRetry }: RunSessionProps) {
+export function RunSession({ target, plan, settings, onRetry, initialProgress }: RunSessionProps) {
   const [runKey, setRunKey] = useState(0);
   return (
     <RunInner
@@ -45,6 +48,7 @@ export function RunSession({ target, plan, settings, onRetry }: RunSessionProps)
       plan={plan}
       settings={settings}
       onRetry={onRetry}
+      initialProgress={runKey === 0 ? (initialProgress ?? null) : null}
       onRetake={() => setRunKey((k) => k + 1)}
     />
   );
@@ -56,23 +60,38 @@ interface RunInnerProps {
   settings: SimulationSettings;
   onRetry?: (() => void) | undefined;
   onRetake: () => void;
+  initialProgress: RunProgress | null;
 }
 
-function RunInner({ target, plan, settings, onRetake }: RunInnerProps) {
+function RunInner({ target, plan, settings, onRetake, initialProgress }: RunInnerProps) {
   const { t, locale } = useI18n();
   const [record, setRecord] = useState<SessionRecord | null>(null);
-  const run = useSimulationRun(plan, settings, (answers, elapsed) => {
-    if (target === null) return; // review sessions are never recorded
-    const rec = buildRecord({
-      target,
-      mode: settings.mode,
-      plan,
-      answers,
-      durationSeconds: elapsed,
-    });
-    historyService.add(rec);
-    setRecord(rec);
-  });
+  const persistence =
+    target === null
+      ? undefined
+      : {
+          initial: initialProgress,
+          save: (p: RunProgress) =>
+            resumeService.save({ version: 1, target, plan, settings, ...p, savedAt: new Date().toISOString() }),
+          clear: () => resumeService.clear(target),
+        };
+  const run = useSimulationRun(
+    plan,
+    settings,
+    (answers, elapsed) => {
+      if (target === null) return; // review sessions are never recorded
+      const rec = buildRecord({
+        target,
+        mode: settings.mode,
+        plan,
+        answers,
+        durationSeconds: elapsed,
+      });
+      historyService.add(rec);
+      setRecord(rec);
+    },
+    persistence,
+  );
   useRunKeyboard(run, run.q.options.length, !run.finished);
 
   if (run.finished) {

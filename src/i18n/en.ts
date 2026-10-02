@@ -29,6 +29,7 @@ export const en: Translation = {
     themeLight: "Light",
     themeDark: "Dark",
     openAllSettings: "All accessibility settings",
+    openMenu: "Open navigation menu",
   },
   home: {
     eyebrow: "Bachelor thesis · Computer Science",
@@ -194,6 +195,10 @@ export const en: Translation = {
     },
   },
   run: {
+    resumeTitle: "You have an unfinished simulation",
+    resumeBody: "Answered: {answered} of {total}. Time elapsed: {time}.",
+    resumeContinue: "Resume simulation",
+    resumeRestart: "Start a new simulation",
     previous: "Previous question",
     skip: "Skip",
     nextSection: "Next section",

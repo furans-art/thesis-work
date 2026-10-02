@@ -10,10 +10,20 @@ export const AUTO_ADVANCE_SECONDS = 10;
  * - practice: free navigation, elapsed-time clock, no time pressure.
  * - exam: per-section countdown, sections lock once left, auto-advance on timeout.
  */
+export interface RunProgress {
+  index: number;
+  answers: (number | null)[];
+  flags: string[];
+  minBlock: number;
+  elapsed: number;
+  blockSecondsLeft: number;
+}
+
 export function useSimulationRun(
   plan: RunPlan,
   settings: SimulationSettings,
   onFinish?: (answers: (number | null)[], elapsedSeconds: number) => void,
+  persistence?: { initial?: RunProgress | null; save: (p: RunProgress) => void; clear: () => void },
 ) {
   const exam = settings.mode === "exam";
   const total = plan.questions.length;
@@ -22,20 +32,34 @@ export function useSimulationRun(
       (plan.blocks.length > 1 ? plan.blocks[b]!.section.durationMinutes : settings.timeLimitMinutes) * 60,
     [plan.blocks, settings.timeLimitMinutes],
   );
+  const init = persistence?.initial ?? null;
 
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(init?.index ?? 0);
   const [draft, setDraft] = useState<number | null>(null);
-  const [answers, setAnswers] = useState<(number | null)[]>(() => Array(total).fill(null));
+  const [answers, setAnswers] = useState<(number | null)[]>(() => init?.answers ?? Array(total).fill(null));
   const [feedbackOpen, setFeedbackOpen] = useState(false);
-  const [flags, setFlags] = useState<Set<string>>(new Set());
+  const [flags, setFlags] = useState<Set<string>>(() => new Set(init?.flags ?? []));
   const [finished, setFinished] = useState(false);
   const [timedOut, setTimedOut] = useState(false);
-  const [minBlock, setMinBlock] = useState(0);
-  const [elapsed, setElapsed] = useState(0);
-  const [blockSecondsLeft, setBlockSecondsLeft] = useState(() => blockDuration(0));
+  const [minBlock, setMinBlock] = useState(init?.minBlock ?? 0);
+  const [elapsed, setElapsed] = useState(init?.elapsed ?? 0);
+  const [blockSecondsLeft, setBlockSecondsLeft] = useState(() => init?.blockSecondsLeft ?? blockDuration(0));
   const [timeUpPending, setTimeUpPending] = useState(false);
   const [autoAdvanceIn, setAutoAdvanceIn] = useState(AUTO_ADVANCE_SECONDS);
   const [leavePending, setLeavePending] = useState(false);
+
+  // Persist progress so an interrupted run can be resumed later.
+  const persistRef = useRef(persistence);
+  persistRef.current = persistence;
+  useEffect(() => {
+    const p = persistRef.current;
+    if (!p) return;
+    if (finished) {
+      p.clear();
+      return;
+    }
+    p.save({ index, answers, flags: [...flags], minBlock, elapsed, blockSecondsLeft });
+  }, [index, answers, flags, minBlock, elapsed, blockSecondsLeft, finished]);
 
   const q = plan.questions[index]!;
   const blockIndex = q.blockIndex;

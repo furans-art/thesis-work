@@ -27,6 +27,7 @@ export const it = {
     themeLight: "Chiaro",
     themeDark: "Scuro",
     openAllSettings: "Tutte le impostazioni di accessibilità",
+    openMenu: "Apri il menu di navigazione",
   },
   home: {
     eyebrow: "Tesi di laurea · Informatica",
@@ -192,6 +193,10 @@ export const it = {
     },
   },
   run: {
+    resumeTitle: "Hai una simulazione interrotta",
+    resumeBody: "Risposte date: {answered} su {total}. Tempo trascorso: {time}.",
+    resumeContinue: "Riprendi simulazione",
+    resumeRestart: "Inizia una nuova simulazione",
     previous: "Domanda precedente",
     skip: "Salta",
     nextSection: "Sezione successiva",

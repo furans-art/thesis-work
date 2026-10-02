@@ -1,12 +1,14 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { RunSession } from "@/components/simulation/run-session";
 import { Button } from "@/components/ui/button";
 import { useI18n } from "@/context/i18n-context";
+import { formatClock } from "@/hooks/use-simulation-run";
 import { useSettingsStore } from "@/hooks/use-settings-store";
 import { fetchLogicQuestions } from "@/services/logicApi.functions";
+import { resumeService, type ResumeState } from "@/services/resume.service";
 import { isSimulationTarget } from "@/services/settings.service";
 import { simulationService } from "@/services/simulation.service";
 
@@ -47,6 +49,13 @@ function RunPage() {
   const { t } = useI18n();
   const { hydrated, getSettings } = useSettingsStore();
   const [attempt, setAttempt] = useState(0);
+  // An interrupted run of this target, read after hydration (localStorage).
+  const [saved, setSaved] = useState<ResumeState | null | undefined>(undefined);
+  const [resuming, setResuming] = useState(false);
+  useEffect(() => {
+    setSaved(resumeService.load(target));
+  }, [target]);
+  const choosing = saved === undefined || (saved !== null && !resuming);
 
   // Shuffling uses Math.random, so the plan is only built on the client after settings load.
   const settings = hydrated ? getSettings(target) : null;
@@ -60,14 +69,14 @@ function RunPage() {
   const logicQuery = useQuery({
     queryKey: ["logic-api-questions", target, requestedCount, attempt],
     queryFn: () => fetchLogicQuestions({ data: { count: requestedCount! } }),
-    enabled: hydrated && isLogicModule && requestedCount !== null,
+    enabled: hydrated && isLogicModule && requestedCount !== null && saved === null,
     staleTime: Infinity,
     refetchOnWindowFocus: false,
     retry: false,
   });
 
   const plan = useMemo(() => {
-    if (!settings) return null;
+    if (!settings || saved !== null) return null;
     if (!isLogicModule) return simulationService.buildPlan(target, settings);
     if (logicQuery.isPending || logicQuery.isFetching) return null;
     const live = logicQuery.data ?? [];
@@ -77,12 +86,60 @@ function RunPage() {
     hydrated,
     target,
     attempt,
+    saved,
     isLogicModule,
     requestedCount,
     logicQuery.isPending,
     logicQuery.isFetching,
     logicQuery.data,
   ]);
+
+  if (saved && resuming) {
+    return (
+      <div className="px-4 pt-6">
+        <RunSession
+          target={target}
+          plan={saved.plan}
+          settings={saved.settings}
+          initialProgress={saved}
+          onRetry={() => {
+            resumeService.clear(target);
+            setResuming(false);
+            setSaved(null);
+          }}
+        />
+      </div>
+    );
+  }
+
+  if (saved && choosing) {
+    const answered = saved.answers.filter((a) => a !== null).length;
+    return (
+      <div className="mx-auto max-w-3xl px-4 py-14">
+        <section className="space-y-4 rounded-lg border border-border bg-card p-6" aria-labelledby="resume-title">
+          <h1 id="resume-title" className="font-serif text-2xl font-semibold">{t.run.resumeTitle}</h1>
+          <p className="text-muted-foreground">
+            {t.run.resumeBody
+              .replace("{answered}", String(answered))
+              .replace("{total}", String(saved.plan.questions.length))
+              .replace("{time}", formatClock(saved.elapsed))}
+          </p>
+          <div className="flex flex-wrap gap-3">
+            <Button onClick={() => setResuming(true)}>{t.run.resumeContinue}</Button>
+            <Button
+              variant="outline"
+              onClick={() => {
+                resumeService.clear(target);
+                setSaved(null);
+              }}
+            >
+              {t.run.resumeRestart}
+            </Button>
+          </div>
+        </section>
+      </div>
+    );
+  }
 
   if (!settings || !plan) {
     return <p className="mx-auto max-w-3xl px-4 py-14 text-muted-foreground">{t.run.loading}</p>;
