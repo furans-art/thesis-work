@@ -2,6 +2,8 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { useRef, useState } from "react";
 import { Download, Upload } from "lucide-react";
 
+import { CollectSettingsCard } from "@/components/admin/collect-settings-card";
+import { SlmSettingsCard } from "@/components/admin/slm-settings-card";
 import { PageShell } from "@/components/layout/page-shell";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -100,6 +102,12 @@ function AdminPage() {
             )}
           </CardContent>
         </Card>
+
+        <SlmSettingsCard />
+
+        <CollectSettingsCard />
+
+
 
         <p className="text-sm text-muted-foreground">
           {t.admin.privacyNote}{" "}

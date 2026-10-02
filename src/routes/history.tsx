@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { RotateCcw } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, Legend, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
+import { SendSessionControl } from "@/components/simulation/send-session";
 import { PageShell } from "@/components/layout/page-shell";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -178,6 +179,7 @@ function HistoryPage() {
                     {s.wrongQuestionIds.length === 0 && !(s.snapshot && s.snapshot.length > 0) && (
                       <p className="text-sm text-success">{t.history.noWrong}</p>
                     )}
+                    <SendSessionControl session={s} />
                   </div>
                 </CardContent>
               </Card>
