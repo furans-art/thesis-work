@@ -18,3 +18,4 @@
 - Lessons live in `src/data/lessons.ts` (1–6 from Kevin's Webpage_Logica, 7–11 Combinatoria) with KaTeX structured bodies in `lesson-content.it/.en.ts`; grouping data-driven via `practiceTargets` in `lesson-groups.ts`; detail route `lessons_.$lessonId.tsx` (flat) so /lessons is not a layout route.
 - Accessibility icon is neutral (SlidersHorizontal), never the disability icon; quick customisation in the header, full page at /accessibility only other entry point; footer links Privacy | Data | About.
 - CVD palettes include achromatopsia (lightness-only, no hue); success/error must stay distinguishable by lightness in that palette.
+- Socratic feedback: browser calls a local Ollama (`src/services/socratic-feedback.service.ts`, URL/model set on /admin) with the deterministic diagnosis as binding facts; outputs leaking the correct answer are discarded — the engine stays the only source of mathematical truth.
