@@ -89,6 +89,13 @@ export const permutationArchetypes: Archetype[] = [
             en: `You removed one position instead of correcting for repetitions: all ${n} letters take part in the anagrams.`,
           },
         },
+        {
+          value: 2 ** n,
+          why: {
+            it: `Hai assegnato due alternative indipendenti a ciascuna posizione: un anagramma usa invece tutte le ${n} lettere disponibili, rispettandone le molteplicità.`,
+            en: `You assigned two independent alternatives to each position: an anagram instead uses all ${n} available letters with their given multiplicities.`,
+          },
+        },
       ];
       const seen = new Set<number>([correct]);
       const picked = candidates.filter(({ value }) => {
