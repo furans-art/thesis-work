@@ -178,6 +178,7 @@ function HistoryPage() {
                     {s.wrongQuestionIds.length === 0 && !(s.snapshot && s.snapshot.length > 0) && (
                       <p className="text-sm text-success">{t.history.noWrong}</p>
                     )}
+                    <SendSessionControl session={s} />
                   </div>
                 </CardContent>
               </Card>
