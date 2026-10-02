@@ -83,6 +83,20 @@ export const urnArchetypes: Archetype[] = [
             en: `You treated the draws as independent: without replacement, both the total and the number of red balls decrease on the second draw.`,
           },
         },
+        {
+          value: correct.complement(),
+          why: {
+            it: `Hai calcolato l'evento complementare, cioè che almeno una delle due palline non sia rossa.`,
+            en: `You computed the complementary event, namely that at least one of the two balls is not red.`,
+          },
+        },
+        {
+          value: new Fraction(red - 1, total - 1),
+          why: {
+            it: `Hai considerato soltanto la seconda probabilità condizionata, dimenticando di moltiplicarla per la probabilità della prima estrazione rossa.`,
+            en: `You considered only the second conditional probability, forgetting to multiply it by the probability of drawing red first.`,
+          },
+        },
       ];
       const seen = new Set<string>([correct.toString()]);
       const picked = candidates.filter(({ value }) => {
