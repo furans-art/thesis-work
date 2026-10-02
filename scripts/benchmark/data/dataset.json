@@ -2,7 +2,7 @@
   "version": 2,
   "engineVersion": 2,
   "seed": 20261001,
-  "createdAt": "2026-10-02T10:30:51.379Z",
+  "createdAt": "2026-10-02T10:31:14.224Z",
   "archetypeCount": 24,
   "items": [
     {
@@ -5700,32 +5700,32 @@
       "family": "probabilita-elementare",
       "difficulty": "intermediate",
       "params": {
-        "pd": 4,
-        "n": 2
+        "pd": 3,
+        "n": 4
       },
       "text": {
-        "it": "La probabilità di centrare il bersaglio a ogni tiro è 1/4. Effettuando 2 tiri indipendenti, qual è la probabilità di centrarlo almeno una volta?",
-        "en": "The probability of hitting the target on each shot is 1/4. Taking 2 independent shots, what is the probability of hitting it at least once?"
+        "it": "La probabilità di centrare il bersaglio a ogni tiro è 1/3. Effettuando 4 tiri indipendenti, qual è la probabilità di centrarlo almeno una volta?",
+        "en": "The probability of hitting the target on each shot is 1/3. Taking 4 independent shots, what is the probability of hitting it at least once?"
       },
       "options": {
-        "A": "3/16",
-        "B": "1/2",
-        "C": "7/16",
-        "D": "9/16"
+        "A": "8/81",
+        "B": "1/3",
+        "C": "65/81",
+        "D": "16/81"
       },
       "correct": "C",
       "explanation": {
-        "it": "Ogni tentativo fallisce con probabilità q = 1 − 1/4 = 3/4. Tutti i 2 tentativi falliscono con probabilità q^2 = 9/16. Quindi P(almeno uno) = 1 − 9/16 = 7/16.",
-        "en": "Each attempt fails with probability q = 1 − 1/4 = 3/4. All 2 attempts fail with probability q^2 = 9/16. So P(at least one) = 1 − 9/16 = 7/16."
+        "it": "Ogni tentativo fallisce con probabilità q = 1 − 1/3 = 2/3. Tutti i 4 tentativi falliscono con probabilità q^4 = 16/81. Quindi P(almeno uno) = 1 − 16/81 = 65/81.",
+        "en": "Each attempt fails with probability q = 1 − 1/3 = 2/3. All 4 attempts fail with probability q^4 = 16/81. So P(at least one) = 1 − 16/81 = 65/81."
       },
       "diagnoses": {
         "A": {
-          "it": "È la probabilità di un successo in una posizione precisa e insuccesso negli altri 1 tentativi, p · (1 − p)^1: «almeno uno» ammette successi in qualsiasi posizione e anche più di uno.",
-          "en": "That is the probability of a success in one specific position and failure in the other 1 attempts, p · (1 − p)^1: “at least one” allows successes in any position, and more than one."
+          "it": "È la probabilità di un successo in una posizione precisa e insuccesso negli altri 3 tentativi, p · (1 − p)^3: «almeno uno» ammette successi in qualsiasi posizione e anche più di uno.",
+          "en": "That is the probability of a success in one specific position and failure in the other 3 attempts, p · (1 − p)^3: “at least one” allows successes in any position, and more than one."
         },
         "B": {
-          "it": "Hai sommato le probabilità dei singoli tentativi (2 × 1/4): così conti più volte i casi in cui più tentativi riescono insieme. Il metodo corretto passa dal complementare 1 − qⁿ.",
-          "en": "You added up the single-attempt probabilities (2 × 1/4): that counts several times the cases where more attempts succeed together. The correct route goes through the complement 1 − qⁿ."
+          "it": "È la probabilità di un solo tentativo: con 4 tentativi indipendenti la probabilità di successo sale.",
+          "en": "That is the probability of a single attempt: with 4 independent attempts the success probability rises."
         },
         "D": {
           "it": "È la probabilità dell'evento contrario, cioè che nessun tentativo riesca: «almeno uno» si ottiene con 1 − qⁿ.",
@@ -5738,8 +5738,8 @@
           "type": "order-irrelevant"
         },
         "B": {
-          "id": "added-attempts",
-          "type": "additive-union"
+          "id": "single-attempt",
+          "type": "other"
         },
         "D": {
           "id": "complement-itself",
@@ -5750,32 +5750,113 @@
         {
           "id": "added-attempts",
           "type": "additive-union",
-          "value": "1/2"
+          "value": "4/3"
         },
         {
           "id": "complement-itself",
           "type": "complement-ignored",
-          "value": "9/16"
+          "value": "16/81"
         },
         {
           "id": "success-in-fixed-position",
           "type": "order-irrelevant",
-          "value": "3/16"
+          "value": "8/81"
         },
         {
           "id": "single-attempt",
           "type": "other",
-          "value": "1/4"
+          "value": "1/3"
         },
         {
           "id": "all-succeed-complement",
           "type": "complement-ignored",
-          "value": "15/16"
+          "value": "80/81"
         }
       ]
     },
     {
       "id": "probabilita-almeno-uno-074",
+      "archetype": "probabilita-almeno-uno",
+      "category": "probabilita-elementare",
+      "family": "probabilita-elementare",
+      "difficulty": "intermediate",
+      "params": {
+        "pd": 3,
+        "n": 4
+      },
+      "text": {
+        "it": "La probabilità di centrare il bersaglio a ogni tiro è 1/3. Effettuando 4 tiri indipendenti, qual è la probabilità di centrarlo almeno una volta?",
+        "en": "The probability of hitting the target on each shot is 1/3. Taking 4 independent shots, what is the probability of hitting it at least once?"
+      },
+      "options": {
+        "A": "16/81",
+        "B": "1/3",
+        "C": "8/81",
+        "D": "65/81"
+      },
+      "correct": "D",
+      "explanation": {
+        "it": "Ogni tentativo fallisce con probabilità q = 1 − 1/3 = 2/3. Tutti i 4 tentativi falliscono con probabilità q^4 = 16/81. Quindi P(almeno uno) = 1 − 16/81 = 65/81.",
+        "en": "Each attempt fails with probability q = 1 − 1/3 = 2/3. All 4 attempts fail with probability q^4 = 16/81. So P(at least one) = 1 − 16/81 = 65/81."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "È la probabilità dell'evento contrario, cioè che nessun tentativo riesca: «almeno uno» si ottiene con 1 − qⁿ.",
+          "en": "That is the probability of the opposite event, that no attempt succeeds: “at least one” is obtained with 1 − qⁿ."
+        },
+        "B": {
+          "it": "È la probabilità di un solo tentativo: con 4 tentativi indipendenti la probabilità di successo sale.",
+          "en": "That is the probability of a single attempt: with 4 independent attempts the success probability rises."
+        },
+        "C": {
+          "it": "È la probabilità di un successo in una posizione precisa e insuccesso negli altri 3 tentativi, p · (1 − p)^3: «almeno uno» ammette successi in qualsiasi posizione e anche più di uno.",
+          "en": "That is the probability of a success in one specific position and failure in the other 3 attempts, p · (1 − p)^3: “at least one” allows successes in any position, and more than one."
+        }
+      },
+      "misconceptions": {
+        "A": {
+          "id": "complement-itself",
+          "type": "complement-ignored"
+        },
+        "B": {
+          "id": "single-attempt",
+          "type": "other"
+        },
+        "C": {
+          "id": "success-in-fixed-position",
+          "type": "order-irrelevant"
+        }
+      },
+      "pool": [
+        {
+          "id": "added-attempts",
+          "type": "additive-union",
+          "value": "4/3"
+        },
+        {
+          "id": "complement-itself",
+          "type": "complement-ignored",
+          "value": "16/81"
+        },
+        {
+          "id": "success-in-fixed-position",
+          "type": "order-irrelevant",
+          "value": "8/81"
+        },
+        {
+          "id": "single-attempt",
+          "type": "other",
+          "value": "1/3"
+        },
+        {
+          "id": "all-succeed-complement",
+          "type": "complement-ignored",
+          "value": "80/81"
+        }
+      ]
+    },
+    {
+      "id": "probabilita-almeno-uno-075",
       "archetype": "probabilita-almeno-uno",
       "category": "probabilita-elementare",
       "family": "probabilita-elementare",
@@ -5789,42 +5870,42 @@
         "en": "A fair six-sided die is rolled 4 times. What is the probability of getting at least a six?"
       },
       "options": {
-        "A": "125/1296",
-        "B": "671/1296",
-        "C": "625/1296",
-        "D": "2/3"
+        "A": "625/1296",
+        "B": "2/3",
+        "C": "671/1296",
+        "D": "125/1296"
       },
-      "correct": "B",
+      "correct": "C",
       "explanation": {
         "it": "Ogni tentativo fallisce con probabilità q = 1 − 1/6 = 5/6. Tutti i 4 tentativi falliscono con probabilità q^4 = 625/1296. Quindi P(almeno uno) = 1 − 625/1296 = 671/1296.",
         "en": "Each attempt fails with probability q = 1 − 1/6 = 5/6. All 4 attempts fail with probability q^4 = 625/1296. So P(at least one) = 1 − 625/1296 = 671/1296."
       },
       "diagnoses": {
         "A": {
-          "it": "È la probabilità di un successo in una posizione precisa e insuccesso negli altri 3 tentativi, p · (1 − p)^3: «almeno uno» ammette successi in qualsiasi posizione e anche più di uno.",
-          "en": "That is the probability of a success in one specific position and failure in the other 3 attempts, p · (1 − p)^3: “at least one” allows successes in any position, and more than one."
-        },
-        "C": {
           "it": "È la probabilità dell'evento contrario, cioè che nessun tentativo riesca: «almeno uno» si ottiene con 1 − qⁿ.",
           "en": "That is the probability of the opposite event, that no attempt succeeds: “at least one” is obtained with 1 − qⁿ."
         },
-        "D": {
+        "B": {
           "it": "Hai sommato le probabilità dei singoli tentativi (4 × 1/6): così conti più volte i casi in cui più tentativi riescono insieme. Il metodo corretto passa dal complementare 1 − qⁿ.",
           "en": "You added up the single-attempt probabilities (4 × 1/6): that counts several times the cases where more attempts succeed together. The correct route goes through the complement 1 − qⁿ."
+        },
+        "D": {
+          "it": "È la probabilità di un successo in una posizione precisa e insuccesso negli altri 3 tentativi, p · (1 − p)^3: «almeno uno» ammette successi in qualsiasi posizione e anche più di uno.",
+          "en": "That is the probability of a success in one specific position and failure in the other 3 attempts, p · (1 − p)^3: “at least one” allows successes in any position, and more than one."
         }
       },
       "misconceptions": {
         "A": {
-          "id": "success-in-fixed-position",
-          "type": "order-irrelevant"
-        },
-        "C": {
           "id": "complement-itself",
           "type": "complement-ignored"
         },
-        "D": {
+        "B": {
           "id": "added-attempts",
           "type": "additive-union"
+        },
+        "D": {
+          "id": "success-in-fixed-position",
+          "type": "order-irrelevant"
         }
       },
       "pool": [
@@ -5856,87 +5937,6 @@
       ]
     },
     {
-      "id": "probabilita-almeno-uno-075",
-      "archetype": "probabilita-almeno-uno",
-      "category": "probabilita-elementare",
-      "family": "probabilita-elementare",
-      "difficulty": "intermediate",
-      "params": {
-        "pd": 3,
-        "n": 3
-      },
-      "text": {
-        "it": "La probabilità di centrare il bersaglio a ogni tiro è 1/3. Effettuando 3 tiri indipendenti, qual è la probabilità di centrarlo almeno una volta?",
-        "en": "The probability of hitting the target on each shot is 1/3. Taking 3 independent shots, what is the probability of hitting it at least once?"
-      },
-      "options": {
-        "A": "4/27",
-        "B": "19/27",
-        "C": "8/27",
-        "D": "1/3"
-      },
-      "correct": "B",
-      "explanation": {
-        "it": "Ogni tentativo fallisce con probabilità q = 1 − 1/3 = 2/3. Tutti i 3 tentativi falliscono con probabilità q^3 = 8/27. Quindi P(almeno uno) = 1 − 8/27 = 19/27.",
-        "en": "Each attempt fails with probability q = 1 − 1/3 = 2/3. All 3 attempts fail with probability q^3 = 8/27. So P(at least one) = 1 − 8/27 = 19/27."
-      },
-      "diagnoses": {
-        "A": {
-          "it": "È la probabilità di un successo in una posizione precisa e insuccesso negli altri 2 tentativi, p · (1 − p)^2: «almeno uno» ammette successi in qualsiasi posizione e anche più di uno.",
-          "en": "That is the probability of a success in one specific position and failure in the other 2 attempts, p · (1 − p)^2: “at least one” allows successes in any position, and more than one."
-        },
-        "C": {
-          "it": "È la probabilità dell'evento contrario, cioè che nessun tentativo riesca: «almeno uno» si ottiene con 1 − qⁿ.",
-          "en": "That is the probability of the opposite event, that no attempt succeeds: “at least one” is obtained with 1 − qⁿ."
-        },
-        "D": {
-          "it": "È la probabilità di un solo tentativo: con 3 tentativi indipendenti la probabilità di successo sale.",
-          "en": "That is the probability of a single attempt: with 3 independent attempts the success probability rises."
-        }
-      },
-      "misconceptions": {
-        "A": {
-          "id": "success-in-fixed-position",
-          "type": "order-irrelevant"
-        },
-        "C": {
-          "id": "complement-itself",
-          "type": "complement-ignored"
-        },
-        "D": {
-          "id": "single-attempt",
-          "type": "other"
-        }
-      },
-      "pool": [
-        {
-          "id": "added-attempts",
-          "type": "additive-union",
-          "value": "1"
-        },
-        {
-          "id": "complement-itself",
-          "type": "complement-ignored",
-          "value": "8/27"
-        },
-        {
-          "id": "success-in-fixed-position",
-          "type": "order-irrelevant",
-          "value": "4/27"
-        },
-        {
-          "id": "single-attempt",
-          "type": "other",
-          "value": "1/3"
-        },
-        {
-          "id": "all-succeed-complement",
-          "type": "complement-ignored",
-          "value": "26/27"
-        }
-      ]
-    },
-    {
       "id": "disposizioni-vincolo-posizione-076",
       "archetype": "disposizioni-vincolo-posizione",
       "category": "disposizioni",
@@ -5944,46 +5944,46 @@
       "difficulty": "intermediate",
       "params": {
         "length": 4,
-        "first": "odd",
-        "last": "even"
+        "first": "even",
+        "last": "any"
       },
       "text": {
-        "it": "Quanti codici di 4 cifre tutte diverse iniziano con una cifra dispari e terminano con una cifra pari?",
-        "en": "How many 4-digit codes with all different digits start with an odd digit and end with an even digit?"
+        "it": "Quanti codici di 4 cifre tutte diverse iniziano con una cifra pari? (Lo 0 è pari e può comparire ovunque.)",
+        "en": "How many 4-digit codes with all different digits start with an even digit? (0 is even and may appear anywhere.)"
       },
       "options": {
-        "A": "5040",
-        "B": "1800",
-        "C": "1400",
+        "A": "2520",
+        "B": "2016",
+        "C": "5040",
         "D": "10000"
       },
-      "correct": "C",
+      "correct": "A",
       "explanation": {
-        "it": "Scegli prima le estremità: ultima cifra pari (5 scelte), prima cifra dispari (5 scelte, tutti i dispari sono ancora disponibili). Restano 8 cifre per la seconda e 7 per la terza: 5 · 5 · 8 · 7 = 1400.",
-        "en": "Choose the ends first: last digit even (5 choices), first digit odd (5 choices, all odds still available). Then 8 digits remain for the second position and 7 for the third: 5 · 5 · 8 · 7 = 1400."
+        "it": "La prima cifra ha 5 scelte (0, 2, 4, 6, 8). A quel punto restano 9 cifre, poi 8, poi 7: totale 5 · 9 · 8 · 7 = 2520.",
+        "en": "The first digit has 5 choices (0, 2, 4, 6, 8). Then 9, 8 and 7 digits remain: total 5 · 9 · 8 · 7 = 2520."
       },
       "diagnoses": {
-        "A": {
-          "it": "Hai contato tutti i codici con cifre distinte, ignorando entrambi i vincoli di parità sulle estremità.",
-          "en": "You counted all codes with distinct digits, ignoring both parity constraints on the ends."
-        },
         "B": {
-          "it": "Hai scelto le posizioni nell'ordine di lettura: ma dopo le due cifre centrali le pari disponibili non sono sempre 5. Conviene fissare prima le due estremità (5 · 5) e poi riempire il centro (8 · 7).",
-          "en": "You filled the positions in reading order: but after the two middle digits the number of available evens is not always 5. Fix the two ends first (5 · 5), then fill the middle (8 · 7)."
+          "it": "Hai escluso lo zero dalle cifre pari: 0 è pari e, in un codice, può stare anche al primo posto.",
+          "en": "You left zero out of the even digits: 0 is even and, in a code, may well come first."
+        },
+        "C": {
+          "it": "Hai contato tutti i codici con cifre distinte senza applicare il vincolo sulla prima cifra pari.",
+          "en": "You counted all codes with distinct digits without applying the first-digit-even constraint."
         },
         "D": {
-          "it": "Hai permesso di ripetere le cifre: «tutte diverse» richiede di escludere a ogni passo le cifre già usate.",
-          "en": "You allowed digits to repeat: “all different” requires excluding, at every step, the digits already used."
+          "it": "Hai permesso di ripetere le cifre: «tutte diverse» richiede le disposizioni semplici, in cui ogni cifra scelta si esclude dalle successive.",
+          "en": "You allowed digits to repeat: “all different” calls for simple dispositions, where each chosen digit is excluded afterwards."
         }
       },
       "misconceptions": {
-        "A": {
+        "B": {
+          "id": "zero-excluded",
+          "type": "other"
+        },
+        "C": {
           "id": "constraint-ignored",
           "type": "constraint-ignored"
-        },
-        "B": {
-          "id": "reading-order",
-          "type": "other"
         },
         "D": {
           "id": "with-repetition",
@@ -6002,14 +6002,14 @@
           "value": "10000"
         },
         {
-          "id": "reading-order",
+          "id": "zero-excluded",
           "type": "other",
-          "value": "1800"
+          "value": "2016"
         },
         {
-          "id": "one-constraint-only",
-          "type": "constraint-applied-once",
-          "value": "2520"
+          "id": "constraint-then-repetition",
+          "type": "repetition",
+          "value": "5000"
         }
       ]
     },
@@ -6029,42 +6029,42 @@
         "en": "How many 4-digit codes with all different digits start with an odd digit and end with an even digit?"
       },
       "options": {
-        "A": "10000",
-        "B": "5040",
+        "A": "1400",
+        "B": "10000",
         "C": "1800",
-        "D": "1400"
+        "D": "5040"
       },
-      "correct": "D",
+      "correct": "A",
       "explanation": {
         "it": "Scegli prima le estremità: ultima cifra pari (5 scelte), prima cifra dispari (5 scelte, tutti i dispari sono ancora disponibili). Restano 8 cifre per la seconda e 7 per la terza: 5 · 5 · 8 · 7 = 1400.",
         "en": "Choose the ends first: last digit even (5 choices), first digit odd (5 choices, all odds still available). Then 8 digits remain for the second position and 7 for the third: 5 · 5 · 8 · 7 = 1400."
       },
       "diagnoses": {
-        "A": {
+        "B": {
           "it": "Hai permesso di ripetere le cifre: «tutte diverse» richiede di escludere a ogni passo le cifre già usate.",
           "en": "You allowed digits to repeat: “all different” requires excluding, at every step, the digits already used."
-        },
-        "B": {
-          "it": "Hai contato tutti i codici con cifre distinte, ignorando entrambi i vincoli di parità sulle estremità.",
-          "en": "You counted all codes with distinct digits, ignoring both parity constraints on the ends."
         },
         "C": {
           "it": "Hai scelto le posizioni nell'ordine di lettura: ma dopo le due cifre centrali le pari disponibili non sono sempre 5. Conviene fissare prima le due estremità (5 · 5) e poi riempire il centro (8 · 7).",
           "en": "You filled the positions in reading order: but after the two middle digits the number of available evens is not always 5. Fix the two ends first (5 · 5), then fill the middle (8 · 7)."
+        },
+        "D": {
+          "it": "Hai contato tutti i codici con cifre distinte, ignorando entrambi i vincoli di parità sulle estremità.",
+          "en": "You counted all codes with distinct digits, ignoring both parity constraints on the ends."
         }
       },
       "misconceptions": {
-        "A": {
+        "B": {
           "id": "with-repetition",
           "type": "repetition"
-        },
-        "B": {
-          "id": "constraint-ignored",
-          "type": "constraint-ignored"
         },
         "C": {
           "id": "reading-order",
           "type": "other"
+        },
+        "D": {
+          "id": "constraint-ignored",
+          "type": "constraint-ignored"
         }
       },
       "pool": [
@@ -6097,37 +6097,37 @@
       "family": "disposizioni",
       "difficulty": "intermediate",
       "params": {
-        "length": 3,
-        "first": "even",
-        "last": "any"
+        "length": 4,
+        "first": "any",
+        "last": "odd"
       },
       "text": {
-        "it": "Quanti codici di 3 cifre tutte diverse iniziano con una cifra pari? (Lo 0 è pari e può comparire ovunque.)",
-        "en": "How many 3-digit codes with all different digits start with an even digit? (0 is even and may appear anywhere.)"
+        "it": "Quanti codici di 4 cifre tutte diverse terminano con una cifra dispari?",
+        "en": "How many 4-digit codes with all different digits end with an odd digit?"
       },
       "options": {
-        "A": "720",
-        "B": "1000",
-        "C": "288",
-        "D": "360"
+        "A": "5040",
+        "B": "3600",
+        "C": "10000",
+        "D": "2520"
       },
       "correct": "D",
       "explanation": {
-        "it": "La prima cifra ha 5 scelte (0, 2, 4, 6, 8); restano 9 e poi 8 cifre: 5 · 9 · 8 = 360.",
-        "en": "The first digit has 5 choices (0, 2, 4, 6, 8); then 9 and 8 digits remain: 5 · 9 · 8 = 360."
+        "it": "Conviene partire dalla posizione vincolata: l'ultima cifra ha 5 scelte (1, 3, 5, 7, 9); le altre si riempiono con le cifre rimaste: 9 · 8 · 7. Totale 9 · 8 · 7 · 5 = 2520.",
+        "en": "Start from the constrained position: the last digit has 5 choices (1, 3, 5, 7, 9); the others are filled with the remaining digits: 9 · 8 · 7. Total 9 · 8 · 7 · 5 = 2520."
       },
       "diagnoses": {
         "A": {
-          "it": "Hai contato tutti i codici di 3 cifre con cifre distinte, senza applicare il vincolo sulla prima cifra pari.",
-          "en": "You counted all 3-digit codes with distinct digits, without applying the first-digit-even constraint."
+          "it": "Hai contato tutti i codici con cifre distinte, senza applicare il vincolo sull'ultima cifra dispari.",
+          "en": "You counted all codes with distinct digits, without applying the last-digit-odd constraint."
         },
         "B": {
-          "it": "Hai permesso di ripetere le cifre: «tutte diverse» richiede le disposizioni semplici, non quelle con ripetizione.",
-          "en": "You allowed digits to repeat: “all different” calls for simple dispositions, not dispositions with repetition."
+          "it": "Hai fissato l'ultima cifra prima delle altre ma hai contato 10 scelte per la prima: una delle cifre dispari è già usata alla fine, quindi le restanti sono 9.",
+          "en": "You fixed the last digit first but counted 10 choices for the first: one odd digit is already used at the end, so only 9 remain."
         },
         "C": {
-          "it": "Hai escluso lo zero dalle cifre pari: 0 è pari e, in un codice, può stare anche al primo posto.",
-          "en": "You left zero out of the even digits: 0 is even and, in a code, may well come first."
+          "it": "Hai permesso di ripetere le cifre: «tutte diverse» esclude i codici in cui una cifra compare più volte.",
+          "en": "You allowed digits to repeat: “all different” rules out codes where a digit appears more than once."
         }
       },
       "misconceptions": {
@@ -6136,34 +6136,34 @@
           "type": "constraint-ignored"
         },
         "B": {
-          "id": "with-repetition",
-          "type": "repetition"
+          "id": "used-digit-not-removed",
+          "type": "constraint-applied-once"
         },
         "C": {
-          "id": "zero-excluded",
-          "type": "other"
+          "id": "with-repetition",
+          "type": "repetition"
         }
       },
       "pool": [
         {
           "id": "constraint-ignored",
           "type": "constraint-ignored",
-          "value": "720"
+          "value": "5040"
         },
         {
           "id": "with-repetition",
           "type": "repetition",
-          "value": "1000"
+          "value": "10000"
         },
         {
-          "id": "zero-excluded",
-          "type": "other",
-          "value": "288"
+          "id": "used-digit-not-removed",
+          "type": "constraint-applied-once",
+          "value": "3600"
         },
         {
           "id": "constraint-then-repetition",
           "type": "repetition",
-          "value": "500"
+          "value": "5000"
         }
       ]
     },
@@ -6183,42 +6183,42 @@
         "en": "How many 4-digit codes with all different digits end with an odd digit?"
       },
       "options": {
-        "A": "10000",
-        "B": "3600",
-        "C": "5040",
-        "D": "2520"
+        "A": "5040",
+        "B": "2520",
+        "C": "3600",
+        "D": "10000"
       },
-      "correct": "D",
+      "correct": "B",
       "explanation": {
         "it": "Conviene partire dalla posizione vincolata: l'ultima cifra ha 5 scelte (1, 3, 5, 7, 9); le altre si riempiono con le cifre rimaste: 9 · 8 · 7. Totale 9 · 8 · 7 · 5 = 2520.",
         "en": "Start from the constrained position: the last digit has 5 choices (1, 3, 5, 7, 9); the others are filled with the remaining digits: 9 · 8 · 7. Total 9 · 8 · 7 · 5 = 2520."
       },
       "diagnoses": {
         "A": {
-          "it": "Hai permesso di ripetere le cifre: «tutte diverse» esclude i codici in cui una cifra compare più volte.",
-          "en": "You allowed digits to repeat: “all different” rules out codes where a digit appears more than once."
+          "it": "Hai contato tutti i codici con cifre distinte, senza applicare il vincolo sull'ultima cifra dispari.",
+          "en": "You counted all codes with distinct digits, without applying the last-digit-odd constraint."
         },
-        "B": {
+        "C": {
           "it": "Hai fissato l'ultima cifra prima delle altre ma hai contato 10 scelte per la prima: una delle cifre dispari è già usata alla fine, quindi le restanti sono 9.",
           "en": "You fixed the last digit first but counted 10 choices for the first: one odd digit is already used at the end, so only 9 remain."
         },
-        "C": {
-          "it": "Hai contato tutti i codici con cifre distinte, senza applicare il vincolo sull'ultima cifra dispari.",
-          "en": "You counted all codes with distinct digits, without applying the last-digit-odd constraint."
+        "D": {
+          "it": "Hai permesso di ripetere le cifre: «tutte diverse» esclude i codici in cui una cifra compare più volte.",
+          "en": "You allowed digits to repeat: “all different” rules out codes where a digit appears more than once."
         }
       },
       "misconceptions": {
         "A": {
-          "id": "with-repetition",
-          "type": "repetition"
+          "id": "constraint-ignored",
+          "type": "constraint-ignored"
         },
-        "B": {
+        "C": {
           "id": "used-digit-not-removed",
           "type": "constraint-applied-once"
         },
-        "C": {
-          "id": "constraint-ignored",
-          "type": "constraint-ignored"
+        "D": {
+          "id": "with-repetition",
+          "type": "repetition"
         }
       },
       "pool": [
@@ -6251,73 +6251,73 @@
       "family": "trombetta",
       "difficulty": "advanced",
       "params": {
-        "k": 6,
-        "n": 4,
+        "k": 7,
+        "n": 3,
         "minEach": 0
       },
       "text": {
-        "it": "In quanti modi distinti si possono sistemare 6 palline identiche fra 4 scatole distinte, senza alcun vincolo (qualcuno può restare a bocca asciutta)?",
-        "en": "In how many distinct ways can you place 6 identical balls among 4 distinct boxes, with no constraint (someone may get none at all)?"
+        "it": "In quanti modi distinti si possono distribuire 7 caramelle identiche fra 3 bambini, senza alcun vincolo (qualcuno può restare a bocca asciutta)?",
+        "en": "In how many distinct ways can you hand out 7 identical sweets among 3 children, with no constraint (someone may get none at all)?"
       },
       "options": {
-        "A": "20",
-        "B": "84",
-        "C": "4096",
-        "D": "10"
+        "A": "15",
+        "B": "2187",
+        "C": "36",
+        "D": "21"
       },
-      "correct": "B",
+      "correct": "C",
       "explanation": {
-        "it": "Oggetti identici e destinatari distinti: è il modello «stelle e barre». Disponiamo 6 stelle e 3 barre separatrici, e scegliamo dove mettere le barre: C(6 + 4 − 1, 4 − 1) = C(9, 3) = 84.",
-        "en": "Identical objects and distinct recipients: this is the \"stars and bars\" model. Lay out 6 stars and 3 separating bars and choose where the bars go: C(6 + 4 − 1, 4 − 1) = C(9, 3) = 84."
+        "it": "Oggetti identici e destinatari distinti: è il modello «stelle e barre». Disponiamo 7 stelle e 2 barre separatrici, e scegliamo dove mettere le barre: C(7 + 3 − 1, 3 − 1) = C(9, 2) = 36.",
+        "en": "Identical objects and distinct recipients: this is the \"stars and bars\" model. Lay out 7 stars and 2 separating bars and choose where the bars go: C(7 + 3 − 1, 3 − 1) = C(9, 2) = 36."
       },
       "diagnoses": {
         "A": {
-          "it": "Hai usato le combinazioni semplici C(6, 3): qui le ripetizioni sono ammesse (uno stesso destinatario può ricevere più oggetti), quindi serve la formula delle combinazioni con ripetizione C(k + n − 1, n − 1).",
-          "en": "You used simple combinations C(6, 3): repetitions are allowed here (one recipient may receive several objects), so you need combinations with repetition, C(k + n − 1, n − 1)."
+          "it": "Hai imposto che ciascuno riceva almeno un oggetto, C(7 − 1, 3 − 1): il testo non pone alcun minimo, quindi qualcuno può non ricevere nulla.",
+          "en": "You required each child to get at least one object, C(7 − 1, 3 − 1): the text sets no minimum, so someone may receive nothing."
         },
-        "C": {
-          "it": "Hai trattato palline identiche come distinguibili: 4^6 conta le assegnazioni di oggetti diversi. Qui gli oggetti sono identici, quindi conta solo quanti ne riceve ciascuna.",
-          "en": "You treated the identical balls as distinguishable: 4^6 counts assignments of different objects. Here the objects are identical, so only how many each box receives matters."
+        "B": {
+          "it": "Hai trattato caramelle identiche come distinguibili: 3^7 conta le assegnazioni di oggetti diversi. Qui gli oggetti sono identici, quindi conta solo quanti ne riceve ciascuno.",
+          "en": "You treated the identical sweets as distinguishable: 3^7 counts assignments of different objects. Here the objects are identical, so only how many each child receives matters."
         },
         "D": {
-          "it": "Hai imposto che ciascuna riceva almeno un oggetto, C(6 − 1, 4 − 1): il testo non pone alcun minimo, quindi qualcuno può non ricevere nulla.",
-          "en": "You required each box to get at least one object, C(6 − 1, 4 − 1): the text sets no minimum, so someone may receive nothing."
+          "it": "Hai usato le combinazioni semplici C(7, 2): qui le ripetizioni sono ammesse (uno stesso destinatario può ricevere più oggetti), quindi serve la formula delle combinazioni con ripetizione C(k + n − 1, n − 1).",
+          "en": "You used simple combinations C(7, 2): repetitions are allowed here (one recipient may receive several objects), so you need combinations with repetition, C(k + n − 1, n − 1)."
         }
       },
       "misconceptions": {
         "A": {
-          "id": "simple-combinations",
-          "type": "repetition"
+          "id": "minimum-one-imposed",
+          "type": "other"
         },
-        "C": {
+        "B": {
           "id": "objects-distinguished",
           "type": "labelled-groups"
         },
         "D": {
-          "id": "minimum-one-imposed",
-          "type": "other"
+          "id": "simple-combinations",
+          "type": "repetition"
         }
       },
       "pool": [
         {
           "id": "objects-distinguished",
           "type": "labelled-groups",
-          "value": "4096"
+          "value": "2187"
         },
         {
           "id": "simple-combinations",
           "type": "repetition",
-          "value": "20"
+          "value": "21"
         },
         {
           "id": "minimum-one-imposed",
           "type": "other",
-          "value": "10"
+          "value": "15"
         },
         {
           "id": "wrong-lower-index",
           "type": "other",
-          "value": "126"
+          "value": "84"
         }
       ]
     },
@@ -6328,44 +6328,40 @@
       "family": "trombetta",
       "difficulty": "advanced",
       "params": {
-        "k": 8,
-        "n": 4,
+        "k": 7,
+        "n": 3,
         "minEach": 0
       },
       "text": {
-        "it": "In quanti modi distinti si possono distribuire 8 caramelle identiche fra 4 bambini, senza alcun vincolo (qualcuno può restare a bocca asciutta)?",
-        "en": "In how many distinct ways can you hand out 8 identical sweets among 4 children, with no constraint (someone may get none at all)?"
+        "it": "In quanti modi distinti si possono ripartire 7 monete da un euro identiche fra 3 salvadanai distinti, senza alcun vincolo (qualcuno può restare a bocca asciutta)?",
+        "en": "In how many distinct ways can you split 7 identical one-euro coins among 3 distinct piggy banks, with no constraint (someone may get none at all)?"
       },
       "options": {
-        "A": "56",
-        "B": "35",
-        "C": "65536",
-        "D": "165"
+        "A": "36",
+        "B": "15",
+        "C": "2187",
+        "D": "21"
       },
-      "correct": "D",
+      "correct": "A",
       "explanation": {
-        "it": "Oggetti identici e destinatari distinti: è il modello «stelle e barre». Disponiamo 8 stelle e 3 barre separatrici, e scegliamo dove mettere le barre: C(8 + 4 − 1, 4 − 1) = C(11, 3) = 165.",
-        "en": "Identical objects and distinct recipients: this is the \"stars and bars\" model. Lay out 8 stars and 3 separating bars and choose where the bars go: C(8 + 4 − 1, 4 − 1) = C(11, 3) = 165."
+        "it": "Oggetti identici e destinatari distinti: è il modello «stelle e barre». Disponiamo 7 stelle e 2 barre separatrici, e scegliamo dove mettere le barre: C(7 + 3 − 1, 3 − 1) = C(9, 2) = 36.",
+        "en": "Identical objects and distinct recipients: this is the \"stars and bars\" model. Lay out 7 stars and 2 separating bars and choose where the bars go: C(7 + 3 − 1, 3 − 1) = C(9, 2) = 36."
       },
       "diagnoses": {
-        "A": {
-          "it": "Hai usato le combinazioni semplici C(8, 3): qui le ripetizioni sono ammesse (uno stesso destinatario può ricevere più oggetti), quindi serve la formula delle combinazioni con ripetizione C(k + n − 1, n − 1).",
-          "en": "You used simple combinations C(8, 3): repetitions are allowed here (one recipient may receive several objects), so you need combinations with repetition, C(k + n − 1, n − 1)."
-        },
         "B": {
-          "it": "Hai imposto che ciascuno riceva almeno un oggetto, C(8 − 1, 4 − 1): il testo non pone alcun minimo, quindi qualcuno può non ricevere nulla.",
-          "en": "You required each child to get at least one object, C(8 − 1, 4 − 1): the text sets no minimum, so someone may receive nothing."
+          "it": "Hai imposto che ciascuna riceva almeno un oggetto, C(7 − 1, 3 − 1): il testo non pone alcun minimo, quindi qualcuno può non ricevere nulla.",
+          "en": "You required each piggy bank to get at least one object, C(7 − 1, 3 − 1): the text sets no minimum, so someone may receive nothing."
         },
         "C": {
-          "it": "Hai trattato caramelle identiche come distinguibili: 4^8 conta le assegnazioni di oggetti diversi. Qui gli oggetti sono identici, quindi conta solo quanti ne riceve ciascuno.",
-          "en": "You treated the identical sweets as distinguishable: 4^8 counts assignments of different objects. Here the objects are identical, so only how many each child receives matters."
+          "it": "Hai trattato monete da un euro identiche come distinguibili: 3^7 conta le assegnazioni di oggetti diversi. Qui gli oggetti sono identici, quindi conta solo quanti ne riceve ciascuna.",
+          "en": "You treated the identical one-euro coins as distinguishable: 3^7 counts assignments of different objects. Here the objects are identical, so only how many each piggy bank receives matters."
+        },
+        "D": {
+          "it": "Hai usato le combinazioni semplici C(7, 2): qui le ripetizioni sono ammesse (uno stesso destinatario può ricevere più oggetti), quindi serve la formula delle combinazioni con ripetizione C(k + n − 1, n − 1).",
+          "en": "You used simple combinations C(7, 2): repetitions are allowed here (one recipient may receive several objects), so you need combinations with repetition, C(k + n − 1, n − 1)."
         }
       },
       "misconceptions": {
-        "A": {
-          "id": "simple-combinations",
-          "type": "repetition"
-        },
         "B": {
           "id": "minimum-one-imposed",
           "type": "other"
@@ -6373,28 +6369,32 @@
         "C": {
           "id": "objects-distinguished",
           "type": "labelled-groups"
+        },
+        "D": {
+          "id": "simple-combinations",
+          "type": "repetition"
         }
       },
       "pool": [
         {
           "id": "objects-distinguished",
           "type": "labelled-groups",
-          "value": "65536"
+          "value": "2187"
         },
         {
           "id": "simple-combinations",
           "type": "repetition",
-          "value": "56"
+          "value": "21"
         },
         {
           "id": "minimum-one-imposed",
           "type": "other",
-          "value": "35"
+          "value": "15"
         },
         {
           "id": "wrong-lower-index",
           "type": "other",
-          "value": "330"
+          "value": "84"
         }
       ]
     },
@@ -6405,47 +6405,47 @@
       "family": "trombetta",
       "difficulty": "advanced",
       "params": {
-        "k": 9,
+        "k": 5,
         "n": 3,
-        "minEach": 2
+        "minEach": 1
       },
       "text": {
-        "it": "In quanti modi distinti si possono distribuire 9 caramelle identiche fra 3 bambini, con il vincolo che ciascuno ne riceva almeno 2?",
-        "en": "In how many distinct ways can you hand out 9 identical sweets among 3 children, with the constraint that each child gets at least 2?"
+        "it": "In quanti modi distinti si possono distribuire 5 caramelle identiche fra 3 bambini, con il vincolo che ciascuno ne riceva almeno 1?",
+        "en": "In how many distinct ways can you hand out 5 identical sweets among 3 children, with the constraint that each child gets at least 1?"
       },
       "options": {
-        "A": "10",
-        "B": "55",
-        "C": "19683",
-        "D": "36"
+        "A": "243",
+        "B": "21",
+        "C": "6",
+        "D": "10"
       },
-      "correct": "A",
+      "correct": "C",
       "explanation": {
-        "it": "Prima soddisfiamo il vincolo: 2 a testa consuma 6 oggetti, e ne restano 3. Su questi si applica il modello «stelle e barre»: C(3 + 3 − 1, 3 − 1) = C(5, 2) = 10.",
-        "en": "First satisfy the constraint: 2 each uses up 6 objects, leaving 3. On those apply \"stars and bars\": C(3 + 3 − 1, 3 − 1) = C(5, 2) = 10."
+        "it": "Prima soddisfiamo il vincolo: 1 a testa consuma 3 oggetti, e ne restano 2. Su questi si applica il modello «stelle e barre»: C(2 + 3 − 1, 3 − 1) = C(4, 2) = 6.",
+        "en": "First satisfy the constraint: 1 each uses up 3 objects, leaving 2. On those apply \"stars and bars\": C(2 + 3 − 1, 3 − 1) = C(4, 2) = 6."
       },
       "diagnoses": {
-        "B": {
-          "it": "Hai dimenticato la pre-assegnazione: prima si consegnano 2 caramelle identiche a testa (6 in tutto) e solo le 3 restanti si distribuiscono liberamente.",
-          "en": "You forgot the pre-assignment: first give 2 to each (6 in total) and only the remaining 3 are distributed freely."
+        "A": {
+          "it": "Hai trattato caramelle identiche come distinguibili: 3^5 conta le assegnazioni di oggetti diversi. Qui gli oggetti sono identici, quindi conta solo quanti ne riceve ciascuno.",
+          "en": "You treated the identical sweets as distinguishable: 3^5 counts assignments of different objects. Here the objects are identical, so only how many each child receives matters."
         },
-        "C": {
-          "it": "Hai trattato caramelle identiche come distinguibili: 3^9 conta le assegnazioni di oggetti diversi. Qui gli oggetti sono identici, quindi conta solo quanti ne riceve ciascuno.",
-          "en": "You treated the identical sweets as distinguishable: 3^9 counts assignments of different objects. Here the objects are identical, so only how many each child receives matters."
+        "B": {
+          "it": "Hai dimenticato la pre-assegnazione: prima si consegnano 1 caramelle identiche a testa (3 in tutto) e solo le 2 restanti si distribuiscono liberamente.",
+          "en": "You forgot the pre-assignment: first give 1 to each (3 in total) and only the remaining 2 are distributed freely."
         },
         "D": {
-          "it": "Hai usato le combinazioni semplici C(9, 2): qui le ripetizioni sono ammesse (uno stesso destinatario può ricevere più oggetti), quindi serve la formula delle combinazioni con ripetizione C(k + n − 1, n − 1).",
-          "en": "You used simple combinations C(9, 2): repetitions are allowed here (one recipient may receive several objects), so you need combinations with repetition, C(k + n − 1, n − 1)."
+          "it": "Hai usato le combinazioni semplici C(5, 2): qui le ripetizioni sono ammesse (uno stesso destinatario può ricevere più oggetti), quindi serve la formula delle combinazioni con ripetizione C(k + n − 1, n − 1).",
+          "en": "You used simple combinations C(5, 2): repetitions are allowed here (one recipient may receive several objects), so you need combinations with repetition, C(k + n − 1, n − 1)."
         }
       },
       "misconceptions": {
+        "A": {
+          "id": "objects-distinguished",
+          "type": "labelled-groups"
+        },
         "B": {
           "id": "minimum-ignored",
           "type": "constraint-ignored"
-        },
-        "C": {
-          "id": "objects-distinguished",
-          "type": "labelled-groups"
         },
         "D": {
           "id": "simple-combinations",
@@ -6456,27 +6456,27 @@
         {
           "id": "objects-distinguished",
           "type": "labelled-groups",
-          "value": "19683"
+          "value": "243"
         },
         {
           "id": "simple-combinations",
           "type": "repetition",
-          "value": "36"
+          "value": "10"
         },
         {
           "id": "minimum-ignored",
           "type": "constraint-ignored",
-          "value": "55"
+          "value": "21"
         },
         {
           "id": "minimum-applied-once",
           "type": "constraint-applied-once",
-          "value": "36"
+          "value": "15"
         },
         {
           "id": "wrong-lower-index",
           "type": "other",
-          "value": "10"
+          "value": "4"
         }
       ]
     },
@@ -6487,83 +6487,154 @@
       "family": "trombetta",
       "difficulty": "advanced",
       "params": {
-        "k": 9,
-        "n": 3,
-        "minEach": 2
+        "k": 7,
+        "n": 4,
+        "minEach": 0
       },
       "text": {
-        "it": "In quanti modi distinti si possono distribuire 9 caramelle identiche fra 3 bambini, con il vincolo che ciascuno ne riceva almeno 2?",
-        "en": "In how many distinct ways can you hand out 9 identical sweets among 3 children, with the constraint that each child gets at least 2?"
+        "it": "In quanti modi distinti si possono ripartire 7 monete da un euro identiche fra 4 salvadanai distinti, senza alcun vincolo (qualcuno può restare a bocca asciutta)?",
+        "en": "In how many distinct ways can you split 7 identical one-euro coins among 4 distinct piggy banks, with no constraint (someone may get none at all)?"
       },
       "options": {
-        "A": "19683",
-        "B": "36",
-        "C": "10",
-        "D": "55"
+        "A": "20",
+        "B": "120",
+        "C": "16384",
+        "D": "35"
       },
-      "correct": "C",
+      "correct": "B",
       "explanation": {
-        "it": "Prima soddisfiamo il vincolo: 2 a testa consuma 6 oggetti, e ne restano 3. Su questi si applica il modello «stelle e barre»: C(3 + 3 − 1, 3 − 1) = C(5, 2) = 10.",
-        "en": "First satisfy the constraint: 2 each uses up 6 objects, leaving 3. On those apply \"stars and bars\": C(3 + 3 − 1, 3 − 1) = C(5, 2) = 10."
+        "it": "Oggetti identici e destinatari distinti: è il modello «stelle e barre». Disponiamo 7 stelle e 3 barre separatrici, e scegliamo dove mettere le barre: C(7 + 4 − 1, 4 − 1) = C(10, 3) = 120.",
+        "en": "Identical objects and distinct recipients: this is the \"stars and bars\" model. Lay out 7 stars and 3 separating bars and choose where the bars go: C(7 + 4 − 1, 4 − 1) = C(10, 3) = 120."
       },
       "diagnoses": {
         "A": {
-          "it": "Hai trattato caramelle identiche come distinguibili: 3^9 conta le assegnazioni di oggetti diversi. Qui gli oggetti sono identici, quindi conta solo quanti ne riceve ciascuno.",
-          "en": "You treated the identical sweets as distinguishable: 3^9 counts assignments of different objects. Here the objects are identical, so only how many each child receives matters."
+          "it": "Hai imposto che ciascuna riceva almeno un oggetto, C(7 − 1, 4 − 1): il testo non pone alcun minimo, quindi qualcuno può non ricevere nulla.",
+          "en": "You required each piggy bank to get at least one object, C(7 − 1, 4 − 1): the text sets no minimum, so someone may receive nothing."
         },
-        "B": {
-          "it": "Hai usato le combinazioni semplici C(9, 2): qui le ripetizioni sono ammesse (uno stesso destinatario può ricevere più oggetti), quindi serve la formula delle combinazioni con ripetizione C(k + n − 1, n − 1).",
-          "en": "You used simple combinations C(9, 2): repetitions are allowed here (one recipient may receive several objects), so you need combinations with repetition, C(k + n − 1, n − 1)."
+        "C": {
+          "it": "Hai trattato monete da un euro identiche come distinguibili: 4^7 conta le assegnazioni di oggetti diversi. Qui gli oggetti sono identici, quindi conta solo quanti ne riceve ciascuna.",
+          "en": "You treated the identical one-euro coins as distinguishable: 4^7 counts assignments of different objects. Here the objects are identical, so only how many each piggy bank receives matters."
         },
         "D": {
-          "it": "Hai dimenticato la pre-assegnazione: prima si consegnano 2 caramelle identiche a testa (6 in tutto) e solo le 3 restanti si distribuiscono liberamente.",
-          "en": "You forgot the pre-assignment: first give 2 to each (6 in total) and only the remaining 3 are distributed freely."
+          "it": "Hai usato le combinazioni semplici C(7, 3): qui le ripetizioni sono ammesse (uno stesso destinatario può ricevere più oggetti), quindi serve la formula delle combinazioni con ripetizione C(k + n − 1, n − 1).",
+          "en": "You used simple combinations C(7, 3): repetitions are allowed here (one recipient may receive several objects), so you need combinations with repetition, C(k + n − 1, n − 1)."
         }
       },
       "misconceptions": {
         "A": {
+          "id": "minimum-one-imposed",
+          "type": "other"
+        },
+        "C": {
           "id": "objects-distinguished",
           "type": "labelled-groups"
         },
-        "B": {
+        "D": {
           "id": "simple-combinations",
           "type": "repetition"
-        },
-        "D": {
-          "id": "minimum-ignored",
-          "type": "constraint-ignored"
         }
       },
       "pool": [
         {
           "id": "objects-distinguished",
           "type": "labelled-groups",
-          "value": "19683"
+          "value": "16384"
         },
         {
           "id": "simple-combinations",
           "type": "repetition",
-          "value": "36"
+          "value": "35"
         },
         {
-          "id": "minimum-ignored",
-          "type": "constraint-ignored",
-          "value": "55"
-        },
-        {
-          "id": "minimum-applied-once",
-          "type": "constraint-applied-once",
-          "value": "36"
+          "id": "minimum-one-imposed",
+          "type": "other",
+          "value": "20"
         },
         {
           "id": "wrong-lower-index",
           "type": "other",
-          "value": "10"
+          "value": "210"
         }
       ]
     },
     {
       "id": "permutazioni-cicliche-084",
+      "archetype": "permutazioni-cicliche",
+      "category": "trombetta",
+      "family": "trombetta",
+      "difficulty": "advanced",
+      "params": {
+        "variant": "mirror",
+        "n": 7
+      },
+      "text": {
+        "it": "Si infilano 7 perline di colori diversi su un braccialetto chiuso ad anello. Quante collane distinte si ottengono, se due sistemazioni che differiscono per una rotazione o per un ribaltamento si considerano uguali?",
+        "en": "You thread 7 beads of different colours onto a closed bracelet. How many distinct bracelets are obtained, if two arrangements differing by a rotation or by a flip count as the same?"
+      },
+      "options": {
+        "A": "720",
+        "B": "5040",
+        "C": "360",
+        "D": "2520"
+      },
+      "correct": "C",
+      "explanation": {
+        "it": "Fissata una perlina si eliminano le rotazioni: (7 − 1)! = 720. Poiché il braccialetto si può ribaltare, ogni collana compare due volte: 720/2 = 360.",
+        "en": "Fixing one bead removes the rotations: (7 − 1)! = 720. Since the bracelet can be flipped, each one appears twice: 720/2 = 360."
+      },
+      "diagnoses": {
+        "A": {
+          "it": "Hai eliminato solo le rotazioni: su un braccialetto si può anche ribaltare, quindi ogni collana viene contata due volte e serve dividere per 2.",
+          "en": "You removed rotations only: a bracelet can also be flipped over, so each one is counted twice and you must divide by 2."
+        },
+        "B": {
+          "it": "Hai contato come una fila: 7! ignora sia le 7 rotazioni sia il ribaltamento.",
+          "en": "You counted as a line: 7! ignores both the 7 rotations and the flip."
+        },
+        "D": {
+          "it": "Hai diviso solo per il ribaltamento: restano da eliminare anche le rotazioni, fissando una perlina come riferimento.",
+          "en": "You divided by the flip only: the rotations still have to be removed by fixing one bead as reference."
+        }
+      },
+      "misconceptions": {
+        "A": {
+          "id": "flip-ignored",
+          "type": "other"
+        },
+        "B": {
+          "id": "linear-arrangement",
+          "type": "circular-as-linear"
+        },
+        "D": {
+          "id": "flip-only",
+          "type": "circular-as-linear"
+        }
+      },
+      "pool": [
+        {
+          "id": "flip-ignored",
+          "type": "other",
+          "value": "720"
+        },
+        {
+          "id": "linear-arrangement",
+          "type": "circular-as-linear",
+          "value": "5040"
+        },
+        {
+          "id": "flip-only",
+          "type": "circular-as-linear",
+          "value": "2520"
+        },
+        {
+          "id": "two-fixed",
+          "type": "other",
+          "value": "120"
+        }
+      ]
+    },
+    {
+      "id": "permutazioni-cicliche-085",
       "archetype": "permutazioni-cicliche",
       "category": "trombetta",
       "family": "trombetta",
@@ -6639,7 +6710,7 @@
       ]
     },
     {
-      "id": "permutazioni-cicliche-085",
+      "id": "permutazioni-cicliche-086",
       "archetype": "permutazioni-cicliche",
       "category": "trombetta",
       "family": "trombetta",
@@ -6715,7 +6786,7 @@
       ]
     },
     {
-      "id": "permutazioni-cicliche-086",
+      "id": "permutazioni-cicliche-087",
       "archetype": "permutazioni-cicliche",
       "category": "trombetta",
       "family": "trombetta",
@@ -6791,181 +6862,105 @@
       ]
     },
     {
-      "id": "permutazioni-cicliche-087",
-      "archetype": "permutazioni-cicliche",
-      "category": "trombetta",
-      "family": "trombetta",
-      "difficulty": "advanced",
-      "params": {
-        "variant": "mirror",
-        "n": 5
-      },
-      "text": {
-        "it": "Si infilano 5 perline di colori diversi su un braccialetto chiuso ad anello. Quante collane distinte si ottengono, se due sistemazioni che differiscono per una rotazione o per un ribaltamento si considerano uguali?",
-        "en": "You thread 5 beads of different colours onto a closed bracelet. How many distinct bracelets are obtained, if two arrangements differing by a rotation or by a flip count as the same?"
-      },
-      "options": {
-        "A": "120",
-        "B": "12",
-        "C": "60",
-        "D": "24"
-      },
-      "correct": "B",
-      "explanation": {
-        "it": "Fissata una perlina si eliminano le rotazioni: (5 − 1)! = 24. Poiché il braccialetto si può ribaltare, ogni collana compare due volte: 24/2 = 12.",
-        "en": "Fixing one bead removes the rotations: (5 − 1)! = 24. Since the bracelet can be flipped, each one appears twice: 24/2 = 12."
-      },
-      "diagnoses": {
-        "A": {
-          "it": "Hai contato come una fila: 5! ignora sia le 5 rotazioni sia il ribaltamento.",
-          "en": "You counted as a line: 5! ignores both the 5 rotations and the flip."
-        },
-        "C": {
-          "it": "Hai diviso solo per il ribaltamento: restano da eliminare anche le rotazioni, fissando una perlina come riferimento.",
-          "en": "You divided by the flip only: the rotations still have to be removed by fixing one bead as reference."
-        },
-        "D": {
-          "it": "Hai eliminato solo le rotazioni: su un braccialetto si può anche ribaltare, quindi ogni collana viene contata due volte e serve dividere per 2.",
-          "en": "You removed rotations only: a bracelet can also be flipped over, so each one is counted twice and you must divide by 2."
-        }
-      },
-      "misconceptions": {
-        "A": {
-          "id": "linear-arrangement",
-          "type": "circular-as-linear"
-        },
-        "C": {
-          "id": "flip-only",
-          "type": "circular-as-linear"
-        },
-        "D": {
-          "id": "flip-ignored",
-          "type": "other"
-        }
-      },
-      "pool": [
-        {
-          "id": "flip-ignored",
-          "type": "other",
-          "value": "24"
-        },
-        {
-          "id": "linear-arrangement",
-          "type": "circular-as-linear",
-          "value": "120"
-        },
-        {
-          "id": "flip-only",
-          "type": "circular-as-linear",
-          "value": "60"
-        },
-        {
-          "id": "two-fixed",
-          "type": "other",
-          "value": "6"
-        }
-      ]
-    },
-    {
       "id": "binomio-newton-088",
       "archetype": "binomio-newton",
       "category": "trombetta",
       "family": "trombetta",
       "difficulty": "advanced",
       "params": {
-        "n": 6,
-        "k": 4,
-        "a": 1,
+        "n": 7,
+        "k": 1,
+        "a": 2,
         "b": 2
       },
       "text": {
-        "it": "Nello sviluppo di (x + 2)^6 secondo la formula del binomio di Newton, quale è il coefficiente numerico del termine in x^4?",
-        "en": "In the expansion of (x + 2)^6 by Newton's binomial formula, what is the numerical coefficient of the x^4 term?"
+        "it": "Nello sviluppo di (2x + 2)^7 secondo la formula del binomio di Newton, quale è il coefficiente numerico del termine in x^1?",
+        "en": "In the expansion of (2x + 2)^7 by Newton's binomial formula, what is the numerical coefficient of the x^1 term?"
       },
       "options": {
-        "A": "240",
-        "B": "15",
-        "C": "1440",
-        "D": "60"
+        "A": "896",
+        "B": "2688",
+        "C": "128",
+        "D": "7"
       },
-      "correct": "D",
+      "correct": "A",
       "explanation": {
-        "it": "La formula del binomio dà il termine generale C(6,k)·(x)^k·(2)^(6−k). Per k = 4: C(6,4) = 15, 1^4 = 1 e 2^2 = 4. Coefficiente = 15 · 1 · 4 = 60.",
-        "en": "The binomial formula gives the general term C(6,k)·(x)^k·(2)^(6−k). For k = 4: C(6,4) = 15, 1^4 = 1 and 2^2 = 4. Coefficient = 15 · 1 · 4 = 60."
+        "it": "La formula del binomio dà il termine generale C(7,k)·(2x)^k·(2)^(7−k). Per k = 1: C(7,1) = 7, 2^1 = 2 e 2^6 = 64. Coefficiente = 7 · 2 · 64 = 896.",
+        "en": "The binomial formula gives the general term C(7,k)·(2x)^k·(2)^(7−k). For k = 1: C(7,1) = 7, 2^1 = 2 and 2^6 = 64. Coefficient = 7 · 2 · 64 = 896."
       },
       "diagnoses": {
-        "A": {
-          "it": "Hai scambiato gli esponenti: nel termine in x^4 la potenza 4 spetta al primo addendo e la potenza 2 al secondo, non il contrario.",
-          "en": "You swapped the exponents: in the x^4 term the power 4 belongs to the first addend and 2 to the second, not the other way round."
-        },
         "B": {
-          "it": "Hai preso solo il coefficiente binomiale C(6,4) = 15: va moltiplicato anche per le potenze delle basi, 1^4 e 2^2.",
-          "en": "You took only the binomial coefficient C(6,4) = 15: it must also be multiplied by the powers of the bases, 1^4 and 2^2."
+          "it": "Hai letto l'esponente della variabile sbagliato: il termine richiesto ha x^1, non x^2.",
+          "en": "You read the wrong exponent of the variable: the requested term has x^1, not x^2."
         },
         "C": {
-          "it": "Hai usato le disposizioni 6!/(6−4)! al posto del coefficiente binomiale: nel binomio di Newton serve C(6,4) = 15, che divide anche per 4!.",
-          "en": "You used dispositions 6!/(6−4)! instead of the binomial coefficient: Newton's binomial needs C(6,4) = 15, which also divides by 4!."
+          "it": "Hai letto l'esponente della variabile sbagliato: il termine richiesto ha x^1, non x^0.",
+          "en": "You read the wrong exponent of the variable: the requested term has x^1, not x^0."
+        },
+        "D": {
+          "it": "Hai preso solo il coefficiente binomiale C(7,1) = 7: va moltiplicato anche per le potenze delle basi, 2^1 e 2^6.",
+          "en": "You took only the binomial coefficient C(7,1) = 7: it must also be multiplied by the powers of the bases, 2^1 and 2^6."
         }
       },
       "misconceptions": {
-        "A": {
-          "id": "exponents-swapped",
-          "type": "other"
-        },
         "B": {
-          "id": "coefficient-only",
+          "id": "exponent-plus-one",
           "type": "other"
         },
         "C": {
-          "id": "dispositions-used",
-          "type": "order-irrelevant"
+          "id": "exponent-minus-one",
+          "type": "other"
+        },
+        "D": {
+          "id": "coefficient-only",
+          "type": "other"
         }
       },
       "pool": [
         {
           "id": "coefficient-only",
           "type": "other",
-          "value": "15"
+          "value": "7"
         },
         {
           "id": "exponents-swapped",
           "type": "other",
-          "value": "240"
+          "value": "896"
         },
         {
           "id": "dispositions-used",
           "type": "order-irrelevant",
-          "value": "1440"
+          "value": "896"
         },
         {
           "id": "exponent-plus-one",
           "type": "other",
-          "value": "12"
+          "value": "2688"
         },
         {
           "id": "exponent-minus-one",
           "type": "other",
-          "value": "160"
+          "value": "128"
         },
         {
           "id": "second-base-forgotten",
           "type": "other",
-          "value": "15"
+          "value": "14"
         },
         {
           "id": "first-base-forgotten",
           "type": "other",
-          "value": "60"
+          "value": "448"
         },
         {
           "id": "sum-of-coefficients",
           "type": "other",
-          "value": "64"
+          "value": "128"
         },
         {
           "id": "wrong-degree",
           "type": "other",
-          "value": "140"
+          "value": "1024"
         }
       ]
     },
@@ -6977,88 +6972,88 @@
       "difficulty": "advanced",
       "params": {
         "n": 6,
-        "k": 3,
-        "a": 3,
+        "k": 1,
+        "a": 2,
         "b": 1
       },
       "text": {
-        "it": "Nello sviluppo di (3x + 1)^6 secondo la formula del binomio di Newton, quale è il coefficiente numerico del termine in x^3?",
-        "en": "In the expansion of (3x + 1)^6 by Newton's binomial formula, what is the numerical coefficient of the x^3 term?"
+        "it": "Nello sviluppo di (2x + 1)^6 secondo la formula del binomio di Newton, quale è il coefficiente numerico del termine in x^1?",
+        "en": "In the expansion of (2x + 1)^6 by Newton's binomial formula, what is the numerical coefficient of the x^1 term?"
       },
       "options": {
-        "A": "540",
-        "B": "20",
-        "C": "1215",
-        "D": "3240"
+        "A": "60",
+        "B": "192",
+        "C": "6",
+        "D": "12"
       },
-      "correct": "A",
+      "correct": "D",
       "explanation": {
-        "it": "La formula del binomio dà il termine generale C(6,k)·(3x)^k·(1)^(6−k). Per k = 3: C(6,3) = 20, 3^3 = 27 e 1^3 = 1. Coefficiente = 20 · 27 · 1 = 540.",
-        "en": "The binomial formula gives the general term C(6,k)·(3x)^k·(1)^(6−k). For k = 3: C(6,3) = 20, 3^3 = 27 and 1^3 = 1. Coefficient = 20 · 27 · 1 = 540."
+        "it": "La formula del binomio dà il termine generale C(6,k)·(2x)^k·(1)^(6−k). Per k = 1: C(6,1) = 6, 2^1 = 2 e 1^5 = 1. Coefficiente = 6 · 2 · 1 = 12.",
+        "en": "The binomial formula gives the general term C(6,k)·(2x)^k·(1)^(6−k). For k = 1: C(6,1) = 6, 2^1 = 2 and 1^5 = 1. Coefficient = 6 · 2 · 1 = 12."
       },
       "diagnoses": {
+        "A": {
+          "it": "Hai letto l'esponente della variabile sbagliato: il termine richiesto ha x^1, non x^2.",
+          "en": "You read the wrong exponent of the variable: the requested term has x^1, not x^2."
+        },
         "B": {
-          "it": "Hai preso solo il coefficiente binomiale C(6,3) = 20: va moltiplicato anche per le potenze delle basi, 3^3 e 1^3.",
-          "en": "You took only the binomial coefficient C(6,3) = 20: it must also be multiplied by the powers of the bases, 3^3 and 1^3."
+          "it": "Hai scambiato gli esponenti: nel termine in x^1 la potenza 1 spetta al primo addendo e la potenza 5 al secondo, non il contrario.",
+          "en": "You swapped the exponents: in the x^1 term the power 1 belongs to the first addend and 5 to the second, not the other way round."
         },
         "C": {
-          "it": "Hai letto l'esponente della variabile sbagliato: il termine richiesto ha x^3, non x^4.",
-          "en": "You read the wrong exponent of the variable: the requested term has x^3, not x^4."
-        },
-        "D": {
-          "it": "Hai usato le disposizioni 6!/(6−3)! al posto del coefficiente binomiale: nel binomio di Newton serve C(6,3) = 20, che divide anche per 3!.",
-          "en": "You used dispositions 6!/(6−3)! instead of the binomial coefficient: Newton's binomial needs C(6,3) = 20, which also divides by 3!."
+          "it": "Hai preso solo il coefficiente binomiale C(6,1) = 6: va moltiplicato anche per le potenze delle basi, 2^1 e 1^5.",
+          "en": "You took only the binomial coefficient C(6,1) = 6: it must also be multiplied by the powers of the bases, 2^1 and 1^5."
         }
       },
       "misconceptions": {
-        "B": {
-          "id": "coefficient-only",
-          "type": "other"
-        },
-        "C": {
+        "A": {
           "id": "exponent-plus-one",
           "type": "other"
         },
-        "D": {
-          "id": "dispositions-used",
-          "type": "order-irrelevant"
+        "B": {
+          "id": "exponents-swapped",
+          "type": "other"
+        },
+        "C": {
+          "id": "coefficient-only",
+          "type": "other"
         }
       },
       "pool": [
         {
           "id": "coefficient-only",
           "type": "other",
-          "value": "20"
+          "value": "6"
         },
         {
           "id": "exponents-swapped",
           "type": "other",
-          "value": "540"
+          "value": "192"
         },
         {
           "id": "dispositions-used",
           "type": "order-irrelevant",
-          "value": "3240"
+          "value": "12"
         },
         {
           "id": "exponent-plus-one",
           "type": "other",
-          "value": "1215"
+          "value": "60"
         },
         {
           "id": "exponent-minus-one",
           "type": "other",
-          "value": "135"
+          "value": "1"
         },
         {
           "id": "second-base-forgotten",
           "type": "other",
-          "value": "540"
+          "value": "12"
         },
         {
           "id": "first-base-forgotten",
           "type": "other",
-          "value": "20"
+          "value": "6"
         },
         {
           "id": "sum-of-coefficients",
@@ -7068,7 +7063,7 @@
         {
           "id": "wrong-degree",
           "type": "other",
-          "value": "945"
+          "value": "14"
         }
       ]
     },
@@ -7079,38 +7074,38 @@
       "family": "trombetta",
       "difficulty": "advanced",
       "params": {
-        "n": 4,
-        "k": 3,
-        "a": 2,
-        "b": 3
+        "n": 6,
+        "k": 5,
+        "a": 1,
+        "b": 2
       },
       "text": {
-        "it": "Nello sviluppo di (2x + 3)^4 secondo la formula del binomio di Newton, quale è il coefficiente numerico del termine in x^3?",
-        "en": "In the expansion of (2x + 3)^4 by Newton's binomial formula, what is the numerical coefficient of the x^3 term?"
+        "it": "Nello sviluppo di (x + 2)^6 secondo la formula del binomio di Newton, quale è il coefficiente numerico del termine in x^5?",
+        "en": "In the expansion of (x + 2)^6 by Newton's binomial formula, what is the numerical coefficient of the x^5 term?"
       },
       "options": {
-        "A": "4",
-        "B": "96",
-        "C": "576",
-        "D": "216"
+        "A": "6",
+        "B": "12",
+        "C": "1440",
+        "D": "192"
       },
       "correct": "B",
       "explanation": {
-        "it": "La formula del binomio dà il termine generale C(4,k)·(2x)^k·(3)^(4−k). Per k = 3: C(4,3) = 4, 2^3 = 8 e 3^1 = 3. Coefficiente = 4 · 8 · 3 = 96.",
-        "en": "The binomial formula gives the general term C(4,k)·(2x)^k·(3)^(4−k). For k = 3: C(4,3) = 4, 2^3 = 8 and 3^1 = 3. Coefficient = 4 · 8 · 3 = 96."
+        "it": "La formula del binomio dà il termine generale C(6,k)·(x)^k·(2)^(6−k). Per k = 5: C(6,5) = 6, 1^5 = 1 e 2^1 = 2. Coefficiente = 6 · 1 · 2 = 12.",
+        "en": "The binomial formula gives the general term C(6,k)·(x)^k·(2)^(6−k). For k = 5: C(6,5) = 6, 1^5 = 1 and 2^1 = 2. Coefficient = 6 · 1 · 2 = 12."
       },
       "diagnoses": {
         "A": {
-          "it": "Hai preso solo il coefficiente binomiale C(4,3) = 4: va moltiplicato anche per le potenze delle basi, 2^3 e 3^1.",
-          "en": "You took only the binomial coefficient C(4,3) = 4: it must also be multiplied by the powers of the bases, 2^3 and 3^1."
+          "it": "Hai preso solo il coefficiente binomiale C(6,5) = 6: va moltiplicato anche per le potenze delle basi, 1^5 e 2^1.",
+          "en": "You took only the binomial coefficient C(6,5) = 6: it must also be multiplied by the powers of the bases, 1^5 and 2^1."
         },
         "C": {
-          "it": "Hai usato le disposizioni 4!/(4−3)! al posto del coefficiente binomiale: nel binomio di Newton serve C(4,3) = 4, che divide anche per 3!.",
-          "en": "You used dispositions 4!/(4−3)! instead of the binomial coefficient: Newton's binomial needs C(4,3) = 4, which also divides by 3!."
+          "it": "Hai usato le disposizioni 6!/(6−5)! al posto del coefficiente binomiale: nel binomio di Newton serve C(6,5) = 6, che divide anche per 5!.",
+          "en": "You used dispositions 6!/(6−5)! instead of the binomial coefficient: Newton's binomial needs C(6,5) = 6, which also divides by 5!."
         },
         "D": {
-          "it": "Hai scambiato gli esponenti: nel termine in x^3 la potenza 3 spetta al primo addendo e la potenza 1 al secondo, non il contrario.",
-          "en": "You swapped the exponents: in the x^3 term the power 3 belongs to the first addend and 1 to the second, not the other way round."
+          "it": "Hai scambiato gli esponenti: nel termine in x^5 la potenza 5 spetta al primo addendo e la potenza 1 al secondo, non il contrario.",
+          "en": "You swapped the exponents: in the x^5 term the power 5 belongs to the first addend and 1 to the second, not the other way round."
         }
       },
       "misconceptions": {
@@ -7131,32 +7126,32 @@
         {
           "id": "coefficient-only",
           "type": "other",
-          "value": "4"
+          "value": "6"
         },
         {
           "id": "exponents-swapped",
           "type": "other",
-          "value": "216"
+          "value": "192"
         },
         {
           "id": "dispositions-used",
           "type": "order-irrelevant",
-          "value": "576"
+          "value": "1440"
         },
         {
           "id": "exponent-plus-one",
           "type": "other",
-          "value": "16"
+          "value": "1"
         },
         {
           "id": "exponent-minus-one",
           "type": "other",
-          "value": "216"
+          "value": "60"
         },
         {
           "id": "second-base-forgotten",
           "type": "other",
-          "value": "32"
+          "value": "6"
         },
         {
           "id": "first-base-forgotten",
@@ -7166,12 +7161,12 @@
         {
           "id": "sum-of-coefficients",
           "type": "other",
-          "value": "16"
+          "value": "64"
         },
         {
           "id": "wrong-degree",
           "type": "other",
-          "value": "240"
+          "value": "42"
         }
       ]
     },
@@ -7182,38 +7177,38 @@
       "family": "trombetta",
       "difficulty": "advanced",
       "params": {
-        "n": 5,
+        "n": 6,
         "k": 4,
-        "a": 2,
-        "b": 1
+        "a": 3,
+        "b": 2
       },
       "text": {
-        "it": "Nello sviluppo di (2x + 1)^5 secondo la formula del binomio di Newton, quale è il coefficiente numerico del termine in x^4?",
-        "en": "In the expansion of (2x + 1)^5 by Newton's binomial formula, what is the numerical coefficient of the x^4 term?"
+        "it": "Nello sviluppo di (3x + 2)^6 secondo la formula del binomio di Newton, quale è il coefficiente numerico del termine in x^4?",
+        "en": "In the expansion of (3x + 2)^6 by Newton's binomial formula, what is the numerical coefficient of the x^4 term?"
       },
       "options": {
-        "A": "5",
-        "B": "80",
-        "C": "10",
-        "D": "1920"
+        "A": "15",
+        "B": "2160",
+        "C": "4860",
+        "D": "116640"
       },
-      "correct": "B",
+      "correct": "C",
       "explanation": {
-        "it": "La formula del binomio dà il termine generale C(5,k)·(2x)^k·(1)^(5−k). Per k = 4: C(5,4) = 5, 2^4 = 16 e 1^1 = 1. Coefficiente = 5 · 16 · 1 = 80.",
-        "en": "The binomial formula gives the general term C(5,k)·(2x)^k·(1)^(5−k). For k = 4: C(5,4) = 5, 2^4 = 16 and 1^1 = 1. Coefficient = 5 · 16 · 1 = 80."
+        "it": "La formula del binomio dà il termine generale C(6,k)·(3x)^k·(2)^(6−k). Per k = 4: C(6,4) = 15, 3^4 = 81 e 2^2 = 4. Coefficiente = 15 · 81 · 4 = 4860.",
+        "en": "The binomial formula gives the general term C(6,k)·(3x)^k·(2)^(6−k). For k = 4: C(6,4) = 15, 3^4 = 81 and 2^2 = 4. Coefficient = 15 · 81 · 4 = 4860."
       },
       "diagnoses": {
         "A": {
-          "it": "Hai preso solo il coefficiente binomiale C(5,4) = 5: va moltiplicato anche per le potenze delle basi, 2^4 e 1^1.",
-          "en": "You took only the binomial coefficient C(5,4) = 5: it must also be multiplied by the powers of the bases, 2^4 and 1^1."
+          "it": "Hai preso solo il coefficiente binomiale C(6,4) = 15: va moltiplicato anche per le potenze delle basi, 3^4 e 2^2.",
+          "en": "You took only the binomial coefficient C(6,4) = 15: it must also be multiplied by the powers of the bases, 3^4 and 2^2."
         },
-        "C": {
-          "it": "Hai scambiato gli esponenti: nel termine in x^4 la potenza 4 spetta al primo addendo e la potenza 1 al secondo, non il contrario.",
-          "en": "You swapped the exponents: in the x^4 term the power 4 belongs to the first addend and 1 to the second, not the other way round."
+        "B": {
+          "it": "Hai scambiato gli esponenti: nel termine in x^4 la potenza 4 spetta al primo addendo e la potenza 2 al secondo, non il contrario.",
+          "en": "You swapped the exponents: in the x^4 term the power 4 belongs to the first addend and 2 to the second, not the other way round."
         },
         "D": {
-          "it": "Hai usato le disposizioni 5!/(5−4)! al posto del coefficiente binomiale: nel binomio di Newton serve C(5,4) = 5, che divide anche per 4!.",
-          "en": "You used dispositions 5!/(5−4)! instead of the binomial coefficient: Newton's binomial needs C(5,4) = 5, which also divides by 4!."
+          "it": "Hai usato le disposizioni 6!/(6−4)! al posto del coefficiente binomiale: nel binomio di Newton serve C(6,4) = 15, che divide anche per 4!.",
+          "en": "You used dispositions 6!/(6−4)! instead of the binomial coefficient: Newton's binomial needs C(6,4) = 15, which also divides by 4!."
         }
       },
       "misconceptions": {
@@ -7221,7 +7216,7 @@
           "id": "coefficient-only",
           "type": "other"
         },
-        "C": {
+        "B": {
           "id": "exponents-swapped",
           "type": "other"
         },
@@ -7234,47 +7229,47 @@
         {
           "id": "coefficient-only",
           "type": "other",
-          "value": "5"
+          "value": "15"
         },
         {
           "id": "exponents-swapped",
           "type": "other",
-          "value": "10"
+          "value": "2160"
         },
         {
           "id": "dispositions-used",
           "type": "order-irrelevant",
-          "value": "1920"
+          "value": "116640"
         },
         {
           "id": "exponent-plus-one",
           "type": "other",
-          "value": "32"
+          "value": "2916"
         },
         {
           "id": "exponent-minus-one",
           "type": "other",
-          "value": "80"
+          "value": "4320"
         },
         {
           "id": "second-base-forgotten",
           "type": "other",
-          "value": "80"
+          "value": "1215"
         },
         {
           "id": "first-base-forgotten",
           "type": "other",
-          "value": "5"
+          "value": "60"
         },
         {
           "id": "sum-of-coefficients",
           "type": "other",
-          "value": "32"
+          "value": "64"
         },
         {
           "id": "wrong-degree",
           "type": "other",
-          "value": "240"
+          "value": "11340"
         }
       ]
     },
@@ -7283,74 +7278,77 @@
       "archetype": "inclusione-esclusione",
       "category": "trombetta",
       "family": "trombetta",
-      "difficulty": "advanced",
+      "difficulty": "intermediate",
       "params": {
-        "sets": 3,
-        "n": 60
+        "sets": 2,
+        "total": 120,
+        "a": 43,
+        "b": 37,
+        "both": 10
       },
       "text": {
-        "it": "Quanti interi da 1 a 60 sono divisibili per 2, per 3 oppure per 5?",
-        "en": "How many integers from 1 to 60 are divisible by 2, by 3 or by 5?"
+        "it": "In una scuola di 120 studenti, 43 praticano il nuoto e 37 praticano l'atletica; 10 praticano entrambe le discipline. Quanti studenti praticano almeno una delle due discipline?",
+        "en": "In a school of 120 students, 43 do swimming and 37 do athletics; 10 do both. How many students do at least one of the two?"
       },
       "options": {
-        "A": "40",
-        "B": "42",
-        "C": "44",
-        "D": "62"
+        "A": "110",
+        "B": "60",
+        "C": "70",
+        "D": "80"
       },
       "correct": "C",
       "explanation": {
-        "it": "Contiamo i multipli: 30 di 2, 20 di 3, 12 di 5. Togliamo le coppie: 10 di 6, 6 di 10, 4 di 15. Ri-aggiungiamo la tripla: 2 di 30. Totale 30 + 20 + 12 − 10 − 6 − 4 + 2 = 44.",
-        "en": "Count the multiples: 30 of 2, 20 of 3, 12 of 5. Remove the pairs: 10 of 6, 6 of 10, 4 of 15. Add the triple back: 2 of 30. Total 30 + 20 + 12 − 10 − 6 − 4 + 2 = 44."
+        "it": "Principio di inclusione-esclusione per due insiemi: |A ∪ B| = |A| + |B| − |A ∩ B| = 43 + 37 − 10 = 70.",
+        "en": "Inclusion–exclusion for two sets: |A ∪ B| = |A| + |B| − |A ∩ B| = 43 + 37 − 10 = 70."
       },
       "diagnoses": {
         "A": {
-          "it": "Hai sottratto l'intersezione tripla invece di sommarla: nel principio di inclusione-esclusione i termini si alternano di segno, quindi il termine triplo va sommato.",
-          "en": "You subtracted the triple intersection instead of adding it: the signs in inclusion–exclusion alternate, so the triple term is added."
+          "it": "Hai lavorato sul totale della scuola: la domanda riguarda solo chi pratica almeno una disciplina, non chi resta escluso.",
+          "en": "You worked from the school total: the question is only about those doing at least one sport, not about who is left out."
         },
         "B": {
-          "it": "Hai sottratto le intersezioni a due a due ma non hai ri-aggiunto l'intersezione tripla: i 2 numeri divisibili per 2·3·5 sono stati tolti una volta di troppo.",
-          "en": "You subtracted the pairwise intersections but did not add the triple intersection back: the 2 numbers divisible by 2·3·5 were removed once too many."
+          "it": "Hai sottratto l'intersezione due volte: chi pratica entrambe le discipline va contato una volta, quindi si toglie 10 una sola volta.",
+          "en": "You subtracted the intersection twice: those doing both must be counted once, so 10 is removed only once."
         },
         "D": {
-          "it": "Hai sommato i tre insiemi senza togliere le sovrapposizioni: i multipli comuni (per esempio quelli divisibili sia per 2 sia per 3) verrebbero contati più volte.",
-          "en": "You added the three sets without removing the overlaps: common multiples (for instance those divisible by both 2 and 3) would be counted several times."
+          "it": "Hai sommato i due gruppi senza togliere l'intersezione: i 10 studenti che praticano entrambe le discipline vengono così contati due volte.",
+          "en": "You added the two groups without removing the intersection: the 10 students doing both get counted twice."
         }
       },
       "misconceptions": {
         "A": {
-          "id": "triple-subtracted",
-          "type": "inclusion-exclusion-truncated"
+          "id": "school-total",
+          "type": "other"
         },
         "B": {
-          "id": "triple-not-added-back",
+          "id": "intersection-removed-twice",
           "type": "inclusion-exclusion-truncated"
         },
         "D": {
-          "id": "overlaps-not-removed",
+          "id": "intersection-not-removed",
           "type": "additive-union"
         }
       },
       "pool": [
         {
-          "id": "overlaps-not-removed",
+          "id": "intersection-not-removed",
           "type": "additive-union",
-          "value": "62"
+          "value": "80"
         },
         {
-          "id": "triple-not-added-back",
+          "id": "intersection-removed-twice",
           "type": "inclusion-exclusion-truncated",
-          "value": "42"
+          "value": "60"
         },
         {
-          "id": "triple-subtracted",
-          "type": "inclusion-exclusion-truncated",
-          "value": "40"
+          "id": "school-total",
+          "type": "other",
+          "value": "110"
         },
         {
-          "id": "none-divisible",
+          "id": "neither",
           "type": "complement-ignored",
-          "value": "16"
+          "value": "50"
         }
       ]
     },

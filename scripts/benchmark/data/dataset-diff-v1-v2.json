@@ -722,12 +722,12 @@
       },
       "new": {
         "key": "C",
-        "value": "7/16",
+        "value": "65/81",
         "options": {
-          "A": "3/16",
-          "B": "1/2",
-          "C": "7/16",
-          "D": "9/16"
+          "A": "8/81",
+          "B": "1/3",
+          "C": "65/81",
+          "D": "16/81"
         }
       }
     },
@@ -747,13 +747,13 @@
         }
       },
       "new": {
-        "key": "B",
-        "value": "671/1296",
+        "key": "D",
+        "value": "65/81",
         "options": {
-          "A": "125/1296",
-          "B": "671/1296",
-          "C": "625/1296",
-          "D": "2/3"
+          "A": "16/81",
+          "B": "1/3",
+          "C": "8/81",
+          "D": "65/81"
         }
       }
     },
@@ -773,72 +773,20 @@
         }
       },
       "new": {
-        "key": "B",
-        "value": "19/27",
-        "options": {
-          "A": "4/27",
-          "B": "19/27",
-          "C": "8/27",
-          "D": "1/3"
-        }
-      }
-    },
-    {
-      "id": "disposizioni-vincolo-posizione-076",
-      "archetype": "disposizioni-vincolo-posizione",
-      "keyChanged": true,
-      "optionsChanged": true,
-      "old": {
-        "key": "A",
-        "value": "2520",
-        "options": {
-          "A": "2520",
-          "B": "2016",
-          "C": "5040",
-          "D": "10000"
-        }
-      },
-      "new": {
         "key": "C",
-        "value": "1400",
+        "value": "671/1296",
         "options": {
-          "A": "5040",
-          "B": "1800",
-          "C": "1400",
-          "D": "10000"
-        }
-      }
-    },
-    {
-      "id": "disposizioni-vincolo-posizione-078",
-      "archetype": "disposizioni-vincolo-posizione",
-      "keyChanged": true,
-      "optionsChanged": true,
-      "old": {
-        "key": "D",
-        "value": "2520",
-        "options": {
-          "A": "5040",
-          "B": "3600",
-          "C": "10000",
-          "D": "2520"
-        }
-      },
-      "new": {
-        "key": "D",
-        "value": "360",
-        "options": {
-          "A": "720",
-          "B": "1000",
-          "C": "288",
-          "D": "360"
+          "A": "625/1296",
+          "B": "2/3",
+          "C": "671/1296",
+          "D": "125/1296"
         }
       }
     },
     {
       "id": "distribuzione-oggetti-stelle-barre-080",
       "archetype": "distribuzione-oggetti-stelle-barre",
-      "keyChanged": true,
+      "keyChanged": false,
       "optionsChanged": true,
       "old": {
         "key": "C",
@@ -851,20 +799,20 @@
         }
       },
       "new": {
-        "key": "B",
-        "value": "84",
+        "key": "C",
+        "value": "36",
         "options": {
-          "A": "20",
-          "B": "84",
-          "C": "4096",
-          "D": "10"
+          "A": "15",
+          "B": "2187",
+          "C": "36",
+          "D": "21"
         }
       }
     },
     {
       "id": "distribuzione-oggetti-stelle-barre-081",
       "archetype": "distribuzione-oggetti-stelle-barre",
-      "keyChanged": true,
+      "keyChanged": false,
       "optionsChanged": true,
       "old": {
         "key": "A",
@@ -877,299 +825,13 @@
         }
       },
       "new": {
-        "key": "D",
-        "value": "165",
-        "options": {
-          "A": "56",
-          "B": "35",
-          "C": "65536",
-          "D": "165"
-        }
-      }
-    },
-    {
-      "id": "distribuzione-oggetti-stelle-barre-082",
-      "archetype": "distribuzione-oggetti-stelle-barre",
-      "keyChanged": true,
-      "optionsChanged": true,
-      "old": {
-        "key": "C",
-        "value": "6",
-        "options": {
-          "A": "243",
-          "B": "21",
-          "C": "6",
-          "D": "10"
-        }
-      },
-      "new": {
         "key": "A",
-        "value": "10",
+        "value": "36",
         "options": {
-          "A": "10",
-          "B": "55",
-          "C": "19683",
-          "D": "36"
-        }
-      }
-    },
-    {
-      "id": "distribuzione-oggetti-stelle-barre-083",
-      "archetype": "distribuzione-oggetti-stelle-barre",
-      "keyChanged": true,
-      "optionsChanged": true,
-      "old": {
-        "key": "B",
-        "value": "120",
-        "options": {
-          "A": "20",
-          "B": "120",
-          "C": "16384",
-          "D": "35"
-        }
-      },
-      "new": {
-        "key": "C",
-        "value": "10",
-        "options": {
-          "A": "19683",
-          "B": "36",
-          "C": "10",
-          "D": "55"
-        }
-      }
-    },
-    {
-      "id": "permutazioni-cicliche-084",
-      "archetype": "permutazioni-cicliche",
-      "keyChanged": true,
-      "optionsChanged": true,
-      "old": {
-        "key": "C",
-        "value": "360",
-        "options": {
-          "A": "720",
-          "B": "5040",
-          "C": "360",
-          "D": "2520"
-        }
-      },
-      "new": {
-        "key": "D",
-        "value": "60",
-        "options": {
-          "A": "120",
-          "B": "360",
-          "C": "720",
-          "D": "60"
-        }
-      }
-    },
-    {
-      "id": "permutazioni-cicliche-085",
-      "archetype": "permutazioni-cicliche",
-      "keyChanged": true,
-      "optionsChanged": true,
-      "old": {
-        "key": "D",
-        "value": "60",
-        "options": {
-          "A": "120",
-          "B": "360",
-          "C": "720",
-          "D": "60"
-        }
-      },
-      "new": {
-        "key": "B",
-        "value": "360",
-        "options": {
-          "A": "720",
-          "B": "360",
-          "C": "5040",
-          "D": "2520"
-        }
-      }
-    },
-    {
-      "id": "permutazioni-cicliche-086",
-      "archetype": "permutazioni-cicliche",
-      "keyChanged": true,
-      "optionsChanged": true,
-      "old": {
-        "key": "B",
-        "value": "360",
-        "options": {
-          "A": "720",
-          "B": "360",
-          "C": "5040",
-          "D": "2520"
-        }
-      },
-      "new": {
-        "key": "D",
-        "value": "5040",
-        "options": {
-          "A": "720",
-          "B": "2520",
-          "C": "40320",
-          "D": "5040"
-        }
-      }
-    },
-    {
-      "id": "permutazioni-cicliche-087",
-      "archetype": "permutazioni-cicliche",
-      "keyChanged": true,
-      "optionsChanged": true,
-      "old": {
-        "key": "D",
-        "value": "5040",
-        "options": {
-          "A": "720",
-          "B": "2520",
-          "C": "40320",
-          "D": "5040"
-        }
-      },
-      "new": {
-        "key": "B",
-        "value": "12",
-        "options": {
-          "A": "120",
-          "B": "12",
-          "C": "60",
-          "D": "24"
-        }
-      }
-    },
-    {
-      "id": "binomio-newton-088",
-      "archetype": "binomio-newton",
-      "keyChanged": true,
-      "optionsChanged": true,
-      "old": {
-        "key": "A",
-        "value": "896",
-        "options": {
-          "A": "896",
-          "B": "2688",
-          "C": "128",
-          "D": "7"
-        }
-      },
-      "new": {
-        "key": "D",
-        "value": "60",
-        "options": {
-          "A": "240",
+          "A": "36",
           "B": "15",
-          "C": "1440",
-          "D": "60"
-        }
-      }
-    },
-    {
-      "id": "binomio-newton-089",
-      "archetype": "binomio-newton",
-      "keyChanged": true,
-      "optionsChanged": true,
-      "old": {
-        "key": "D",
-        "value": "12",
-        "options": {
-          "A": "60",
-          "B": "192",
-          "C": "6",
-          "D": "12"
-        }
-      },
-      "new": {
-        "key": "A",
-        "value": "540",
-        "options": {
-          "A": "540",
-          "B": "20",
-          "C": "1215",
-          "D": "3240"
-        }
-      }
-    },
-    {
-      "id": "binomio-newton-090",
-      "archetype": "binomio-newton",
-      "keyChanged": true,
-      "optionsChanged": true,
-      "old": {
-        "key": "B",
-        "value": "12",
-        "options": {
-          "A": "6",
-          "B": "12",
-          "C": "1440",
-          "D": "192"
-        }
-      },
-      "new": {
-        "key": "B",
-        "value": "96",
-        "options": {
-          "A": "4",
-          "B": "96",
-          "C": "576",
-          "D": "216"
-        }
-      }
-    },
-    {
-      "id": "binomio-newton-091",
-      "archetype": "binomio-newton",
-      "keyChanged": true,
-      "optionsChanged": true,
-      "old": {
-        "key": "C",
-        "value": "4860",
-        "options": {
-          "A": "15",
-          "B": "2160",
-          "C": "4860",
-          "D": "116640"
-        }
-      },
-      "new": {
-        "key": "B",
-        "value": "80",
-        "options": {
-          "A": "5",
-          "B": "80",
-          "C": "10",
-          "D": "1920"
-        }
-      }
-    },
-    {
-      "id": "inclusione-esclusione-092",
-      "archetype": "inclusione-esclusione",
-      "keyChanged": true,
-      "optionsChanged": true,
-      "old": {
-        "key": "C",
-        "value": "70",
-        "options": {
-          "A": "110",
-          "B": "60",
-          "C": "70",
-          "D": "80"
-        }
-      },
-      "new": {
-        "key": "C",
-        "value": "44",
-        "options": {
-          "A": "40",
-          "B": "42",
-          "C": "44",
-          "D": "62"
+          "C": "2187",
+          "D": "21"
         }
       }
     }

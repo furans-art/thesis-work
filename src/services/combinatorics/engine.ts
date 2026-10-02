@@ -9,7 +9,7 @@
  * There is no numeric-perturbation fallback: every option carries a diagnosis.
  */
 
-import type { Rng } from "./math-utils";
+import { createRng, type Rng } from "./math-utils";
 import type { Archetype, DistractorCandidate, GeneratedExercise, ResolvedExercise } from "./types";
 
 export const ENGINE_VERSION = 2;
@@ -59,9 +59,27 @@ export function selectDistractors(ex: GeneratedExercise): DistractorCandidate[] 
   return out;
 }
 
+/** FNV-1a, used only to derive deterministic resampling seeds. */
+function hash(text: string): number {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < text.length; i += 1) {
+    h ^= text.charCodeAt(i);
+    h = Math.imul(h, 0x01000193);
+  }
+  return h >>> 0;
+}
+
+/**
+ * The first attempt draws from the caller's stream; resampling draws from a
+ * derived stream so the caller's sequence is consumed exactly as if no retry
+ * had happened (later items of a seeded dataset do not shift).
+ */
 export function resolveExercise(archetype: Archetype, rng: Rng): ResolvedExercise {
+  let first = "";
   for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt += 1) {
-    const ex = archetype.generate(rng);
+    const source = attempt === 0 ? rng : createRng(hash(`${archetype.id}|${first}|${attempt}`));
+    const ex = archetype.generate(source);
+    if (attempt === 0) first = JSON.stringify(ex.params);
     if (!isValidValue(ex.correct, ex.kind) && !(ex.kind === "probability" && ex.correct === "1")) {
       continue;
     }
