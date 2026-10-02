@@ -63,6 +63,8 @@ export interface RunFile {
   transport: string;
   locale: PromptLocale;
   datasetSeed: number;
+  /** dataset format version; absent on runs recorded against v1 */
+  datasetVersion?: number;
   startedAt: string;
   answers: RunAnswer[];
 }
@@ -70,7 +72,11 @@ export interface RunFile {
 const dataset = JSON.parse(readFileSync(datasetPath, "utf8")) as BenchmarkDataset;
 const items = dataset.items.slice(0, Number.isFinite(limit) ? limit : undefined);
 const outPath = resolve(
-  argStr("out", `scripts/benchmark/data/results/${modelId}-${locale}.json`),
+  // v1 result files keep their historical name; v2 runs get a suffix so they never overwrite them
+  argStr(
+    "out",
+    `scripts/benchmark/data/results/${modelId}-${locale}${(dataset.version ?? 1) >= 2 ? "-v2" : ""}.json`,
+  ),
 );
 
 let run: RunFile = {
@@ -80,13 +86,22 @@ let run: RunFile = {
   transport: config.transport,
   locale,
   datasetSeed: dataset.seed,
+  datasetVersion: dataset.version,
   startedAt: new Date().toISOString(),
   answers: [],
 };
 if (!fresh && existsSync(outPath)) {
   const previous = JSON.parse(readFileSync(outPath, "utf8")) as RunFile;
-  if (previous.datasetSeed === dataset.seed && previous.modelId === config.id) {
+  // only resume answers recorded on the same dataset version: v1 options differ
+  if (
+    previous.datasetSeed === dataset.seed &&
+    previous.modelId === config.id &&
+    (previous.datasetVersion ?? 1) === dataset.version
+  ) {
     run = { ...previous, answers: previous.answers.filter((a) => !a.error) };
+  } else if ((previous.datasetVersion ?? 1) !== dataset.version) {
+    console.error(`${outPath} holds answers for dataset v${previous.datasetVersion ?? 1}; refusing to overwrite (use --out or --fresh)`);
+    process.exit(1);
   }
 }
 

@@ -1,173 +1,163 @@
 /**
- * Deterministic benchmark dataset builder.
+ * Deterministic benchmark dataset builder (format v2).
  *
  * Samples exercises from the 24 procedural archetypes of the Combinatorics &
  * Probability engine and serialises them with their ground truth: correct
  * option, exact step-by-step explanation and, for every wrong option, the
- * cognitive misconception that produces that exact value.
+ * misconception (id + taxonomy type + bilingual diagnosis) that produces it.
+ * Options come from the engine's distractor invariant: there is no
+ * numeric-perturbation fallback, so every wrong option is diagnosed.
  *
- * The RNG is seeded, so the same seed always yields byte-identical datasets:
- * the experiment reported in the thesis is fully reproducible.
+ * The RNG is seeded, so the same seed always yields byte-identical items.
  */
 
 import { createRng, type Rng } from "../../src/services/combinatorics/math-utils";
-import { dispositionArchetypes } from "../../src/services/combinatorics/archetypes/dispositions";
-import { permutationArchetypes } from "../../src/services/combinatorics/archetypes/permutations";
-import { combinationArchetypes } from "../../src/services/combinatorics/archetypes/combinations";
-import { urnArchetypes } from "../../src/services/combinatorics/archetypes/urns";
-import { probabilityArchetypes } from "../../src/services/combinatorics/archetypes/probability";
-import { advancedArchetypes } from "../../src/services/combinatorics/archetypes/advanced";
-import { trombettaArchetypes } from "../../src/services/combinatorics/archetypes/trombetta";
-import type { Archetype, Localized } from "../../src/services/combinatorics/types";
+import { ARCHETYPES } from "../../src/services/combinatorics/combinatorics.service";
+import { ENGINE_VERSION, resolveExercise } from "../../src/services/combinatorics/engine";
+import {
+  CATEGORY_IDS,
+  categoryOf,
+  type ReportingCategory,
+} from "../../src/services/combinatorics/categories";
+import type {
+  Archetype,
+  ExerciseParams,
+  Localized,
+  MisconceptionType,
+  ResolvedExercise,
+} from "../../src/services/combinatorics/types";
 
 export const OPTION_LABELS = ["A", "B", "C", "D"] as const;
 export type OptionLabel = (typeof OPTION_LABELS)[number];
 
-/** Macro-categories used to aggregate results per family in Chapter 6. */
-export const FAMILIES = {
-  disposizioni: dispositionArchetypes,
-  permutazioni: permutationArchetypes,
-  combinazioni: combinationArchetypes,
-  urne: urnArchetypes,
-  probabilita: probabilityArchetypes,
-  avanzati: advancedArchetypes,
-  trombetta: trombettaArchetypes,
-} satisfies Record<string, Archetype[]>;
+export const DATASET_VERSION = 2;
+export const CATEGORIES = CATEGORY_IDS;
+export type Category = ReportingCategory;
+/** @deprecated kept for older imports; categories are the reporting unit. */
+export type Family = Category;
 
-export type Family = keyof typeof FAMILIES;
+export const ALL_ARCHETYPES: Archetype[] = ARCHETYPES;
 
-const FAMILY_OF = new Map<string, Family>();
-for (const [family, list] of Object.entries(FAMILIES) as [Family, Archetype[]][]) {
-  for (const a of list) FAMILY_OF.set(a.id, family);
+export interface ItemMisconception {
+  id: string;
+  type: MisconceptionType;
 }
-
-export const ALL_ARCHETYPES: Archetype[] = Object.values(FAMILIES).flat();
 
 export interface BenchmarkItem {
   id: string;
   archetype: string;
-  family: Family;
+  /** reporting category (single source of truth: categories.ts) */
+  category: Category;
+  /** same as category, kept so older runners keep writing a `family` field */
+  family: Category;
   difficulty: string;
-  /** problem statement, both languages (the runner picks one) */
+  params: ExerciseParams;
   text: Localized;
-  /** four options keyed A–D, already shuffled */
   options: Record<OptionLabel, string>;
   correct: OptionLabel;
-  /** exact derivation produced by the engine */
   explanation: Localized;
-  /**
-   * For each wrong label, the misconception whose application yields it.
-   * Missing entry = the value is a neutral fallback with no known diagnosis.
-   */
+  /** diagnosis for every wrong label (always three entries in v2) */
   diagnoses: Partial<Record<OptionLabel, Localized>>;
+  misconceptions: Partial<Record<OptionLabel, ItemMisconception>>;
+  /** every candidate the archetype proposed, picked or not, for traceability */
+  pool: (ItemMisconception & { value: string })[];
 }
 
 export interface BenchmarkDataset {
+  version: number;
+  engineVersion: number;
   seed: number;
   createdAt: string;
   archetypeCount: number;
   items: BenchmarkItem[];
 }
 
-function parseValue(value: string): { a: number; b: number } {
-  if (value.includes("/")) {
-    const [a, b] = value.split("/").map(Number);
-    return { a: a ?? 0, b: b ?? 1 };
-  }
-  return { a: Number(value), b: 1 };
+/** v1 items (no version field): only the fields the tooling still reads. */
+export interface LegacyItem {
+  id: string;
+  archetype: string;
+  text: Localized;
+  options: Record<OptionLabel, string>;
+  correct: OptionLabel;
+  diagnoses: Partial<Record<OptionLabel, Localized>>;
 }
 
-function gcd2(a: number, b: number): number {
-  let x = Math.abs(a);
-  let y = Math.abs(b);
-  while (y) [x, y] = [y, x % y];
-  return x || 1;
+export interface LegacyDataset {
+  seed: number;
+  items: LegacyItem[];
 }
 
-/** Mirrors the app's fallback policy so options stay plausible and distinct. */
-function fallbackDistractors(correct: string): string[] {
-  const { a, b } = parseValue(correct);
-  if (b > 1) {
-    return [a + 1, a - 1, a + 2, Math.max(a - 2, 0)]
-      .filter((n) => n >= 0 && n < b)
-      .map((n) => (n === 0 ? "0" : `${n / gcd2(n, b)}/${b / gcd2(n, b)}`));
-  }
-  return [a + 1, a - 1 > 0 ? a - 1 : a + 2, 2 * a, a + 3].map(String);
+export interface BuiltItem {
+  item: BenchmarkItem;
+  exercise: ResolvedExercise;
 }
 
-function buildItem(archetype: Archetype, index: number, rng: Rng): BenchmarkItem {
-  const ex = archetype.generate(rng);
-  const seen = new Set<string>([ex.correct]);
-  const wrong: { value: string; why: Localized | undefined }[] = [];
-  const rawWhys = ex.diagnoses ?? [];
-
-  ex.distractors.forEach((label, i) => {
-    if (wrong.length === 3) return;
-    let value = label;
-    let why = rawWhys[i];
-    const { a, b } = parseValue(value);
-    const invalidProbability = b > 1 && a > b;
-    if (invalidProbability || seen.has(value)) {
-      const fb = fallbackDistractors(ex.correct).find((c) => !seen.has(c));
-      if (fb === undefined) return;
-      value = fb;
-      why = undefined;
-    }
-    seen.add(value);
-    wrong.push({ value, why });
-  });
-
-  for (const fb of fallbackDistractors(ex.correct)) {
-    if (wrong.length === 3) break;
-    if (seen.has(fb)) continue;
-    seen.add(fb);
-    wrong.push({ value: fb, why: undefined });
-  }
-
+function buildItem(archetype: Archetype, index: number, rng: Rng): BuiltItem {
+  const ex = resolveExercise(archetype, rng);
   const shuffled = rng.shuffle([
-    { value: ex.correct, correct: true, why: undefined as Localized | undefined },
-    ...wrong.map((w) => ({ value: w.value, correct: false, why: w.why })),
+    { value: ex.correct, miss: null as ResolvedExercise["distractors"][number] | null },
+    ...ex.distractors.map((d) => ({ value: d.value, miss: d })),
   ]);
 
   const options = {} as Record<OptionLabel, string>;
   const diagnoses: Partial<Record<OptionLabel, Localized>> = {};
+  const misconceptions: Partial<Record<OptionLabel, ItemMisconception>> = {};
   let correct: OptionLabel = "A";
   shuffled.forEach((entry, i) => {
     const label = OPTION_LABELS[i]!;
     options[label] = entry.value;
-    if (entry.correct) correct = label;
-    else if (entry.why) diagnoses[label] = entry.why;
+    if (!entry.miss) {
+      correct = label;
+      return;
+    }
+    diagnoses[label] = entry.miss.diagnosis;
+    misconceptions[label] = { id: entry.miss.id, type: entry.miss.type };
   });
 
+  const category = categoryOf(archetype.id);
   return {
-    id: `${archetype.id}-${String(index).padStart(3, "0")}`,
-    archetype: archetype.id,
-    family: FAMILY_OF.get(archetype.id) ?? "avanzati",
-    difficulty: ex.difficulty,
-    text: ex.text,
-    options,
-    correct,
-    explanation: ex.explanation,
-    diagnoses,
+    exercise: ex,
+    item: {
+      id: `${archetype.id}-${String(index).padStart(3, "0")}`,
+      archetype: archetype.id,
+      category,
+      family: category,
+      difficulty: ex.difficulty,
+      params: ex.params,
+      text: ex.text,
+      options,
+      correct,
+      explanation: ex.explanation,
+      diagnoses,
+      misconceptions,
+      pool: ex.pool.map((c) => ({ id: c.id, type: c.type, value: c.value })),
+    },
   };
 }
 
-/**
- * Builds `perArchetype` items for each of the 24 archetypes, so every family
- * is represented with equal weight and no archetype can dominate the score.
- */
-export function buildDataset(seed: number, perArchetype: number): BenchmarkDataset {
+/** Builds `perArchetype` items for each of the 24 archetypes, equal weight per archetype. */
+export function buildDatasetWithExercises(
+  seed: number,
+  perArchetype: number,
+): { dataset: BenchmarkDataset; built: BuiltItem[] } {
   const rng = createRng(seed);
-  const items: BenchmarkItem[] = [];
+  const built: BuiltItem[] = [];
   ALL_ARCHETYPES.forEach((archetype) => {
-    for (let i = 0; i < perArchetype; i += 1) {
-      items.push(buildItem(archetype, items.length, rng));
-    }
+    for (let i = 0; i < perArchetype; i += 1) built.push(buildItem(archetype, built.length, rng));
   });
   return {
-    seed,
-    createdAt: new Date().toISOString(),
-    archetypeCount: ALL_ARCHETYPES.length,
-    items,
+    built,
+    dataset: {
+      version: DATASET_VERSION,
+      engineVersion: ENGINE_VERSION,
+      seed,
+      createdAt: new Date().toISOString(),
+      archetypeCount: ALL_ARCHETYPES.length,
+      items: built.map((b) => b.item),
+    },
   };
+}
+
+export function buildDataset(seed: number, perArchetype: number): BenchmarkDataset {
+  return buildDatasetWithExercises(seed, perArchetype).dataset;
 }

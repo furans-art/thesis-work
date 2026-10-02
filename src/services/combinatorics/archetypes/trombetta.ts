@@ -9,8 +9,9 @@
  */
 
 import { combinations, factorial } from "../math-utils";
-import type { Archetype, GeneratedExercise } from "../types";
+import type { Archetype, DistractorCandidate, GeneratedExercise } from "../types";
 import type { Rng } from "../math-utils";
+import { cand } from "./candidate";
 
 /* ============= 1. Distributing identical objects (stars and bars) ============= */
 
@@ -42,14 +43,6 @@ function starsAndBarsExercise(rng: Rng): GeneratedExercise {
   const ctx = rng.pick(starsContexts);
 
   const correct = combinations(free + n - 1, n - 1);
-  // mistake A: treating the identical objects as distinguishable
-  const wrongDistinct = n ** k;
-  // mistake B: using simple combinations, i.e. forgetting repetition is allowed
-  const wrongSimple = combinations(k, n - 1);
-  // mistake C: forgetting the minimum pre-assignment (or applying it when absent)
-  const wrongNoMin =
-    minEach > 0 ? combinations(k + n - 1, n - 1) : combinations(k - n + n - 1, n - 1);
-
   const constraintIt =
     minEach === 0
       ? "senza alcun vincolo (qualcuno può restare a bocca asciutta)"
@@ -62,30 +55,37 @@ function starsAndBarsExercise(rng: Rng): GeneratedExercise {
   return {
     archetype: "distribuzione-oggetti-stelle-barre",
     difficulty: "advanced",
+    kind: "count",
+    params: { k, n, minEach },
     text: {
       it: `In quanti modi distinti si possono ${ctx.it.verb} ${k} ${ctx.it.objects} fra ${n} ${ctx.it.holders}, ${constraintIt}?`,
       en: `In how many distinct ways can you ${ctx.en.verb} ${k} ${ctx.en.objects} among ${n} ${ctx.en.holders}, ${constraintEn}?`,
     },
     correct: `${correct}`,
-    distractors: [`${wrongDistinct}`, `${wrongSimple}`, `${wrongNoMin}`],
-    diagnoses: [
-      {
-        it: `Hai trattato ${ctx.it.objects} come distinguibili: ${n}^${k} conta le assegnazioni di oggetti diversi. Qui gli oggetti sono identici, quindi conta solo quanti ne riceve ciascun${ctx.it.holder === "bambino" ? "o" : "a"}.`,
-        en: `You treated the ${ctx.en.objects} as distinguishable: ${n}^${k} counts assignments of different objects. Here the objects are identical, so only how many each ${ctx.en.holder} receives matters.`,
-      },
-      {
-        it: "Hai usato le combinazioni semplici: qui le ripetizioni sono ammesse (uno stesso destinatario può ricevere più oggetti), quindi serve la formula delle combinazioni con ripetizione C(k+n−1, n−1).",
-        en: "You used simple combinations: repetitions are allowed here (one recipient may receive several objects), so you need combinations with repetition, C(k+n−1, n−1).",
-      },
-      minEach > 0
-        ? {
-            it: `Hai dimenticato la pre-assegnazione: prima si consegnano ${minEach} ${ctx.it.objects} a testa (${n * minEach} in tutto) e solo le ${free} restanti si distribuiscono liberamente.`,
-            en: `You forgot the pre-assignment: first give ${minEach} to each (${n * minEach} in total) and only the remaining ${free} are distributed freely.`,
-          }
-        : {
-            it: "Hai applicato una pre-assegnazione che il testo non chiede: senza vincolo di minimo si distribuiscono tutti gli oggetti liberamente.",
-            en: "You applied a pre-assignment the text does not ask for: with no minimum constraint all objects are distributed freely.",
-          },
+    candidates: [
+      cand("objects-distinguished", "labelled-groups", n ** k,
+        `Hai trattato ${ctx.it.objects} come distinguibili: ${n}^${k} conta le assegnazioni di oggetti diversi. Qui gli oggetti sono identici, quindi conta solo quanti ne riceve ciascun${ctx.it.holder === "bambino" ? "o" : "a"}.`,
+        `You treated the ${ctx.en.objects} as distinguishable: ${n}^${k} counts assignments of different objects. Here the objects are identical, so only how many each ${ctx.en.holder} receives matters.`),
+      cand("simple-combinations", "repetition", combinations(k, n - 1),
+        `Hai usato le combinazioni semplici C(${k}, ${n - 1}): qui le ripetizioni sono ammesse (uno stesso destinatario può ricevere più oggetti), quindi serve la formula delle combinazioni con ripetizione C(k + n − 1, n − 1).`,
+        `You used simple combinations C(${k}, ${n - 1}): repetitions are allowed here (one recipient may receive several objects), so you need combinations with repetition, C(k + n − 1, n − 1).`),
+      ...(minEach > 0
+        ? [
+            cand("minimum-ignored", "constraint-ignored", combinations(k + n - 1, n - 1),
+              `Hai dimenticato la pre-assegnazione: prima si consegnano ${minEach} ${ctx.it.objects} a testa (${n * minEach} in tutto) e solo le ${free} restanti si distribuiscono liberamente.`,
+              `You forgot the pre-assignment: first give ${minEach} to each (${n * minEach} in total) and only the remaining ${free} are distributed freely.`),
+            cand("minimum-applied-once", "constraint-applied-once", combinations(k - minEach + n - 1, n - 1),
+              `Hai tolto il minimo una sola volta (${k} − ${minEach}): la quota di ${minEach} va consegnata a ciascuno degli ${n} destinatari, quindi si tolgono ${n * minEach} oggetti.`,
+              `You removed the minimum only once (${k} − ${minEach}): the quota of ${minEach} goes to each of the ${n} recipients, so ${n * minEach} objects are removed.`),
+          ]
+        : [
+            cand("minimum-one-imposed", "other", combinations(k - 1, n - 1),
+              `Hai imposto che ciascun${ctx.it.holder === "bambino" ? "o" : "a"} riceva almeno un oggetto, C(${k} − 1, ${n} − 1): il testo non pone alcun minimo, quindi qualcuno può non ricevere nulla.`,
+              `You required each ${ctx.en.holder} to get at least one object, C(${k} − 1, ${n} − 1): the text sets no minimum, so someone may receive nothing.`),
+          ]),
+      cand("wrong-lower-index", "other", combinations(free + n - 1, n),
+        `Hai scelto ${n} posizioni invece di ${n - 1}: per separare ${n} destinatari bastano ${n - 1} barre, quindi C(${free + n - 1}, ${n - 1}).`,
+        `You chose ${n} positions instead of ${n - 1}: separating ${n} recipients takes only ${n - 1} bars, hence C(${free + n - 1}, ${n - 1}).`),
     ],
     explanation: {
       it:
@@ -119,25 +119,26 @@ function circularExercise(rng: Rng): GeneratedExercise {
     return {
       archetype: "permutazioni-cicliche",
       difficulty: "intermediate",
+      kind: "count",
+      params: { variant, n },
       text: {
         it: `In quanti modi distinti si possono far sedere ${n} persone ${ctx.it}, se due sistemazioni che differiscono solo per una rotazione si considerano uguali?`,
         en: `In how many distinct ways can ${n} people be seated ${ctx.en}, if two arrangements differing only by a rotation count as the same?`,
       },
       correct: `${correct}`,
-      distractors: [`${factorial(n)}`, `${factorial(n - 1) / 2}`, `${factorial(n - 2)}`],
-      diagnoses: [
-        {
-          it: `Hai contato come se fosse una fila: ${n}! conta anche le ${n} rotazioni di una stessa disposizione circolare, che il testo dichiara indistinguibili.`,
-          en: `You counted as if it were a line: ${n}! also counts the ${n} rotations of the same circular arrangement, which the text declares indistinguishable.`,
-        },
-        {
-          it: "Hai diviso anche per le simmetrie speculari: il testo identifica solo le rotazioni, non le riflessioni (orario e antiorario restano diversi).",
-          en: "You also divided by mirror symmetries: the text identifies rotations only, not reflections (clockwise and anticlockwise stay different).",
-        },
-        {
-          it: "Hai fissato due persone come riferimento invece di una sola: per eliminare le rotazioni basta bloccare un unico posto.",
-          en: "You fixed two people as reference instead of one: removing rotations requires blocking a single seat only.",
-        },
+      candidates: [
+        cand("linear-arrangement", "circular-as-linear", factorial(n),
+          `Hai contato come se fosse una fila: ${n}! conta anche le ${n} rotazioni di una stessa disposizione circolare, che il testo dichiara indistinguibili.`,
+          `You counted as if it were a line: ${n}! also counts the ${n} rotations of the same circular arrangement, which the text declares indistinguishable.`),
+        cand("mirror-removed", "other", factorial(n - 1) / 2,
+          "Hai diviso anche per le simmetrie speculari: il testo identifica solo le rotazioni, non le riflessioni (orario e antiorario restano diversi).",
+          "You also divided by mirror symmetries: the text identifies rotations only, not reflections (clockwise and anticlockwise stay different)."),
+        cand("two-fixed", "other", factorial(n - 2),
+          "Hai fissato due persone come riferimento invece di una sola: per eliminare le rotazioni basta bloccare un unico posto.",
+          "You fixed two people as reference instead of one: removing rotations requires blocking a single seat only."),
+        cand("linear-halved", "circular-as-linear", factorial(n) / 2,
+          `Hai diviso ${n}! per 2 invece che per ${n}: le rotazioni di una disposizione circolare sono ${n}, non 2.`,
+          `You divided ${n}! by 2 instead of ${n}: a circular arrangement has ${n} rotations, not 2.`),
       ],
       explanation: {
         it: `Fissiamo una persona come riferimento per eliminare le rotazioni: le altre ${n - 1} si dispongono liberamente, quindi (${n} − 1)! = ${correct}. Equivalentemente ${n}!/${n}.`,
@@ -151,25 +152,26 @@ function circularExercise(rng: Rng): GeneratedExercise {
     return {
       archetype: "permutazioni-cicliche",
       difficulty: "advanced",
+      kind: "count",
+      params: { variant, n },
       text: {
         it: `Si infilano ${n} perline di colori diversi su un braccialetto chiuso ad anello. Quante collane distinte si ottengono, se due sistemazioni che differiscono per una rotazione o per un ribaltamento si considerano uguali?`,
         en: `You thread ${n} beads of different colours onto a closed bracelet. How many distinct bracelets are obtained, if two arrangements differing by a rotation or by a flip count as the same?`,
       },
       correct: `${correct}`,
-      distractors: [`${factorial(n - 1)}`, `${factorial(n)}`, `${factorial(n) / 2}`],
-      diagnoses: [
-        {
-          it: "Hai eliminato solo le rotazioni: su un braccialetto si può anche ribaltare, quindi ogni collana viene contata due volte e serve dividere per 2.",
-          en: "You removed rotations only: a bracelet can also be flipped over, so each one is counted twice and you must divide by 2.",
-        },
-        {
-          it: `Hai contato come una fila: ${n}! ignora sia le ${n} rotazioni sia il ribaltamento.`,
-          en: `You counted as a line: ${n}! ignores both the ${n} rotations and the flip.`,
-        },
-        {
-          it: "Hai diviso solo per il ribaltamento: restano da eliminare anche le rotazioni, fissando una perlina come riferimento.",
-          en: "You divided by the flip only: the rotations still have to be removed by fixing one bead as reference.",
-        },
+      candidates: [
+        cand("flip-ignored", "other", factorial(n - 1),
+          "Hai eliminato solo le rotazioni: su un braccialetto si può anche ribaltare, quindi ogni collana viene contata due volte e serve dividere per 2.",
+          "You removed rotations only: a bracelet can also be flipped over, so each one is counted twice and you must divide by 2."),
+        cand("linear-arrangement", "circular-as-linear", factorial(n),
+          `Hai contato come una fila: ${n}! ignora sia le ${n} rotazioni sia il ribaltamento.`,
+          `You counted as a line: ${n}! ignores both the ${n} rotations and the flip.`),
+        cand("flip-only", "circular-as-linear", factorial(n) / 2,
+          "Hai diviso solo per il ribaltamento: restano da eliminare anche le rotazioni, fissando una perlina come riferimento.",
+          "You divided by the flip only: the rotations still have to be removed by fixing one bead as reference."),
+        cand("two-fixed", "other", factorial(n - 2),
+          "Hai fissato due perline come riferimento: per eliminare le rotazioni basta una perlina, e il ribaltamento si elimina dividendo per 2.",
+          "You fixed two beads as reference: one bead suffices to remove rotations, and the flip is removed by dividing by 2."),
       ],
       explanation: {
         it: `Fissata una perlina si eliminano le rotazioni: (${n} − 1)! = ${factorial(n - 1)}. Poiché il braccialetto si può ribaltare, ogni collana compare due volte: ${factorial(n - 1)}/2 = ${correct}.`,
@@ -183,25 +185,26 @@ function circularExercise(rng: Rng): GeneratedExercise {
   return {
     archetype: "permutazioni-cicliche",
     difficulty: "advanced",
+    kind: "count",
+    params: { variant, n },
     text: {
       it: `In quanti modi distinti si possono far sedere ${n} persone ${ctx.it}, se due di loro non devono sedersi vicine e le sistemazioni che differiscono per una rotazione si considerano uguali?`,
       en: `In how many distinct ways can ${n} people be seated ${ctx.en}, if two of them must not sit next to each other and arrangements differing by a rotation count as the same?`,
     },
     correct: `${correct}`,
-    distractors: [`${factorial(n - 1)}`, `${2 * factorial(n - 2)}`, `${(n - 2) * factorial(n - 2)}`],
-    diagnoses: [
-      {
-        it: "Hai contato tutte le sistemazioni circolari senza applicare il vincolo: vanno escluse quelle in cui le due persone sono adiacenti.",
-        en: "You counted every circular arrangement without applying the constraint: the ones where the two people are adjacent must be excluded.",
-      },
-      {
-        it: "Hai contato proprio i casi da escludere, cioè quelli con le due persone vicine: il risultato cercato è il complementare.",
-        en: "You counted exactly the cases to exclude, the ones with the two people adjacent: the answer is the complement.",
-      },
-      {
-        it: `Hai contato ${n - 2} posti liberi per la seconda persona: dopo aver fissato la prima, i posti da evitare sono i due adiacenti, quindi ne restano ${n - 3}.`,
-        en: `You allowed ${n - 2} free seats for the second person: after fixing the first, the two adjacent seats are forbidden, so ${n - 3} remain.`,
-      },
+    candidates: [
+      cand("constraint-ignored", "constraint-ignored", factorial(n - 1),
+        "Hai contato tutte le sistemazioni circolari senza applicare il vincolo: vanno escluse quelle in cui le due persone sono adiacenti.",
+        "You counted every circular arrangement without applying the constraint: the ones where the two people are adjacent must be excluded."),
+      cand("excluded-cases", "complement-ignored", 2 * factorial(n - 2),
+        "Hai contato proprio i casi da escludere, cioè quelli con le due persone vicine: il risultato cercato è il complementare.",
+        "You counted exactly the cases to exclude, the ones with the two people adjacent: the answer is the complement."),
+      cand("one-neighbour-excluded", "constraint-applied-once", (n - 2) * factorial(n - 2),
+        `Hai contato ${n - 2} posti liberi per la seconda persona: dopo aver fissato la prima, i posti da evitare sono i due adiacenti, quindi ne restano ${n - 3}.`,
+        `You allowed ${n - 2} free seats for the second person: after fixing the first, the two adjacent seats are forbidden, so ${n - 3} remain.`),
+      cand("linear-non-adjacent", "circular-as-linear", factorial(n) - 2 * factorial(n - 1),
+        `Hai contato le file non circolari con le due persone separate (${n}! − 2 · ${n - 1}!): al tavolo rotondo le rotazioni coincidono e anche il primo e l'ultimo posto sono vicini.`,
+        `You counted straight lines with the two people apart (${n}! − 2 · ${n - 1}!): at a round table rotations coincide and the first and last seats are adjacent too.`),
     ],
     explanation: {
       it: `Fissiamo la prima persona speciale per eliminare le rotazioni. La seconda non può occupare i due posti adiacenti, quindi ha ${n} − 3 = ${n - 3} scelte; le altre ${n - 2} persone si dispongono in (${n} − 2)! modi. Totale: ${n - 3} · ${factorial(n - 2)} = ${correct}.`,
@@ -227,8 +230,10 @@ function binomialExercise(rng: Rng): GeneratedExercise {
 
   // candidate mistakes, each with its own diagnosis; colliding or
   // coincidentally-correct values are skipped in order
-  const candidates: { value: number; why: { it: string; en: string } }[] = [
+  const raw: { id: string; type: DistractorCandidate["type"]; value: number; why: { it: string; en: string } }[] = [
     {
+      id: "coefficient-only",
+      type: "other",
       value: bin,
       why: {
         it: `Hai preso solo il coefficiente binomiale C(${n},${k}) = ${bin}: va moltiplicato anche per le potenze delle basi, ${a}^${k} e ${b}^${n - k}.`,
@@ -236,6 +241,8 @@ function binomialExercise(rng: Rng): GeneratedExercise {
       },
     },
     {
+      id: "exponents-swapped",
+      type: "other",
       value: bin * a ** (n - k) * b ** k,
       why: {
         it: `Hai scambiato gli esponenti: nel termine in x^${k} la potenza ${k} spetta al primo addendo e la potenza ${n - k} al secondo, non il contrario.`,
@@ -243,6 +250,8 @@ function binomialExercise(rng: Rng): GeneratedExercise {
       },
     },
     {
+      id: "dispositions-used",
+      type: "order-irrelevant",
       value: (factorial(n) / factorial(n - k)) * a ** k * b ** (n - k),
       why: {
         it: `Hai usato le disposizioni ${n}!/(${n}−${k})! al posto del coefficiente binomiale: nel binomio di Newton serve C(${n},${k}) = ${bin}, che divide anche per ${k}!.`,
@@ -250,6 +259,8 @@ function binomialExercise(rng: Rng): GeneratedExercise {
       },
     },
     {
+      id: "exponent-plus-one",
+      type: "other",
       value: combinations(n, k + 1) * a ** (k + 1) * b ** (n - k - 1),
       why: {
         it: `Hai letto l'esponente della variabile sbagliato: il termine richiesto ha x^${k}, non x^${k + 1}.`,
@@ -257,6 +268,8 @@ function binomialExercise(rng: Rng): GeneratedExercise {
       },
     },
     {
+      id: "exponent-minus-one",
+      type: "other",
       value: combinations(n, k - 1) * a ** (k - 1) * b ** (n - k + 1),
       why: {
         it: `Hai letto l'esponente della variabile sbagliato: il termine richiesto ha x^${k}, non x^${k - 1}.`,
@@ -264,6 +277,8 @@ function binomialExercise(rng: Rng): GeneratedExercise {
       },
     },
     {
+      id: "second-base-forgotten",
+      type: "other",
       value: bin * a ** k,
       why: {
         it: `Hai dimenticato la potenza della seconda base: manca il fattore ${b}^${n - k} = ${b ** (n - k)}.`,
@@ -271,6 +286,8 @@ function binomialExercise(rng: Rng): GeneratedExercise {
       },
     },
     {
+      id: "first-base-forgotten",
+      type: "other",
       value: bin * b ** (n - k),
       why: {
         it: `Hai dimenticato la potenza della prima base: manca il fattore ${a}^${k} = ${a ** k}.`,
@@ -278,6 +295,8 @@ function binomialExercise(rng: Rng): GeneratedExercise {
       },
     },
     {
+      id: "sum-of-coefficients",
+      type: "other",
       value: 2 ** n,
       why: {
         it: `Hai confuso il coefficiente del singolo termine con la somma di tutti i coefficienti dello sviluppo, che è 2^${n}.`,
@@ -285,6 +304,8 @@ function binomialExercise(rng: Rng): GeneratedExercise {
       },
     },
     {
+      id: "wrong-degree",
+      type: "other",
       value: combinations(n + 1, k) * a ** k * b ** (n - k),
       why: {
         it: `Hai letto la potenza sbagliata del binomio: il coefficiente C(${n + 1},${k}) appartiene allo sviluppo di grado ${n + 1}, non ${n}.`,
@@ -293,25 +314,19 @@ function binomialExercise(rng: Rng): GeneratedExercise {
     },
   ];
 
-  const seen = new Set([correct]);
-  const picked: typeof candidates = [];
-  for (const c of candidates) {
-    if (picked.length === 3) break;
-    if (c.value <= 0 || seen.has(c.value)) continue;
-    seen.add(c.value);
-    picked.push(c);
-  }
+  const candidates = raw.map((c) => cand(c.id, c.type, c.value, c.why.it, c.why.en));
 
   return {
     archetype: "binomio-newton",
     difficulty: "advanced",
+    kind: "count",
+    params: { n, k, a, b },
     text: {
       it: `Nello sviluppo di ${expr} secondo la formula del binomio di Newton, quale è il coefficiente numerico del termine in x^${k}?`,
       en: `In the expansion of ${expr} by Newton's binomial formula, what is the numerical coefficient of the x^${k} term?`,
     },
     correct: `${correct}`,
-    distractors: picked.map((c) => `${c.value}`),
-    diagnoses: picked.map((c) => c.why),
+    candidates,
     explanation: {
       it: `La formula del binomio dà il termine generale C(${n},k)·(${aPart})^k·(${b})^(${n}−k). Per k = ${k}: C(${n},${k}) = ${bin}, ${a}^${k} = ${a ** k} e ${b}^${n - k} = ${b ** (n - k)}. Coefficiente = ${bin} · ${a ** k} · ${b ** (n - k)} = ${correct}.`,
       en: `The binomial formula gives the general term C(${n},k)·(${aPart})^k·(${b})^(${n}−k). For k = ${k}: C(${n},${k}) = ${bin}, ${a}^${k} = ${a ** k} and ${b}^${n - k} = ${b ** (n - k)}. Coefficient = ${bin} · ${a ** k} · ${b ** (n - k)} = ${correct}.`,
@@ -340,25 +355,26 @@ function inclusionExclusionExercise(rng: Rng): GeneratedExercise {
     return {
       archetype: "inclusione-esclusione",
       difficulty: "intermediate",
+      kind: "count",
+      params: { sets: 2, total, a, b, both },
       text: {
         it: `In una scuola di ${total} studenti, ${a} praticano il nuoto e ${b} praticano l'atletica; ${both} praticano entrambe le discipline. Quanti studenti praticano almeno una delle due discipline?`,
         en: `In a school of ${total} students, ${a} do swimming and ${b} do athletics; ${both} do both. How many students do at least one of the two?`,
       },
       correct: `${correct}`,
-      distractors: [`${a + b}`, `${a + b - 2 * both}`, `${total - both}`],
-      diagnoses: [
-        {
-          it: `Hai sommato i due gruppi senza togliere l'intersezione: i ${both} studenti che praticano entrambe le discipline vengono così contati due volte.`,
-          en: `You added the two groups without removing the intersection: the ${both} students doing both get counted twice.`,
-        },
-        {
-          it: `Hai sottratto l'intersezione due volte: chi pratica entrambe le discipline va contato una volta, quindi si toglie ${both} una sola volta.`,
-          en: `You subtracted the intersection twice: those doing both must be counted once, so ${both} is removed only once.`,
-        },
-        {
-          it: "Hai lavorato sul totale della scuola: la domanda riguarda solo chi pratica almeno una disciplina, non chi resta escluso.",
-          en: "You worked from the school total: the question is only about those doing at least one sport, not about who is left out.",
-        },
+      candidates: [
+        cand("intersection-not-removed", "additive-union", a + b,
+          `Hai sommato i due gruppi senza togliere l'intersezione: i ${both} studenti che praticano entrambe le discipline vengono così contati due volte.`,
+          `You added the two groups without removing the intersection: the ${both} students doing both get counted twice.`),
+        cand("intersection-removed-twice", "inclusion-exclusion-truncated", a + b - 2 * both,
+          `Hai sottratto l'intersezione due volte: chi pratica entrambe le discipline va contato una volta, quindi si toglie ${both} una sola volta.`,
+          `You subtracted the intersection twice: those doing both must be counted once, so ${both} is removed only once.`),
+        cand("school-total", "other", total - both,
+          "Hai lavorato sul totale della scuola: la domanda riguarda solo chi pratica almeno una disciplina, non chi resta escluso.",
+          "You worked from the school total: the question is only about those doing at least one sport, not about who is left out."),
+        cand("neither", "complement-ignored", total - (a + b - both),
+          "Hai contato chi non pratica nessuna delle due discipline: è il complementare dell'insieme richiesto.",
+          "You counted those doing neither sport: that is the complement of the requested set."),
       ],
       explanation: {
         it: `Principio di inclusione-esclusione per due insiemi: |A ∪ B| = |A| + |B| − |A ∩ B| = ${a} + ${b} − ${both} = ${correct}.`,
@@ -381,29 +397,26 @@ function inclusionExclusionExercise(rng: Rng): GeneratedExercise {
   return {
     archetype: "inclusione-esclusione",
     difficulty: "advanced",
+    kind: "count",
+    params: { sets: 3, n },
     text: {
       it: `Quanti interi da 1 a ${n} sono divisibili per ${p}, per ${q} oppure per ${r}?`,
       en: `How many integers from 1 to ${n} are divisible by ${p}, by ${q} or by ${r}?`,
     },
     correct: `${correct}`,
-    distractors: [
-      `${cA + cB + cC}`,
-      `${cA + cB + cC - cAB - cAC - cBC}`,
-      `${cA + cB + cC - cAB - cAC - cBC - cABC}`,
-    ],
-    diagnoses: [
-      {
-        it: "Hai sommato i tre insiemi senza togliere le sovrapposizioni: i multipli comuni (per esempio quelli divisibili sia per 2 sia per 3) verrebbero contati più volte.",
-        en: "You added the three sets without removing the overlaps: common multiples (for instance those divisible by both 2 and 3) would be counted several times.",
-      },
-      {
-        it: `Hai sottratto le intersezioni a due a due ma non hai ri-aggiunto l'intersezione tripla: i ${cABC} numeri divisibili per ${p}·${q}·${r} sono stati tolti una volta di troppo.`,
-        en: `You subtracted the pairwise intersections but did not add the triple intersection back: the ${cABC} numbers divisible by ${p}·${q}·${r} were removed once too many.`,
-      },
-      {
-        it: "Hai sottratto l'intersezione tripla invece di sommarla: nel principio di inclusione-esclusione i termini si alternano di segno, quindi il termine triplo va sommato.",
-        en: "You subtracted the triple intersection instead of adding it: the signs in inclusion–exclusion alternate, so the triple term is added.",
-      },
+    candidates: [
+      cand("overlaps-not-removed", "additive-union", cA + cB + cC,
+        "Hai sommato i tre insiemi senza togliere le sovrapposizioni: i multipli comuni (per esempio quelli divisibili sia per 2 sia per 3) verrebbero contati più volte.",
+        "You added the three sets without removing the overlaps: common multiples (for instance those divisible by both 2 and 3) would be counted several times."),
+      cand("triple-not-added-back", "inclusion-exclusion-truncated", cA + cB + cC - cAB - cAC - cBC,
+        `Hai sottratto le intersezioni a due a due ma non hai ri-aggiunto l'intersezione tripla: i ${cABC} numeri divisibili per ${p}·${q}·${r} sono stati tolti una volta di troppo.`,
+        `You subtracted the pairwise intersections but did not add the triple intersection back: the ${cABC} numbers divisible by ${p}·${q}·${r} were removed once too many.`),
+      cand("triple-subtracted", "inclusion-exclusion-truncated", cA + cB + cC - cAB - cAC - cBC - cABC,
+        "Hai sottratto l'intersezione tripla invece di sommarla: nel principio di inclusione-esclusione i termini si alternano di segno, quindi il termine triplo va sommato.",
+        "You subtracted the triple intersection instead of adding it: the signs in inclusion–exclusion alternate, so the triple term is added."),
+      cand("none-divisible", "complement-ignored", n - correct,
+        `Hai contato gli interi non divisibili per nessuno dei tre numeri: è il complementare dell'insieme richiesto.`,
+        `You counted the integers divisible by none of the three numbers: that is the complement of the requested set.`),
     ],
     explanation: {
       it: `Contiamo i multipli: ${cA} di ${p}, ${cB} di ${q}, ${cC} di ${r}. Togliamo le coppie: ${cAB} di ${p * q}, ${cAC} di ${p * r}, ${cBC} di ${q * r}. Ri-aggiungiamo la tripla: ${cABC} di ${p * q * r}. Totale ${cA} + ${cB} + ${cC} − ${cAB} − ${cAC} − ${cBC} + ${cABC} = ${correct}.`,

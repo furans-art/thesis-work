@@ -17,6 +17,8 @@ export interface Question {
    * exercises of the thesis modules provide it.
    */
   rationales?: (Localized | null)[] | undefined;
+  /** Combinatorics engine version that generated it; absent on older snapshots. */
+  engineVersion?: number | undefined;
 }
 
 /** Mock data for the fac-simile. Swap for a real source later. */

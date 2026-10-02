@@ -1,0 +1,931 @@
+{
+  "from": 1,
+  "to": 2,
+  "seed": 20261001,
+  "changes": [
+    {
+      "id": "disposizioni-semplici-codice-001",
+      "archetype": "disposizioni-semplici-codice",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "A",
+        "value": "120",
+        "options": {
+          "A": "120",
+          "B": "121",
+          "C": "5",
+          "D": "625"
+        }
+      },
+      "new": {
+        "key": "A",
+        "value": "120",
+        "options": {
+          "A": "120",
+          "B": "20",
+          "C": "5",
+          "D": "625"
+        }
+      }
+    },
+    {
+      "id": "disposizioni-ripetizione-targa-005",
+      "archetype": "disposizioni-ripetizione-targa",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "D",
+        "value": "81",
+        "options": {
+          "A": "82",
+          "B": "0",
+          "C": "64",
+          "D": "81"
+        }
+      },
+      "new": {
+        "key": "D",
+        "value": "81",
+        "options": {
+          "A": "12",
+          "B": "64",
+          "C": "15",
+          "D": "81"
+        }
+      }
+    },
+    {
+      "id": "disposizioni-ripetizione-targa-007",
+      "archetype": "disposizioni-ripetizione-targa",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "B",
+        "value": "27",
+        "options": {
+          "A": "6",
+          "B": "27",
+          "C": "1",
+          "D": "28"
+        }
+      },
+      "new": {
+        "key": "B",
+        "value": "27",
+        "options": {
+          "A": "6",
+          "B": "27",
+          "C": "10",
+          "D": "1"
+        }
+      }
+    },
+    {
+      "id": "permutazioni-semplici-anagrammi-013",
+      "archetype": "permutazioni-semplici-anagrammi",
+      "keyChanged": false,
+      "optionsChanged": false,
+      "textChanged": true,
+      "invalidInV1": true,
+      "old": {
+        "key": "D",
+        "value": "720",
+        "options": {
+          "A": "120",
+          "B": "64",
+          "C": "30",
+          "D": "720"
+        }
+      },
+      "new": {
+        "key": "D",
+        "value": "720",
+        "options": {
+          "A": "120",
+          "B": "64",
+          "C": "30",
+          "D": "720"
+        }
+      }
+    },
+    {
+      "id": "permutazioni-ripetizione-anagrammi-016",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "A",
+        "value": "12",
+        "options": {
+          "A": "12",
+          "B": "24",
+          "C": "13",
+          "D": "11"
+        }
+      },
+      "new": {
+        "key": "A",
+        "value": "12",
+        "options": {
+          "A": "12",
+          "B": "24",
+          "C": "6",
+          "D": "16"
+        }
+      }
+    },
+    {
+      "id": "permutazioni-ripetizione-anagrammi-019",
+      "archetype": "permutazioni-ripetizione-anagrammi",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "D",
+        "value": "420",
+        "options": {
+          "A": "1008",
+          "B": "840",
+          "C": "5040",
+          "D": "420"
+        }
+      },
+      "new": {
+        "key": "D",
+        "value": "420",
+        "options": {
+          "A": "35",
+          "B": "840",
+          "C": "5040",
+          "D": "420"
+        }
+      }
+    },
+    {
+      "id": "combinazioni-diagonali-poligono-032",
+      "archetype": "combinazioni-diagonali-poligono",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "A",
+        "value": "27",
+        "options": {
+          "A": "27",
+          "B": "36",
+          "C": "72",
+          "D": "9"
+        }
+      },
+      "new": {
+        "key": "A",
+        "value": "27",
+        "options": {
+          "A": "27",
+          "B": "36",
+          "C": "72",
+          "D": "6"
+        }
+      }
+    },
+    {
+      "id": "combinazioni-diagonali-poligono-033",
+      "archetype": "combinazioni-diagonali-poligono",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "B",
+        "value": "27",
+        "options": {
+          "A": "9",
+          "B": "27",
+          "C": "72",
+          "D": "36"
+        }
+      },
+      "new": {
+        "key": "B",
+        "value": "27",
+        "options": {
+          "A": "6",
+          "B": "27",
+          "C": "72",
+          "D": "36"
+        }
+      }
+    },
+    {
+      "id": "combinazioni-diagonali-poligono-034",
+      "archetype": "combinazioni-diagonali-poligono",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "A",
+        "value": "9",
+        "options": {
+          "A": "9",
+          "B": "6",
+          "C": "30",
+          "D": "15"
+        }
+      },
+      "new": {
+        "key": "A",
+        "value": "9",
+        "options": {
+          "A": "9",
+          "B": "3",
+          "C": "30",
+          "D": "15"
+        }
+      }
+    },
+    {
+      "id": "combinazioni-diagonali-poligono-035",
+      "archetype": "combinazioni-diagonali-poligono",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "D",
+        "value": "27",
+        "options": {
+          "A": "36",
+          "B": "72",
+          "C": "9",
+          "D": "27"
+        }
+      },
+      "new": {
+        "key": "D",
+        "value": "27",
+        "options": {
+          "A": "36",
+          "B": "72",
+          "C": "6",
+          "D": "27"
+        }
+      }
+    },
+    {
+      "id": "urna-senza-reimmissione-stesso-colore-040",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "C",
+        "value": "27/55",
+        "options": {
+          "A": "65/121",
+          "B": "1",
+          "C": "27/55",
+          "D": "28/55"
+        }
+      },
+      "new": {
+        "key": "C",
+        "value": "27/55",
+        "options": {
+          "A": "65/121",
+          "B": "21/55",
+          "C": "27/55",
+          "D": "54/55"
+        }
+      }
+    },
+    {
+      "id": "urna-senza-reimmissione-stesso-colore-041",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "B",
+        "value": "4/9",
+        "options": {
+          "A": "77/81",
+          "B": "4/9",
+          "C": "1",
+          "D": "41/81"
+        }
+      },
+      "new": {
+        "key": "B",
+        "value": "4/9",
+        "options": {
+          "A": "8/9",
+          "B": "4/9",
+          "C": "5/18",
+          "D": "41/81"
+        }
+      }
+    },
+    {
+      "id": "urna-senza-reimmissione-stesso-colore-042",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "C",
+        "value": "8/15",
+        "options": {
+          "A": "3/5",
+          "B": "29/50",
+          "C": "8/15",
+          "D": "1"
+        }
+      },
+      "new": {
+        "key": "C",
+        "value": "8/15",
+        "options": {
+          "A": "1/15",
+          "B": "29/50",
+          "C": "8/15",
+          "D": "7/15"
+        }
+      }
+    },
+    {
+      "id": "urna-senza-reimmissione-stesso-colore-043",
+      "archetype": "urna-senza-reimmissione-stesso-colore",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "D",
+        "value": "7/15",
+        "options": {
+          "A": "1",
+          "B": "74/75",
+          "C": "13/25",
+          "D": "7/15"
+        }
+      },
+      "new": {
+        "key": "D",
+        "value": "7/15",
+        "options": {
+          "A": "1/3",
+          "B": "14/15",
+          "C": "13/25",
+          "D": "7/15"
+        }
+      }
+    },
+    {
+      "id": "urna-senza-reimmissione-entrambe-rosse-044",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "A",
+        "value": "5/22",
+        "options": {
+          "A": "5/22",
+          "B": "1/2",
+          "C": "2/11",
+          "D": "3/11"
+        }
+      },
+      "new": {
+        "key": "A",
+        "value": "5/22",
+        "options": {
+          "A": "5/22",
+          "B": "1/4",
+          "C": "1/2",
+          "D": "3/11"
+        }
+      }
+    },
+    {
+      "id": "urna-senza-reimmissione-entrambe-rosse-045",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "C",
+        "value": "1/5",
+        "options": {
+          "A": "1/2",
+          "B": "3/10",
+          "C": "1/5",
+          "D": "2/5"
+        }
+      },
+      "new": {
+        "key": "C",
+        "value": "1/5",
+        "options": {
+          "A": "1/4",
+          "B": "3/10",
+          "C": "1/5",
+          "D": "1/2"
+        }
+      }
+    },
+    {
+      "id": "urna-senza-reimmissione-entrambe-rosse-046",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "C",
+        "value": "1/3",
+        "options": {
+          "A": "4/15",
+          "B": "3/5",
+          "C": "1/3",
+          "D": "2/3"
+        }
+      },
+      "new": {
+        "key": "C",
+        "value": "1/3",
+        "options": {
+          "A": "4/15",
+          "B": "9/25",
+          "C": "1/3",
+          "D": "3/5"
+        }
+      }
+    },
+    {
+      "id": "urna-senza-reimmissione-entrambe-rosse-047",
+      "archetype": "urna-senza-reimmissione-entrambe-rosse",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "C",
+        "value": "1/3",
+        "options": {
+          "A": "4/15",
+          "B": "2/3",
+          "C": "1/3",
+          "D": "3/5"
+        }
+      },
+      "new": {
+        "key": "C",
+        "value": "1/3",
+        "options": {
+          "A": "4/15",
+          "B": "3/5",
+          "C": "1/3",
+          "D": "9/25"
+        }
+      }
+    },
+    {
+      "id": "urna-almeno-uno-048",
+      "archetype": "urna-almeno-uno",
+      "keyChanged": true,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": true,
+      "old": {
+        "key": "D",
+        "value": "7/12",
+        "options": {
+          "A": "11/18",
+          "B": "5/12",
+          "C": "2/3",
+          "D": "7/12"
+        }
+      },
+      "new": {
+        "key": "D",
+        "value": "11/12",
+        "options": {
+          "A": "8/9",
+          "B": "1/12",
+          "C": "1/2",
+          "D": "11/12"
+        }
+      }
+    },
+    {
+      "id": "urna-almeno-uno-049",
+      "archetype": "urna-almeno-uno",
+      "keyChanged": true,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": true,
+      "old": {
+        "key": "B",
+        "value": "28/33",
+        "options": {
+          "A": "5/33",
+          "B": "28/33",
+          "C": "19/22",
+          "D": "5/12"
+        }
+      },
+      "new": {
+        "key": "B",
+        "value": "15/22",
+        "options": {
+          "A": "7/22",
+          "B": "15/22",
+          "C": "95/144",
+          "D": "35/66"
+        }
+      }
+    },
+    {
+      "id": "urna-almeno-uno-050",
+      "archetype": "urna-almeno-uno",
+      "keyChanged": true,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": true,
+      "old": {
+        "key": "D",
+        "value": "5/7",
+        "options": {
+          "A": "4/7",
+          "B": "2/7",
+          "C": "16/21",
+          "D": "5/7"
+        }
+      },
+      "new": {
+        "key": "D",
+        "value": "6/7",
+        "options": {
+          "A": "4/7",
+          "B": "1/7",
+          "C": "40/49",
+          "D": "6/7"
+        }
+      }
+    },
+    {
+      "id": "urna-almeno-uno-051",
+      "archetype": "urna-almeno-uno",
+      "keyChanged": true,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": true,
+      "old": {
+        "key": "C",
+        "value": "76/91",
+        "options": {
+          "A": "15/91",
+          "B": "11/13",
+          "C": "76/91",
+          "D": "3/7"
+        }
+      },
+      "new": {
+        "key": "C",
+        "value": "9/13",
+        "options": {
+          "A": "4/13",
+          "B": "33/49",
+          "C": "9/13",
+          "D": "48/91"
+        }
+      }
+    },
+    {
+      "id": "probabilita-dadi-somma-052",
+      "archetype": "probabilita-dadi-somma",
+      "keyChanged": true,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": true,
+      "old": {
+        "key": "A",
+        "value": "1/6",
+        "options": {
+          "A": "1/6",
+          "B": "1/3",
+          "C": "0",
+          "D": "1/2"
+        }
+      },
+      "new": {
+        "key": "A",
+        "value": "5/36",
+        "options": {
+          "A": "5/36",
+          "B": "1/11",
+          "C": "1/7",
+          "D": "1/6"
+        }
+      }
+    },
+    {
+      "id": "probabilita-dadi-somma-053",
+      "archetype": "probabilita-dadi-somma",
+      "keyChanged": true,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": true,
+      "old": {
+        "key": "A",
+        "value": "1/6",
+        "options": {
+          "A": "1/6",
+          "B": "1/3",
+          "C": "1/2",
+          "D": "5/36"
+        }
+      },
+      "new": {
+        "key": "A",
+        "value": "5/36",
+        "options": {
+          "A": "5/36",
+          "B": "1/11",
+          "C": "1/6",
+          "D": "1/7"
+        }
+      }
+    },
+    {
+      "id": "probabilita-dadi-somma-054",
+      "archetype": "probabilita-dadi-somma",
+      "keyChanged": true,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": true,
+      "old": {
+        "key": "C",
+        "value": "1/9",
+        "options": {
+          "A": "1/3",
+          "B": "5/36",
+          "C": "1/9",
+          "D": "2/9"
+        }
+      },
+      "new": {
+        "key": "C",
+        "value": "1/12",
+        "options": {
+          "A": "1/9",
+          "B": "2/21",
+          "C": "1/12",
+          "D": "1/11"
+        }
+      }
+    },
+    {
+      "id": "probabilita-dadi-somma-055",
+      "archetype": "probabilita-dadi-somma",
+      "keyChanged": true,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": true,
+      "old": {
+        "key": "B",
+        "value": "1/9",
+        "options": {
+          "A": "1/3",
+          "B": "1/9",
+          "C": "5/36",
+          "D": "2/9"
+        }
+      },
+      "new": {
+        "key": "B",
+        "value": "1/12",
+        "options": {
+          "A": "1/9",
+          "B": "1/12",
+          "C": "2/21",
+          "D": "1/11"
+        }
+      }
+    },
+    {
+      "id": "principio-cassetti-dirichlet-070",
+      "archetype": "principio-cassetti-dirichlet",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "D",
+        "value": "3",
+        "options": {
+          "A": "2",
+          "B": "4",
+          "C": "6",
+          "D": "3"
+        }
+      },
+      "new": {
+        "key": "D",
+        "value": "3",
+        "options": {
+          "A": "2",
+          "B": "4",
+          "C": "5",
+          "D": "3"
+        }
+      }
+    },
+    {
+      "id": "probabilita-almeno-uno-072",
+      "archetype": "probabilita-almeno-uno",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "C",
+        "value": "37/64",
+        "options": {
+          "A": "27/64",
+          "B": "27/256",
+          "C": "37/64",
+          "D": "3/4"
+        }
+      },
+      "new": {
+        "key": "C",
+        "value": "37/64",
+        "options": {
+          "A": "27/64",
+          "B": "9/64",
+          "C": "37/64",
+          "D": "3/4"
+        }
+      }
+    },
+    {
+      "id": "probabilita-almeno-uno-073",
+      "archetype": "probabilita-almeno-uno",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "C",
+        "value": "15/16",
+        "options": {
+          "A": "1/32",
+          "B": "1/2",
+          "C": "15/16",
+          "D": "1/16"
+        }
+      },
+      "new": {
+        "key": "C",
+        "value": "15/16",
+        "options": {
+          "A": "1/2",
+          "B": "1/4",
+          "C": "15/16",
+          "D": "1/16"
+        }
+      }
+    },
+    {
+      "id": "probabilita-almeno-uno-074",
+      "archetype": "probabilita-almeno-uno",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "D",
+        "value": "15/16",
+        "options": {
+          "A": "1/16",
+          "B": "1/2",
+          "C": "1/32",
+          "D": "15/16"
+        }
+      },
+      "new": {
+        "key": "D",
+        "value": "15/16",
+        "options": {
+          "A": "1/16",
+          "B": "1/4",
+          "C": "1/2",
+          "D": "15/16"
+        }
+      }
+    },
+    {
+      "id": "probabilita-almeno-uno-075",
+      "archetype": "probabilita-almeno-uno",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "C",
+        "value": "3/4",
+        "options": {
+          "A": "1/8",
+          "B": "1/4",
+          "C": "3/4",
+          "D": "1/2"
+        }
+      },
+      "new": {
+        "key": "C",
+        "value": "3/4",
+        "options": {
+          "A": "1/2",
+          "B": "1/4",
+          "C": "3/4",
+          "D": "7/8"
+        }
+      }
+    },
+    {
+      "id": "distribuzione-oggetti-stelle-barre-080",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "C",
+        "value": "36",
+        "options": {
+          "A": "15",
+          "B": "2187",
+          "C": "36",
+          "D": "35"
+        }
+      },
+      "new": {
+        "key": "C",
+        "value": "36",
+        "options": {
+          "A": "15",
+          "B": "2187",
+          "C": "36",
+          "D": "21"
+        }
+      }
+    },
+    {
+      "id": "distribuzione-oggetti-stelle-barre-081",
+      "archetype": "distribuzione-oggetti-stelle-barre",
+      "keyChanged": false,
+      "optionsChanged": true,
+      "textChanged": false,
+      "invalidInV1": false,
+      "old": {
+        "key": "A",
+        "value": "36",
+        "options": {
+          "A": "36",
+          "B": "15",
+          "C": "2187",
+          "D": "35"
+        }
+      },
+      "new": {
+        "key": "A",
+        "value": "36",
+        "options": {
+          "A": "36",
+          "B": "15",
+          "C": "2187",
+          "D": "21"
+        }
+      }
+    }
+  ]
+}
