@@ -68,6 +68,8 @@ export const en: Translation = {
     backToLessons: "All lessons",
     practice: "Practise this lesson",
     playground: "Open the formula playground",
+    prevLesson: "Previous lesson",
+    nextLesson: "Next lesson",
     notFound: "Lesson not found.",
     lessonCount: "lessons available",
     comingSoon: "Theory coming soon",
