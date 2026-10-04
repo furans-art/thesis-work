@@ -1,3 +1,3 @@
-- [ ] Creare 4 figure narrative 16:9 per il capitolo: esercizio, errore, diagnosi, tutor.
-- [ ] Creare una raccolta completa di circa 20 screenshot, privilegiando il 16:9 senza tagli illeggibili.
-- [ ] Consegnare immagini numerate e didascalie pronte per la tesi.
+- [x] Creare 4 figure narrative 16:9 per il capitolo: esercizio, errore, diagnosi, tutor.
+- [x] Creare una raccolta completa di circa 20 screenshot, privilegiando il 16:9 senza tagli illeggibili.
+- [x] Consegnare immagini numerate e didascalie pronte per la tesi.
