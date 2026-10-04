@@ -84,6 +84,45 @@ function LessonPage() {
             </Link>
           </Button>
         </div>
+        <nav
+          aria-label={t.lessons.title}
+          className="flex flex-wrap items-stretch justify-between gap-3"
+        >
+          {prevLesson ? (
+            <Button variant="outline" asChild className="h-auto max-w-[48%] whitespace-normal">
+              <Link
+                to="/lessons/$lessonId"
+                params={{ lessonId: String(prevLesson.id) }}
+                className="flex items-center gap-2 py-3 text-left"
+              >
+                <ArrowLeft aria-hidden="true" className="shrink-0" />
+                <span>
+                  <span className="block text-xs text-muted-foreground">{t.lessons.prevLesson}</span>
+                  <span className="block font-semibold">{lessonKey(prevLesson.titleKey)}</span>
+                </span>
+              </Link>
+            </Button>
+          ) : (
+            <span />
+          )}
+          {nextLesson ? (
+            <Button variant="outline" asChild className="ml-auto h-auto max-w-[48%] whitespace-normal">
+              <Link
+                to="/lessons/$lessonId"
+                params={{ lessonId: String(nextLesson.id) }}
+                className="flex items-center gap-2 py-3 text-right"
+              >
+                <span>
+                  <span className="block text-xs text-muted-foreground">{t.lessons.nextLesson}</span>
+                  <span className="block font-semibold">{lessonKey(nextLesson.titleKey)}</span>
+                </span>
+                <ArrowRight aria-hidden="true" className="shrink-0" />
+              </Link>
+            </Button>
+          ) : (
+            <span />
+          )}
+        </nav>
       </article>
     </PageShell>
   );
