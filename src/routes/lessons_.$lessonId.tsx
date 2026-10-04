@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, BookOpen, FlaskConical } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpen, FlaskConical } from "lucide-react";
 
 import { PageShell } from "@/components/layout/page-shell";
 import { Button } from "@/components/ui/button";
@@ -43,6 +43,11 @@ function LessonPage() {
   }
 
   const lessonKey = (key: string): string => (t.lesson as Record<string, string>)[key] ?? "";
+
+  const sorted = [...lessons].sort((a, b) => a.id - b.id);
+  const index = sorted.findIndex((l) => l.id === lesson.id);
+  const prevLesson = index > 0 ? sorted[index - 1] : undefined;
+  const nextLesson = index >= 0 && index < sorted.length - 1 ? sorted[index + 1] : undefined;
 
   return (
     <PageShell title={lessonKey(lesson.titleKey)}>
