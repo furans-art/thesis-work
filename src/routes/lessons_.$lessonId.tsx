@@ -44,7 +44,13 @@ function LessonPage() {
 
   const lessonKey = (key: string): string => (t.lesson as Record<string, string>)[key] ?? "";
 
-  const sorted = [...lessons].sort((a, b) => a.id - b.id);
+  // Prev/next stay within the lesson's own section (logic or combinatorics):
+  // the two modules are numbered independently, so crossing sections would
+  // show a wrong sequence.
+  const sectionKey = lesson.practiceTargets[0] ?? "";
+  const sorted = lessons
+    .filter((l) => (l.practiceTargets[0] ?? "") === sectionKey)
+    .sort((a, b) => a.id - b.id);
   const index = sorted.findIndex((l) => l.id === lesson.id);
   const prevLesson = index > 0 ? sorted[index - 1] : undefined;
   const nextLesson = index >= 0 && index < sorted.length - 1 ? sorted[index + 1] : undefined;
