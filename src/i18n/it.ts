@@ -66,6 +66,8 @@ export const it = {
     backToLessons: "Tutte le lezioni",
     practice: "Esercitati su questa lezione",
     playground: "Apri il laboratorio formule",
+    prevLesson: "Lezione precedente",
+    nextLesson: "Lezione successiva",
     notFound: "Lezione non trovata.",
     lessonCount: "lezioni disponibili",
     comingSoon: "Teoria in arrivo",

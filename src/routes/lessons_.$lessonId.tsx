@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft, BookOpen, FlaskConical } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpen, FlaskConical } from "lucide-react";
 
 import { PageShell } from "@/components/layout/page-shell";
 import { Button } from "@/components/ui/button";
@@ -44,6 +44,11 @@ function LessonPage() {
 
   const lessonKey = (key: string): string => (t.lesson as Record<string, string>)[key] ?? "";
 
+  const sorted = [...lessons].sort((a, b) => a.id - b.id);
+  const index = sorted.findIndex((l) => l.id === lesson.id);
+  const prevLesson = index > 0 ? sorted[index - 1] : undefined;
+  const nextLesson = index >= 0 && index < sorted.length - 1 ? sorted[index + 1] : undefined;
+
   return (
     <PageShell title={lessonKey(lesson.titleKey)}>
       <article className="max-w-3xl space-y-6">
@@ -79,6 +84,45 @@ function LessonPage() {
             </Link>
           </Button>
         </div>
+        <nav
+          aria-label={t.lessons.title}
+          className="flex flex-wrap items-stretch justify-between gap-3"
+        >
+          {prevLesson ? (
+            <Button variant="outline" asChild className="h-auto max-w-[48%] whitespace-normal">
+              <Link
+                to="/lessons/$lessonId"
+                params={{ lessonId: String(prevLesson.id) }}
+                className="flex items-center gap-2 py-3 text-left"
+              >
+                <ArrowLeft aria-hidden="true" className="shrink-0" />
+                <span>
+                  <span className="block text-xs text-muted-foreground">{t.lessons.prevLesson}</span>
+                  <span className="block font-semibold">{lessonKey(prevLesson.titleKey)}</span>
+                </span>
+              </Link>
+            </Button>
+          ) : (
+            <span />
+          )}
+          {nextLesson ? (
+            <Button variant="outline" asChild className="ml-auto h-auto max-w-[48%] whitespace-normal">
+              <Link
+                to="/lessons/$lessonId"
+                params={{ lessonId: String(nextLesson.id) }}
+                className="flex items-center gap-2 py-3 text-right"
+              >
+                <span>
+                  <span className="block text-xs text-muted-foreground">{t.lessons.nextLesson}</span>
+                  <span className="block font-semibold">{lessonKey(nextLesson.titleKey)}</span>
+                </span>
+                <ArrowRight aria-hidden="true" className="shrink-0" />
+              </Link>
+            </Button>
+          ) : (
+            <span />
+          )}
+        </nav>
       </article>
     </PageShell>
   );
