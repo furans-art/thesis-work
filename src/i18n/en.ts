@@ -11,6 +11,7 @@ export const en: Translation = {
     comingSoon: "Coming soon",
     placeholder: "Placeholder content: this section will be completed in the next steps.",
     skipToContent: "Skip to main content",
+    loadingPage: "Loading page…",
     minutes: "min",
     questions: "questions",
   },

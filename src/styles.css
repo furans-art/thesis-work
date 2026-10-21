@@ -322,3 +322,8 @@
     var(--color-border) 66% 100%
   );
 }
+
+@keyframes page-loading {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(300%); }
+}
