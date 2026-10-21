@@ -4,6 +4,7 @@ import {
   Link,
   createRootRouteWithContext,
   useRouter,
+  useRouterState,
   HeadContent,
   Scripts,
   type ErrorComponentProps,
@@ -131,6 +132,7 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function AppFrame() {
   const { t } = useI18n();
+  const isLoading = useRouterState({ select: (s) => s.status === "pending" });
 
   return (
     <div className="flex min-h-dvh flex-col bg-background">
@@ -141,9 +143,31 @@ function AppFrame() {
         {t.common.skipToContent}
       </a>
       <SiteHeader />
-      <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">
-        {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-        <Outlet />
+      <main
+        id="main-content"
+        tabIndex={-1}
+        aria-busy={isLoading}
+        className="relative flex-1 focus:outline-none"
+      >
+        {isLoading && (
+          <div
+            role="status"
+            aria-live="polite"
+            className="pointer-events-none absolute inset-x-0 top-0 z-40"
+          >
+            <div className="h-1 w-full overflow-hidden bg-primary/15">
+              <div className="h-full w-1/3 animate-[page-loading_1.1s_ease-in-out_infinite] bg-primary" />
+            </div>
+            <div className="mx-auto mt-3 flex w-fit items-center gap-2 rounded-full border bg-card px-4 py-1.5 text-sm text-muted-foreground shadow-sm">
+              <span className="h-3 w-3 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+              {t.common.loadingPage}
+            </div>
+          </div>
+        )}
+        <div className={isLoading ? "opacity-50 transition-opacity" : "transition-opacity"}>
+          {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
+          <Outlet />
+        </div>
       </main>
       <SiteFooter />
       <Toaster richColors position="top-center" />

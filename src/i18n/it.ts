@@ -9,6 +9,7 @@ export const it = {
     comingSoon: "In arrivo",
     placeholder: "Contenuto segnaposto: questa sezione verrà completata nei prossimi passi.",
     skipToContent: "Vai al contenuto principale",
+    loadingPage: "Caricamento della pagina…",
     minutes: "min",
     questions: "domande",
   },
